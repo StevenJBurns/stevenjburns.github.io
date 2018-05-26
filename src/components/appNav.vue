@@ -1,12 +1,12 @@
 <template>
   <nav>
     <ul>
-      <li><a href="/">&lt;Home /&gt;</a></li>
-      <li><a href="/skills">&lt;Skills /&gt;</a></li>
-      <li><a href="/projects">&lt;Projects /&gt;</a></li>
-      <li><a href="/sandbox">&lt;Sandbox /&gt;</a></li>
-      <li><a href="/contact">&lt;Contact /&gt;</a></li>
-      <li><a href="/about">&lt;About /&gt;</a></li>
+      <li><router-link to="/">&lt;Home /&gt;</router-link></li>
+      <li><router-link to="/skills">&lt;Skills /&gt;</router-link></li>
+      <li><router-link to="/projects">&lt;Projects /&gt;</router-link></li>
+      <li><router-link to="/sandbox">&lt;Sandbox /&gt;</router-link></li>
+      <li><router-link to="/contact">&lt;Contact /&gt;</router-link></li>
+      <li><router-link to="/about">&lt;About /&gt;</router-link></li>
     </ul>
   </nav>
 </template>

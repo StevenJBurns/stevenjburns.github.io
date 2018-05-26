@@ -13,6 +13,7 @@
 
 <style scoped>
   main {
+    flex: 1 0 auto;
     background: #007700
   }
 </style>

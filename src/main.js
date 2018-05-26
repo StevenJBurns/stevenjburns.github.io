@@ -24,8 +24,8 @@ const routes = [
 ];
 
 const router = new VueRouter({
-  routes  // this is ES6 for -> routes: routes //
-  //mode: "history"
+  routes,  // this is ES6 for -> routes: routes //
+  mode: "history"
 });
 
 new Vue({

@@ -9,16 +9,9 @@
     <meta name="Description" content="My personal portfolio website for full stack web development">
     <meta name="Keywords" content="StevenJBurns, full stack, web, developer, webdev, portfolio, personal">
     <meta name="Copyright" content="2018">
+    <meta http-equiv="refresh" content="0;URL='/'">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <script>
-      (function(){
-        var redirect = sessionStorage.redirect;
-        delete sessionStorage.redirect;
-        if (redirect && redirect != location.href) {
-          history.replaceState(null, null, redirect);
-        }
-      })();
-    </script>
+    <script>sessionStorage.redirect = location.href;</script>
     <title>Steven J Burns &bull; Full Stack Developer</title>
   </head>
   <body>

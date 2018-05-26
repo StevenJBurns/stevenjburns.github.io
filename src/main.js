@@ -32,4 +32,4 @@ new Vue({
   el: '#app',
   router, // this is ES6 for -> router: router //
   render: h => h(App)
-})//.$mount('#app');
+}).$mount('#app');

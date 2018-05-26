@@ -1,12 +1,12 @@
 <template>
   <nav>
     <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/">Skills</a></li>
-      <li><a href="/">Project</a></li>
-      <li><a href="/">Sandbox</a></li>
-      <li><a href="/">Contact</a></li>
-      <li><a href="/">About</a></li>
+      <li><a href="/">&lt;Home /&gt;</a></li>
+      <li><a href="/skills">&lt;Skills /&gt;</a></li>
+      <li><a href="/projects">&lt;Projects /&gt;</a></li>
+      <li><a href="/sandbox">&lt;Sandbox /&gt;</a></li>
+      <li><a href="/contact">&lt;Contact /&gt;</a></li>
+      <li><a href="/about">&lt;About /&gt;</a></li>
     </ul>
   </nav>
 </template>
@@ -30,7 +30,7 @@
 
   li {
     margin: 2px;
-    width: 72px;
+    width: 96px;
     background: #BFBFBF;
     display: inline-block;
     border-radius: 4px;

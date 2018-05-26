@@ -1,12 +1,12 @@
 <template>
   <nav>
     <ul>
-      <li>Home</li>
-      <li>Skills</li>
-      <li>Project</li>
-      <li>Sandbox</li>
-      <li>Contact</li>
-      <li>About</li>
+      <li><a href="/">Home</a></li>
+      <li><a href="/">Skills</a></li>
+      <li><a href="/">Project</a></li>
+      <li><a href="/">Sandbox</a></li>
+      <li><a href="/">Contact</a></li>
+      <li><a href="/">About</a></li>
     </ul>
   </nav>
 </template>
@@ -31,10 +31,19 @@
   li {
     margin: 2px;
     width: 72px;
-    color: #2F2F2F;
     background: #BFBFBF;
     display: inline-block;
     border-radius: 4px;
-    text-align: center
+  }
+
+  a:link, a:visited {
+    color: #2F2F2F;
+    text-align: center;
+    text-decoration: none;
+    cursor: default
+  }
+
+  a:hover, a:active {
+    background: #BFBFBF
   }
 </style>

@@ -16,11 +16,11 @@ Vue.use(VueRouter);
 
 const routes = [
   { path: "/", component: Home},
-  { path: "/skills/", component: Skills},
-  { path: "/projects/", component: Projects},
-  { path: "/sandbox/", component: Sandbox},
-  { path: "/contact/", component: Contact},
-  { path: "/about/", component: About}
+  { path: "/skills", component: Skills},
+  { path: "/projects", component: Projects},
+  { path: "/sandbox", component: Sandbox},
+  { path: "/contact", component: Contact},
+  { path: "/about", component: About}
 ];
 
 const router = new VueRouter({

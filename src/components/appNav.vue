@@ -2,11 +2,11 @@
   <nav>
     <ul>
       <li><router-link to="/">&lt;Home /&gt;</router-link></li>
-      <li><router-link to="/skills">&lt;Skills /&gt;</router-link></li>
-      <li><router-link to="/projects">&lt;Projects /&gt;</router-link></li>
-      <li><router-link to="/sandbox">&lt;Sandbox /&gt;</router-link></li>
-      <li><router-link to="/contact">&lt;Contact /&gt;</router-link></li>
-      <li><router-link to="/about">&lt;About /&gt;</router-link></li>
+      <li><router-link to="skills">&lt;Skills /&gt;</router-link></li>
+      <li><router-link to="projects">&lt;Projects /&gt;</router-link></li>
+      <li><router-link to="sandbox">&lt;Sandbox /&gt;</router-link></li>
+      <li><router-link to="contact">&lt;Contact /&gt;</router-link></li>
+      <li><router-link to="about">&lt;About /&gt;</router-link></li>
     </ul>
   </nav>
 </template>

@@ -1,8 +1,8 @@
 /* Dependencies */
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import App from './App.vue';
 
+import App from './App.vue';
 import Home from './pages/home.vue';
 import Skills from './pages/skills.vue';
 import Projects from './pages/projects.vue';
@@ -29,6 +29,7 @@ const router = new VueRouter({
 });
 
 new Vue({
+  el: '#app',
   router, // this is ES6 for -> router: router //
   render: h => h(App)
-}).$mount('#app');
+})//.$mount('#app');

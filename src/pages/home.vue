@@ -1,6 +1,5 @@
 <template>
   <main>
-    <hr>
     <h1>STEVEN J BURNS</h1>
     <img src="content/images/bullseye.DDDDDD.png">
     <h3>Full Stack Developer</h3>
@@ -20,7 +19,7 @@
 <style scoped>
   main {
     flex: 1 0 auto;
-    background: #000077
+    background: #77CCDD
   }
   svg {
     margin: 0 auto;

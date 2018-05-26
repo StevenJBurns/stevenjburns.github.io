@@ -31,8 +31,8 @@
   li {
     margin: 2px;
     width: 72px;
-    color: #DFDFDF;
-    background: #7F7F7F;
+    color: #2F2F2F;
+    background: #BFBFBF;
     display: inline-block;
     border-radius: 4px;
     text-align: center

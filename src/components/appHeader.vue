@@ -14,6 +14,6 @@
 <style scoped>
   header {
     padding: 12px;
-    background: #BFBFBF
+    background: #7F7F7F;
   }
 </style>

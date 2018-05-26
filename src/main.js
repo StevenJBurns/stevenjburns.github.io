@@ -25,7 +25,7 @@ const routes = [
 
 const router = new VueRouter({
   routes,  // this is ES6 for -> routes: routes //
-  mode: "hash"
+  mode: "abstract"
 });
 
 new Vue({

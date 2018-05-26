@@ -11,13 +11,14 @@
   import Header from './components/appHeader.vue';
   import Nav from './components/appNav.vue';
   import Footer from './components/appFooter.vue';
+  //import routerview from 'vue-router';
 
   export default {
     name: 'App',
     components: {
       Header,
       Nav,
-      Footer,
+      Footer
     }
   }
 </script>

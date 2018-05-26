@@ -31,6 +31,7 @@
   li {
     margin: 2px;
     width: 96px;
+    height: 32px;
     background: #BFBFBF;
     display: inline-block;
     border-radius: 4px;
@@ -39,8 +40,7 @@
   a:link, a:visited {
     color: #2F2F2F;
     text-align: center;
-    text-decoration: none;
-    cursor: default
+    text-decoration: none
   }
 
   a:hover, a:active {

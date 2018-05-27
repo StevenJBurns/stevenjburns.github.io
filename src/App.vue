@@ -2,9 +2,11 @@
   <div id="app">
     <Header />
     <Nav />
-    <transition name="fade">
-      <router-view></router-view>
-    </transition>
+    <main>
+      <transition name="fade">
+        <router-view></router-view>
+      </transition>
+    </main>
     <Footer />
   </div>
 </template>
@@ -31,7 +33,7 @@
     padding: 0
   }
 
-  div {
+  #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -40,16 +42,22 @@
 
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 100%;
+  }
+
+  main {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
   }
 
   .fade-enter-active, .fade-leave-active {
     transition-property: opacity;
-    transition-duration: 1s;
+    transition-duration: 0.5s;
   }
 
   .fade-enter-active {
-    transition-delay: 1s;
+    transition-delay: 0.5s;
   }
 
   .fade-enter, .fade-leave-active {

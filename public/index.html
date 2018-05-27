@@ -12,7 +12,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="<%= BASE_URL %>favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="<%= BASE_URL %>favicon-16x16.png">
     <link rel="stylesheet" type="text/css" href="<%= BASE_URL %>index.css">
-    <script>
+    <!-- <script>
       (function(){
         let redirect = sessionStorage.redirect;
         delete sessionStorage.redirect;
@@ -20,19 +20,18 @@
           history.replaceState(null, null, redirect);
         }
       })();
-    </script>
+    </script> -->
     <style>
       body {
         color: #DFDFDF;
-        background: #2F2F2F
+        background: #2F2F2F;
+        min-height: 100vh
       }
     </style>
     <title>Steven J Burns &bull; Full Stack Developer</title>
   </head>
   <body>
-    <noscript>
-      <strong>This website doesn't work properly without JavaScript. Please enable it to continue.</strong>
-    </noscript>
+    <noscript>This website doesn't work properly without JavaScript. Please enable it to continue.</noscript>
     <div id="app"><!-- built files will be auto injected --></div>
   </body>
 </html>

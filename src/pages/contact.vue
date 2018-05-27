@@ -1,7 +1,7 @@
 <template>
-  <main>
+  <div>
     <h3>Contact</h3>
-  </main>
+  </div>
 </template>
 
 <script>
@@ -12,8 +12,7 @@
 </script>
 
 <style scoped>
-  main {
-    flex: 1 0 auto;
+  div {
     background: #335500
   }
 </style>

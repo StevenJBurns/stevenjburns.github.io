@@ -1,7 +1,7 @@
 <template>
-  <main>
+  <div>
     <h3>Skills</h3>    
-  </main>
+  </div>
 </template>
 
 <script>
@@ -12,8 +12,7 @@
 </script>
 
 <style scoped>
-  main {
-    flex: 1 0 auto;
+  div {
     background: #DD0000
   }
 </style>

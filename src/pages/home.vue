@@ -1,15 +1,13 @@
 <template>
-  <main>
+  <div>
     <h1>STEVEN J BURNS</h1>
-    <img src="../assets/bullseye.DDDDDD.png">
-    <h3>Full Stack Developer</h3>
-    <h3>Longmont &nbsp; &bull; &nbsp; Colorado</h3>
-  </main>
+    <img height=144 width=144 src="../assets/bullseye.DDDDDD.png">
+    <h2>Full Stack Developer</h2>
+    <h3>Longmont&nbsp;&bull;&nbsp;Colorado</h3>
+  </div>
 </template>
 
 <script>
-  //import Main from '../components/appMain.vue';
-
   export default {
     name: 'PageHome',
     props: {}
@@ -17,12 +15,15 @@
 </script>
 
 <style scoped>
-  main {
+  div {
     flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
     background: #77CCDD
   }
-  svg {
-    margin: 0 auto;
-    display: block
+
+  img {
+    margin: 12px auto;
+    display: inline-block
   }
 </style>

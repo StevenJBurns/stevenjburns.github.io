@@ -2,7 +2,9 @@
   <div id="app">
     <Header />
     <Nav />
-    <router-view></router-view>
+    <transition name="fade">
+      <router-view></router-view>
+    </transition>
     <Footer />
   </div>
 </template>
@@ -39,5 +41,23 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+  }
+
+  .fade-enter-active, .fade-leave-active {
+    transition: all 0.25s;
+  }
+
+  .fade-enter-active {
+    transition: all 0.25s;
+  }
+
+  .fade-enter {
+    transform: translateY(-50%);
+    opacity: 1
+  }
+  
+  .fade-leave-active {
+    transform: translateY(50%);
+    opacity: 0
   }
 </style>

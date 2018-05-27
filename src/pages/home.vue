@@ -19,6 +19,7 @@
 <style scoped>
   main {
     flex: 1 0 auto;
+    /* margin: 0 48px; */
     background: #77CCDD
   }
   svg {

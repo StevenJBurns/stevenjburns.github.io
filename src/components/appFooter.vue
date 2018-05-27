@@ -14,6 +14,7 @@
 <style scoped>
   footer {
     padding: 12px;
-    background: #BFBFBF
+    color: #DFDFDF;
+    background: transparent
   }
 </style>

@@ -21,7 +21,7 @@
 <style scoped>
   nav {
     padding: 8px 0;
-    background: #9F9F9F;
+    background: transparent
   }
 
   ul {

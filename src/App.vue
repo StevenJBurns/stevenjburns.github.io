@@ -44,20 +44,15 @@
   }
 
   .fade-enter-active, .fade-leave-active {
-    transition: all 0.25s;
+    transition-property: opacity;
+    transition-duration: 1s;
   }
 
   .fade-enter-active {
-    transition: all 0.25s;
+    transition-delay: 1s;
   }
 
-  .fade-enter {
-    transform: translateY(-50%);
-    opacity: 1
-  }
-  
-  .fade-leave-active {
-    transform: translateY(50%);
+  .fade-enter, .fade-leave-active {
     opacity: 0
   }
 </style>

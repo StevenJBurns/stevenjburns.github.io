@@ -1,7 +1,7 @@
 <template>
   <main>
     <h1>STEVEN J BURNS</h1>
-    <img src="content/images/bullseye.DDDDDD.png">
+    <img src="../assets/bullseye.DDDDDD.png">
     <h3>Full Stack Developer</h3>
     <h3>Longmont &nbsp; &bull; &nbsp; Colorado</h3>
   </main>
@@ -19,7 +19,6 @@
 <style scoped>
   main {
     flex: 1 0 auto;
-    /* margin: 0 48px; */
     background: #77CCDD
   }
   svg {

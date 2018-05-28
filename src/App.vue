@@ -3,7 +3,7 @@
     <Header />
     <Nav />
     <main>
-      <transition name="fade">
+      <transition name="fade" mode="out-in">
         <router-view></router-view>
       </transition>
     </main>
@@ -53,11 +53,11 @@
 
   .fade-enter-active, .fade-leave-active {
     transition-property: opacity;
-    transition-duration: 0.5s;
+    transition-duration: 0.2s;
   }
 
   .fade-enter-active {
-    transition-delay: 0.5s;
+    transition-delay: 0.1s;
   }
 
   .fade-enter, .fade-leave-active {

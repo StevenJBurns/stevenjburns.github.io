@@ -42,13 +42,14 @@
 
     display: flex;
     flex-direction: column;
-    min-height: 100%;
+    min-height: 100vh
   }
 
   main {
     flex: 1 0 auto;
     display: flex;
     flex-direction: column;
+    min-height: 100%
   }
 
   .fade-enter-active, .fade-leave-active {
@@ -61,6 +62,7 @@
   }
 
   .fade-enter, .fade-leave-active {
+    visibility: visible; 
     opacity: 0
   }
 </style>

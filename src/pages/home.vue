@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>STEVEN J BURNS</h1>
-    <img height=144 width=144 src="../assets/bullseye.DDDDDD.png">
+    <img height=120 width=120 src="../assets/bullseye.DDDDDD.png">
     <h2>Full Stack Developer</h2>
     <h3>Longmont&nbsp;&bull;&nbsp;Colorado</h3>
   </div>
@@ -21,7 +21,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #55AABB
+    background: #708090
   }
 
   img {

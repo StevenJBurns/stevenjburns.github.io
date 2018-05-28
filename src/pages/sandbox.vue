@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3>Sandox</h3>    
+    <h3>Sandbox</h3>    
   </div>
 </template>
 
@@ -18,6 +18,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #777700
+    background: #908070
   }
 </style>

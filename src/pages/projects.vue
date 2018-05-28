@@ -18,6 +18,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #007700
+    background: #907080
   }
 </style>

@@ -18,7 +18,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #DD0000
+    background: #809070
   }
 </style>
 

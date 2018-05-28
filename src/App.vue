@@ -49,7 +49,6 @@
     flex: 1 0 auto;
     display: flex;
     flex-direction: column;
-    /* min-height: 100% */
   }
 
   .fade-enter-active, .fade-leave-active {

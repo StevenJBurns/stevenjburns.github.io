@@ -21,7 +21,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #708090
+    background: #708090;
+    text-shadow: 2px 2px 16px #2F2F2F
   }
 
   img {

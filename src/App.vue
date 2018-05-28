@@ -46,14 +46,14 @@
   }
 
   main {
-    color: #DFDFDF;
     flex: 1 0 auto;
     display: flex;
     flex-direction: column;
+    color: #DFDFDF;
   }
 
   .fade-enter-active, .fade-leave-active {
-    transition-property: opacity;
+    transition-property: all;
     transition-duration: 0.2s;
   }
 
@@ -62,7 +62,7 @@
   }
 
   .fade-enter, .fade-leave-active {
-    visibility: visible; 
+    transform: scale(0.75, 0.75);
     opacity: 0
   }
 </style>

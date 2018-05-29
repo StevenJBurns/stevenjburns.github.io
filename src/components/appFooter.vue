@@ -2,10 +2,10 @@
   <footer>
     <nav>
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">LinkedIn</a></li>
-        <li><a href="#">GitHub</a></li>
-        <li><a href="#">Email</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="https://www.linkedin.com/in/steven-j-burns/">LinkedIn</a></li>
+        <li><a href="https://github.com/StevenJBurns">GitHub</a></li>
+        <li><a href="mailto:stevenjburns@msn.com?subject=You're%20Hired">SJB</a></li>
       </ul>
     </nav>
     <h4>&copy;2018 &bull; Steven J Burns</h4>
@@ -45,6 +45,6 @@
   }
 
   a:hover, a:active {
-    color: #DFDF00;
+    color: #BF7F00;
   }
 </style>

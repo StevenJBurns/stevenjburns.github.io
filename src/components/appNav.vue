@@ -21,18 +21,23 @@
 <style scoped>
   nav {
     padding: 8px 0;
-    background: transparent
+    background: #0F0F0F;
   }
 
   ul {
-    list-style: none
+    color: #BFBFBF;
+    list-style: none;
+    transition: color 0.25s
+  }
+
+  ul:hover {
+    color: #7F7F7F;
   }
 
   li {
     margin: 2px;
     width: 96px;
     height: 32px;
-    background: #BFBFBF;
     display: inline-block;
     border-radius: 4px;
   }
@@ -44,6 +49,6 @@
   }
 
   a:hover, a:active {
-    background: #BFBFBF
+    color: #BFBFBF
   }
 </style>

@@ -21,34 +21,30 @@
 <style scoped>
   nav {
     padding: 8px 0;
-    background: #0F0F0F;
+    background: transparent
   }
 
   ul {
     color: #BFBFBF;
-    list-style: none;
-    transition: color 0.25s
-  }
-
-  ul:hover {
-    color: #7F7F7F;
+    list-style: none
   }
 
   li {
     margin: 2px;
     width: 96px;
     height: 32px;
-    display: inline-block;
     border-radius: 4px;
+    display: inline-block
   }
 
   a:link, a:visited {
-    color: #2F2F2F;
+    color: #9F9F9F;
     text-align: center;
-    text-decoration: none
+    text-decoration: none;
+    transition: color 0.1s
   }
 
   a:hover, a:active {
-    color: #BFBFBF
+    color: #DFDFDF
   }
 </style>

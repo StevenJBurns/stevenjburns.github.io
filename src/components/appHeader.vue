@@ -1,6 +1,6 @@
 <template>
   <header>
-    <h2>StevenJBurns on GitHub Pages</h2>
+    <h2>StevenJBurns</h2>
   </header>
 </template>
 
@@ -15,6 +15,7 @@
   header {
     padding: 12px;
     color: #DFDFDF;
-    background: transparent
+    background: transparent;
+    text-align: left
   }
 </style>

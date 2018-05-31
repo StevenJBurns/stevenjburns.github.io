@@ -8,6 +8,8 @@
     "publish": "push-dir --dir=dist --branch=master --verbose"
   },
   "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.8",
+    "@fortawesome/vue-fontawesome": "0.0.22",
     "vue": "^2.5.16",
     "vue-router": "^3.0.1"
   },

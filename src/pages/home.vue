@@ -5,8 +5,8 @@
     <svg height="256" width="256">
       <defs>
         <filter id="drop-shadow" x="0" y="0" width="200%" height="200%">
-          <feOffset result="offOut" in="SourceAlpha" dx="8" dy="8" />
-          <feGaussianBlur result="blurOut" in="offOut" stdDeviation="4" />
+          <feOffset result="offOut" in="SourceAlpha" dx="4" dy="4" />
+          <feGaussianBlur result="blurOut" in="offOut" stdDeviation="6" />
           <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
         </filter>
       </defs>

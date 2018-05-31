@@ -1,6 +1,6 @@
 <template>
   <header>
-    <h2>StevenJBurns</h2>
+    <h2>STEVEN J BURNS</h2>
   </header>
 </template>
 

@@ -2,8 +2,8 @@
   <transition name="modal">
     <div class="modal-backdrop">
       <nav>
+        <font-awesome-icon icon="window-close" size="2x" @click="requestResponsiveMenu" />
         <ul>
-          <li><font-awesome-icon icon="window-close" size="2x" @click="requestResponsiveMenu" /></li>
           <li><router-link tag="li" to="/skills">&lt;Skills /&gt;</router-link></li>
           <li><router-link tag="li" to="/projects">&lt;Projects /&gt;</router-link></li>
           <li><router-link tag="li" to="/contact">&lt;Contact /&gt;</router-link></li>
@@ -14,6 +14,7 @@
   </transition>
 </template>
 
+
 <script>
   import {eventBus} from "../main.js";
   import FontAwesomeIcon from "@fortawesome/vue-fontawesome";
@@ -23,6 +24,13 @@
     name: 'responsiveMenu',
     components: {
       FontAwesomeIcon
+    },
+    data() {
+      return {};
+    },
+    beforeRouteUpdate (to, from, next) {
+      eventBus.$emit('requestResponsiveMenu');
+      next();
     },
     methods: {
       requestResponsiveMenu() {
@@ -44,7 +52,7 @@
     right: 0;
     left: 0;
     top: 0;
-    transition: opacity .3s ease;
+    transition: opacity 0.25s ease;
   }
 
   nav {
@@ -52,7 +60,6 @@
     width: 240x;
     background: #BFBFBF;
     border: 4px solid #DFDFDF;
-    overflow-x: auto;
     display: flex;
     flex-direction: row;
     transition: all 0.25 ease
@@ -66,15 +73,17 @@
     list-style: none
   }
 
-  modal-enter {
+  svg {
+    right: 0;
+  }
+
+  /* Vue generated transition classes */
+  .modal-enter, .modal-leave-to {
     opacity: 0
   }
 
-  modal-leave-active {
-    opacity: 0
-  }
-
-  modal-enter nav {
-    transform: scale(1.1)
+  .modal-enter-active,
+  .modal-leave-active {
+    transition: all 0.25s ease
   }
 </style>

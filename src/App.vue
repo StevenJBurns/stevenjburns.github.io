@@ -40,8 +40,6 @@
     },
     methods: {
       toggleResponsiveMenu() {
-        console.log('...');
-        
         this.showResponsiveMenu = !this.showResponsiveMenu;
       }
     }

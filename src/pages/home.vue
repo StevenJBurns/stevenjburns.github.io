@@ -1,7 +1,7 @@
 <template>
   <div>
-    <h1>Full Stack Developer</h1>
-    <svg height="256" width="256">
+    <h2>Full Stack Developer</h2>
+    <svg height="192" width="192" viewBox="0 0 256 256">
       <defs>
         <filter id="drop-shadow" x="0" y="0" width="200%" height="200%">
           <feOffset result="offOut" in="SourceAlpha" dx="4" dy="4" />
@@ -35,6 +35,7 @@
   div {
     flex: 1 0 auto;
     display: flex;
+    padding: 24px;
     flex-direction: column;
     justify-content: center;
     align-items: center;

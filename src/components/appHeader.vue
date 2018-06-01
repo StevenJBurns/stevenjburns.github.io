@@ -1,21 +1,60 @@
 <template>
   <header>
-    <h2>STEVEN J BURNS</h2>
+    <h2>
+      <router-link to="/">STEVEN J BURNS</router-link>
+      </h2>
+    <Nav />
+    <font-awesome-icon icon="bars" size="2x" />
   </header>
 </template>
 
 <script>
+  import Nav from "./appNav.vue";
+  import FontAwesomeIcon from "@fortawesome/vue-fontawesome";
+  import { fasBars } from "@fortawesome/fontawesome-free-solid";
+
   export default {
     name: 'Header',
-    props: {}
+    components: {
+      Nav,
+      FontAwesomeIcon
+    }
   }
 </script>
 
 <style scoped>
   header {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
     padding: 12px;
     color: #DFDFDF;
     background: transparent;
     text-align: left
   }
+
+  header h2 {
+    display: inline-block
+  }
+
+  h2 a:link,
+  h2 a:visited {
+    color: #DFDFDF;
+    text-decoration: none
+  }
+
+  Nav {
+    display: inline-block
+  }
+
+  svg {
+    display: none
+  }
+
+  @media screen and (max-width: 600px) {
+  svg { display: inline }
+  
+  nav {
+    display: none
+  }
+}
 </style>

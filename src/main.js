@@ -18,7 +18,6 @@ const routes = [
   { path: "/", component: Home},
   { path: "/skills", component: Skills},
   { path: "/projects", component: Projects},
-  // { path: "/sandbox", component: Sandbox},
   { path: "/contact", component: Contact},
   { path: "/about", component: About}
 ];
@@ -27,6 +26,9 @@ const router = new VueRouter({
   routes,  // this is ES6 for -> routes: routes //
   mode: "history"
 });
+
+// State management without Vuex
+export const eventBus = new Vue({});
 
 new Vue({
   el: '#app',

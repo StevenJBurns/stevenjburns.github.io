@@ -12,16 +12,33 @@
 </template>
 
 <script>
+  /* State Management without Vuex */
+  import {eventBus} from "./main.js";
+
   import Header from './components/appHeader.vue';
   import Nav from './components/appNav.vue';
   import Footer from './components/appFooter.vue';
 
   export default {
     name: 'App',
+    data() {
+      return {
+        showResonsiveMenu: false
+      }
+    },
     components: {
       Header,
       Nav,
       Footer
+    },
+    created() {
+      // eventBus.$on('', this.changeCurrentColor);
+    },
+    beforeDestroy() {
+      // eventBus.$off('change-current-color');
+    },
+    methods: {
+      
     }
   }
 </script>

@@ -50,11 +50,9 @@
   }
 
   li {
-    /* width: 80px; */
-    margin: 12px;
-    padding: 4px;
+    margin: 8px;
+    padding: 2px;
     border-radius: 4px;
-    /* background: #7F7F7F; */
     display: inline-block
   }
 

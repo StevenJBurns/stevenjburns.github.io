@@ -1,44 +1,47 @@
 <template>
   <div id="app">
     <Header />
-    <!-- <Nav /> -->
     <main>
       <transition name="fade" mode="out-in">
         <router-view></router-view>
       </transition>
     </main>
     <Footer />
+    <modal-menu v-show="showResponsiveMenu" />
   </div>
 </template>
 
 <script>
   /* State Management without Vuex */
-  import {eventBus} from "./main.js";
-
+  import { eventBus } from "./main.js";
   import Header from './components/appHeader.vue';
   import Nav from './components/appNav.vue';
   import Footer from './components/appFooter.vue';
+  import ModalMenu from "./pages/modalMenu.vue"
 
   export default {
     name: 'App',
     data() {
       return {
-        showResonsiveMenu: false
+        showResponsiveMenu: false
       }
     },
     components: {
       Header,
       Nav,
-      Footer
+      Footer,
+      "modal-menu": ModalMenu
     },
     created() {
-      // eventBus.$on('', this.changeCurrentColor);
+      eventBus.$on('requestResponsiveMenu', this.toggleResponsiveMenu);
     },
     beforeDestroy() {
-      // eventBus.$off('change-current-color');
+      eventBus.$off('requestResponsiveMenu');
     },
     methods: {
-      
+      toggleResponsiveMenu() {
+        this.showResponsiveMenu = !this.showResponsiveMenu;
+      }
     }
   }
 </script>

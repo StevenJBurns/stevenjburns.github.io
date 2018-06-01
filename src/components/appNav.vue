@@ -1,7 +1,6 @@
 <template>
   <nav>
     <ul>
-      <!-- <li><router-link to="/">&lt;Home /&gt;</router-link></li> -->
       <li><router-link tag="li" to="/skills">&lt;Skills /&gt;</router-link></li>
       <li><router-link tag="li" to="/projects">&lt;Projects /&gt;</router-link></li>
       <li><router-link tag="li" to="/contact">&lt;Contact /&gt;</router-link></li>

@@ -4,7 +4,7 @@
       <router-link to="/">STEVEN J BURNS</router-link>
       </h2>
     <Nav />
-    <font-awesome-icon icon="bars" size="2x" />
+    <font-awesome-icon icon="bars" size="2x" @click="openResponsiveMenu()" />
   </header>
 </template>
 
@@ -12,12 +12,18 @@
   import Nav from "./appNav.vue";
   import FontAwesomeIcon from "@fortawesome/vue-fontawesome";
   import { fasBars } from "@fortawesome/fontawesome-free-solid";
+  import { eventBus } from "../main.js";
 
   export default {
     name: 'Header',
     components: {
       Nav,
-      FontAwesomeIcon
+      'font-awesome-icon': FontAwesomeIcon
+    },
+    methods: {
+      openResponsiveMenu() {
+        eventBus.$emit('requestResponsiveMenu');
+      }
     }
   }
 </script>

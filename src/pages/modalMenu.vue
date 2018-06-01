@@ -1,15 +1,17 @@
 <template>
-  <div class="modal-backdrop">
-    <nav>
-      <ul>
-        <li><font-awesome-icon icon="window-close" size="2x" /></li>
-        <li><router-link tag="li" to="/skills">&lt;Skills /&gt;</router-link></li>
-        <li><router-link tag="li" to="/projects">&lt;Projects /&gt;</router-link></li>
-        <li><router-link tag="li" to="/contact">&lt;Contact /&gt;</router-link></li>
-        <li><router-link tag="li" to="/about">&lt;About /&gt;</router-link></li>
-      </ul>
-    </nav>
-  </div>
+  <transition name="modal">
+    <div class="modal-backdrop">
+      <nav>
+        <ul>
+          <li><font-awesome-icon icon="window-close" size="2x" @click="requestResponsiveMenu" /></li>
+          <li><router-link tag="li" to="/skills">&lt;Skills /&gt;</router-link></li>
+          <li><router-link tag="li" to="/projects">&lt;Projects /&gt;</router-link></li>
+          <li><router-link tag="li" to="/contact">&lt;Contact /&gt;</router-link></li>
+          <li><router-link tag="li" to="/about">&lt;About /&gt;</router-link></li>
+        </ul>
+      </nav>
+    </div>
+  </transition>
 </template>
 
 <script>
@@ -23,15 +25,8 @@
       FontAwesomeIcon
     },
     methods: {
-      closeModalCancel() {
-        eventBus.$emit('modalClearGridRequested');
-      },
-      closeModalNoSave() {
-        eventBus.$emit('clear-grid');
-        eventBus.$emit('modalClearGridRequested');
-      },
-      closeModalAndSave() {
-
+      requestResponsiveMenu() {
+        eventBus.$emit('requestResponsiveMenu');
       }
     }
   }
@@ -55,13 +50,12 @@
   nav {
     height: 240px;
     width: 240x;
-    /* padding: 24px; */
     background: #BFBFBF;
     border: 4px solid #DFDFDF;
-    /* box-shadow: 2px 2px 20px 1px; */
     overflow-x: auto;
     display: flex;
     flex-direction: row;
+    transition: all 0.25 ease
   }
 
   ul {
@@ -70,5 +64,17 @@
     padding: 2px 4px;
     font-size: 16px;
     list-style: none
+  }
+
+  modal-enter {
+    opacity: 0
+  }
+
+  modal-leave-active {
+    opacity: 0
+  }
+
+  modal-enter nav {
+    transform: scale(1.1)
   }
 </style>

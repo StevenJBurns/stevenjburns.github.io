@@ -2,11 +2,11 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
+/* Page imports */
 import App from './App.vue';
 import Home from './pages/home.vue';
 import Skills from './pages/skills.vue';
 import Projects from './pages/projects.vue';
-import Sandbox from './pages/sandbox.vue';
 import Contact from './pages/contact.vue';
 import About from './pages/about.vue';
 
@@ -18,7 +18,7 @@ const routes = [
   { path: "/", component: Home},
   { path: "/skills", component: Skills},
   { path: "/projects", component: Projects},
-  { path: "/sandbox", component: Sandbox},
+  // { path: "/sandbox", component: Sandbox},
   { path: "/contact", component: Contact},
   { path: "/about", component: About}
 ];

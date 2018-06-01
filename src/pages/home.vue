@@ -1,7 +1,6 @@
 <template>
   <div>
-    <h1>STEVEN J BURNS</h1>
-    <!-- <img height=120 width=120 src="../assets/bullseye.DDDDDD.png"> -->
+    <h1>Full Stack Developer</h1>
     <svg height="256" width="256">
       <defs>
         <filter id="drop-shadow" x="0" y="0" width="200%" height="200%">
@@ -21,8 +20,7 @@
         <animateTransform attributeName="transform" type="translate" from="-24 -24" to="0 0" begin="1.5s" dur="0.5s" fill="freeze" />
       </polygon>
     </svg>
-    <h2>Full Stack Developer</h2>
-    <h3>Longmont&nbsp;&bull;&nbsp;Colorado</h3>
+    <h2>Longmont&nbsp;&bull;&nbsp;Colorado</h2>
   </div>
 </template>
 

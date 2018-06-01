@@ -7,7 +7,12 @@
 <script>
   export default {
     name: 'PageProjects',
-    props: {}
+    props: {},
+    data () {
+      return {
+        value: 0
+      }
+    }
   }
 </script>
 

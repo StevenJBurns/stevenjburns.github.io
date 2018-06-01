@@ -56,13 +56,14 @@
   }
 
   nav {
-    height: 240px;
-    width: 240x;
+    display: flex;
+    flex-direction: column;
     background: #BFBFBF;
     border: 4px solid #DFDFDF;
-    display: flex;
-    flex-direction: row;
-    transition: all 0.25 ease
+    transition: all 0.25 ease;
+    height: 240px;
+    width: 240px;
+
   }
 
   ul {
@@ -74,7 +75,7 @@
   }
 
   svg {
-    right: 0;
+    justify-self: right;
   }
 
   /* Vue generated transition classes */

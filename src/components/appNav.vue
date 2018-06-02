@@ -23,16 +23,19 @@
   }
 
   ul {
+    display: table;
+    list-style: none;
     color: #BFBFBF;
-    list-style: none
   }
 
   li {
+    display: table-cell;
+    vertical-align: middle;
     margin: 2px;
-    width: 80px;
+    width: 92px;
     height: 32px;
     border-radius: 4px;
-    display: inline-block;
+    /* display: inline-block; */
     text-align: center;
     font-size: 0.9em
   }
@@ -50,7 +53,7 @@
   }
 
   .router-link-active, .router-link-exact-active {
-    color: #DFDFDF;
-    background: maroon
+    color: #3F3F3F;
+    background: #BFBFBF
   }
 </style>

@@ -26,5 +26,11 @@
     align-items: center;
     background: #809070
   }
+
+  svg {
+    /* height: 100%; */
+    width: 100%;
+    display: block
+  }
 </style>
 

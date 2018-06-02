@@ -2,7 +2,9 @@
   <div>
     <h1>About Me</h1>
     <hr>
+    <img id="img-a" width="144" src="../assets/steve_then.png">
     <h3>let Career = (MilitaryPilot) =&gt; FullStackDeveloper;</h3>
+    <img id="img-b" width="144" src="../assets/steve_now.jpg">
     <hr>
     <p>Welcome to my personal portfolio site. My name is Steve Burns. I was neither the host of Blues Clues in the 1990s nor am I a distant relative of Montgomery J Burns of The Simpsons.  I <strong><em>am</em></strong> a U.S. Air Force veteran transitioning to a second career in software development. As a graduate of the Air Force Academy and former combat pilot, I am seeking an equally challenging second career.</p>
     <p>Programming has fascinated me since the mid-1980s when I discovered BASIC on my first computer : the mighty Atari 800 equipped with 16KB of memory and video capable of 16 colors. Seeing the potential of computers beyond games and entertainment, I was hooked.  But college and the Air Force became my priority and so computers would take a back seat as a hobby.  By the 1990s I was hooked again by the awe-inspiring features of Windows 3.1 that introduced me to "relational" databases in Microsoft Access and productivity tools such as Solitaire and Minesweeper. While I saw many potential projects in the daily routines of the military I could never find the time to learn programming on a serious level or write software that was worth using and so computers were shelved as a hobby once again.</p>
@@ -32,6 +34,18 @@
     align-items: center;
     background: #445566;
     overflow: hidden
+  }
+
+  div h3, div img {
+    display: inline-block
+  }
+
+  #img-a {
+    clip-path: circle(100.0% at 100% 50%);
+  }
+
+  #img-b {
+    clip-path: circle(100.0% at 0 50%);
   }
 
   hr {

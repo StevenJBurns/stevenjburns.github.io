@@ -2,7 +2,7 @@
   <transition name="modal">
     <div class="modal-backdrop">
       <nav>
-        <font-awesome-icon icon="window-close" size="2x" @click="requestResponsiveMenu" />
+        <font-awesome-icon icon="times-circle" size="2x" @click="requestResponsiveMenu" />
         <ul @click="requestResponsiveMenu">
           <li><router-link tag="li" to="/">&lt;Home /&gt;</router-link></li>
           <li><router-link tag="li" to="/skills">&lt;Skills /&gt;</router-link></li>
@@ -19,7 +19,7 @@
 <script>
   import {eventBus} from "../main.js";
   import FontAwesomeIcon from "@fortawesome/vue-fontawesome";
-  import { fasWindowclose } from "@fortawesome/fontawesome-free-solid";
+  import { fasTimescircle } from "@fortawesome/fontawesome-free-solid";
 
   export default {
     name: 'responsiveMenu',
@@ -65,7 +65,7 @@
   }
 
   svg {
-    justify-self: right;
+    margin: 8px;
   }
   
   ul {

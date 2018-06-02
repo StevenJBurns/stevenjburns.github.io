@@ -3,7 +3,8 @@
     <div class="modal-backdrop">
       <nav>
         <font-awesome-icon icon="window-close" size="2x" @click="requestResponsiveMenu" />
-        <ul>
+        <ul @click="requestResponsiveMenu">
+          <li><router-link tag="li" to="/">&lt;Home /&gt;</router-link></li>
           <li><router-link tag="li" to="/skills">&lt;Skills /&gt;</router-link></li>
           <li><router-link tag="li" to="/projects">&lt;Projects /&gt;</router-link></li>
           <li><router-link tag="li" to="/contact">&lt;Contact /&gt;</router-link></li>
@@ -27,10 +28,6 @@
     },
     data() {
       return {};
-    },
-    beforeRouteUpdate (to, from, next) {
-      eventBus.$emit('requestResponsiveMenu');
-      next();
     },
     methods: {
       requestResponsiveMenu() {
@@ -58,24 +55,32 @@
   nav {
     display: flex;
     flex-direction: column;
-    background: #BFBFBF;
-    border: 4px solid #DFDFDF;
+    background: #445566;
+    border: 4px solid #778899;
+    border-radius: 8px;
     transition: all 0.25 ease;
     height: 240px;
     width: 240px;
-
-  }
-
-  ul {
-    width: 240px;
-    margin: 4px;
-    padding: 2px 4px;
-    font-size: 16px;
-    list-style: none
+    color: #DFDFDF
   }
 
   svg {
     justify-self: right;
+  }
+  
+  ul {
+    width: 240px;
+    margin: 4px;
+    font-size: 16px;
+    list-style: none;
+  }
+
+  li {
+    display: table;
+    height: 32px;
+    width: 100%;
+    text-align: center;
+    vertical-align: middle
   }
 
   /* Vue generated transition classes */

@@ -1,13 +1,19 @@
 <template>
   <div>
-    <h3>Skills</h3>    
+    <h3>Skills</h3>
+    <skills-chart />
   </div>
 </template>
 
 <script>
+  import SkilsChart from "../components/svgSkillsChart.vue";
+
   export default {
     name: 'PageSkills',
-    props: {}
+    props: {},
+    components: {
+      "skills-chart": SkilsChart
+    }
   }
 </script>
 

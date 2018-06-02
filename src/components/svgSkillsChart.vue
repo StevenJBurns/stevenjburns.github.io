@@ -1,17 +1,23 @@
 <template>
-  <svg mlns="http://www.w3.org/2000/svg" height="256" width="256" viewport="0 0 512 512">
-    <g>
-      <circle id="front-end" cx="64" cy="64" r="28" stroke="#EE3300" stroke-width="8" fill="#FF4400" />
-      <text stroke="#DFDFDF" stroke-width="2px">Front End</text>
-    </g>
-    <g>
-      <circle id="env-tools" cx="128" cy="128" r="28" stroke="#7F7F7F" stroke-width="8" fill="#BFBFBF" />
-      <text stroke="#DFDFDF" stroke-width="2px">Environments and Tools</text>
-    </g>
-    <g>
-      <circle id="back-end" cx="192" cy="192" r="28" stroke="#000088" stroke-width="8" fill="#3333AA" />
-      <text stroke="#DFDFDF" stroke-width="2px">Back End</text>
-    </g>
+  <svg mlns="http://www.w3.org/2000/svg" version="1.1" height="512" width="512" viewport="0 0 512 512">
+    <svg class="sub-svg" x="25%" y="50%" style="overflow: visible;">
+      <g class="sub-svg">
+        <circle id="front-end" cx="0" cy="0" r="64" stroke="#EE3300" stroke-width="8" fill="#3F3F3F" />
+        <text dy="6" text-anchor="middle" >Front End</text>
+      </g>
+    </svg>
+    <svg class="sub-svg" x="50%" y="50%" style="overflow: visible;">
+      <g>
+        <circle id="env-tools" cx="0" cy="0" r="64" stroke="#5F5F5F" stroke-width="8" fill="#3F3F3F" />
+        <text dy="6" text-anchor="middle">Environments and Tools</text>
+      </g>
+    </svg>
+    <svg class="sub-svg" x="75%" y="50%" style="overflow: visible;">
+      <g>
+        <circle id="back-end" cx="0" cy="0" r="64" stroke="#000088" stroke-width="8" fill="#3F3F3F" />
+        <text dy="6" text-anchor="middle">Back End</text>
+      </g>
+    </svg>
   </svg>
 </template>
 
@@ -36,5 +42,15 @@
 
   #back-end:hover {
     fill: #000088
+  }
+
+  .sub-svg {
+    background: #333300;
+    transform-origin: center;
+    border: 4px solid #0F0F0F
+  }
+
+  text {
+    fill: #DFDFDF
   }
 </style>

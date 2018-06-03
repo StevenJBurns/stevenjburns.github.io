@@ -19,7 +19,8 @@
 <style scoped>
   nav {
     padding: 8px 0;
-    background: transparent
+    background: transparent;
+    align-self: center;
   }
 
   ul {
@@ -29,15 +30,15 @@
   }
 
   li {
-    display: table-cell;
-    vertical-align: middle;
     margin: 2px;
-    width: 92px;
+    width: 96px;
     height: 32px;
     border-radius: 4px;
-    /* display: inline-block; */
+    display: table-cell;
+    vertical-align: middle;
+    font-weight: bold;
     text-align: center;
-    font-size: 0.9em
+    font-size: 1em
   }
 
   a:link, a:visited {

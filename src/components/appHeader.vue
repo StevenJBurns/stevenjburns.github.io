@@ -51,8 +51,8 @@
   }
 
   header h2 {
-    display: inline-block
-  }
+    align-self: center
+}
 
   h2 a:link,
   h2 a:visited {

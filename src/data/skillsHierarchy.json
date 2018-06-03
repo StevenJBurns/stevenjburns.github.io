@@ -1,0 +1,46 @@
+{
+  "name": "Skills",
+  "children": [
+    {
+      "name": "Front End",
+      "children": [
+        { "name": "HTML" },
+        { "name": "SVG" },
+        { "name": "CSS" },
+        { "name": "JavaScript" },
+        { "name": "jQuery" }
+      ]
+    },
+    {
+      "name": "Back End",
+      "children": [
+        { "name": "Node JS" },
+        { "name": "Ruby on Rails" },
+        { "name": "ASP.NET" },
+        { "name": "Java" },
+        { "name": "Python" }
+      ]
+    },
+    {
+      "name": "Data",
+      "children": [
+        { "name": "JSON" },
+        { "name": "XML" },
+        { "name": "SQLite" },
+        { "name": "MySql" },
+        { "name": "PostgreSQL" },
+        { "name": "Microsoft SQL Server" }
+      ]
+    },
+    {
+      "name": "Tools & Environment",
+      "children": [
+        { "name": "Git" },
+        { "name": "GitHub" },
+        { "name": "NPM" },
+        { "name": "CRUD" },
+        { "name": "RESTful" }
+      ]
+    }
+  ]
+}

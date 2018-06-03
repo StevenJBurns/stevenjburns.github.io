@@ -1,18 +1,19 @@
 <template>
   <div>
     <h3>Skills</h3>
-    <skills-chart />
+    <div id="divSkillsChart"></div>
+    <!-- <skills-chart /> -->
   </div>
 </template>
 
 <script>
-  import SkilsChart from "../components/svgSkillsChart.vue";
+  //import SkilsChart from "../components/svgSkillsChart.vue";
 
   export default {
     name: 'PageSkills',
     props: {},
     components: {
-      "skills-chart": SkilsChart
+
     }
   }
 </script>
@@ -22,15 +23,13 @@
     flex: 1 0 auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content:flex-start;
     background: #809070
   }
 
-  svg {
-    /* height: 100%; */
-    width: 100%;
-    display: block
+  #divSkillsChart {
+    flex: 1 0 auto;
+    background: maroon
   }
 </style>
 

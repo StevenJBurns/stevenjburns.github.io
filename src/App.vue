@@ -88,7 +88,8 @@
   }
 
   .fade-enter {
-    opacity: 0
+    opacity: 0;
+    transform: scale(0.75, 0.75)
   }
   
    .fade-leave-active {

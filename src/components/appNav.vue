@@ -31,7 +31,7 @@
 
   li {
     /* margin: 8px; */
-    padding: 4px;
+    padding: 2px;
     /* width: 96px; */
     /* height: 32px; */
     border-radius: 4px;
@@ -39,7 +39,7 @@
     vertical-align: middle;
     text-align: center;
     font-weight: bold;
-    font-size: 1em
+    font-size: 0.95em
   }
 
   a:link, a:visited {

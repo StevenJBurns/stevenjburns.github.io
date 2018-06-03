@@ -8,9 +8,9 @@
       <polygon points="128,128 16,84 62,62 84,16" stroke="#2F2F2F" stroke-width="8" stroke-linejoin="round" fill="#F0F0F0" fill-opacity="1">
       </polygon>
     </svg>
-    <h3>
+    <h2 id="#appTitle">
       <router-link to="/">STEVEN J BURNS</router-link>
-    </h3>
+    </h2>
     <Nav />
     <font-awesome-icon icon="bars" size="2x" @click="openResponsiveMenu()" />
   </header>
@@ -40,7 +40,7 @@
   header {
     display: grid;
     grid-template-columns: auto 1fr auto auto;
-    padding: 12px;
+    padding: 8px 8px 8px 0;
     color: #DFDFDF;
     background: transparent;
     text-align: left
@@ -50,17 +50,19 @@
     display: inline-block
   }
 
-  header h3 {
-    align-self: center
-}
+  header h2 {
+    margin: 0;
+    align-self: center;
+    display: inline-block
+  }
 
-  h3 a:link,
-  h3 a:visited {
+  h2 a:link,
+  h2 a:visited {
     color: #DFDFDF;
     text-decoration: none
   }
 
-  Nav {
+  nav {
     display: inline-block
   }
 
@@ -69,10 +71,17 @@
   }
 
   @media screen and (max-width: 720px) {
-  svg { display: inline }
-  
+  svg {
+    align-self: center;
+    display: inline-block
+  }
+
   nav {
     display: none
+  }
+
+  header h2 {
+    margin: 0 auto
   }
 }
 </style>

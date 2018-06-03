@@ -12,12 +12,13 @@ body {
   display: flex;
   flex-direction: column;
   color: #DFDFDF;
-  background: #2F2F2F;
+  /* background: #2F2F2F; */
+  background: radial-gradient(ellipse at bottom, #4F4F4F, #000000);
 }
 
 header {
   text-align: center;
-  background: #1F1F1F;
+  /* background: #1F1F1F; */
 }
 
 header h2 {
@@ -35,7 +36,7 @@ main {
 
 footer {
   text-align: center;
-  background: #1F1F1F
+  /* background: #1F1F1F */
 }
 
 footer h4 {

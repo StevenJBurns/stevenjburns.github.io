@@ -28,7 +28,7 @@
       let format = d3.format(",d");
       // let diameter;
 
-      let pack = d3.pack().size([512, 512]);
+      let pack = d3.pack().size([480, 480]);
       let root = d3.hierarchy(AppData).sum(d => d.size);
 
       let node = g.selectAll(".node")
@@ -65,14 +65,6 @@
     flex-direction: column;
     justify-content:flex-start;
     background: #809070
-  }
-
-  .node {
-    background: #445566
-  }
-
-  .leaf {
-    background: #778899
   }
 </style>
 

@@ -69,19 +69,30 @@
     display: flex;
     flex-direction: column;
     color: #DFDFDF;
-  }
-
-  .fade-enter-active, .fade-leave-active {
-    transition-property: all;
-    transition-duration: 0.2s;
+    overflow-x: hidden
   }
 
   .fade-enter-active {
-    transition-delay: 0.1s;
+    transition-property: all;
+    transition-duration: 0.125s;
+
+  }
+  
+  .fade-leave-active {
+    transition-property: all;
+    transition-duration: 0.25s;
   }
 
-  .fade-enter, .fade-leave-active {
-    transform: scale(0.75, 0.75);
+  .fade-enter-active {
+    transition-delay: 0.125s;
+  }
+
+  .fade-enter {
+    opacity: 0
+  }
+  
+   .fade-leave-active {
+    transform: scale(0.25, 0.25);
     opacity: 0
   }
 </style>

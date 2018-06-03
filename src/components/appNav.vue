@@ -18,7 +18,7 @@
 
 <style scoped>
   nav {
-    padding: 8px 0;
+    padding: 0;
     background: transparent;
     align-self: center;
   }
@@ -30,14 +30,15 @@
   }
 
   li {
-    margin: 2px;
-    width: 96px;
-    height: 32px;
+    /* margin: 8px; */
+    padding: 4px;
+    /* width: 96px; */
+    /* height: 32px; */
     border-radius: 4px;
     display: table-cell;
     vertical-align: middle;
-    font-weight: bold;
     text-align: center;
+    font-weight: bold;
     font-size: 1em
   }
 

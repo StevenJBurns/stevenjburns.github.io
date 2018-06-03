@@ -68,7 +68,7 @@
     display: none
   }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 720px) {
   svg { display: inline }
   
   nav {

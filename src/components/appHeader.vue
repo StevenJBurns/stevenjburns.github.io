@@ -8,9 +8,9 @@
       <polygon points="128,128 16,84 62,62 84,16" stroke="#2F2F2F" stroke-width="8" stroke-linejoin="round" fill="#F0F0F0" fill-opacity="1">
       </polygon>
     </svg>
-    <h2>
+    <h3>
       <router-link to="/">STEVEN J BURNS</router-link>
-    </h2>
+    </h3>
     <Nav />
     <font-awesome-icon icon="bars" size="2x" @click="openResponsiveMenu()" />
   </header>
@@ -50,12 +50,12 @@
     display: inline-block
   }
 
-  header h2 {
+  header h3 {
     align-self: center
 }
 
-  h2 a:link,
-  h2 a:visited {
+  h3 a:link,
+  h3 a:visited {
     color: #DFDFDF;
     text-decoration: none
   }

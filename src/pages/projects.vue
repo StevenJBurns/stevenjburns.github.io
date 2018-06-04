@@ -20,7 +20,7 @@
         <h4>TwoFifteen</h4>
       </section>
       <section>
-        <img height="180" width="240">
+        <img height="180" width="240" src="../assets/screenshots/pixelart.png">
         <h4>Pixel-Art</h4>
       </section>
       <section>

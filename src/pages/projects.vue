@@ -4,35 +4,35 @@
     <hr>
     <div id="divCardWrapper">
       <section>
-        <img height="256" width="256">
+        <img height="180" width="240">
         <h4>CEA</h4>
       </section>
       <section>
-        <img height="256" width="256">
+        <img height="180" width="240">
         <h4>MeritViewer</h4>
       </section>
       <section>
-        <img height="256" width="256">
+        <img height="180" width="240">
         <h4>Stagecoach Meat Co.</h4>
       </section>
       <section>
-        <img height="256" width="256">
+        <img height="180" width="240">
         <h4>TwoFifteen</h4>
       </section>
       <section>
-        <img height="256" width="256">
+        <img height="180" width="240">
         <h4>Pixel-Art</h4>
       </section>
       <section>
-        <img height="256" width="256">
+        <img height="180" width="240">
         <h4>Franchise Favorites</h4>
       </section>
       <section>
-        <img height="256" width="256">
-        <h4>Extrasolar</h4>
+        <img height="180" width="240" src="../assets/screenshots/extrasolar.png">
+        <h4>ExtraSolar</h4>
       </section>
       <section>
-        <img height="256" width="256">
+        <img height="180" width="240" src="../assets/screenshots/noxfit.png">
         <h4>NOX</h4>
       </section>
     </div>
@@ -61,12 +61,18 @@
   #divCardWrapper {
     display: grid;
     grid-gap: 32px;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   }
 
   section {
-    padding: 2px;
     background: #909060;
-    border: 2px solid #0F0F0F
+    border-radius: 8px;
+    box-shadow: 4px 4px 16px #000000;
+    overflow: hidden
+    /* border: 2px solid #0F0F0F */
+  }
+
+  h4 {
+
   }
 </style>

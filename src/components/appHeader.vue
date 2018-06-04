@@ -11,6 +11,7 @@
     <h2 id="#appTitle">
       <router-link to="/">STEVEN J BURNS</router-link>
     </h2>
+    <hr>
     <Nav />
     <font-awesome-icon icon="bars" size="2x" @click="openResponsiveMenu()" />
   </header>
@@ -39,7 +40,7 @@
 <style scoped>
   header {
     display: grid;
-    grid-template-columns: auto 1fr auto auto;
+    grid-template-columns: auto max-content 1fr auto auto;
     padding: 8px 8px 8px 0;
     color: #DFDFDF;
     background: transparent;
@@ -62,6 +63,14 @@
     text-decoration: none
   }
 
+  hr {
+    border: 0;
+    height: 2px;
+    margin: 0 24px;
+    align-self: center;
+    background: linear-gradient(to right, #00000000, #DFDFDF, #00000000);
+  }
+
   nav {
     display: inline-block
   }
@@ -71,9 +80,17 @@
   }
 
   @media screen and (max-width: 720px) {
+  header {
+    grid-template-columns: auto 1fr auto auto auto;
+  }
+
   svg {
     align-self: center;
     display: inline-block
+  }
+
+  hr {
+    display: none
   }
 
   nav {

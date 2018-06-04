@@ -38,6 +38,7 @@
 
 <style scoped>
   div {
+    padding: 32px 5%;
     flex: 1 0 auto;
     display: flex;
     flex-direction: column;
@@ -48,15 +49,15 @@
 
   #divCardWrapper {
     display: grid;
-    grid-column-gap: 32px;
-    /* grid-template-columns: 1fr 1fr; */
+    grid-gap: 16px;
+    grid-template-columns: repeat(auto-fill, minmax(256px, 1fr));
   }
 
   section {
+    height: 96px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    align-self: stretch;
-    /* margin: 12px auto; */
+    grid-template-columns: auto 1fr;
+    /* align-self: stretch; */
     padding: 8px;
     border-radius: 8px;
     box-shadow: 4px 4px 16px #000000;

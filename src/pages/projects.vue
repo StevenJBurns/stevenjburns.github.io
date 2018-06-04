@@ -23,6 +23,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #909060
+    background: #707040
   }
 </style>

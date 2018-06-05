@@ -24,24 +24,28 @@
     data() {
       return {
         showResponsiveMenu: false,
-        appColors: [
-          {
-            homeDark: "#405060",
-            homeLight: "#708090"
+        appColors: {
+          theme: "home",
+          colors: {
+            dark: "#405060",
+            light: "#708090"
           },
-          {
-            projectsDark: "#707040",
-            projectsLight: "#909060"
+          theme: "projects",
+          colors: {
+            dark: "#707040",
+            light: "#909060"
           },
-          {
-            contactDark: "#303050",
-            contactLight: "#707090"
+          theme: "contact",
+          colors: {
+            dark: "#303050",
+            light: "#707090"
           },
-          {
-            aboutDark: "#778899",
-            aboutLight: "#445566"
+          theme: "about",
+          colors: {
+            dark: "#778899",
+            light: "#445566"
           }
-        ]
+        }
       }
     },
     components: {

@@ -1,4 +1,4 @@
-/* Dependencies */
+/* App Dependencies */
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
@@ -14,12 +14,35 @@ Vue.config.productionTip = false;
 
 Vue.use(VueRouter);
 
+const appColorThemes = {
+  home : {
+    dark: "#405060",
+    light: "#708090"
+  },
+  skill: {
+    dark: "#809070",
+    light: "#A0B0C0"
+  },
+  projects: {
+    dark: "#707040",
+    light: "#909060"
+  },
+  contact: {
+    dark: "#303050",
+    light: "#707090"
+  },
+  about: {
+    dark: "#778899",
+    light: "#445566"
+  }
+};
+
 const routes = [
-  { path: "/", component: Home},
-  { path: "/skills", component: Skills},
-  { path: "/projects", component: Projects},
-  { path: "/contact", component: Contact},
-  { path: "/about", component: About}
+  { path: "/", component: Home, /* props: appColorThemes[home] */},
+  { path: "/skills", component: Skills, /* props: appColorThemes[skills] */},
+  { path: "/projects", component: Projects, /* props: appColorThemes[projects] */},
+  { path: "/contact", component: Contact, /* props: appColorThemes[contact] */},
+  { path: "/about", component: About, /* props: appColorThemes[about] */}
 ];
 
 const router = new VueRouter({

@@ -23,29 +23,7 @@
     name: 'App',
     data() {
       return {
-        showResponsiveMenu: false,
-        appColors: {
-          theme: "home",
-          colors: {
-            dark: "#405060",
-            light: "#708090"
-          },
-          theme: "projects",
-          colors: {
-            dark: "#707040",
-            light: "#909060"
-          },
-          theme: "contact",
-          colors: {
-            dark: "#303050",
-            light: "#707090"
-          },
-          theme: "about",
-          colors: {
-            dark: "#778899",
-            light: "#445566"
-          }
-        }
+        showResponsiveMenu: false
       }
     },
     components: {

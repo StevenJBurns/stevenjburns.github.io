@@ -30,10 +30,7 @@
   }
 
   li {
-    /* margin: 8px; */
     padding: 2px;
-    /* width: 96px; */
-    /* height: 32px; */
     border-radius: 4px;
     display: table-cell;
     vertical-align: middle;

@@ -12,7 +12,10 @@
 <script>
   export default {
     name: 'Nav',
-    props: {}
+    props: {
+      dark: String,
+      light: String
+    },
   }
 </script>
 

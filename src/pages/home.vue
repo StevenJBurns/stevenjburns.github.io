@@ -27,9 +27,16 @@
 </template>
 
 <script>
+  import { eventBus } from "../main.js";
+
   export default {
     name: 'PageHome',
-    props: {}
+    props: {
+      theme: Object
+    },
+    created() {
+      eventBus.$emit('changingTheme', this.theme)
+    }
   }
 </script>
 

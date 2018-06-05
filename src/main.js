@@ -10,39 +10,19 @@ import Projects from './pages/projects.vue';
 import Contact from './pages/contact.vue';
 import About from './pages/about.vue';
 
+/* import app color themes from JSON */
+import Themes from "./data/appThemeColors.json";
+
 Vue.config.productionTip = false;
 
 Vue.use(VueRouter);
 
-const appColorThemes = {
-  home : {
-    dark: "#405060",
-    light: "#708090"
-  },
-  skill: {
-    dark: "#809070",
-    light: "#A0B0C0"
-  },
-  projects: {
-    dark: "#707040",
-    light: "#909060"
-  },
-  contact: {
-    dark: "#303050",
-    light: "#707090"
-  },
-  about: {
-    dark: "#778899",
-    light: "#445566"
-  }
-};
-
 const routes = [
-  { path: "/", component: Home, /* props: appColorThemes[home] */},
-  { path: "/skills", component: Skills, /* props: appColorThemes[skills] */},
-  { path: "/projects", component: Projects, /* props: appColorThemes[projects] */},
-  { path: "/contact", component: Contact, /* props: appColorThemes[contact] */},
-  { path: "/about", component: About, /* props: appColorThemes[about] */}
+  { path: "/", component: Home, props: { theme: Themes['home']}},
+  { path: "/skills", component: Skills, props: { theme: Themes['skills']}},
+  { path: "/projects", component: Projects, props: { theme: Themes['projects']}},
+  { path: "/contact", component: Contact, props: { theme: Themes['contact']}},
+  { path: "/about", component: About, props: { theme: Themes['about']}}
 ];
 
 const router = new VueRouter({
@@ -55,6 +35,15 @@ export const eventBus = new Vue({});
 
 new Vue({
   el: '#app',
+  data() {
+    return {
+      //"theme": this.router.currentRoute
+    }
+  },
+  created() {
+    console.log(`main props ${this.theme}`);
+
+  },
   router, // this is ES6 for -> router: router //
   render: h => h(App)
 }).$mount('#app');

@@ -31,16 +31,22 @@
 </template>
 
 <script>
+  import { eventBus } from "../main.js";
   import FontAwesomeIcon from "@fortawesome/vue-fontawesome";
   import { fasEnvelope } from "@fortawesome/fontawesome-free-solid";
   import { fabLinkedin, fabGithub, faTwitter } from "@fortawesome/fontawesome-free-brands";
 
   export default {
     name: 'PageContact',
-    props: {},
+    props: {
+      theme: Object
+    },
     components: {
       FontAwesomeIcon
     },
+    created() {
+      eventBus.$emit('changingTheme', this.theme)
+    }
   }
 </script>
 

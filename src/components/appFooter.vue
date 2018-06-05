@@ -4,21 +4,21 @@
       <ul>
         <!-- <li><a href="/">Home</a></li> -->
         <li>
-          <a href="https://www.linkedin.com/in/steven-j-burns/">
+          <a href="https://www.linkedin.com/in/steven-j-burns/" :style="style" @mouseover="mouseOver()">
             <font-awesome-icon :icon="['fab', 'linkedin']" size="2x" />
           </a>
         </li>
         <li>
-          <a href="https://twitter.com/StevenJBurns">
+          <a href="https://twitter.com/StevenJBurns" :style="style" @mouseover="mouseOver()">
             <font-awesome-icon :icon="['fab', 'twitter']" size="2x" />
           </a>
         </li>        <li>
-          <a href="https://github.com/StevenJBurns">
+          <a href="https://github.com/StevenJBurns" :style="style" @mouseover="mouseOver()">
             <font-awesome-icon :icon="['fab', 'github']" size="2x" />
           </a>
         </li>
         <li>
-          <a href="mailto:stevenjburns@msn.com?subject=You're%20Hired">
+          <a href="mailto:stevenjburns@msn.com?subject=You're%20Hired" :style="style" @mouseover="mouseOver()">
             <font-awesome-icon icon="envelope" size="2x" />
           </a>
         </li>
@@ -38,7 +38,28 @@
     components: {
       FontAwesomeIcon
     },
-    props: {}
+    props: {
+      theme: Object
+    },
+    data() {
+      return {
+        isMouseOverLink: false
+        //hoverColor: this.theme.light
+      }
+    },
+    methods: {
+      mouseOver() {
+        this.isMouseOverLink = !this.isMouseOverLink;
+      }
+    },
+    computed:{
+      style() {
+        return `color: ${this.theme.light}`
+      }
+    },
+    created() {
+      console.log(`footer props: ${this.theme}`);
+    }
   }
 </script>
 
@@ -63,10 +84,10 @@
   a:link, a:visited {
     color: #DFDFDF;
     text-decoration: none;
-    transition: color 0.25s
+    transition: color 0.25s ease
   }
 
-  a:hover, a:active {
+  /* a:hover, a:active {
     color: #708090;
-  }
+  } */
 </style>

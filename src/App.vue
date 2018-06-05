@@ -6,7 +6,7 @@
         <router-view></router-view>
       </transition>
     </main>
-    <Footer />
+    <Footer :theme="theme" />
     <modal-menu v-show="showResponsiveMenu" />
   </div>
 </template>
@@ -14,17 +14,23 @@
 <script>
   /* State Management without Vuex */
   import { eventBus } from "./main.js";
+
+  /* import app components */
   import Header from './components/appHeader.vue';
   import Nav from './components/appNav.vue';
   import Footer from './components/appFooter.vue';
-  import ModalMenu from "./pages/modalMenu.vue"
+  import ModalMenu from "./pages/modalMenu.vue";
 
   export default {
     name: 'App',
     data() {
       return {
-        showResponsiveMenu: false
+        showResponsiveMenu: false,
+        theme: {}
       }
+    },
+    props: {
+
     },
     components: {
       Header,
@@ -34,6 +40,9 @@
     },
     created() {
       eventBus.$on('requestResponsiveMenu', this.toggleResponsiveMenu);
+      eventBus.$on('changingTheme', this.changeTheme);
+      console.log(`app props ${this.theme}`);
+      
     },
     beforeDestroy() {
       eventBus.$off('requestResponsiveMenu');
@@ -41,6 +50,9 @@
     methods: {
       toggleResponsiveMenu() {
         this.showResponsiveMenu = !this.showResponsiveMenu;
+      },
+      changeTheme(newTheme) {
+        this.theme = newTheme;
       }
     }
   }

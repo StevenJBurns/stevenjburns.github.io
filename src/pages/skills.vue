@@ -6,11 +6,11 @@
 </template>
 
 <script>
+  import { eventBus } from "../main.js";
+
   import * as d3 from "d3";
   import AppData from "../data/skillsHierarchy.json";
 
-
-  
   export default {
     name: 'PageSkills',
     data() {
@@ -18,9 +18,14 @@
         colors: ["#445566", "#778899", "#AABBCC"]
       }
     },
-    props: {},
+    props: {
+      theme: Object
+    },
     components: {
 
+    },
+    created() {
+      eventBus.$emit('changingTheme', this.theme)
     },
     mounted() {
       const svg = d3.select("#svgPackChart");

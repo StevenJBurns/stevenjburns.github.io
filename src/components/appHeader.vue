@@ -25,6 +25,10 @@
 
   export default {
     name: 'Header',
+    props: {
+      dark: String,
+      light: String
+    },
     components: {
       Nav,
       'font-awesome-icon': FontAwesomeIcon

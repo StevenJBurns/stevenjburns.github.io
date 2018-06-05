@@ -40,13 +40,20 @@
 </template>
 
 <script>
+  import { eventBus } from "../main.js";
+
   export default {
     name: 'PageProjects',
-    props: {},
+    props: {
+      theme: Object
+    },
     data () {
       return {
         value: 0
       }
+    },
+    created() {
+      eventBus.$emit('changingTheme', this.theme)
     }
   }
 </script>

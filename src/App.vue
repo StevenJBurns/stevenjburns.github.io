@@ -75,7 +75,6 @@
   .fade-enter-active {
     transition-property: all;
     transition-duration: 0.125s;
-
   }
   
   .fade-leave-active {

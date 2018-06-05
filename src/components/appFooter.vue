@@ -9,6 +9,10 @@
           </a>
         </li>
         <li>
+          <a href="https://twitter.com/StevenJBurns">
+            <font-awesome-icon :icon="['fab', 'twitter']" size="2x" />
+          </a>
+        </li>        <li>
           <a href="https://github.com/StevenJBurns">
             <font-awesome-icon :icon="['fab', 'github']" size="2x" />
           </a>
@@ -27,7 +31,7 @@
 <script>
   import FontAwesomeIcon from "@fortawesome/vue-fontawesome";
   import { fasEnvelope } from "@fortawesome/fontawesome-free-solid";
-  import { fabLinkedin, fabGithub } from "@fortawesome/fontawesome-free-brands";
+  import { fabLinkedin, fabTwitter, fabGithub } from "@fortawesome/fontawesome-free-brands";
 
   export default {
     name: 'Footer',

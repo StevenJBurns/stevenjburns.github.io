@@ -4,11 +4,11 @@
     <div id="divCardWrapper">
       <section>
         <font-awesome-icon :icon="['fab', 'linkedin']" size="4x" />
-        <span>Everyone's professional anchor</span>
+        <span>Everyone's professional anchor. Add me to your network if we are like-minded.</span>
       </section>
       <section>
         <font-awesome-icon :icon="['fab', 'twitter']" size="4x" />
-        <span>Find me on Twitter for witty banter and software programming related nuggets</span>
+        <span>Find me on Twitter for witty banter and software development related nuggets</span>
       </section>
       <section>
         <font-awesome-icon :icon="['fab', 'github']" size="4x" />
@@ -38,28 +38,25 @@
 
 <style scoped>
   div {
-    padding: 32px 5%;
     flex: 1 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    padding: 32px 5%;
     background: #707090
   }
 
   #divCardWrapper {
-    display: grid;
-    grid-gap: 16px;
-    grid-template-columns: repeat(auto-fill, minmax(256px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start
   }
 
   section {
-    height: 96px;
-    display: grid;
-    grid-template-columns: auto 1fr;
-    /* align-self: stretch; */
+    margin: 16px auto;
+    width: 240px;
+    height: 120px;
     padding: 8px;
+    display: grid;
     border-radius: 8px;
+    grid-template-columns: auto 1fr;
     box-shadow: 4px 4px 16px #000000;
     background: #303050;
     text-align: left
@@ -70,6 +67,7 @@
   }
 
   section span {
-    padding: 10px
+    padding-left: 10px;
+    align-self: center
   }
 </style>

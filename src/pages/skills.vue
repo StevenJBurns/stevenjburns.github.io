@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!-- <h3>Skills</h3> -->
     <svg id="svgPackChart" height="512" width="512"></svg>
   </div>
 </template>
@@ -53,12 +52,6 @@
         .attr("text-anchor", "middle")
         .attr("dy", "6")
         .style("fill", "#DFDFDF")
-
-
-      // node.filter(d => !d.children)
-      //   .append("text")
-      //   .attr("dy", "0.3em")
-      //   .text(d => d.data.name.substring(0, d.r / 3));
     }
   }
 </script>

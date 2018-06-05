@@ -23,7 +23,25 @@
     name: 'App',
     data() {
       return {
-        showResponsiveMenu: false
+        showResponsiveMenu: false,
+        appColors: [
+          {
+            homeDark: "",
+            homeLight: ""
+          },
+          {
+            projectsDark: "",
+            projectsLight: ""
+          },
+          {
+            contactDark: "",
+            contactLight: ""
+          },
+          {
+            aboutDark: "",
+            aboutLight: ""
+          }
+        ]
       }
     },
     components: {

@@ -48,7 +48,6 @@
   section {
     padding: 24px;
     background: #708090;
-    /* border: 1px solid #7F7F7F; */
     box-shadow: 2px 2px 12px #000000;
     border-radius: 8px
   }

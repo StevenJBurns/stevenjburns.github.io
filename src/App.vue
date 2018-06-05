@@ -26,20 +26,20 @@
         showResponsiveMenu: false,
         appColors: [
           {
-            homeDark: "",
-            homeLight: ""
+            homeDark: "#405060",
+            homeLight: "#708090"
           },
           {
-            projectsDark: "",
-            projectsLight: ""
+            projectsDark: "#707040",
+            projectsLight: "#909060"
           },
           {
-            contactDark: "",
-            contactLight: ""
+            contactDark: "#303050",
+            contactLight: "#707090"
           },
           {
-            aboutDark: "",
-            aboutLight: ""
+            aboutDark: "#778899",
+            aboutLight: "#445566"
           }
         ]
       }

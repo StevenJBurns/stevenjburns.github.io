@@ -4,22 +4,22 @@
       <ul @mouseover="mouseOver" @mouseout="mouseOut">
         <li>
           <a href="https://www.linkedin.com/in/steven-j-burns/">
-            <font-awesome-icon :icon="['fab', 'linkedin']" size="2x" />
+            <font-awesome-icon :icon="['fab', 'linkedin']" size="3x" />
           </a>
         </li>
         <li>
           <a href="https://twitter.com/StevenJBurns">
-            <font-awesome-icon :icon="['fab', 'twitter']" size="2x" />
+            <font-awesome-icon :icon="['fab', 'twitter']" size="3x" />
           </a>
         </li>
         <li>
           <a href="https://github.com/StevenJBurns">
-            <font-awesome-icon :icon="['fab', 'github']" size="2x" />
+            <font-awesome-icon :icon="['fab', 'github']" size="3x" />
           </a>
         </li>
         <li>
           <a href="mailto:stevenjburns@msn.com?subject=You're%20Hired">
-            <font-awesome-icon icon="envelope" size="2x" />
+            <font-awesome-icon icon="envelope" size="3x" />
           </a>
         </li>
       </ul>

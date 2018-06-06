@@ -12,7 +12,7 @@
       <router-link to="/">STEVEN J BURNS</router-link>
     </h2>
     <hr>
-    <Nav />
+    <Nav :theme="theme"/>
     <font-awesome-icon icon="bars" size="2x" @click="openResponsiveMenu()" />
   </header>
 </template>
@@ -25,9 +25,13 @@
 
   export default {
     name: 'Header',
+    data() {
+      return {
+        // theme: {}
+      }
+    },
     props: {
-      dark: String,
-      light: String
+      theme: Object
     },
     components: {
       Nav,

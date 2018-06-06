@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <ul>
+    <ul @mouseover="mouseOver" @mouseout="mouseOut" @click="linkClick">
       <li><router-link tag="li" to="/skills">&lt;Skills /&gt;</router-link></li>
       <li><router-link tag="li" to="/projects">&lt;Projects /&gt;</router-link></li>
       <li><router-link tag="li" to="/contact">&lt;Contact /&gt;</router-link></li>
@@ -13,9 +13,39 @@
   export default {
     name: 'Nav',
     props: {
-      dark: String,
-      light: String
+      theme: Object
     },
+    methods: {
+      mouseOver(event) {
+        if (event.target.classList.contains("router-link-active")) {
+          event.target.style = `color: #0F0F0F; background: ${this.theme.light}`;
+        } else {
+          event.target.style = `color: ${this.theme.light}; background: transparent`;
+        }
+      },
+      mouseOut(event) {
+        if (event.target.classList.contains("router-link-active")) {
+          event.target.style = `color: #0F0F0F; background: ${this.theme.light}`;
+        } else {
+          event.target.style = `color: #F0F0F0;`;
+        }
+      },
+      linkClick(event) {
+
+        let appTitle = document.querySelector("#appTitle");
+        console.log(appTitle);
+        
+        //appTitle.style = "background: transparent;";
+
+        let listItems = document.querySelectorAll("li");
+        listItems.forEach((i) => i.style = "background: transparent;");
+
+        let activeLink = document.querySelector(".router-link-exact-active");
+        activeLink.style = `color: #0F0F0F; background: ${this.theme.light};`;
+
+        event.target.style = `background: ${this.theme.light}`;
+      }
+    }
   }
 </script>
 
@@ -39,23 +69,21 @@
     vertical-align: middle;
     text-align: center;
     font-weight: bold;
-    font-size: 0.95em
+    font-size: 0.95em;
+    cursor: pointer;
+    transition: all 0.25 ease
   }
 
   a:link, a:visited {
-    color: #9F9F9F;
+    color: #0F0F0F;
     text-align: center;
     text-decoration: none;
-    transition: color 0.1s;
+    transition: color 0.25s ease;
     display: inline-block;
   }
 
-  a:hover, a:active {
-    color: #DFDFDF
-  }
-
-  .router-link-active, .router-link-exact-active {
+  /* .router-link-active, .router-link-exact-active {
     color: #3F3F3F;
     background: #BFBFBF
-  }
+  } */
 </style>

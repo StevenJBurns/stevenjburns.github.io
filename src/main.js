@@ -40,10 +40,6 @@ new Vue({
       //"theme": this.router.currentRoute
     }
   },
-  created() {
-    console.log(`main props ${this.theme}`);
-
-  },
   router, // this is ES6 for -> router: router //
   render: h => h(App)
 }).$mount('#app');

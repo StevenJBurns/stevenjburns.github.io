@@ -40,9 +40,7 @@
     },
     created() {
       eventBus.$on('requestResponsiveMenu', this.toggleResponsiveMenu);
-      eventBus.$on('changingTheme', this.changeTheme);
-      console.log(`app props ${this.theme}`);
-      
+      eventBus.$on('changingTheme', this.changeTheme);      
     },
     beforeDestroy() {
       eventBus.$off('requestResponsiveMenu');

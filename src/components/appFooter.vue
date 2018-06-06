@@ -54,9 +54,6 @@
       mouseOut(event) {
         event.target.style = "color: #DFDFDF; transition: color 0.25s ease;";
       }
-    },
-    created() {
-      console.log(`footer props: ${this.theme}`);
     }
   }
 </script>

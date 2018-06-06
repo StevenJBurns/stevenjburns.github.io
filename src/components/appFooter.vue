@@ -1,7 +1,7 @@
 <template>
   <footer>
     <nav>
-      <ul @mouseover.capture="mouseOver()" @mouseout="mouseOut()">
+      <ul @mouseover.capture="mouseOver" @mouseout.capture="mouseOut">
         <li>
           <a href="https://www.linkedin.com/in/steven-j-burns/">
             <font-awesome-icon :icon="['fab', 'linkedin']" size="2x" />
@@ -48,11 +48,11 @@
       }
     },
     methods: {
-      mouseOver() {
-        event.target.style = `transition: all 0.25s ease; color: ${this.theme.light}`;
+      mouseOver(event) {        
+        event.target.style = `color: ${this.theme.light}; transition: color 0.25s ease;`;
       },
-      mouseOut() {
-        event.target.style = "transition: all 0.25s ease; color: #DFDFDF";
+      mouseOut(event) {
+        event.target.style = "color: #DFDFDF; transition: color 0.25s ease;";
       }
     },
     created() {
@@ -82,6 +82,6 @@
   a:link, a:visited {
     color: #DFDFDF;
     text-decoration: none;
-    transition: color 0.25s ease
+    /* transition: color 0.25s ease */
   }
 </style>

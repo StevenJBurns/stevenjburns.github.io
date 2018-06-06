@@ -1,7 +1,7 @@
 <template>
   <footer>
     <nav>
-      <ul @mouseover.capture="mouseOver" @mouseout.capture="mouseOut">
+      <ul @mouseover="mouseOver" @mouseout="mouseOut">
         <li>
           <a href="https://www.linkedin.com/in/steven-j-burns/">
             <font-awesome-icon :icon="['fab', 'linkedin']" size="2x" />
@@ -79,6 +79,5 @@
   a:link, a:visited {
     color: #DFDFDF;
     text-decoration: none;
-    /* transition: color 0.25s ease */
   }
 </style>

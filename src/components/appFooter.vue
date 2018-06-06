@@ -48,10 +48,10 @@
     },
     methods: {
       mouseOver() {
-        event.target.style.color = this.theme.light;
+        event.target.style = `transition: all 0.25s ease; color: ${this.theme.light}`;
       },
       mouseOut() {
-        event.target.style.color = "#DFDFDF";
+        event.target.style = "transition: all 0.25s ease; color: #DFDFDF";
       }
     },
     created() {

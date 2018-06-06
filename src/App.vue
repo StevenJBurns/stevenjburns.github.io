@@ -51,6 +51,19 @@
       },
       changeTheme(newTheme) {
         this.theme = newTheme;
+
+        // let menuItems = document.querySelectorAll(".menu-item");
+        // console.log(menuItems);
+
+        // let activeLink = document.querySelector(".router-link-exact-active");
+        // console.log(activeLink);
+        // activeLink.style = `color: #0F0F0F; background: ${this.theme.light};`;
+        
+        // menuItems.forEach((i) => {
+        //   i.style = "color: #F0F0F0; background: transparent;";
+        // });
+
+        //event.target.style = `background: ${this.theme.light}`;
       }
     }
   }

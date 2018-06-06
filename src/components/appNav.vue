@@ -1,10 +1,11 @@
 <template>
   <nav>
-    <ul @mouseover="mouseOver" @mouseout="mouseOut" @click="linkClick">
-      <li><router-link tag="li" to="/skills">&lt;Skills /&gt;</router-link></li>
-      <li><router-link tag="li" to="/projects">&lt;Projects /&gt;</router-link></li>
-      <li><router-link tag="li" to="/contact">&lt;Contact /&gt;</router-link></li>
-      <li><router-link tag="li" to="/about">&lt;About /&gt;</router-link></li>
+    <ul @mouseover="mouseOver" @mouseout="mouseOut">
+      <li class="menu-item"><router-link tag="li" to="/">HOME</router-link></li>
+      <li class="menu-item"><router-link tag="li" to="/skills">SKILLS</router-link></li>
+      <li class="menu-item"><router-link tag="li" to="/projects">PROJECTS</router-link></li>
+      <li class="menu-item"><router-link tag="li" to="/contact">CONTACT</router-link></li>
+      <li class="menu-item"><router-link tag="li" to="/about">ABOUT</router-link></li>
     </ul>
   </nav>
 </template>
@@ -17,33 +18,23 @@
     },
     methods: {
       mouseOver(event) {
-        if (event.target.classList.contains("router-link-active")) {
-          event.target.style = `color: #0F0F0F; background: ${this.theme.light}`;
-        } else {
-          event.target.style = `color: ${this.theme.light}; background: transparent`;
-        }
+        // if (event.target.classList.contains("router-link-active")) {
+        //   event.target.style = `color: #0F0F0F; background: ${this.theme.light}`;
+        // } else {
+        //   event.target.style = `color: ${this.theme.light}; background: transparent`;
+        // }
       },
       mouseOut(event) {
-        if (event.target.classList.contains("router-link-active")) {
-          event.target.style = `color: #0F0F0F; background: ${this.theme.light}`;
-        } else {
-          event.target.style = `color: #F0F0F0;`;
-        }
+        // if (event.target.classList.contains("router-link-active")) {
+        //   event.target.style = `color: #0F0F0F; background: ${this.theme.light}`;
+        // } else {
+        //   event.target.style = `color: #F0F0F0;`;
+        // }
       },
-      linkClick(event) {
-
-        let appTitle = document.querySelector("#appTitle");
-        console.log(appTitle);
+    },
+    computed: {
+      styleActiveLink() {
         
-        //appTitle.style = "background: transparent;";
-
-        let listItems = document.querySelectorAll("li");
-        listItems.forEach((i) => i.style = "background: transparent;");
-
-        let activeLink = document.querySelector(".router-link-exact-active");
-        activeLink.style = `color: #0F0F0F; background: ${this.theme.light};`;
-
-        event.target.style = `background: ${this.theme.light}`;
       }
     }
   }
@@ -57,12 +48,13 @@
   }
 
   ul {
-    display: table;
+    display: flex;
     list-style: none;
     color: #BFBFBF;
   }
 
   li {
+    margin: 2px;
     padding: 2px;
     border-radius: 4px;
     display: table-cell;
@@ -71,19 +63,22 @@
     font-weight: bold;
     font-size: 0.95em;
     cursor: pointer;
-    transition: all 0.25 ease
+    transition: all 0.5 ease
   }
 
-  a:link, a:visited {
+  a:link,
+  a:visited {
     color: #0F0F0F;
     text-align: center;
     text-decoration: none;
-    transition: color 0.25s ease;
     display: inline-block;
+    transition: all 0.5s ease;
   }
 
-  /* .router-link-active, .router-link-exact-active {
-    color: #3F3F3F;
-    background: #BFBFBF
-  } */
+  /* .router-link-active, */
+  .router-link-exact-active {
+    color: #0F0F0F;
+    background: #BFBFBF;
+    transition: all 0.5s ease
+  }
 </style>

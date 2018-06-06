@@ -11,7 +11,8 @@
           <a href="https://twitter.com/StevenJBurns">
             <font-awesome-icon :icon="['fab', 'twitter']" size="2x" />
           </a>
-        </li>        <li>
+        </li>
+        <li>
           <a href="https://github.com/StevenJBurns">
             <font-awesome-icon :icon="['fab', 'github']" size="2x" />
           </a>
@@ -83,9 +84,4 @@
     text-decoration: none;
     transition: color 0.25s ease
   }
-
-  /* a:hover, a:active {
-    color: #DFDFDF;
-    color: #708090;
-  } */
 </style>

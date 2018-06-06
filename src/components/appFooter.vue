@@ -1,23 +1,23 @@
 <template>
   <footer>
     <nav>
-      <ul>
+      <ul @mouseover.capture="mouseOver()" @mouseout="mouseOut()">
         <li>
-          <a href="https://www.linkedin.com/in/steven-j-burns/" :style="{color: this.hoverColor}" @mouseover="mouseOver()" @mouseout="mouseOut()">
+          <a href="https://www.linkedin.com/in/steven-j-burns/">
             <font-awesome-icon :icon="['fab', 'linkedin']" size="2x" />
           </a>
         </li>
         <li>
-          <a href="https://twitter.com/StevenJBurns" :style="{color: hoverColor}" @mouseover="mouseOver()" @mouseout="mouseOut()">
+          <a href="https://twitter.com/StevenJBurns">
             <font-awesome-icon :icon="['fab', 'twitter']" size="2x" />
           </a>
         </li>        <li>
-          <a href="https://github.com/StevenJBurns" :style="{color: hoverColor}" @mouseover="mouseOver()" @mouseout="mouseOut()">
+          <a href="https://github.com/StevenJBurns">
             <font-awesome-icon :icon="['fab', 'github']" size="2x" />
           </a>
         </li>
         <li>
-          <a href="mailto:stevenjburns@msn.com?subject=You're%20Hired" :style="{color: hoverColor}" @mouseover="mouseOver()" @mouseout="mouseOut()">
+          <a href="mailto:stevenjburns@msn.com?subject=You're%20Hired">
             <font-awesome-icon icon="envelope" size="2x" />
           </a>
         </li>
@@ -42,21 +42,17 @@
     },
     data() {
       return {
+        isMouseOver: false,
         hoverColor: this.theme.light
       }
     },
     methods: {
       mouseOver() {
-        this.hoverColor = this.theme.light;
+        event.target.style.color = this.theme.light;
       },
       mouseOut() {
-        this.hoverColor = "#DFDFDF";
+        event.target.style.color = "#DFDFDF";
       }
-    },
-    computed:{
-      // style() {
-      //   return this.isMouseOverLink ? `color: ${this.theme.light}` : 'color: #DFDFDF'
-      // }
     },
     created() {
       console.log(`footer props: ${this.theme}`);

@@ -1,6 +1,7 @@
 /* App Dependencies */
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import VueAnalytics from 'vue-analytics';
 
 /* Page imports */
 import App from './App.vue';
@@ -14,6 +15,10 @@ import About from './pages/about.vue';
 import Themes from "./data/appThemeColors.json";
 
 Vue.config.productionTip = false;
+
+Vue.use(VueAnalytics, {
+  id: 'UA-35847828-1'
+});
 
 Vue.use(VueRouter);
 

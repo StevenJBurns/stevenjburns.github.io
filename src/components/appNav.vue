@@ -56,6 +56,7 @@
   li {
     margin: 2px;
     padding: 2px;
+    width: 80px;
     border-radius: 4px;
     display: table-cell;
     vertical-align: middle;

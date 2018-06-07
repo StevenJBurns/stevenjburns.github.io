@@ -16,10 +16,6 @@ import Themes from "./data/appThemeColors.json";
 
 Vue.config.productionTip = false;
 
-Vue.use(VueAnalytics, {
-  id: 'UA-35847828-1'
-});
-
 Vue.use(VueRouter);
 
 const routes = [
@@ -33,6 +29,11 @@ const routes = [
 const router = new VueRouter({
   routes,  // this is ES6 for -> routes: routes //
   mode: "history"
+});
+
+Vue.use(VueAnalytics, {
+  id: 'UA-35847828-1',
+  router
 });
 
 // State management without Vuex

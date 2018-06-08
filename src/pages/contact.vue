@@ -69,7 +69,7 @@
               'value': '#ffffff'
             },
             'shape': {
-              'type': 'circle',
+              'type': ['html5', 'css3', 'js'],
               'stroke': {
                 'width': 0,
                 'color': '#000000'

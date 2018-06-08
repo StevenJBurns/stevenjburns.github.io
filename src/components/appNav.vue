@@ -40,18 +40,24 @@
     },
     methods: {
       mouseOver(event) {
-        // if (event.target.classList.contains("router-link-active")) {
-        //   event.target.style = `color: #0F0F0F; background: ${this.theme.light}`;
-        // } else {
-        //   event.target.style = `color: ${this.theme.light}; background: transparent`;
-        // }
+        if (event.target.classList.contains("router-link-exact-active")) return;
+
+        event.target.style =
+          `width: 100%;
+          color: ${this.theme.light};
+          display: table-cell;
+          vertical-align: middle;
+          background: transparent`;
       },
       mouseOut(event) {
-        // if (event.target.classList.contains("router-link-active")) {
-        //   event.target.style = `color: #0F0F0F; background: ${this.theme.light}`;
-        // } else {
-        //   event.target.style = `color: #F0F0F0;`;
-        // }
+        if (event.target.classList.contains("router-link-exact-active")) return;
+
+        event.target.style =
+          `width: 100%;
+          color: #F0F0F0;
+          display: table-cell;
+          vertical-align: middle;
+          background: transparent`;
       },
     },
     computed: {

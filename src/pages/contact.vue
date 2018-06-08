@@ -38,6 +38,10 @@
   import { fasEnvelope } from "@fortawesome/fontawesome-free-solid";
   import { fabLinkedin, fabGithub, faTwitter } from "@fortawesome/fontawesome-free-brands";
 
+  import HTML5 from "../assets/logos/HTML5.svg";
+  import CSS3 from "../assets/logos/css3.svg";
+  import JS from "../assets/logos/javascript.svg";
+
   export default {
     name: 'PageContact',
     props: {
@@ -59,7 +63,7 @@
         particlesJS('particles-js', {
           'particles': {
             'number': {
-              'value': 80,
+              'value': 64,
               'density': {
                 'enable': true,
                 'value_area': 800
@@ -69,7 +73,7 @@
               'value': '#ffffff'
             },
             'shape': {
-              'type': ['html5', 'css3', 'js'],
+              'type': ['image0', 'image1', 'image2'],
               'stroke': {
                 'width': 0,
                 'color': '#000000'
@@ -78,7 +82,17 @@
                 'nb_sides': 5
               },
               'image': {
-                'src': 'img/github.svg',
+                'src': '../assets/logos/HTML5.svg',
+                'width': 100,
+                'height': 100
+              },
+              'image': {
+                'src': '../assets/logos/css3.svg',
+                'width': 100,
+                'height': 100
+              },
+              'image': {
+                'src': 'assets/logos/javascript.svg',
                 'width': 100,
                 'height': 100
               }
@@ -94,7 +108,7 @@
               }
             },
             'size': {
-              'value': 10,
+              'value': 64,
               'random': true,
               'anim': {
                 'enable': true,

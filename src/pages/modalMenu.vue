@@ -1,6 +1,6 @@
 <template>
-  <div class="modal-backdrop">
-    <transition name="modal" :theme="theme">
+  <transition name="modal" :theme="theme">
+    <div class="modal-backdrop">
       <nav class="nav-modal">
         <font-awesome-icon icon="times-circle" size="2x" @click="requestResponsiveMenu" />
         <ul @click="requestResponsiveMenu">
@@ -11,8 +11,8 @@
           <li><router-link tag="li" to="/about">About</router-link></li>
         </ul>
       </nav>
-    </transition>
-  </div>
+    </div>
+  </transition>
 </template>
 
 
@@ -33,8 +33,6 @@
       theme: Object
     },
     beforeUpdate() {
-      console.log(this.theme)
-      console.log(document.querySelector(".nav-modal"));
       document.querySelector(".nav-modal").style = `background: ${this.theme.dark}`;
     },
     methods: {

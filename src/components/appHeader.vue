@@ -8,7 +8,7 @@
       <polygon points="128,128 16,84 62,62 84,16" stroke="#2F2F2F" stroke-width="8" stroke-linejoin="round" fill="#F0F0F0" fill-opacity="1">
       </polygon>
     </svg>
-    <h2 id="#appTitle" class="menu-item">STEVEN J BURNS</h2>
+    <h2 id="#appTitle">STEVEN J BURNS</h2>
     <hr>
     <Nav :theme="theme"/>
     <font-awesome-icon icon="bars" size="2x" @click="openResponsiveMenu()" />

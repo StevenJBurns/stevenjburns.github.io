@@ -51,6 +51,7 @@
     align-items: center;
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.75);
+    z-index: 2;
     bottom: 0;
     right: 0;
     left: 0;

@@ -23,7 +23,14 @@
     </svg>
     <h2>Longmont&nbsp;&bull;&nbsp;Colorado</h2>
     </section>
-        <vue-particles color="#778899" :particlesNumber="128" :linesDistance="96"></vue-particles>
+    <vue-particles color="#778899"
+                   :particlesNumber="256"
+                   :particleOpacity="0.75"
+                   :linesDistance="60"
+                   shapeType="circle"
+                   :particleSize="4"
+                   :moveSpeed="2" 
+                   :clickEffect="false" />
   </div>
 </template>
 
@@ -61,10 +68,10 @@
 
   section {
     padding: 24px;
-    background: #708090;
+    background: #708090BB;
     box-shadow: 2px 2px 12px #000000;
     border-radius: 8px;
-    z-index: 1
+    z-index: 1;
   }
 
   img {
@@ -76,6 +83,8 @@
     top: 0;
     left: 0;
     width: 100%;
+    height: 100%;
     position: absolute;
+    z-index: 0
   }
 </style>

@@ -22,12 +22,12 @@
       theme: Object
     },
     beforeUpdate() {
-      document.querySelectorAll(".menu-item").style = "background: transparent";
-      document.querySelector(".router-link-exact-active").style = `background: ${this.theme.light}`;
+      //document.querySelectorAll(".menu-item").style = "background: transparent";
+      //document.querySelector(".router-link-exact-active").style = `background: ${this.theme.light}`;
     },
     updated() {
-      document.querySelectorAll(".menu-item").style = "background: transparent";
-      document.querySelector(".router-link-exact-active").style = `background: ${this.theme.light}`;
+      document.querySelector(".router-link-exact-active").style = `background: ${this.theme.light}; border-radius: 4px;`;
+      document.querySelectorAll(".menu-item:not(.router-link-exact-active)").style = "background: transparent";
     },
     methods: {
       mouseOver(event) {
@@ -83,6 +83,7 @@
     font-size: 0.95em;
     cursor: pointer;
     overflow: hidden;
+    background: transparent;
     transition: all 0.5 ease
   }
 

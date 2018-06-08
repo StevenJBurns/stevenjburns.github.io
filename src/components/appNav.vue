@@ -1,11 +1,11 @@
 <template>
-  <nav>
+  <nav :theme="theme">
     <ul @mouseover="mouseOver" @mouseout="mouseOut">
-      <li class="menu-item"><router-link tag="li" to="/">HOME</router-link></li>
-      <li class="menu-item"><router-link tag="li" to="/skills">SKILLS</router-link></li>
-      <li class="menu-item"><router-link tag="li" to="/projects">PROJECTS</router-link></li>
-      <li class="menu-item"><router-link tag="li" to="/contact">CONTACT</router-link></li>
-      <li class="menu-item"><router-link tag="li" to="/about">ABOUT</router-link></li>
+      <li><router-link class="menu-item" to="/">HOME</router-link></li>
+      <li><router-link class="menu-item" to="/skills">SKILLS</router-link></li>
+      <li><router-link class="menu-item" to="/projects">PROJECTS</router-link></li>
+      <li><router-link class="menu-item" to="/contact">CONTACT</router-link></li>
+      <li><router-link class="menu-item" to="/about">ABOUT</router-link></li>
     </ul>
   </nav>
 </template>
@@ -13,8 +13,21 @@
 <script>
   export default {
     name: 'Nav',
+    data() {
+      return {
+        currentTheme: this.theme
+      }
+    },
     props: {
       theme: Object
+    },
+    beforeUpdate() {
+      document.querySelectorAll(".menu-item").style = "background: transparent";
+      document.querySelector(".router-link-exact-active").style = `background: ${this.theme.light}`;
+    },
+    updated() {
+      document.querySelectorAll(".menu-item").style = "background: transparent";
+      document.querySelector(".router-link-exact-active").style = `background: ${this.theme.light}`;
     },
     methods: {
       mouseOver(event) {
@@ -35,6 +48,11 @@
     computed: {
       styleActiveLink() {
         
+      }
+    },
+    watch: {
+      '$route'() {
+        //document.querySelector(".router-link-exact-active").style = `background: ${this.theme.light}` 
       }
     }
   }
@@ -64,12 +82,19 @@
     font-weight: bold;
     font-size: 0.95em;
     cursor: pointer;
+    overflow: hidden;
     transition: all 0.5 ease
+  }
+
+  .menu-item {
+    display: table-cell;
+    background: transparent;    
   }
 
   a:link,
   a:visited {
-    color: #0F0F0F;
+    width: 100%;
+    color: #F0F0F0;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -79,7 +104,7 @@
   /* .router-link-active, */
   .router-link-exact-active {
     color: #0F0F0F;
-    background: #BFBFBF;
+    background: transparent;
     transition: all 0.5s ease
   }
 </style>

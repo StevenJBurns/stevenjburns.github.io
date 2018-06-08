@@ -22,13 +22,21 @@
       theme: Object
     },
     beforeUpdate() {
-      document.querySelector(".router-link-exact-active").style = `background: ${this.theme.light}; border-radius: 4px;`;
-      //document.querySelectorAll(".menu-item:not(.router-link-exact-active)").style = "background: transparent";
-      document.querySelectorAll("a:not(.router-link-exact-active)").forEach(element => {
-        element.style = "background: transparent"
-      });
-    },
-    updated() {
+      document.querySelector(".router-link-exact-active").style =
+        `width: 100%;
+        display: table-cell;
+        vertical-align: middle;
+        background: ${this.theme.light};
+        border-radius: 4px;`;
+
+      document.querySelectorAll("a:not(.router-link-exact-active)")
+        .forEach((e) => { e.style =
+          `width: 100%;
+          display: table-cell;
+          vertical-align: middle;
+          background: transparent;
+          border-radius: 4px;`
+        });
     },
     methods: {
       mouseOver(event) {
@@ -50,11 +58,6 @@
       styleActiveLink() {
         
       }
-    },
-    watch: {
-      '$route'() {
-        //document.querySelector(".router-link-exact-active").style = `background: ${this.theme.light}` 
-      }
     }
   }
 </script>
@@ -73,29 +76,27 @@
   }
 
   li {
-    margin: 2px;
-    padding: 2px;
-    width: 80px;
+    height: 32px;
+    width: 96px;
     border-radius: 4px;
-    display: table-cell;
-    vertical-align: middle;
     text-align: center;
     font-weight: bold;
-    font-size: 0.95em;
+    font-size: 1em;
     cursor: pointer;
     overflow: hidden;
     background: transparent;
-    transition: all 0.5 ease
+    transition: all 0.5 ease;
+    display: table;
   }
 
   .menu-item {
-    display: table-cell;
     background: transparent;    
   }
 
   a:link,
   a:visited {
     width: 100%;
+    height: 100%;
     color: #F0F0F0;
     text-align: center;
     text-decoration: none;

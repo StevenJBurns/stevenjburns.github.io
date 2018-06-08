@@ -2,6 +2,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import VueAnalytics from 'vue-analytics';
+import VueParticles from 'vue-particles';
 
 /* Page imports */
 import App from './App.vue';
@@ -17,6 +18,7 @@ import Themes from "./data/appThemeColors.json";
 Vue.config.productionTip = false;
 
 Vue.use(VueRouter);
+Vue.use(VueParticles);
 
 const routes = [
   { path: "/", component: Home, props: { theme: Themes['home']}},
@@ -42,9 +44,7 @@ export const eventBus = new Vue({});
 new Vue({
   el: '#app',
   data() {
-    return {
-      //"theme": this.router.currentRoute
-    }
+    return {}
   },
   router, // this is ES6 for -> router: router //
   render: h => h(App)

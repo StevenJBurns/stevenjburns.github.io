@@ -23,19 +23,25 @@
     </svg>
     <h2>Longmont&nbsp;&bull;&nbsp;Colorado</h2>
     </section>
+        <vue-particles color="#778899" :particlesNumber="128" :linesDistance="96"></vue-particles>
   </div>
 </template>
 
 <script>
+  import Vue from "vue";
   import { eventBus } from "../main.js";
+
 
   export default {
     name: 'PageHome',
     props: {
       theme: Object
     },
+    components: {
+      // "vue-particles": VueParticles
+    },
     created() {
-      eventBus.$emit('changingTheme', this.theme)
+      eventBus.$emit('changingTheme', this.theme);
     }
   }
 </script>
@@ -49,18 +55,27 @@
     justify-content: center;
     align-items: center;
     background: #405060;
-    text-shadow: 2px 2px 16px #2F2F2F
+    text-shadow: 2px 2px 16px #2F2F2F;
+    position: relative;
   }
 
   section {
     padding: 24px;
     background: #708090;
     box-shadow: 2px 2px 12px #000000;
-    border-radius: 8px
+    border-radius: 8px;
+    z-index: 1
   }
 
   img {
     margin: 12px auto;
     display: inline-block
+  }
+
+  #particles-js {
+    top: 0;
+    left: 0;
+    width: 100%;
+    position: absolute;
   }
 </style>

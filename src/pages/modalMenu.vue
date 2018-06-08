@@ -1,6 +1,6 @@
 <template>
-  <transition name="modal">
-    <div class="modal-backdrop">
+  <div class="modal-backdrop">
+    <transition name="modal" :theme="theme">
       <nav class="nav-modal">
         <font-awesome-icon icon="times-circle" size="2x" @click="requestResponsiveMenu" />
         <ul @click="requestResponsiveMenu">
@@ -11,8 +11,8 @@
           <li><router-link tag="li" to="/about">About</router-link></li>
         </ul>
       </nav>
-    </div>
-  </transition>
+    </transition>
+  </div>
 </template>
 
 

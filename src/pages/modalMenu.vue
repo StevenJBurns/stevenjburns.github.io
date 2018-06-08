@@ -1,14 +1,14 @@
 <template>
   <transition name="modal">
     <div class="modal-backdrop">
-      <nav>
+      <nav class="nav-modal">
         <font-awesome-icon icon="times-circle" size="2x" @click="requestResponsiveMenu" />
         <ul @click="requestResponsiveMenu">
-          <li><router-link tag="li" to="/">&lt;Home /&gt;</router-link></li>
-          <li><router-link tag="li" to="/skills">&lt;Skills /&gt;</router-link></li>
-          <li><router-link tag="li" to="/projects">&lt;Projects /&gt;</router-link></li>
-          <li><router-link tag="li" to="/contact">&lt;Contact /&gt;</router-link></li>
-          <li><router-link tag="li" to="/about">&lt;About /&gt;</router-link></li>
+          <li><router-link tag="li" to="/">Home</router-link></li>
+          <li><router-link tag="li" to="/skills">Skills</router-link></li>
+          <li><router-link tag="li" to="/projects">Projects</router-link></li>
+          <li><router-link tag="li" to="/contact">Contact</router-link></li>
+          <li><router-link tag="li" to="/about">About</router-link></li>
         </ul>
       </nav>
     </div>
@@ -28,6 +28,14 @@
     },
     data() {
       return {};
+    },
+    props: {
+      theme: Object
+    },
+    beforeUpdate() {
+      console.log(this.theme)
+      console.log(document.querySelector(".nav-modal"));
+      document.querySelector(".nav-modal").style = `background: ${this.theme.dark}`;
     },
     methods: {
       requestResponsiveMenu() {

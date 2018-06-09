@@ -38,9 +38,9 @@
   import { fasEnvelope } from "@fortawesome/fontawesome-free-solid";
   import { fabLinkedin, fabGithub, faTwitter } from "@fortawesome/fontawesome-free-brands";
 
-  import HTML5 from "../assets/logos/HTML5.svg";
-  import CSS3 from "../assets/logos/css3.svg";
-  import JS from "../assets/logos/javascript.svg";
+  // import HTML5 from "../assets/logos/HTML5.svg";
+  // import CSS3 from "../assets/logos/css3.svg";
+  // import JS from "../assets/logos/javascript.svg";
 
   export default {
     name: 'PageContact',
@@ -70,35 +70,25 @@
               }
             },
             'color': {
-              'value': '#ffffff'
+              'value': '#7F7F7F'
             },
             'shape': {
-              'type': ['image0', 'image1', 'image2'],
+              'type': "image",
               'stroke': {
                 'width': 0,
-                'color': '#000000'
+                'color': '#7F7F7F'
               },
               'polygon': {
                 'nb_sides': 5
               },
               'image': {
-                'src': '../assets/logos/HTML5.svg',
-                'width': 100,
-                'height': 100
-              },
-              'image': {
-                'src': '../assets/logos/css3.svg',
-                'width': 100,
-                'height': 100
-              },
-              'image': {
-                'src': 'assets/logos/javascript.svg',
-                'width': 100,
-                'height': 100
+                'src': 'images/html5.png',
+                'width': 256,
+                'height': 256
               }
             },
             'opacity': {
-              'value': 0.25,
+              'value': 0.75,
               'random': false,
               'anim': {
                 'enable': false,
@@ -243,6 +233,8 @@
   #particles-js {
     top: 0;
     left: 0;
+    margin: 0;
+    padding: 0;
     width: 100%;
     height: 100%;
     position: absolute;

@@ -63,7 +63,7 @@
         particlesJS('particles-js', {
           'particles': {
             'number': {
-              'value': 64,
+              'value': 16,
               'density': {
                 'enable': true,
                 'value_area': 800
@@ -82,13 +82,13 @@
                 'nb_sides': 5
               },
               'image': {
-                'src': 'images/html5.png',
-                'width': 256,
-                'height': 256
+                'src': `${require("./images/html5.png")}`,
+                'width': 12,
+                'height': 12
               }
             },
             'opacity': {
-              'value': 0.75,
+              'value': 0.25,
               'random': false,
               'anim': {
                 'enable': false,
@@ -98,12 +98,12 @@
               }
             },
             'size': {
-              'value': 64,
+              'value': 16,
               'random': true,
               'anim': {
-                'enable': true,
+                'enable': false,
                 'speed': 48,
-                'size_min': 0.1,
+                'size_min': 4,
                 'sync': false
               }
             },
@@ -116,7 +116,7 @@
             },
             'move': {
               'enable': true,
-              'speed': 2,
+              'speed': 1,
               'direction': 'none',
               'random': false,
               'straight': false,

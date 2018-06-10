@@ -27,13 +27,11 @@
         <span>Compose an electronic letter. Or just send a raven.</span>
       </section>
     </div>
-    <div id='particles-js'></div>
   </div>
 </template>
 
 <script>
   import { eventBus } from "../main.js";
-  //import particlesJS from "particles.js";
   import FontAwesomeIcon from "@fortawesome/vue-fontawesome";
   import { fasEnvelope } from "@fortawesome/fontawesome-free-solid";
   import { fabLinkedin, fabGithub, faTwitter } from "@fortawesome/fontawesome-free-brands";
@@ -54,118 +52,10 @@
       eventBus.$emit('changingTheme', this.theme)
     },
     mounted() {
-      let particlesJS = require('particles.js');
-      this.$nextTick(() => this.initParticlesJS());
+
     },
     methods: {
-      initParticlesJS () {
-        /* eslint-disable */
-        particlesJS('particles-js', {
-          'particles': {
-            'number': {
-              'value': 3,
-              'density': {
-                'enable': true,
-                'value_area': 200
-              }
-            },
-            'color': {
-              'value': '#FFFFFF'
-            },
-            'shape': {
-              'type': [ `image1`, `image2`, `image3`],
-              'stroke': {
-                'width': 0,
-                'color': '#7F7F7F'
-              },
-              'polygon': {
-                'nb_sides': 4
-              }
-            },
-            'opacity': {
-              'value': 0.75,
-              'random': false,
-              'anim': {
-                'enable': false,
-                'speed': 1,
-                'opacity_min': 0.1,
-                'sync': false
-              }
-            },
-            'size': {
-              'value': 64,
-              'random': true,
-              'anim': {
-                'enable': false,
-                'speed': 48,
-                'size_min': 4,
-                'sync': false
-              }
-            },
-            'line_linked': {
-              'enable': true,
-              'distance': 192,
-              'color': '#FFFFFF',
-              'opacity': 0.25,
-              'width': 2
-            },
-            'move': {
-              'enable': true,
-              'speed': 4,
-              'direction': 'none',
-              'random': false,
-              'straight': false,
-              'out_mode': 'out',
-              'bounce': false,
-              'attract': {
-                'enable': false,
-                'rotateX': 600,
-                'rotateY': 1200
-              }
-            }
-          },
-          'interactivity': {
-            'detect_on': 'canvas',
-            'events': {
-              'onhover': {
-                'enable': false,
-                'mode': 'repulse'
-              },
-              'onclick': {
-                'enable': true,
-                'mode': 'push'
-              },
-              'resize': true
-            },
-            'modes': {
-              'grab': {
-                'distance': 800,
-                'line_linked': {
-                  'opacity': 1
-                }
-              },
-              'bubble': {
-                'distance': 800,
-                'size': 80,
-                'duration': 2,
-                'opacity': 0.8,
-                'speed': 3
-              },
-              'repulse': {
-                'distance': 400,
-                'duration': 0.4
-              },
-              'push': {
-                'particles_nb': 4
-              },
-              'remove': {
-                'particles_nb': 2
-              }
-            }
-          },
-          'retina_detect': true
-        })
-      }
+
     }
   }
 </script>
@@ -223,17 +113,6 @@
   section span {
     padding: 4px;
     align-self: center
-  }
-
-  #particles-js {
-    top: 0;
-    left: 0;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 0
   }
 
   @media screen and (max-width: 720px) {

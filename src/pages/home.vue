@@ -38,14 +38,13 @@
   import Vue from "vue";
   import { eventBus } from "../main.js";
 
-
   export default {
     name: 'PageHome',
     props: {
       theme: Object
     },
     components: {
-      // "vue-particles": VueParticles
+
     },
     created() {
       eventBus.$emit('changingTheme', this.theme);

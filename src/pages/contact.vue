@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="divPageWrapper">
     <h3>I am always on the lookout to get involved in a new software development challenge. Drop me a line at any of the following:</h3>
     <div id="divCardWrapper">
       <section>
@@ -27,6 +27,14 @@
         <span>Compose an electronic letter. Or just send a raven.</span>
       </section>
     </div>
+    <vue-particles color="#778899"
+                   :particlesNumber="144"
+                   :particleOpacity="0.75"
+                   :linesDistance="96"
+                   shapeType="circle"
+                   :particleSize="8"
+                   :moveSpeed="2"
+                   :clickEffect="false" />
   </div>
 </template>
 
@@ -61,11 +69,15 @@
 </script>
 
 <style scoped>
-  div {
+  #divPageWrapper {
     flex: 1 0 auto;
     padding: 32px 15%;
     background: #707090;
     position: relative;
+  }
+
+  h3 {
+    color: #303050;
   }
 
   #divCardWrapper {
@@ -75,6 +87,8 @@
     z-index: 1;
     justify-content: space-evenly
   }
+
+
 
   a:link, a:visited {
     color: #F0F0F0;
@@ -113,6 +127,15 @@
   section span {
     padding: 4px;
     align-self: center
+  }
+
+  #particles-js {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 0
   }
 
   @media screen and (max-width: 720px) {

@@ -23,14 +23,6 @@
     </svg>
     <h2>Longmont&nbsp;&bull;&nbsp;Colorado</h2>
     </section>
-    <vue-particles color="#778899"
-                   :particlesNumber="256"
-                   :particleOpacity="0.75"
-                   :linesDistance="60"
-                   shapeType="circle"
-                   :particleSize="4"
-                   :moveSpeed="2" 
-                   :clickEffect="false" />
   </div>
 </template>
 
@@ -76,14 +68,5 @@
   img {
     margin: 12px auto;
     display: inline-block
-  }
-
-  #particles-js {
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 0
   }
 </style>

@@ -38,7 +38,7 @@
   import { fasEnvelope } from "@fortawesome/fontawesome-free-solid";
   import { fabLinkedin, fabGithub, faTwitter } from "@fortawesome/fontawesome-free-brands";
 
-  // import HTML5 from "../assets/logos/HTML5.svg";
+  // import HTML5 from "../assets/logos/html5.png";
   // import CSS3 from "../assets/logos/css3.svg";
   // import JS from "../assets/logos/javascript.svg";
 
@@ -63,32 +63,27 @@
         particlesJS('particles-js', {
           'particles': {
             'number': {
-              'value': 16,
+              'value': 3,
               'density': {
                 'enable': true,
-                'value_area': 800
+                'value_area': 200
               }
             },
             'color': {
-              'value': '#7F7F7F'
+              'value': '#FFFFFF'
             },
             'shape': {
-              'type': "image",
+              'type': [ `image1`, `image2`, `image3`],
               'stroke': {
                 'width': 0,
                 'color': '#7F7F7F'
               },
               'polygon': {
-                'nb_sides': 5
-              },
-              'image': {
-                'src': `${require("./images/html5.png")}`,
-                'width': 12,
-                'height': 12
+                'nb_sides': 4
               }
             },
             'opacity': {
-              'value': 0.25,
+              'value': 0.75,
               'random': false,
               'anim': {
                 'enable': false,
@@ -98,7 +93,7 @@
               }
             },
             'size': {
-              'value': 16,
+              'value': 64,
               'random': true,
               'anim': {
                 'enable': false,
@@ -116,7 +111,7 @@
             },
             'move': {
               'enable': true,
-              'speed': 1,
+              'speed': 4,
               'direction': 'none',
               'random': false,
               'straight': false,

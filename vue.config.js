@@ -1,3 +1,8 @@
 module.exports = {
-  //assetPublicPath: ""
+  // configureWebpack: {
+  //   rules: [{
+  //     test: /\.svg$/,
+  //     use: [{ loader: 'html-loader' }]
+  //   }]
+  // }
 };

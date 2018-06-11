@@ -85,7 +85,13 @@
     display: none
   }
 
-  @media screen and (max-width: 720px) {
+  @media screen and (max-width: 1024px) {
+    hr {
+      display: hidden
+    }
+  }
+
+  @media screen and (max-width: 800px) {
   header {
     grid-template-columns: auto 1fr auto auto auto;
   }
@@ -93,10 +99,6 @@
   svg {
     align-self: center;
     display: inline-block
-  }
-
-  hr {
-    display: none
   }
 
   nav {

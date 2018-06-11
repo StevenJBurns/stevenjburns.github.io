@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="divPageWrapper">
     <section>
     <h2>Full Stack Developer</h2>
     <svg height="192" width="192" viewBox="0 0 256 256">
@@ -23,6 +23,7 @@
     </svg>
     <h2>Longmont&nbsp;&bull;&nbsp;Colorado</h2>
     </section>
+    <div id="page-background"></div>
   </div>
 </template>
 
@@ -45,7 +46,7 @@
 </script>
 
 <style scoped>
-  div {
+  #divPageWrapper {
     flex: 1 0 auto;
     display: flex;
     padding: 24px;
@@ -65,8 +66,12 @@
     z-index: 1;
   }
 
-  img {
-    margin: 12px auto;
-    display: inline-block
-  }
+  #page-background {
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: green;
+}
 </style>

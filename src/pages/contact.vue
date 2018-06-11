@@ -84,11 +84,8 @@
     display: flex;
     flex-wrap: wrap;
     background: #00000000;
-    z-index: 1;
-    justify-content: space-evenly
+    justify-content: space-evenly;
   }
-
-
 
   a:link, a:visited {
     color: #F0F0F0;
@@ -98,6 +95,7 @@
   }
 
   section {
+    z-index: 1;
     display: grid;
     margin: 16px auto;
     width: 256px;
@@ -135,7 +133,7 @@
     width: 100%;
     height: 100%;
     position: absolute;
-    z-index: 0
+
   }
 
   @media screen and (max-width: 720px) {

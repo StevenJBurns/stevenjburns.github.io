@@ -21,6 +21,7 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.0-beta.16",
     "@vue/cli-service": "^3.0.0-beta.16",
+    "html-loader": "^0.5.5",
     "push-dir": "^0.4.1",
     "vue-particles": "^1.0.9",
     "vue-template-compiler": "^2.5.13"

@@ -2,6 +2,7 @@
   <div id="divPageWrapper">
     <section>
     <h2>Full Stack Developer</h2>
+    <h3>Learning All The Things</h3>
     <svg height="192" width="192" viewBox="0 0 256 256">
       <defs>
         <filter id="drop-shadow" x="0" y="0" width="200%" height="200%">
@@ -23,13 +24,23 @@
     </svg>
     <h2>Longmont&nbsp;&bull;&nbsp;Colorado</h2>
     </section>
-    <div id="page-background"></div>
+    <div id="divPageBackground">
+      <div v-html="require('../assets/logos/html5.svg')" />
+      <div v-html="require('../assets/logos/svg.svg')" />
+      <div v-html="require('../assets/logos/css3.svg')" />
+      <div v-html="require('../assets/logos/javascript.svg')" />
+    </div>
   </div>
 </template>
 
 <script>
   import Vue from "vue";
   import { eventBus } from "../main.js";
+
+  // import svgHTML from "../assets/logos/html5.svg";
+  // import svgSVG from "../assets/logos/svg.svg";
+  // import svgCSS from "../assets/logos/css3.svg";
+  // import svgJS from "../assets/logos/javascript.svg";
 
   export default {
     name: 'PageHome',
@@ -53,7 +64,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* background: #405060; */
     background: radial-gradient(circle at center, #708090 0%, #001020 100%);
     text-shadow: 2px 2px 16px #2F2F2F;
     position: relative;
@@ -61,18 +71,36 @@
 
   section {
     padding: 24px;
+    width: 288px;
+    height: 288px;
     background: #708090BB;
     box-shadow: 2px 2px 12px #000000;
-    border-radius: 8px;
+    border-radius: 50%;
     z-index: 1;
   }
 
-  #page-background {
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  background: transparent;
-}
+  #divPageBackground {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: transparent
+  }
+
+  .logo {
+    top: 0;
+    left: 0;
+    opacity: 1;
+    display: inline;
+    position: absolute;
+    animation: move 1 ease-in 1s;
+    transform-origin: -25% -25%
+  }
+
+  @keyframes move {
+    25% { opacity: 0.5}
+    50% { transform: scale(0.75) }
+    100% { top: 50%; left: 50%; opacity: 0.9; transform: scale(0) }
+  }
 </style>

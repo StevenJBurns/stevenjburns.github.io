@@ -97,15 +97,15 @@
   section {
     z-index: 1;
     display: grid;
-    margin: 16px auto;
+    margin: 16px;
     width: 256px;
     height: 160px;
     border-radius: 8px;
     grid-template-columns: auto 1fr;
     box-shadow: 4px 4px 16px #000000;
+    transition: all 0.25s ease;
     background: #303050;
     text-align: left;
-    transition: all 0.25s ease
   }
 
   section:hover {
@@ -133,7 +133,6 @@
     width: 100%;
     height: 100%;
     position: absolute;
-
   }
 
   @media screen and (max-width: 720px) {

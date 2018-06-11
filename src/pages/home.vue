@@ -53,7 +53,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #405060;
+    /* background: #405060; */
+    background: radial-gradient(circle at center, #708090 0%, #001020 100%);
     text-shadow: 2px 2px 16px #2F2F2F;
     position: relative;
   }
@@ -72,6 +73,6 @@
   height: 100%;
   width: 100%;
   position: absolute;
-  background: green;
+  background: transparent;
 }
 </style>

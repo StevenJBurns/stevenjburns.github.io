@@ -1,13 +1,13 @@
-<svg width="2500" height="2500" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet">
+<svg width="64" height="64" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet">
   <defs>
     <linearGradient x1="50%" y1="3.961%" x2="50%" y2="100%" id="a">
       <stop stop-color="#FDFDFD" offset="0%"/>
-	  <stop stop-color="#CBCBCB" offset="100%"/>
+	    <stop stop-color="#CBCBCB" offset="100%"/>
     </linearGradient>
-	<linearGradient x1="50%" y1="3.961%" x2="50%" y2="100%" id="b">
-	  <stop stop-color="#B2E198" offset="0%"/>
-	  <stop stop-color="#04A171" offset="100%"/>
-	</linearGradient>
+	  <linearGradient x1="50%" y1="3.961%" x2="50%" y2="100%" id="b">
+	    <stop stop-color="#B2E198" offset="0%"/>
+	    <stop stop-color="#04A171" offset="100%"/>
+	  </linearGradient>
   </defs>
   <circle fill="url(#a)" cx="128" cy="128" r="127.858"/>
   <circle fill="url(#b)" cx="127.858" cy="128.142" r="116.907"/>

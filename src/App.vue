@@ -91,13 +91,17 @@
 
   .fade-enter-active {
     transition-property: all;
-    transition-duration: 0.125s;
+    transition-duration: 0.25s;
+  }
+
+  .fade-leave {
+
   }
   
    .fade-leave-active {
     transition-property: all;
-    transition-duration: 0.25s;
-    transform: scale(0.25, 0.25);
-    opacity: 0
+    transition-duration: 0s;
+    /* transform: scale(0.25, 0.25); */
+    /* opacity: 0 */
   }
 </style>

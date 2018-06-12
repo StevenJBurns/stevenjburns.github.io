@@ -202,6 +202,7 @@
     align-items: center;
     background: radial-gradient(circle at center, #708090 0%, #001020 100%);
     text-shadow: 2px 2px 16px #2F2F2F;
+    overflow: hidden;
     position: relative;
   }
 
@@ -210,6 +211,7 @@
     width: 288px;
     height: 288px;
     background: #708090BB;
+    background: radial-gradient(circle at center, #304050 0%, #001020 90%, #00102000 100%);
     box-shadow: 2px 2px 12px #000000;
     border-radius: 50%;
     z-index: 1;

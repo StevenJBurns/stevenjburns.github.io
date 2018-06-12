@@ -84,26 +84,19 @@
     overflow-x: hidden
   }
 
+  .fade-enter {
+    opacity: 0;
+    transform: scale(1.75, 1.75)
+  }
+
   .fade-enter-active {
     transition-property: all;
     transition-duration: 0.125s;
   }
   
-  .fade-leave-active {
+   .fade-leave-active {
     transition-property: all;
     transition-duration: 0.25s;
-  }
-
-  .fade-enter-active {
-    transition-delay: 0.125s;
-  }
-
-  .fade-enter {
-    opacity: 0;
-    transform: scale(0.75, 0.75)
-  }
-  
-   .fade-leave-active {
     transform: scale(0.25, 0.25);
     opacity: 0
   }

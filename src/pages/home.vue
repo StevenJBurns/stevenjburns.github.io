@@ -161,7 +161,7 @@
     methods: {
       getRandomPercent() {
         let x = Math.floor(Math.random() * 100);
-        return (x <= 25 || x >= 75) ? x : this.getRandomPercent();
+        return (x <= 40 || x >= 60) ? x : this.getRandomPercent();
       },
       getRandomDuration() {
         return Math.floor(Math.random() * 3) + 0;
@@ -170,16 +170,19 @@
         target.style["top"] = `${this.getRandomPercent()}%`;
         target.style["left"] = `${this.getRandomPercent()}%`;
         target.style["opacity"] = 0;
+        target.style["transform"] = "scale(1)";
 
         let delay = this.getRandomDuration();
         let duration = this.getRandomDuration() + 2;
 
         TweenLite.to(target, duration, { top: '50%',
                                         left: '50%',
-                                        opacity: 0.75,
                                         delay: delay,
+                                        opacity: 0.75,
+                                        transform: "scale(0.5)",
                                         onComplete: this.animateLogo,
-                                        onCompleteParams: [target] })
+                                        onCompleteParams: [target]
+                                        });
       }
     }
   }

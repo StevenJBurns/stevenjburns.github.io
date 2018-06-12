@@ -24,9 +24,9 @@
     </svg>
     <h2>Longmont&nbsp;&bull;&nbsp;Colorado</h2>
     </section>
-    <div id="divPageBackground" name="logo">
-      <transition   v-on:before-enter="beforeEnter" appear>
-        <svg xmlns="http://www.w3.org/2000/svg" id="svgHTML5" key="html" height="64" width="64" viewBox="0 0 512 512">
+    <div id="divPageBackground">
+      <!-- <transition name="logo" :css="false" @before-enter="beforeEnter" @enter="enter" @leave="leave" @after-leave="afterLeave" appear> -->
+        <svg xmlns="http://www.w3.org/2000/svg" id="svgHTML5" class="logo" key="html" height="64" width="64" viewBox="0 0 512 512">
           <title>HTML5 Logo</title>
           <polygon fill="#E44D26" points="107.644,470.877 74.633,100.62 437.367,100.62 404.321,470.819 255.778,512"/>
           <polygon fill="#F16529" points="256,480.523 376.03,447.246 404.27,130.894 256,130.894"/>
@@ -39,9 +39,9 @@
           <polygon fill="#FFFFFF" points="255.843,268.217 255.843,313.627 311.761,313.627 306.49,372.521 255.843,386.191 255.843,433.435 348.937,407.634 349.62,399.962 360.291,280.411 361.399,268.217 349.162,268.217"/>
           <polygon fill="#FFFFFF" points="255.843,176.305 255.843,204.509 255.843,221.605 255.843,221.716 365.385,221.716 365.385,221.716 365.531,221.716 366.442,211.509 368.511,188.488 369.597,176.305"/>
         </svg>
-      </transition>
-      <transition v-on:before-enter="beforeEnter" appear>
-        <svg xmlns="http://www.w3.org/2000/svg" id="svgCSS3" key="logo" width="64" height="64" viewBox="0 0 538.584 538.583">
+      <!-- </transition>
+      <transition name="logo" :css="false" @before-enter="beforeEnter" @enter="enter" @leave="leave" @after-leave="afterLeave" appear> -->
+        <svg xmlns="http://www.w3.org/2000/svg" id="svgCSS3" class="logo" key="logo" width="64" height="64" viewBox="0 0 538.584 538.583">
           <path d="M0 0h538.584v538.583H0V0z" fill="none" />
           <path d="M405.5 467.454L269.29 504.13l-136.212-36.676-31.432-340.525h335.29L405.5 467.454z" fill="#2062af"/>
           <path d="M269.289 154.511v320.367l.308.084 110.229-29.682 25.443-290.769h-135.98z" fill="#3c9cd7" />
@@ -70,19 +70,15 @@
           <path d="M162.898 196.167H373.59l-4.157 41.122H167.98l-5.082-41.122z" fill="url(#d)" />
           <path d="M269.168 196.167h-106.27l5.082 41.122h101.188v-41.122z" opacity=".05" />
         </svg>
-      </transition>
+      <!-- </transition> -->
     </div>
   </div>
 </template>
 
 <script>
   import Vue from "vue";
+  import { TweenLite } from "gsap";
   import { eventBus } from "../main.js";
-
-  // import svgHTML from "../assets/logos/html5.svg";
-  // import svgSVG from "../assets/logos/svg.svg";
-  // import svgCSS from "../assets/logos/css3.svg";
-  // import svgJS from "../assets/logos/javascript.svg";
 
   export default {
     name: 'PageHome',
@@ -91,62 +87,49 @@
     },
     data() {
       return {
-        logos: [],
-        root: null
+        // logos: [],
+        // root: null
       }
     },
     components: {
-
     },
     created() {
       eventBus.$emit('changingTheme', this.theme);
     },
     mounted() {
-      let root = document.querySelector(":root");
       let logos = document.querySelectorAll("#divPageBackground svg");
-
+      
       logos.forEach((logo, i) => {
-        console.log(logo);
-        
-        logo.addEventListener("animationend", e => this.animationCycleComplete(e), false);
-        root.style.setProperty("--random-duration", `${this.getRandomDuration()}s`);
-
-        logo.style.setProperty('top', `${this.getRandomPercent}%`);
-        logo.style.setProperty('left', `${this.getRandomPercent}%`);
-        //logos[i].style.setProperty("animation-duration", `${this.getRandomDuration}s`);
-        logo.style.setProperty("animation", `move ${this.getRandomDuration}s cubic-bezier(0.215, 0.61, 0.355, 1) 1`);
-
-        void logo.getBoundingClientRect();
-        //logo.classList.add("logo");
+        this.animateLogo(logos[i]);
       });
+    },
+    beforeDestroy() {
+
     },
     methods: {
       getRandomPercent() {
         let x = Math.floor(Math.random() * 100);
         return (x <= 25 || x >= 75) ? x : this.getRandomPercent();
       },
-      getRandomDuration: () => { Math.floor(Math.random() * 6) + 12 },
-
-      beforeEnter: function(logo) {
-
+      getRandomDuration() {
+        return Math.floor(Math.random() * 3) + 0;
       },
+      animateLogo: function(target) {
+        target.style["top"] = `${this.getRandomPercent()}%`;
+        target.style["left"] = `${this.getRandomPercent()}%`;
+        target.style["opacity"] = 0;
 
-      animationCycleComplete(e) {        
-        let logo = e.target;
+        let delay = this.getRandomDuration();
+        let duration = this.getRandomDuration();
 
-        //logo.style.setProperty('display', 'hidden');
-        logo.classList.remove("logo");
+        console.log(target.id, duration);
 
-        logo.style.setProperty('top', `${this.getRandomPercent()}%`);
-        logo.style.setProperty('left', `${this.getRandomPercent()}%`);
-        logo.style.setProperty("animation", `move ${this.getRandomDuration()} cubic-bezier(0.215, 0.61, 0.355, 1) 1`);
-
-        // this is a weird technique - it forces reflow on the PNG and SVG assets 
-        void logo.getBoundingClientRect();
-
-        logo.classList.add("logo");
-        console.log(logo);
-        
+        TweenLite.to(target, duration, { top: '50%',
+                                        left: '50%',
+                                        opacity: 0.75,
+                                        delay: delay,
+                                        onComplete: this.animateLogo,
+                                        onCompleteParams: [target] })
       }
     }
   }
@@ -154,9 +137,7 @@
 
 <style scoped>
   :root {
-    --random-duration: 0s;
-    --random-start-X: 0px;
-    --ramdom-start-Y: 0px;
+
   }
 
   #divPageWrapper {
@@ -194,24 +175,6 @@
     opacity: 0;
     display: inline;
     position: absolute;
-    transform-origin: -25% -25%
-  }
-
-  .logo-move {
-    transition: all 1s ease-in;
-  }
-
-  .logo-enter {
-    opacity: 0;
-  }
-
-  .logo-enter-to {
-
-  }
-
-  @keyframes move {
-    25% { opacity: 0.5}
-    50% { transform: scale(0.75) }
-    100% { top: 50%; left: 50%; opacity: 0.9; transform: scale(0) }
+    transform-origin: -25% -25%;
   }
 </style>

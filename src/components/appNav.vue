@@ -1,11 +1,21 @@
 <template>
   <nav :theme="theme">
-    <ul @mouseover="mouseOver" @mouseout="mouseOut">
-      <li><router-link class="menu-item" to="/">HOME</router-link></li>
-      <li><router-link class="menu-item" to="/skills">SKILLS</router-link></li>
-      <li><router-link class="menu-item" to="/projects">PROJECTS</router-link></li>
-      <li><router-link class="menu-item" to="/contact">CONTACT</router-link></li>
-      <li><router-link class="menu-item" to="/about">ABOUT</router-link></li>
+    <ul>
+      <li @mouseover.capture="mouseOver" @mouseout.capture="mouseOut">
+        <router-link class="menu-item" to="/">HOME</router-link>
+        </li>
+      <li @mouseover.capture="mouseOver" @mouseout.capture="mouseOut">
+        <router-link class="menu-item" to="/skills">SKILLS</router-link>
+      </li>
+      <li @mouseover.capture="mouseOver" @mouseout.capture="mouseOut">
+        <router-link class="menu-item" to="/projects">PROJECTS</router-link>
+        </li>
+      <li @mouseover.capture="mouseOver" @mouseout.capture="mouseOut">
+        <router-link class="menu-item" to="/contact">CONTACT</router-link>
+        </li>
+      <li @mouseover.capture="mouseOver" @mouseout.capture="mouseOut">
+        <router-link class="menu-item" to="/about">ABOUT</router-link>
+      </li>
     </ul>
   </nav>
 </template>
@@ -24,18 +34,17 @@
     beforeUpdate() {
       document.querySelector(".router-link-exact-active").style =
         `width: 100%;
+        color: #0f0f0f;
         display: table-cell;
         vertical-align: middle;
-        background: ${this.theme.light};
-        border-radius: 4px;`;
+        background: ${this.theme.light}`;
 
       document.querySelectorAll("a:not(.router-link-exact-active)")
         .forEach((e) => { e.style =
           `width: 100%;
           display: table-cell;
           vertical-align: middle;
-          background: transparent;
-          border-radius: 4px;`
+          background: transparent`
         });
     },
     methods: {
@@ -44,7 +53,7 @@
 
         event.target.style =
           `width: 100%;
-          color: ${this.theme.light};
+          height: 100%;
           display: table-cell;
           vertical-align: middle;
           background: ${this.theme.dark}`;
@@ -54,16 +63,12 @@
 
         event.target.style =
           `width: 100%;
+          height: 100%;
           color: #F0F0F0;
           display: table-cell;
           vertical-align: middle;
           background: transparent`;
       },
-    },
-    computed: {
-      styleActiveLink() {
-        
-      }
     }
   }
 </script>
@@ -77,6 +82,7 @@
 
   ul {
     display: flex;
+    flex-direction: row;
     list-style: none;
     color: #BFBFBF;
   }
@@ -85,7 +91,6 @@
     margin: 2px;
     height: 32px;
     width: 96px;
-    border-radius: 4px;
     text-align: center;
     font-weight: bold;
     font-size: 1em;
@@ -107,7 +112,7 @@
     color: #F0F0F0;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
+    display: table-cell;
     transition: all 0.5s ease;
   }
 

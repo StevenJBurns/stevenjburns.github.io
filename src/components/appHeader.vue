@@ -54,6 +54,7 @@
   }
 
   #appLogo {
+    margin: 0 12px;
     display: inline-block
   }
 

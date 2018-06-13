@@ -101,7 +101,5 @@
    .fade-leave-active {
     transition-property: all;
     transition-duration: 0s;
-    /* transform: scale(0.25, 0.25); */
-    /* opacity: 0 */
   }
 </style>

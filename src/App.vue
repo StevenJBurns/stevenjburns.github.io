@@ -81,7 +81,7 @@
     display: flex;
     flex-direction: column;
     color: #DFDFDF;
-    overflow-x: hidden
+    overflow: hidden;
   }
 
   .fade-enter {

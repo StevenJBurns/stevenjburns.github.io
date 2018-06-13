@@ -21,6 +21,12 @@
         <span>Fork. Clone. Star. Follow. My source code and some front-end hosted projects.</span>
       </section>
       <section>
+        <a href="https://github.com/StevenJBurns">
+          <font-awesome-icon :icon="['fab', 'codepen']" size="4x" />
+        </a>
+        <span>Not big enough to be &quot;real&quot; projects yet. Where I go experiment, prototpye and just screw around with code.</span>
+      </section>
+      <section>
         <a href="mailto:stevenjburns@msn.com">
           <font-awesome-icon icon="envelope" size="4x" />
         </a>
@@ -43,10 +49,6 @@
   import FontAwesomeIcon from "@fortawesome/vue-fontawesome";
   import { fasEnvelope } from "@fortawesome/fontawesome-free-solid";
   import { fabLinkedin, fabGithub, faTwitter } from "@fortawesome/fontawesome-free-brands";
-
-  // import HTML5 from "../assets/logos/html5.png";
-  // import CSS3 from "../assets/logos/css3.svg";
-  // import JS from "../assets/logos/javascript.svg";
 
   export default {
     name: 'PageContact',
@@ -84,7 +86,8 @@
     display: flex;
     flex-wrap: wrap;
     background: #00000000;
-    justify-content: space-evenly;
+    
+    justify-content: center;
   }
 
   a:link, a:visited {
@@ -96,7 +99,9 @@
 
   section {
     z-index: 1;
-    display: grid;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
     margin: 16px;
     width: 256px;
     height: 160px;

@@ -47,7 +47,7 @@
           color: ${this.theme.light};
           display: table-cell;
           vertical-align: middle;
-          background: transparent`;
+          background: ${this.theme.dark}`;
       },
       mouseOut(event) {
         if (event.target.classList.contains("router-link-exact-active")) return;
@@ -82,6 +82,7 @@
   }
 
   li {
+    margin: 2px;
     height: 32px;
     width: 96px;
     border-radius: 4px;
@@ -90,7 +91,7 @@
     font-size: 1em;
     cursor: pointer;
     overflow: hidden;
-    background: transparent;
+    background: #2F2F2F;
     transition: all 0.5 ease;
     display: table;
   }

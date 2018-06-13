@@ -280,7 +280,7 @@
     padding: 24px;
     width: 288px;
     height: 288px;
-    background: radial-gradient(circle at center, #708080 0%, #102030 100%);
+    background: radial-gradient(circle at center, #708080 0%, #102030BB 100%);
     border-radius: 50%;
     z-index: 1;
   }

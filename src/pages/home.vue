@@ -3,7 +3,7 @@
     <section>
     <h2>Full Stack Developer</h2>
     <h3>Learning All The Things</h3>
-    <svg height="192" width="192" viewBox="0 0 256 256">
+    <svg height="160" width="160" viewBox="0 0 256 256">
       <defs>
         <filter id="drop-shadow" x="0" y="0" width="200%" height="200%">
           <feOffset result="offOut" in="SourceAlpha" dx="4" dy="4" />
@@ -244,21 +244,21 @@
         return (x <= 33 || x >= 66) ? x : this.getRandomPercent();
       },
       getRandomDuration: function() {
-        return Math.floor(Math.random() * 8) + 4;
+        return Math.floor(Math.random() * 8) + 8;
       },
       animateLogo: function(target) {
         target.style["top"] = `${this.getRandomPercent()}%`;
         target.style["left"] = `${this.getRandomPercent()}%`;
         target.style["opacity"] = 0;
-        target.style["transform"] = "scale(1)";
+        // target.style["transform"] = "scale(4)";
 
         let duration = this.getRandomDuration();
         
-        TweenLite.to(target, duration, { top: '50%',
+        TweenLite.to(target, duration, { delay: 2,
+                                        top: '50%',
                                         left: '50%',
-                                        opacity: 0.5,
-                                        delay: 2,
-                                        transform: "scale(0.5)",
+                                        opacity: 0.75,
+                                        scale: 0.5,
                                         onComplete: this.animateLogo,
                                         onCompleteParams: [target]
                                         });
@@ -286,10 +286,11 @@
   }
 
   section {
-    padding: 24px;
-    width: 288px;
-    height: 288px;
+    padding: 4px;
+    width: 240px;
+    height: 240px;
     background: radial-gradient(circle at center, #708080 0%, #102030BB 100%);
+    background: transparent;
     border-radius: 50%;
     z-index: 1;
   }

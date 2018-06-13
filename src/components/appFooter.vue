@@ -1,23 +1,28 @@
 <template>
   <footer>
     <nav>
-      <ul @mouseover="mouseOver" @mouseout="mouseOut">
-        <li>
+      <ul>
+        <li @mouseover.capture="mouseOver" @mouseout.capture="mouseOut">
           <a href="https://www.linkedin.com/in/steven-j-burns/">
             <font-awesome-icon :icon="['fab', 'linkedin']" size="3x" />
           </a>
         </li>
-        <li>
+        <li @mouseover.capture="mouseOver" @mouseout.capture="mouseOut">
           <a href="https://twitter.com/StevenJBurns">
             <font-awesome-icon :icon="['fab', 'twitter']" size="3x" />
           </a>
         </li>
-        <li>
+        <li @mouseover.capture="mouseOver" @mouseout.capture="mouseOut">
           <a href="https://github.com/StevenJBurns">
             <font-awesome-icon :icon="['fab', 'github']" size="3x" />
           </a>
         </li>
-        <li>
+        <li @mouseover.capture="mouseOver" @mouseout.capture="mouseOut">
+          <a href="https://codepen.io/StevenJBurns/#">
+            <font-awesome-icon :icon="['fab', 'codepen']" size="3x" />
+          </a>
+        </li>
+        <li @mouseover.capture="mouseOver" @mouseout.capture="mouseOut">
           <a href="mailto:stevenjburns@msn.com?subject=You're%20Hired">
             <font-awesome-icon icon="envelope" size="3x" />
           </a>
@@ -31,7 +36,7 @@
 <script>
   import FontAwesomeIcon from "@fortawesome/vue-fontawesome";
   import { fasEnvelope } from "@fortawesome/fontawesome-free-solid";
-  import { fabLinkedin, fabTwitter, fabGithub } from "@fortawesome/fontawesome-free-brands";
+  import { fabLinkedin, fabTwitter, fabGithub, fabCodepen } from "@fortawesome/fontawesome-free-brands";
 
   export default {
     name: 'Footer',
@@ -79,5 +84,11 @@
   a:link, a:visited {
     color: #DFDFDF;
     text-decoration: none;
+  }
+
+  @media screen and (max-width: 480px) {
+    li {
+      font-size: 0.75em;
+    }
   }
 </style>

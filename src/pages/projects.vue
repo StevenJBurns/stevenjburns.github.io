@@ -62,16 +62,19 @@
   div {
     flex: 1 0 auto;
     padding: 32px 5%;
-    background: #707040
+    background: #707040;
+    background: linear-gradient(to bottom right, #404010, #808050, #404010);
   }
   
   #divCardWrapper {
     display: grid;
     grid-gap: 32px;
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    background: transparent
   }
 
   section {
+    padding: 24px;
     background: #909060;
     border-radius: 8px;
     box-shadow: 4px 4px 16px #000000;

@@ -282,7 +282,7 @@
     background: radial-gradient(circle at center, #708090 0%, #001020 100%);
     text-shadow: 2px 2px 16px #2F2F2F;
     position: relative;
-    overflow: hidden;
+    overflow: hidden
   }
 
   section {

@@ -80,13 +80,13 @@
 
   h3 {
     color: #303050;
+
   }
 
   #divCardWrapper {
     display: flex;
     flex-wrap: wrap;
     background: #00000000;
-    
     justify-content: center;
   }
 
@@ -137,7 +137,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    position: absolute;
+    position: absolute
   }
 
   @media screen and (max-width: 720px) {

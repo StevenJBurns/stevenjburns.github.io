@@ -1,7 +1,7 @@
 <template>
   <div>
     <div id="svgWrapper">
-      <svg id="svgSkillsChart" height="480" width="480" viewbox="0 0 2048 2048" @click="svgClicked"></svg>
+      <svg id="svgSkillsChart" height="480" width="480" viewbox="0 0 2048 2048"></svg>
     </div>
   </div>
 </template>
@@ -17,8 +17,10 @@
     name: 'PageSkills',
     data() {
       return {
-        skillZoomLevel: 0,
-        skillDepthColors: ["#445566", "#556677", "#667788", "#778899", "#8899AA", "#99AABB", "#AABBCC", "#BBCCDD"]
+        view: null,
+        focus: null,
+        currentNode: null,
+        skillColors: ["#445566", "#556677", "#667788", "#778899", "#8899AA", "#99AABB", "#AABBCC", "#BBCCDD"]
       }
     },
     props: {
@@ -31,51 +33,69 @@
       eventBus.$emit('changingTheme', this.theme)
     },
     mounted() {
+      const colors =["#445566", "#556677", "#667788", "#778899", "#8899AA", "#99AABB", "#AABBCC", "#BBCCDD"]
+
       const svg = d3.select("#svgSkillsChart");
       let g = svg.append("g").attr("transform", "translate(2,2)");
 
       let diameter;
-      let format = d3.format(",d");
 
-      let pack = d3.pack().padding(8).size([480, 480]);
-      let root = d3.hierarchy(AppData).sum(d => d.size);
+      let pack = d3.pack().size([480, 480]).padding(8);
+      let root = d3.hierarchy(AppData)
+                    .sum(d => d.size)
+                    .sort((a,b) => b.value - a.value);
 
-      let node = g.selectAll(".node")
-        .data(pack(root).descendants())
-        .enter()
-        .append("g")
-        .attr("class", d => d.children ? "node" : "leaf node")
-        .attr("transform", d => `translate(${d.x}, ${d.y})`)
-        .on("click", this.svgClicked);
+      this.focus = root;
+      let nodes = pack(root).descendants();
 
-      node.append("title").text(d => d.data.name);
+      let circle = g.selectAll("circle")
+        .data(nodes)
+        .enter().append("circle")
+          .attr("class", (d) => d.parent ? (d.children ? "node" : "node node-leaf") : "node root-node")
+          .style("fill", (d) => d.children ? this.skillColors[d.depth] : null)
+          .on("click", (d) => {if (focus !== d) this.zoom(d), d3.event.stopPropagation() });
 
-      node.append("circle")
-        .attr("r", d => d.r)
-        .style("fill", d => this.skillDepthColors[d.depth]);
-
-      node.append("text")
-        .attr("text-anchor", "middle")
-        .attr("dy", "6")
-        .style("fill", "#DFDFDF")
-        .text(d => d.data.name)
+      this.currentNode = g.selectAll("circle, text");
+      
+      this.zoomTo([root.x, root.y, root.r * 2]);
     },
     methods: {
       svgClicked: function(event) {
-        console.log(event);
-
-        d3.select(event.target).transition().duration(500).style("fill", "navy").style("stroke", "red")
+        d3.select(event.target)
+          .transition()
+          .duration(500)
+          .style("fill", "navy")
+          .style("stroke", "red")
       },
       zoom: function(d) {
+        let focus0 = this.focus;
+        
+        this.focus = d;
 
+        console.log(this.view);
+        
+
+        var transition = d3.transition()
+            .duration(d3.event.altKey ? 7500 : 750)
+            .tween("zoom", function(d) {
+              let i = d3.interpolateZoom(this.view, [focus.x, focus.y, focus.r * 2]);
+              return (t) => this.zoomTo(i(t))
+            });
+
+        // transition.selectAll("text")
+        //   .filter(function(d) { return d.parent === this.focus || this.style.display === "inline"; })
+        //     .style("fill-opacity", function(d) { return d.parent === this.focus ? 1 : 0; })
+        //     .on("start", function(d) { if (d.parent === this.focus) this.style.display = "inline"; })
+        //     .on("end", function(d) { if (d.parent !== this.focus) this.style.display = "none"; });
       },
-      addActiveClass: function(target) {
-        target.parentNode.classList.add("active-node");
-        console.log("new active", target.parentNode);
-      },
-      removeActiveClass: function(active) {
-        active.classList.remove("active-node");
-        console.log("old active", active);
+      zoomTo: function(oldView) {
+        this.view = oldView;
+        let k = 960 / oldView[2]; 
+        
+        this.currentNode.attr("transform", (d) =>
+          `translate(${(d.x - oldView[0]) * k}, ${(d.y - oldView[1]) * k})`);
+
+        this.currentNode.attr("r", (d) => d.r * k);
       }
     }
   }

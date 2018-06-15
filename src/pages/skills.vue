@@ -41,9 +41,11 @@
       let pack = d3.pack().size([480, 480]).padding(8);
       let root = d3.hierarchy(AppData)
                     .sum(d => d.size)
-                    .sort((a, b) => b.value - a.value);
+                    //.sort((a, b) => b.value - a.value);
 
       this.focus = root;
+      console.log(`root is ${root[0]}`);
+      console.log(`AppData is ${AppData}`);
       let nodes = pack(root).descendants();
 
       let circle = g.selectAll("circle")
@@ -51,30 +53,26 @@
         .enter().append("circle")
           .attr("class", (d) => d.parent ? (d.children ? "node" : "node node-leaf") : "node root-node")
           .style("fill", (d) => this.skillColors[d.depth + 1])
-          .on("click", (d) => {if (focus !== d) this.zoom(d), d3.event.stopPropagation() });
+          .on("click", (d) => {if (this.focus !== d) this.zoom(d), d3.event.stopPropagation() });
 
       this.currentNode = g.selectAll("circle, text");
-      console.log(root);
+
       this.zoomTo([root.x, root.y, root.r]);
     },
     methods: {
-      // svgClicked: function(event) {
-      //   d3.select(event.target)
-      //     .transition()
-      //     .duration(500)
-      //     .style("fill", "navy")
-      //     .style("stroke", "red")
-      //},
       zoom: function(d) {
-        // let focus0 = this.focus;
+        let focus0 = this.focus;
         
         this.focus = d;
+
+        console.log(`view is ${this.view}`);
+        console.log(`focus is ${this.focus0}`);
         
         let transition = d3.transition()
             .duration(d3.event.altKey ? 7500 : 750)
             .tween("zoom", function(d) {
               let i = d3.interpolateZoom(this.view, [focus.x, focus.y, focus.r * 2]);
-              // return (t) => this.zoomTo(i(t))
+              return (t) => this.zoomTo(i(t))
             });
 
         // transition.selectAll("text")

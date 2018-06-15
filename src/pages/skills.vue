@@ -14,6 +14,7 @@
     name: 'PageSkills',
     data() {
       return {
+        root: null,
         circle: null,
         currentView: null,
         currentNode: null,
@@ -93,11 +94,11 @@
                  .size([480, 480])
                  .padding(8);
 
-      let root = d3.hierarchy(this.appData)
+      this.root = d3.hierarchy(this.appData)
                  .sum(d => d.size)
                  .sort((a, b) => b.value - a.value);
 
-      let nodes = pack(root).descendants();
+      let nodes = pack(this.root).descendants();
 
       this.circle = g.selectAll("circle")
         .data(nodes)
@@ -119,10 +120,20 @@
               .duration(250)
               .attr('stroke', 'transparent')
           });
+      
+        var text = g.selectAll("text")
+          .data(nodes)
+          .enter().append("text")
+            .attr("class", "label")
+            .attr("dy", "8")
+            .attr("text-anchor", "middle")
+            .style("fill-opacity", function(d) { return d.parent == this.currentFocus ? 1 : 0; })
+            .style("display", function(d) { return d.parent == this.currentFocus ? "inline" : "none"; })
+            .text(d => d.data.name);
 
-      this.node = g.selectAll("circle");
+      this.node = g.selectAll("circle, text");
 
-      this.zoomTo([root.x, root.y, root.r]);
+      this.zoomTo([this.root.x, this.root.y, this.root.r * 2]);
     },
     computed: {
       svg: function() {
@@ -132,11 +143,6 @@
         return d3.pack()
                  .size([480, 480])
                  .padding(8);
-      },
-      root: function() {
-        return d3.hierarchy(this.appData)
-                 .sum(d => d.size)
-                 .sort((a, b) => b.value - a.value);
       },
       nodes: function() {
         return this.pack(this.root).descendants();
@@ -164,6 +170,7 @@
       zoom: function(d) {
         this.currentFocus = d;
 
+        let root = this.root;
         let view = this.currentView;
         let focus = this.currentFocus;
         let zoomTo = this.zoomTo;
@@ -175,11 +182,11 @@
               return function(t) { zoomTo(i(t)) };
             });
 
-        // transition.selectAll("text")
-        //   .filter(function(d) { return d.parent === this.focus || this.style.display === "inline"; })
-        //     .style("fill-opacity", function(d) { return d.parent === this.focus ? 1 : 0; })
-        //     .on("start", function(d) { if (d.parent === this.focus) this.style.display = "inline"; })
-        //     .on("end", function(d) { if (d.parent !== this.focus) this.style.display = "none"; });
+        transition.selectAll("text")
+          .filter(function(d) { return d.parent === focus || this.style.display === "inline"; })
+            .style("fill-opacity", function(d) { return d.parent === focus ? 1 : 0; })
+            .on("start", function(d) { if (d.parent === focus) this.style.display = "inline"; })
+            .on("end", function(d) { if (d.parent !== focus) this.style.display = "none"; });      
       },
       zoomTo: function(v) {
         let k = 480 / (v[2]);

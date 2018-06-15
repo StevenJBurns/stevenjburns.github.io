@@ -82,7 +82,10 @@
       eventBus.$emit('changingTheme', this.theme)
     },
     mounted() {
+      let zoom = this.zoom;
+
       const svg = d3.select("#svgSkillsChart");
+      // svg.on("click", () => zoom(root));
 
       const g = svg.append("g").attr("transform", "translate(240, 240)");
 
@@ -179,7 +182,7 @@
         //     .on("end", function(d) { if (d.parent !== this.focus) this.style.display = "none"; });
       },
       zoomTo: function(v) {
-        let k = 480 / (v[2] * 2);
+        let k = 480 / (v[2]);
         
         this.view = v;
 

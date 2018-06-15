@@ -27,33 +27,33 @@
               "name": "Front End",
               "size": 25,
               "children": [
-                { "name": "HTML", "size": 7 },
-                { "name": "SVG", "size": 2 },
+                { "name": "HTML", "size": 5 },
+                { "name": "SVG", "size": 5 },
                 { "name": "CSS", "size": 5 },
-                { "name": "JavaScript", "size": 10 },
-                { "name": "jQuery", "size": 6 }
+                { "name": "JavaScript", "size": 5 },
+                { "name": "jQuery", "size": 5 }
               ]
             },
             {
               "name": "Back End",
               "size": 25,
               "children": [
-                { "name": "Node JS", "size": 8 },
-                { "name": "Ruby on Rails", "size": 6 },
-                { "name": "ASP.NET", "size": 3 },
-                { "name": "Java", "size": 1 },
-                { "name": "Python", "size": 2 }
+                { "name": "Node JS", "size": 5 },
+                { "name": "Ruby on Rails", "size": 5 },
+                { "name": "ASP.NET", "size": 5 },
+                { "name": "Java", "size": 5 },
+                { "name": "Python", "size": 5 }
               ]
             },
             {
               "name": "Data",
               "size": 25,
               "children": [
-                { "name": "JSON", "size": 9 },
-                { "name": "XML", "size": 2 },
-                { "name": "SQLite", "size": 3 },
-                { "name": "MySql", "size": 7 },
-                { "name": "PostgreSQL", "size": 7 },
+                { "name": "JSON", "size": 5 },
+                { "name": "XML", "size": 5 },
+                { "name": "SQLite", "size": 5 },
+                { "name": "MySql", "size": 5 },
+                { "name": "PostgreSQL", "size": 5 },
                 { "name": "Microsoft SQL Server", "size": 5 }
               ]
             },
@@ -61,11 +61,11 @@
               "name": "Tools & Environment",
               "size": 25,
               "children": [
-                { "name": "Git", "size": 10 },
-                { "name": "GitHub", "size": 10 },
-                { "name": "NPM", "size": 9 },
-                { "name": "CRUD", "size": 6 },
-                { "name": "RESTful", "size": 7 }
+                { "name": "Git", "size": 5 },
+                { "name": "GitHub", "size": 5 },
+                { "name": "NPM", "size": 5 },
+                { "name": "CRUD", "size": 5 },
+                { "name": "RESTful", "size": 5 }
               ]
             }
           ]
@@ -100,8 +100,22 @@
         .data(nodes)
         .enter().append("circle")
           .attr("class", (d) => d.parent ? (d.children ? "node" : "node node-leaf") : "node root-node")
+          .attr('stroke', 'transparent')
+          .attr('stroke-width', 4)
           .style("fill", (d) => this.skillColors[d.depth + 1])
-          .on("click", (d) => this.currentFocus !== d ? this.zoom(d) : d3.event.stopPropagation());
+          .on("click", (d) => this.currentFocus !== d ? this.zoom(d) : d3.event.stopPropagation())
+          .on('mouseover', function() {
+            d3.select(this)
+              .transition()
+              .duration(250)
+              .attr('stroke', 'darkgreen')
+          })
+          .on('mouseout', function() {
+            d3.select(this)
+              .transition()
+              .duration(250)
+              .attr('stroke', 'transparent')
+          });
 
       this.node = g.selectAll("circle");
 
@@ -191,11 +205,6 @@
   #svgWrapper {
     margin: 24px;
     padding: 8px;
-  }
-
-  circle:hover {
-    stroke: black;
-    stroke-width: 4px
   }
 </style>
 

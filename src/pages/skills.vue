@@ -1,7 +1,7 @@
 <template>
   <div>
     <div id="svgWrapper">
-      <svg id="svgSkillsChart" height="480" width="480" viewbox="0 0 2048 2048"></svg>
+      <svg id="svgSkillsChart" height="480" width="480" viewbox="0 0 1920 1920"></svg>
     </div>
   </div>
 </template>
@@ -33,17 +33,15 @@
       eventBus.$emit('changingTheme', this.theme)
     },
     mounted() {
-      const colors =["#445566", "#556677", "#667788", "#778899", "#8899AA", "#99AABB", "#AABBCC", "#BBCCDD"]
-
       const svg = d3.select("#svgSkillsChart");
-      let g = svg.append("g").attr("transform", "translate(2,2)");
+      let g = svg.append("g").attr("transform", "translate(240, 240)");
 
       let diameter;
 
       let pack = d3.pack().size([480, 480]).padding(8);
       let root = d3.hierarchy(AppData)
                     .sum(d => d.size)
-                    .sort((a,b) => b.value - a.value);
+                    .sort((a, b) => b.value - a.value);
 
       this.focus = root;
       let nodes = pack(root).descendants();
@@ -52,34 +50,31 @@
         .data(nodes)
         .enter().append("circle")
           .attr("class", (d) => d.parent ? (d.children ? "node" : "node node-leaf") : "node root-node")
-          .style("fill", (d) => d.children ? this.skillColors[d.depth] : null)
+          .style("fill", (d) => this.skillColors[d.depth + 1])
           .on("click", (d) => {if (focus !== d) this.zoom(d), d3.event.stopPropagation() });
 
       this.currentNode = g.selectAll("circle, text");
-      
-      this.zoomTo([root.x, root.y, root.r * 2]);
+      console.log(root);
+      this.zoomTo([root.x, root.y, root.r]);
     },
     methods: {
-      svgClicked: function(event) {
-        d3.select(event.target)
-          .transition()
-          .duration(500)
-          .style("fill", "navy")
-          .style("stroke", "red")
-      },
+      // svgClicked: function(event) {
+      //   d3.select(event.target)
+      //     .transition()
+      //     .duration(500)
+      //     .style("fill", "navy")
+      //     .style("stroke", "red")
+      //},
       zoom: function(d) {
-        let focus0 = this.focus;
+        // let focus0 = this.focus;
         
         this.focus = d;
-
-        console.log(this.view);
         
-
-        var transition = d3.transition()
+        let transition = d3.transition()
             .duration(d3.event.altKey ? 7500 : 750)
             .tween("zoom", function(d) {
               let i = d3.interpolateZoom(this.view, [focus.x, focus.y, focus.r * 2]);
-              return (t) => this.zoomTo(i(t))
+              // return (t) => this.zoomTo(i(t))
             });
 
         // transition.selectAll("text")
@@ -89,13 +84,14 @@
         //     .on("end", function(d) { if (d.parent !== this.focus) this.style.display = "none"; });
       },
       zoomTo: function(oldView) {
-        this.view = oldView;
-        let k = 960 / oldView[2]; 
-        
-        this.currentNode.attr("transform", (d) =>
-          `translate(${(d.x - oldView[0]) * k}, ${(d.y - oldView[1]) * k})`);
+        let k = 480 / (oldView[2] * 2);
 
-        this.currentNode.attr("r", (d) => d.r * k);
+        this.view = oldView;
+        
+        this.currentNode.attr("transform", (d) =>           
+          `translate(${(d.x - oldView[0]) * k}, ${(d.y - oldView[1]) * k})`)
+
+        this.currentNode.attr("r", d => d.r * k);
       }
     }
   }

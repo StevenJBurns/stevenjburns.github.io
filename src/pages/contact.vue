@@ -24,7 +24,7 @@
         <a href="https://github.com/StevenJBurns">
           <font-awesome-icon :icon="['fab', 'codepen']" size="4x" />
         </a>
-        <span>Not big enough to be &quot;real&quot; projects yet. Where I go experiment, prototpye and just screw around with code.</span>
+        <span>Not big enough to be &quot;real&quot; projects yet. Where I go to experiment, prototpye and just screw around with code.</span>
       </section>
       <section>
         <a href="mailto:stevenjburns@msn.com">

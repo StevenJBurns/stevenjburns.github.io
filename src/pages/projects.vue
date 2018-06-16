@@ -14,14 +14,26 @@
       <section>
         <img>
         <h4>Stagecoach Meat Co.</h4>
+        <div class="card-overlay">
+          <h4>React &bull; ASP.NET Core &bull; Microsoft SQL Server &bull; Azure</h4>
+          <span>My first Vue.js endeavor. Originally a bootcamp project using jQuery</span>
+        </div>
       </section>
       <section>
         <img>
         <h4>TwoFifteen</h4>
+        <div class="card-overlay">
+          <h4>React &bull; ASP.NET Core &bull; Microsoft SQL Server &bull; Azure</h4>
+          <span>My first Vue.js endeavor. Originally a bootcamp project using jQuery</span>
+        </div>
       </section>
       <section>
         <img src="../assets/screenshots/pixelart.png">
         <h4>Pixel-Art</h4>
+        <div class="card-overlay">
+          <h4>Vue &bull; core HTML and JS APIs</h4>
+          <span>My first Vue.js endeavor. Originally a bootcamp project using jQuery</span>
+        </div>
       </section>
       <section>
         <img>
@@ -30,6 +42,10 @@
       <section>
         <img src="../assets/screenshots/extrasolar.png">
         <h4>ExtraSolar</h4>
+        <div class="card-overlay">
+          <h4>React &bull; HTML5 Canvas</h4>
+          <span>The love-child of my astronomy background and web development.</span>
+        </div>
       </section>
       <section>
         <img src="../assets/screenshots/noxfit.png">

@@ -1,7 +1,7 @@
 <template>
   <div id="divPageWrapper">
     <h2>Projects</h2>
-    <hr>
+    <p>Click or over to see information and links for a given project</p>
     <div id="divCardWrapper">
       <section>
         <img>
@@ -215,7 +215,7 @@
 
   section:hover img,
   section:hover > h4 {
-    opacity: 0.25
+    opacity: 0
   }
 
   .card-overlay {
@@ -226,7 +226,7 @@
     width: 100%;
     transition: opacity 0.5s;
     position: absolute;
-    background: #FFFFAA;
+    background: #B0B080;
     color: #0F0F0F;
     display: flex;
     flex-direction: column
@@ -260,7 +260,7 @@
   }
   
   section:hover .card-overlay {
-    opacity: 0.5
+    opacity: 1
   }
 
   #divCodepenInfo {

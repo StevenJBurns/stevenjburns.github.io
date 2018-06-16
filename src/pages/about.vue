@@ -34,6 +34,7 @@
 
 <style scoped>
   div {
+    padding: 64px 0;
     flex: 1 0 auto;
     display: flex;
     flex-direction: column;

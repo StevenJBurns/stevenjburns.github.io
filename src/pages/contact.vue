@@ -73,7 +73,7 @@
 <style scoped>
   #divPageWrapper {
     flex: 1 0 auto;
-    padding: 32px 15%;
+    padding: 32px 1%;
     background: #707090;
     position: relative;
   }
@@ -85,7 +85,9 @@
 
   #divCardWrapper {
     display: flex;
+    margin: 0 auto;
     flex-wrap: wrap;
+    max-width: 960px;
     background: #00000000;
     justify-content: center;
   }
@@ -100,10 +102,10 @@
   section {
     z-index: 1;
     padding: 16px;
-    display: flex;
-    flex-direction: column;
-    margin: 16px;
-    width: 256px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    margin: 12px;
+    width: 288px;
     height: 160px;
     border-radius: 8px;
     grid-template-columns: auto 1fr;

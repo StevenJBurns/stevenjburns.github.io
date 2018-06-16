@@ -135,7 +135,7 @@
     <hr>
     <div id="divCodepenInfo">
       <font-awesome-icon :icon="['fab', 'codepen']" size="5x" />
-      <p>Some of my smaller efforts are over on <a href="https://codepen.io/StevenJBurns">CodePen</a>. Mostly for quick testing, experiments and prototypes</p>
+      <p>Some of my smaller efforts are over on <a href="https://codepen.io/StevenJBurns">CodePen</a> for quick testing, experiments and prototypes</p>
     </div>
   </div>
 </template>

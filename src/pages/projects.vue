@@ -6,53 +6,99 @@
       <section>
         <img>
         <h4>CEA</h4>
+        <div class="card-overlay">
+          <span>One of my very first programming projects rewritten in Angular </span>
+          <h4>Angular &bull; ASP.NET Core &bull; MySql</h4>
+          <div class="overlay-footer">
+            <font-awesome-icon :icon="['fab', 'github']" size="4x" />
+            <font-awesome-icon icon="globe" size="4x" />
+          </div>
+        </div>
       </section>
       <section>
         <img>
         <h4>MeritViewer</h4>
+        <div class="card-overlay">
+          <span>An info tool for an old video game I used to play. An experiment that turned into a program.</span>
+          <h4>React JS &bull; JSON</h4>
+          <div class="overlay-footer">
+            <font-awesome-icon :icon="['fab', 'github']" size="4x" />
+            <font-awesome-icon icon="globe" size="4x" />
+          </div>
+        </div>
       </section>
       <section>
         <img>
         <h4>Stagecoach Meat Co.</h4>
         <div class="card-overlay">
-          <h4>React &bull; ASP.NET Core &bull; Microsoft SQL Server &bull; Azure</h4>
           <span>My first Vue.js endeavor. Originally a bootcamp project using jQuery</span>
+          <h4>React &bull; ASP.NET Core &bull; Microsoft SQL Server &bull; Azure</h4>
+          <div class="overlay-footer">
+            <font-awesome-icon :icon="['fab', 'github']" size="4x" />
+            <font-awesome-icon icon="globe" size="4x" />
+          </div>
         </div>
       </section>
       <section>
         <img>
         <h4>TwoFifteen</h4>
         <div class="card-overlay">
-          <h4>React &bull; ASP.NET Core &bull; Microsoft SQL Server &bull; Azure</h4>
           <span>My first Vue.js endeavor. Originally a bootcamp project using jQuery</span>
+          <h4>React &bull; ASP.NET Core &bull; Microsoft SQL Server &bull; Azure</h4>
+          <div class="overlay-footer">
+            <font-awesome-icon :icon="['fab', 'github']" size="4x" />
+            <font-awesome-icon icon="globe" size="4x" />
+          </div>
         </div>
       </section>
       <section>
         <img src="../assets/screenshots/pixelart.png">
         <h4>Pixel-Art</h4>
         <div class="card-overlay">
-          <h4>Vue &bull; core HTML and JS APIs</h4>
           <span>My first Vue.js endeavor. Originally a bootcamp project using jQuery</span>
+          <h4>Vue &bull; core HTML and JS APIs</h4>
+          <div class="overlay-footer">
+            <font-awesome-icon :icon="['fab', 'github']" size="4x" />
+            <font-awesome-icon icon="globe" size="4x" />
+          </div>
         </div>
       </section>
       <section>
         <img>
         <h4>Franchise Favorites</h4>
+        <div class="card-overlay">
+          <span>A gee whiz</span>
+          <h4>React JS &bull; OAuth &bull; MongoDB</h4>
+          <div class="overlay-footer">
+            <font-awesome-icon :icon="['fab', 'github']" size="4x" />
+            <font-awesome-icon icon="globe" size="4x" />
+          </div>
+        </div>
       </section>
       <section>
         <img src="../assets/screenshots/extrasolar.png">
         <h4>ExtraSolar</h4>
         <div class="card-overlay">
-          <h4>React &bull; HTML5 Canvas</h4>
           <span>The love-child of my astronomy background and web development.</span>
+          <h4>React &bull; HTML5 Canvas</h4>
+          <div class="overlay-footer">
+            <font-awesome-icon :icon="['fab', 'github']" size="4x" />
+            <font-awesome-icon icon="globe" size="4x" />
+          </div>
         </div>
       </section>
       <section>
         <img src="../assets/screenshots/noxfit.png">
         <h4>NOX</h4>
         <div class="card-overlay">
+          <span>A customer portal and discrete admin access created for a fitness consultant in Colorado Springs, CO</span>
           <h4>React &bull; Rails &bull; Postgresql</h4>
-          <span>A portal created for a fitness consultant in Colorado Springs, CO</span>
+          <div class="overlay-footer">
+            <font-awesome-icon :icon="['fab', 'github']" size="4x" />
+            <a href="http://noxfit.com/">
+              <font-awesome-icon icon="globe" size="4x" />
+            </a>
+          </div>
         </div>
       </section>
     </div>
@@ -65,9 +111,16 @@
 
 <script>
   import { eventBus } from "../main.js";
+  import FontAwesomeIcon from "@fortawesome/vue-fontawesome";
+  import { fasGlobe } from "@fortawesome/fontawesome-free-solid";
+  import { fabGithub } from "@fortawesome/fontawesome-free-brands";
+
 
   export default {
     name: 'PageProjects',
+    components: {
+      FontAwesomeIcon
+    },
     props: {
       theme: Object
     },
@@ -128,7 +181,8 @@
     transition: opacity 0.5s
   }
 
-  section:hover img {
+  section:hover img,
+  section:hover > h4 {
     opacity: 0.25
   }
 
@@ -142,10 +196,32 @@
     position: absolute;
     background: #FFFFAA;
     color: #0F0F0F;
+    display: flex;
+    flex-direction: column
   }
 
   .card-overlay span {
+    padding: 0 8px;
+    font-weight: bold;
+    text-align: left;
+    flex: 1 0 auto
+  }
+
+  .card-overlay h4 {
+    padding: 0 8px;
     text-align: center
+  }
+
+  .overlay-footer {
+    padding: 8px
+  }
+
+  .overlay-footer svg {
+    margin: 0 12px
+  }
+  .overlay-footer a:link,
+  .overlay-footer a:visited {
+    color: #0F0F0F
   }
   
   section:hover .card-overlay {

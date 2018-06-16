@@ -1,7 +1,7 @@
 <template>
   <div>
     <div id="svgWrapper">
-      <svg id="svgSkillsChart" height="512" width="512" viewbox="0 0 1920 1920"></svg>
+      <svg id="svgSkillsChart" height="320" width="320" viewbox="0 0 1920 1920"></svg>
     </div>
   </div>
 </template>
@@ -28,11 +28,13 @@
               "name": "Front End",
               "size": 25,
               "children": [
-                { "name": "HTML", "size": 5 },
+                { "name": "HTML", "size": 25 },
                 { "name": "SVG", "size": 5 },
-                { "name": "CSS", "size": 5 },
+                { "name": "CSS", "size": 12 },
                 { "name": "JavaScript", "size": 5 },
-                { "name": "jQuery", "size": 5 }
+                { "name": "jQuery", "size": 5 },
+                { "name": "React", "size": 5 },
+                { "name": "Vue", "size": 5 }
               ]
             },
             {
@@ -50,12 +52,13 @@
               "name": "Data",
               "size": 25,
               "children": [
-                { "name": "JSON", "size": 5 },
-                { "name": "XML", "size": 5 },
-                { "name": "SQLite", "size": 5 },
-                { "name": "MySql", "size": 5 },
-                { "name": "PostgreSQL", "size": 5 },
-                { "name": "Microsoft SQL Server", "size": 5 }
+                { "name": "JSON", "size": 12 },
+                { "name": "XML", "size": 3 },
+                { "name": "SQLite", "size": 4 },
+                { "name": "MySql", "size": 6 },
+                { "name": "PostgreSQL", "size": 9 },
+                { "name": "Microsoft SQL Server", "size": 6 },
+                { "name": "MongoDB", "size": 4 }
               ]
             },
             {
@@ -88,10 +91,10 @@
       const svg = d3.select("#svgSkillsChart");
       // svg.on("click", () => zoom(root));
 
-      const g = svg.append("g").attr("transform", "translate(240, 240)");
+      const g = svg.append("g").attr("transform", "translate(144, 144)");
 
       let pack = d3.pack()
-                 .size([480, 480])
+                 .size([320, 320])
                  .padding(8);
 
       this.root = d3.hierarchy(this.appData)
@@ -182,6 +185,12 @@
               return function(t) { zoomTo(i(t)) };
             });
 
+        // transition.selectAll("circle")
+        //   .filter(function(d) { return d.parent === focus || this.style.display === "inline"})
+        //     style("opacity", function(d) { return d.parent === focus ? 1 : 0})
+        //     .on("start", function(d) { if (d.parent === focus) this.style.display = "inline"; })
+        //     .on("end", function(d) { if (d.parent !== focus) this.style.display = "none"; });      
+
         transition.selectAll("text")
           .filter(function(d) { return d.parent === focus || this.style.display === "inline"; })
             .style("fill-opacity", function(d) { return d.parent === focus ? 1 : 0; })
@@ -189,7 +198,7 @@
             .on("end", function(d) { if (d.parent !== focus) this.style.display = "none"; });      
       },
       zoomTo: function(v) {
-        let k = 480 / (v[2]);
+        let k = 320 / (v[2]);
         
         this.view = v;
 

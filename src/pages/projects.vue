@@ -10,8 +10,12 @@
           <span>One of my very first programming projects rewritten in Angular </span>
           <h4>Angular &bull; ASP.NET Core &bull; MySql</h4>
           <div class="overlay-footer">
-            <font-awesome-icon :icon="['fab', 'github']" size="4x" />
-            <font-awesome-icon icon="globe" size="4x" />
+            <a href="#">
+              <font-awesome-icon :icon="['fab', 'github']" size="3x" />
+            </a>
+            <a href="#">
+              <font-awesome-icon icon="globe" size="3x" />
+            </a>
           </div>
         </div>
       </section>
@@ -22,8 +26,12 @@
           <span>An info tool for an old video game I used to play. An experiment that turned into a program.</span>
           <h4>React JS &bull; JSON</h4>
           <div class="overlay-footer">
-            <font-awesome-icon :icon="['fab', 'github']" size="4x" />
-            <font-awesome-icon icon="globe" size="4x" />
+            <a href="#">
+              <font-awesome-icon :icon="['fab', 'github']" size="3x" />
+            </a>
+            <a href="#">
+              <font-awesome-icon icon="globe" size="3x" />
+            </a>
           </div>
         </div>
       </section>
@@ -34,8 +42,12 @@
           <span>My first Vue.js endeavor. Originally a bootcamp project using jQuery</span>
           <h4>React &bull; ASP.NET Core &bull; Microsoft SQL Server &bull; Azure</h4>
           <div class="overlay-footer">
-            <font-awesome-icon :icon="['fab', 'github']" size="4x" />
-            <font-awesome-icon icon="globe" size="4x" />
+            <a href="#">
+              <font-awesome-icon :icon="['fab', 'github']" size="3x" />
+            </a>
+            <a href="#">
+              <font-awesome-icon icon="globe" size="3x" />
+            </a>
           </div>
         </div>
       </section>
@@ -46,8 +58,12 @@
           <span>My first Vue.js endeavor. Originally a bootcamp project using jQuery</span>
           <h4>React &bull; ASP.NET Core &bull; Microsoft SQL Server &bull; Azure</h4>
           <div class="overlay-footer">
-            <font-awesome-icon :icon="['fab', 'github']" size="4x" />
-            <font-awesome-icon icon="globe" size="4x" />
+            <a href="#">
+              <font-awesome-icon :icon="['fab', 'github']" size="3x" />
+            </a>
+            <a href="#">
+              <font-awesome-icon icon="globe" size="3x" />
+            </a>
           </div>
         </div>
       </section>
@@ -58,8 +74,12 @@
           <span>My first Vue.js endeavor. Originally a bootcamp project using jQuery</span>
           <h4>Vue &bull; core HTML and JS APIs</h4>
           <div class="overlay-footer">
-            <font-awesome-icon :icon="['fab', 'github']" size="4x" />
-            <font-awesome-icon icon="globe" size="4x" />
+            <a href="">
+              <font-awesome-icon :icon="['fab', 'github']" size="4x" />
+            </a>
+            <a href="#">
+              <font-awesome-icon icon="globe" size="4x" />
+            </a>
           </div>
         </div>
       </section>
@@ -70,8 +90,12 @@
           <span>A gee whiz</span>
           <h4>React JS &bull; OAuth &bull; MongoDB</h4>
           <div class="overlay-footer">
-            <font-awesome-icon :icon="['fab', 'github']" size="4x" />
-            <font-awesome-icon icon="globe" size="4x" />
+            <a href="#">
+              <font-awesome-icon :icon="['fab', 'github']" size="3x" />
+            </a>
+            <a href="#">
+              <font-awesome-icon icon="globe" size="3x" />
+            </a>
           </div>
         </div>
       </section>
@@ -82,8 +106,12 @@
           <span>The love-child of my astronomy background and web development.</span>
           <h4>React &bull; HTML5 Canvas</h4>
           <div class="overlay-footer">
-            <font-awesome-icon :icon="['fab', 'github']" size="4x" />
-            <font-awesome-icon icon="globe" size="4x" />
+            <a href="#">
+              <font-awesome-icon :icon="['fab', 'github']" size="3x" />
+            </a>
+            <a href="#">
+              <font-awesome-icon icon="globe" size="3x" />
+            </a>
           </div>
         </div>
       </section>
@@ -95,17 +123,18 @@
           <h4>React &bull; Rails &bull; Postgresql</h4>
           <div class="overlay-footer">
             <a href="#">
-              <font-awesome-icon :icon="['fab', 'github']" size="4x" />
+              <font-awesome-icon :icon="['fab', 'github']" size="3x" />
             </a>
             <a href="http://noxfit.com/">
-              <font-awesome-icon icon="globe" size="4x" />
+              <font-awesome-icon icon="globe" size="3x" />
             </a>
           </div>
         </div>
       </section>
     </div>
-    <div>
-      <hr>
+    <hr>
+    <div id="divCodepenInfo">
+      <font-awesome-icon :icon="['fab', 'codepen']" size="6x" />
       <h2>Some of my smaller efforts are over on <a href="">CodePen</a>. Mostly for quick testing, experiments and prototypes</h2>
     </div>
   </div>
@@ -115,7 +144,7 @@
   import { eventBus } from "../main.js";
   import FontAwesomeIcon from "@fortawesome/vue-fontawesome";
   import { fasGlobe } from "@fortawesome/fontawesome-free-solid";
-  import { fabGithub } from "@fortawesome/fontawesome-free-brands";
+  import { fabGithub, fabCodepen } from "@fortawesome/fontawesome-free-brands";
 
 
   export default {
@@ -236,5 +265,15 @@
 
   h4 {
 
+  }
+
+  #divCodepenInfo {
+    display: grid;
+    grid-template-columns: auto 1fr;
+  }
+
+  #divCodepenInfo a:link,
+  #divCodepenInfo a:visited {
+    color: #C0C090
   }
 </style>

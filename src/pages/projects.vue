@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="divPageWrapper">
     <h2>Projects</h2>
     <hr>
     <div id="divCardWrapper">
@@ -40,6 +40,10 @@
         </div>
       </section>
     </div>
+    <div>
+      <hr>
+      <h2>Some of my smaller efforts are over on <a href="">CodePen</a>. Mostly for quick testing, experiments and prototypes</h2>
+    </div>
   </div>
 </template>
 
@@ -63,13 +67,17 @@
 </script>
 
 <style scoped>
-  div {
+  #divPageWrapper {
     flex: 1 0 auto;
     padding: 32px 5%;
     background: #707040;
     background: linear-gradient(to bottom right, #303000, #A0A070, #303000);
   }
   
+  hr {
+    margin: 2em 0
+  }
+
   #divCardWrapper {
     display: flex;
     flex-wrap: wrap;

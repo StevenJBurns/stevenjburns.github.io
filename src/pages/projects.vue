@@ -134,13 +134,13 @@
     </div>
     <hr>
     <div id="divCodepenInfo">
-      <font-awesome-icon :icon="['fab', 'codepen']" size="6x" />
-      <h2>Some of my smaller efforts are over on <a href="">CodePen</a>. Mostly for quick testing, experiments and prototypes</h2>
+      <font-awesome-icon :icon="['fab', 'codepen']" size="5x" />
+      <p>Some of my smaller efforts are over on <a href="https://codepen.io/StevenJBurns">CodePen</a>. Mostly for quick testing, experiments and prototypes</p>
     </div>
   </div>
 </template>
 
-<script>
+<script scoped>
   import { eventBus } from "../main.js";
   import FontAwesomeIcon from "@fortawesome/vue-fontawesome";
   import { fasGlobe } from "@fortawesome/fontawesome-free-solid";
@@ -263,17 +263,25 @@
     opacity: 0.5
   }
 
-  h4 {
-
-  }
-
   #divCodepenInfo {
     display: grid;
+    align-items: center;
     grid-template-columns: auto 1fr;
+  }
+
+  #divCodepenInfo p {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: left
+  }
+
+  #divCodepenInfo svg {
+    margin: 0 24px
   }
 
   #divCodepenInfo a:link,
   #divCodepenInfo a:visited {
-    color: #C0C090
+    color: #C0C090;
+    display: inline !important
   }
 </style>

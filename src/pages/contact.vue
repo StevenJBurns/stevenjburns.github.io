@@ -89,7 +89,7 @@
     display: flex;
     margin: 0 auto;
     flex-wrap: wrap;
-    max-width: 960px;
+    max-width: 1080px;
     background: #00000000;
     justify-content: center;
   }

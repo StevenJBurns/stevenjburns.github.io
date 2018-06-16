@@ -60,6 +60,7 @@
 
   header h2 {
     margin: 0;
+    font-size: 2em;
     align-self: center;
     display: inline-block
   }
@@ -87,6 +88,11 @@
   }
 
   @media screen and (max-width: 1024px) {
+    header h2 {
+      margin: 0 auto;
+      font-size: 1.5em
+    }
+
     hr {
       display: hidden
     }
@@ -107,7 +113,8 @@
   }
 
   header h2 {
-    margin: 0 auto
+    margin: 0 auto;
+    font-size: 1em
   }
 }
 </style>

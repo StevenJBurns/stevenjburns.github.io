@@ -24,7 +24,7 @@
         <a href="https://github.com/StevenJBurns">
           <font-awesome-icon :icon="['fab', 'codepen']" size="4x" />
         </a>
-        <span>Not big enough to be &quot;real&quot; projects yet. Where I go to experiment, prototpye and just screw around with code.</span>
+        <span>Not big enough to be &quot;real&quot; projects yet. My place to experiment, prototype and just screw around with code.</span>
       </section>
       <section>
         <a href="mailto:stevenjburns@msn.com">
@@ -73,14 +73,16 @@
 <style scoped>
   #divPageWrapper {
     flex: 1 0 auto;
-    padding: 32px 1%;
+    padding: 32px 0;
     background: #707090;
     position: relative;
   }
 
   h3 {
+    margin: 0 32px;
     color: #303050;
-
+    max-width: 720px;
+    display: inline-block;
   }
 
   #divCardWrapper {

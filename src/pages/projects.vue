@@ -89,12 +89,14 @@
       </section>
       <section>
         <img src="../assets/screenshots/noxfit.png">
-        <h4>NOX</h4>
+        <h3>NOX</h3>
         <div class="card-overlay">
           <span>A customer portal and discrete admin access created for a fitness consultant in Colorado Springs, CO</span>
           <h4>React &bull; Rails &bull; Postgresql</h4>
           <div class="overlay-footer">
-            <font-awesome-icon :icon="['fab', 'github']" size="4x" />
+            <a href="#">
+              <font-awesome-icon :icon="['fab', 'github']" size="4x" />
+            </a>
             <a href="http://noxfit.com/">
               <font-awesome-icon icon="globe" size="4x" />
             </a>
@@ -161,6 +163,7 @@
 
   section {
     margin: 16px;
+    padding: 16px 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -217,11 +220,14 @@
   }
 
   .overlay-footer svg {
-    margin: 0 12px
+
   }
+
   .overlay-footer a:link,
   .overlay-footer a:visited {
-    color: #0F0F0F
+    margin: 0 12px;
+    color: #0F0F0F;
+    display: inline
   }
   
   section:hover .card-overlay {

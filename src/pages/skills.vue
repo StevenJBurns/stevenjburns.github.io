@@ -1,7 +1,14 @@
 <template>
-  <div>
-    <div id="svgWrapper">
-      <svg id="svgSkillsChart" height="320" width="320" viewbox="0 0 1920 1920"></svg>
+  <div id="divPageWrapper">
+    <div id="divSkillsWrapper">
+      <div id="divSkillsList">
+        <ul>
+          <li />
+        </ul>
+      </div>
+        <div id="divChartWrapper">
+          <svg id="svgSkillsChart"></svg>
+        </div>
     </div>
   </div>
 </template>
@@ -88,13 +95,14 @@
     mounted() {
       let zoom = this.zoom;
 
-      const svg = d3.select("#svgSkillsChart");
-      // svg.on("click", () => zoom(root));
+      const svg = d3.select("#svgSkillsChart")
+                     .attr("preserveAspectRatio", "xMinYMin meet")
+                     .attr("viewBox", "0 0 300 300");
 
       const g = svg.append("g").attr("transform", "translate(144, 144)");
 
       let pack = d3.pack()
-                 .size([320, 320])
+                 //.size([320, 320])
                  .padding(8);
 
       this.root = d3.hierarchy(this.appData)
@@ -198,7 +206,7 @@
             .on("end", function(d) { if (d.parent !== focus) this.style.display = "none"; });      
       },
       zoomTo: function(v) {
-        let k = 320 / (v[2]);
+        let k = 288 / (v[2]);
         
         this.view = v;
 
@@ -213,7 +221,7 @@
 </script>
 
 <style scoped>
-  div {
+  #divPageWrapper {
     flex: 1 0 auto;
     display: flex;
     flex-direction: column;
@@ -221,9 +229,39 @@
     background: #809070
   }
 
-  #svgWrapper {
+  #divSkillsWrapper {
     margin: 24px;
     padding: 8px;
+    display: flex;
+    flex-direction: row;
+  }
+
+  #divSkillsList {
+    min-width: 320px;
+    background: green;
+  }
+
+  #divChartWrapper {
+    width: 100%;
+    display: inline-block;
+    position: relative;
+    padding-bottom: 100%;
+    vertical-align: top;
+    overflow: hidden
+  }
+
+  #svgSkillsChart {
+    top: 0;
+    left: 0;
+    min-width: 288px;
+    position: absolute;
+  }
+
+  @media screen and (max-width: 720px) {
+    #divSkillsWrapper {
+      flex: 1 0 auto;
+      flex-direction: column;
+    }
   }
 </style>
 

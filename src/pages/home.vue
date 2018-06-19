@@ -249,16 +249,17 @@
       animateLogo: function(target) {
         target.style["top"] = `${this.getRandomPercent()}%`;
         target.style["left"] = `${this.getRandomPercent()}%`;
+        target.style["transform"] = "scale(0.75)";
         target.style["opacity"] = 0;
-        // target.style["transform"] = "scale(4)";
 
+        let delay = this.getRandomDuration() - 6;
         let duration = this.getRandomDuration();
         
-        TweenLite.to(target, duration, { delay: 2,
+        TweenLite.to(target, duration, { delay: delay,
                                         top: '50%',
                                         left: '50%',
-                                        opacity: 0.75,
-                                        scale: 0.5,
+                                        opacity: 1,
+                                        scale: 0.75,
                                         onComplete: this.animateLogo,
                                         onCompleteParams: [target]
                                         });

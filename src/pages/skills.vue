@@ -1,14 +1,12 @@
 <template>
   <div id="divPageWrapper">
-    <div id="divSkillsWrapper">
-      <div id="divSkillsList">
-        <ul>
-          <li />
-        </ul>
-      </div>
-        <div id="divChartWrapper">
-          <svg id="svgSkillsChart"></svg>
-        </div>
+    <div id="divSkillsList">
+      <ul>
+        <li />
+      </ul>
+    </div>
+    <div id="divChartWrapper">
+      <svg id="svgSkillsChart"></svg>
     </div>
   </div>
 </template>
@@ -97,17 +95,17 @@
 
       const svg = d3.select("#svgSkillsChart")
                      .attr("preserveAspectRatio", "xMinYMin meet")
-                     .attr("viewBox", "0 0 300 300");
+                     .attr("viewBox", "0 0 256 256");
 
-      const g = svg.append("g").attr("transform", "translate(144, 144)");
+      const g = svg.append("g").attr("transform", "translate(128, 128)");
 
       let pack = d3.pack()
-                 //.size([320, 320])
-                 .padding(8);
+                   //.size([320, 320])
+                   .padding(8);
 
       this.root = d3.hierarchy(this.appData)
-                 .sum(d => d.size)
-                 .sort((a, b) => b.value - a.value);
+                    .sum(d => d.size)
+                    .sort((a, b) => b.value - a.value);
 
       let nodes = pack(this.root).descendants();
 
@@ -206,7 +204,7 @@
             .on("end", function(d) { if (d.parent !== focus) this.style.display = "none"; });      
       },
       zoomTo: function(v) {
-        let k = 288 / (v[2]);
+        let k = 224 / (v[2]);
         
         this.view = v;
 
@@ -223,42 +221,31 @@
 <style scoped>
   #divPageWrapper {
     flex: 1 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content:flex-start;
-    background: #809070
-  }
-
-  #divSkillsWrapper {
-    margin: 24px;
     padding: 8px;
     display: flex;
     flex-direction: row;
+    background: #809070
   }
 
   #divSkillsList {
-    min-width: 320px;
+    min-width: 288px;
     background: green;
   }
 
   #divChartWrapper {
     width: 100%;
+    margin: auto;
     display: inline-block;
-    position: relative;
-    padding-bottom: 100%;
-    vertical-align: top;
+    text-align: center;
     overflow: hidden
   }
 
   #svgSkillsChart {
-    top: 0;
-    left: 0;
-    min-width: 288px;
-    position: absolute;
+    max-height: 512px;
   }
 
   @media screen and (max-width: 720px) {
-    #divSkillsWrapper {
+    #divPageWrapper {
       flex: 1 0 auto;
       flex-direction: column;
     }

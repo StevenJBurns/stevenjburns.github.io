@@ -312,9 +312,9 @@
   }
 
   #divCodepenInfo {
-    display: grid;
-    align-items: center;
-    grid-template-columns: auto 1fr;
+    display: flex;
+    flex-direction: row;
+    align-items: center
   }
 
   #divCodepenInfo p {
@@ -331,5 +331,16 @@
   #divCodepenInfo a:visited {
     color: #C0C090;
     display: inline !important
+  }
+
+  @media screen and (max-width: 800px) {
+    #divCodepenInfo {
+      flex-direction: column
+    }
+
+  #divCodepenInfo p {
+    font-size: 1.25em;
+    text-align: justify
+    }
   }
 </style>

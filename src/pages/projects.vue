@@ -131,6 +131,38 @@
           </div>
         </div>
       </section>
+      <section>
+        <img src="">
+        <h3>Web-Dev-Roadmap</h3>
+        <div class="card-overlay">
+          <span>Infographic depicting some standard routes to learn web development heavily influenced by my subjective experience </span>
+          <h4>React &bull; SVG &bull; D3js</h4>
+          <div class="overlay-footer">
+            <a href="#">
+              <font-awesome-icon :icon="['fab', 'github']" size="3x" />
+            </a>
+            <a href="#">
+              <font-awesome-icon icon="globe" size="3x" />
+            </a>
+          </div>
+        </div>
+      </section>
+      <section>
+        <img src="">
+        <h3>Web-Dev-Quiz</h3>
+        <div class="card-overlay">
+          <span>Test your knowledge and wits on topics considered to be important in web develpment</span>
+          <h4>React &bull; Node JS &bull; MongoDB</h4>
+          <div class="overlay-footer">
+            <a href="#">
+              <font-awesome-icon :icon="['fab', 'github']" size="3x" />
+            </a>
+            <a href="#">
+              <font-awesome-icon icon="globe" size="3x" />
+            </a>
+          </div>
+        </div>
+      </section>
     </div>
     <hr>
     <div id="divCodepenInfo">

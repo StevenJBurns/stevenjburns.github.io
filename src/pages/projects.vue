@@ -333,7 +333,7 @@
     display: inline !important
   }
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 640px) {
     #divCodepenInfo {
       flex-direction: column
     }

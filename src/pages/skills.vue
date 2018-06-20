@@ -62,7 +62,7 @@
                 { "name": "SQLite", "size": 4 },
                 { "name": "MySql", "size": 6 },
                 { "name": "PostgreSQL", "size": 9 },
-                { "name": "Microsoft SQL Server", "size": 6 },
+                { "name": "MSSQL", "size": 6 },
                 { "name": "MongoDB", "size": 4 }
               ]
             },
@@ -95,13 +95,11 @@
 
       const svg = d3.select("#svgSkillsChart")
                      .attr("preserveAspectRatio", "xMinYMin meet")
-                     .attr("viewBox", "0 0 256 256");
+                     .attr("viewBox", "0 0 288 288");
 
-      const g = svg.append("g").attr("transform", "translate(128, 128)");
+      const g = svg.append("g").attr("transform", "translate(144, 144)");
 
-      let pack = d3.pack()
-                   //.size([320, 320])
-                   .padding(8);
+      let pack = d3.pack().padding(2);
 
       this.root = d3.hierarchy(this.appData)
                     .sum(d => d.size)
@@ -121,7 +119,7 @@
             d3.select(this)
               .transition()
               .duration(250)
-              .attr('stroke', 'darkgreen')
+              .attr('stroke', '#B0C0A0')
           })
           .on('mouseout', function() {
             d3.select(this)
@@ -133,9 +131,10 @@
         var text = g.selectAll("text")
           .data(nodes)
           .enter().append("text")
-            .attr("class", "label")
-            .attr("dy", "8")
+            .attr("class", "svglabel")
+            .attr("dy", "4")
             .attr("text-anchor", "middle")
+            .style("font-size", "10px")
             .style("fill-opacity", function(d) { return d.parent == this.currentFocus ? 1 : 0; })
             .style("display", function(d) { return d.parent == this.currentFocus ? "inline" : "none"; })
             .text(d => d.data.name);
@@ -204,7 +203,8 @@
             .on("end", function(d) { if (d.parent !== focus) this.style.display = "none"; });      
       },
       zoomTo: function(v) {
-        let k = 224 / (v[2]);
+        let k = 240 / (v[2]);
+        console.log(k);
         
         this.view = v;
 
@@ -212,7 +212,7 @@
           return `translate(${(d.x - v[0]) * k + 16}, ${(d.y - v[1]) * k + 16})`
         });
 
-        this.circle.attr("r", function(d) { return d.r * k });        
+        this.circle.attr("r", function(d) { return d.r * k });
       }
     }
   }
@@ -222,6 +222,7 @@
   #divPageWrapper {
     flex: 1 0 auto;
     padding: 8px;
+    padding-right: 0;
     display: flex;
     flex-direction: row;
     background: #809070
@@ -229,19 +230,26 @@
 
   #divSkillsList {
     min-width: 288px;
-    background: green;
+    border: 2px solid #777;
+    border-radius: 0 16px 16px 0;
+    background: #B0C0A0;
   }
 
   #divChartWrapper {
     width: 100%;
-    margin: auto;
-    display: inline-block;
+    position: relative;
     text-align: center;
     overflow: hidden
   }
 
   #svgSkillsChart {
+    top: 0;
+    left: 0;
     max-height: 512px;
+    }
+  
+  .svglabel {
+
   }
 
   @media screen and (max-width: 720px) {

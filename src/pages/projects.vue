@@ -59,65 +59,11 @@
       </section>
       <section>
         <img>
-        <h4>CEA</h4>
-        <div class="card-overlay">
-          <span>One of my very first programming projects rewritten in Angular </span>
-          <hr class="hrCard">
-          <h4>Angular &bull; ASP.NET Core &bull; MySql</h4>
-          <hr class="hrCard">
-          <div class="overlay-footer">
-            <a href="#">
-              <font-awesome-icon :icon="['fab', 'github']" size="3x" />
-            </a>
-            <a href="#">
-              <font-awesome-icon icon="globe" size="3x" />
-            </a>
-          </div>
-        </div>
-      </section>
-      <section>
-        <img>
-        <h4>MeritViewer</h4>
-        <div class="card-overlay">
-          <span>An info tool for an old video game I used to play. An experiment that turned into a program.</span>
-          <hr class="hrCard">
-          <h4>React JS &bull; JSON</h4>
-          <hr class="hrCard">
-          <div class="overlay-footer">
-            <a href="#">
-              <font-awesome-icon :icon="['fab', 'github']" size="3x" />
-            </a>
-            <a href="#">
-              <font-awesome-icon icon="globe" size="3x" />
-            </a>
-          </div>
-        </div>
-      </section>
-      <section>
-        <img>
         <h4>Stagecoach Meat Co.</h4>
         <div class="card-overlay">
           <span>The Stagecoach Meat Co. in eastern Colorado wanted a very simple infographic-style web page for their customers. So I made this for them.</span>
           <hr class="hrCard">
           <h4>React &bull; SVG &bull;</h4>
-          <hr class="hrCard">
-          <div class="overlay-footer">
-            <a href="#">
-              <font-awesome-icon :icon="['fab', 'github']" size="3x" />
-            </a>
-            <a href="#">
-              <font-awesome-icon icon="globe" size="3x" />
-            </a>
-          </div>
-        </div>
-      </section>
-      <section>
-        <img>
-        <h4>Franchise Favorites</h4>
-        <div class="card-overlay">
-          <span>A gee whiz</span>
-          <hr class="hrCard">
-          <h4>React JS &bull; OAuth &bull; MongoDB</h4>
           <hr class="hrCard">
           <div class="overlay-footer">
             <a href="#">
@@ -142,6 +88,24 @@
               <font-awesome-icon :icon="['fab', 'github']" size="3x" />
             </a>
             <a href="http://noxfit.com/">
+              <font-awesome-icon icon="globe" size="3x" />
+            </a>
+          </div>
+        </div>
+      </section>
+      <section>
+        <img>
+        <h4>MeritViewer</h4>
+        <div class="card-overlay">
+          <span>An info tool for an old video game I used to play. An experiment that turned into a program.</span>
+          <hr class="hrCard">
+          <h4>React JS &bull; JSON</h4>
+          <hr class="hrCard">
+          <div class="overlay-footer">
+            <a href="#">
+              <font-awesome-icon :icon="['fab', 'github']" size="3x" />
+            </a>
+            <a href="#">
               <font-awesome-icon icon="globe" size="3x" />
             </a>
           </div>
@@ -183,6 +147,42 @@
           </div>
         </div>
       </section>
+      <section>
+        <img>
+        <h4>Franchise Favorites</h4>
+        <div class="card-overlay">
+          <span>A gee whiz</span>
+          <hr class="hrCard">
+          <h4>React JS &bull; OAuth &bull; MongoDB</h4>
+          <hr class="hrCard">
+          <div class="overlay-footer">
+            <a href="#">
+              <font-awesome-icon :icon="['fab', 'github']" size="3x" />
+            </a>
+            <a href="#">
+              <font-awesome-icon icon="globe" size="3x" />
+            </a>
+          </div>
+        </div>
+      </section>      
+      <section>
+        <img>
+        <h4>CEA</h4>
+        <div class="card-overlay">
+          <span>One of my very first programming projects rewritten in Angular </span>
+          <hr class="hrCard">
+          <h4>Angular &bull; ASP.NET Core &bull; MySql</h4>
+          <hr class="hrCard">
+          <div class="overlay-footer">
+            <a href="#">
+              <font-awesome-icon :icon="['fab', 'github']" size="3x" />
+            </a>
+            <a href="#">
+              <font-awesome-icon icon="globe" size="3x" />
+            </a>
+          </div>
+        </div>
+      </section>      
       <section>
         <img src="">
         <h3>LogBook</h3>

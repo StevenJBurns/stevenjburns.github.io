@@ -165,6 +165,24 @@
       </section>
       <section>
         <img src="">
+        <h3>LogBook</h3>
+        <div class="card-overlay">
+          <span>Pilots are required to keep a log of flying hours and aviation events. Why not transform that static trove of data into a modern interactive visualization?</span>
+          <hr class="hrCard">
+          <h4>React &bull; Node JS &bull; MongoDB</h4>
+          <hr class="hrCard">
+          <div class="overlay-footer">
+            <a href="#">
+              <font-awesome-icon :icon="['fab', 'github']" size="3x" />
+            </a>
+            <a href="#">
+              <font-awesome-icon icon="globe" size="3x" />
+            </a>
+          </div>
+        </div>
+      </section>
+      <section>
+        <img src="">
         <h3>AirfieldAR</h3>
         <div class="card-overlay">
           <span>A first stab at augmented reality. Use a mobile device to visualize aviation flight paths, approaches and patterns!</span>
@@ -179,27 +197,12 @@
           </div>
         </div>
       </section>
-      <section>
-        <img src="">
-        <h3>LogBook</h3>
-        <div class="card-overlay">
-          <span>Pilots are required to keep a log of flying hours and aviation events. Why not transform that static trove of data into a modern interactive visualization?</span>
-          <h4>React &bull; Node JS &bull; MongoDB</h4>
-          <div class="overlay-footer">
-            <a href="#">
-              <font-awesome-icon :icon="['fab', 'github']" size="3x" />
-            </a>
-            <a href="#">
-              <font-awesome-icon icon="globe" size="3x" />
-            </a>
-          </div>
-        </div>
-      </section>
+
     </div>
-    <hr>
+    <hr class="hrPage">
     <div id="divCodepenInfo">
       <font-awesome-icon :icon="['fab', 'codepen']" size="5x" />
-      <p>Some of my smaller efforts are over on <a href="https://codepen.io/StevenJBurns">CodePen</a> for quick testing, experiments and prototypes</p>
+      <p>Some of my smaller efforts are hosted on <a href="https://codepen.io/StevenJBurns">CodePen</a> for quick testing, experiments and prototypes</p>
     </div>
   </div>
 </template>
@@ -238,8 +241,13 @@
     background: linear-gradient(to bottom right, #303000, #A0A070, #303000);
   }
   
-  hr {
+  .hrPage {
     margin: 2em 0
+  }
+
+  .hrCard {
+    margin: 0 0.5em;
+    border-color: #0F0F0F
   }
 
   #divCardWrapper {
@@ -295,9 +303,10 @@
   }
 
   .card-overlay span {
-    padding: 0 8px;
+    padding: 0.5em;
+    padding-bottom: 0;
     font-weight: bold;
-    text-align: left;
+    text-align: justify;
     flex: 1 0 auto
   }
 
@@ -307,6 +316,8 @@
   }
 
   .overlay-footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     padding: 8px
   }
 

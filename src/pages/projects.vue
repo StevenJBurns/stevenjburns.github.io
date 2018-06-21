@@ -1,13 +1,13 @@
 <template>
   <div id="divPageWrapper">
-    <h2>Projects</h2>
+    <h2>A collection of projects</h2>
     <p>Click or over to see information and links for a given project</p>
     <div id="divCardWrapper">
       <section>
         <img src="../assets/screenshots/extrasolar.png">
         <h4>ExtraSolar</h4>
         <div class="card-overlay">
-          <span>The love-child of my astronomy background and web development.</span>
+          <span>The love-child of my astronomy background and web development. Real time Exoplanet data from the NASA API charted</span>
           <hr class="hrCard">
           <h4>React &bull; HTML5 Canvas</h4>
           <hr class="hrCard">
@@ -25,7 +25,7 @@
         <img>
         <h4>TwoFifteen</h4>
         <div class="card-overlay">
-          <span>My first Vue.js endeavor. Originally a bootcamp project using jQuery</span>
+          <span>All sports lend themselves to data analysis and visualization. I couldn't find a clean, free baseball API. So I made my own.</span>
           <hr class="hrCard">
           <h4>React &bull; ASP.NET Core &bull; Microsoft SQL Server &bull; Azure</h4>
           <hr class="hrCard">
@@ -49,10 +49,10 @@
           <hr class="hrCard">
           <div class="overlay-footer">
             <a href="">
-              <font-awesome-icon :icon="['fab', 'github']" size="4x" />
+              <font-awesome-icon :icon="['fab', 'github']" size="3x" />
             </a>
             <a href="#">
-              <font-awesome-icon icon="globe" size="4x" />
+              <font-awesome-icon icon="globe" size="3x" />
             </a>
           </div>
         </div>
@@ -97,9 +97,9 @@
         <img>
         <h4>Stagecoach Meat Co.</h4>
         <div class="card-overlay">
-          <span>My first Vue.js endeavor. Originally a bootcamp project using jQuery</span>
+          <span>The Stagecoach Meat Co. in eastern Colorado wanted a very simple infographic-style web page for their customers. So I made this for them.</span>
           <hr class="hrCard">
-          <h4>React &bull; ASP.NET Core &bull; Microsoft SQL Server &bull; Azure</h4>
+          <h4>React &bull; SVG &bull;</h4>
           <hr class="hrCard">
           <div class="overlay-footer">
             <a href="#">
@@ -135,7 +135,7 @@
         <div class="card-overlay">
           <span>A customer portal and discrete admin access created for a fitness consultant in Colorado Springs, CO</span>
           <hr class="hrCard">
-          <h4>React &bull; Rails &bull; Postgresql</h4>
+          <h4>React &bull; Rails &bull; Postgresql &bull; OAuth</h4>
           <hr class="hrCard">
           <div class="overlay-footer">
             <a href="#">
@@ -203,7 +203,7 @@
       </section>
       <section>
         <img src="">
-        <h3>AirfieldAR</h3>
+        <h3>Airfield<sup>+</sup></h3>
         <div class="card-overlay">
           <span>A first stab at augmented reality. Use a mobile device to visualize aviation flight paths, approaches and patterns!</span>
           <hr class="hrCard">
@@ -294,6 +294,10 @@
     box-shadow: 4px 4px 32px #000000;
     position: relative;
     overflow: hidden
+  }
+
+  section h3 {
+    margin: 12px auto
   }
 
   img {

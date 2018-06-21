@@ -4,43 +4,13 @@
     <p>Click or over to see information and links for a given project</p>
     <div id="divCardWrapper">
       <section>
-        <img>
-        <h4>CEA</h4>
+        <img src="../assets/screenshots/extrasolar.png">
+        <h4>ExtraSolar</h4>
         <div class="card-overlay">
-          <span>One of my very first programming projects rewritten in Angular </span>
-          <h4>Angular &bull; ASP.NET Core &bull; MySql</h4>
-          <div class="overlay-footer">
-            <a href="#">
-              <font-awesome-icon :icon="['fab', 'github']" size="3x" />
-            </a>
-            <a href="#">
-              <font-awesome-icon icon="globe" size="3x" />
-            </a>
-          </div>
-        </div>
-      </section>
-      <section>
-        <img>
-        <h4>MeritViewer</h4>
-        <div class="card-overlay">
-          <span>An info tool for an old video game I used to play. An experiment that turned into a program.</span>
-          <h4>React JS &bull; JSON</h4>
-          <div class="overlay-footer">
-            <a href="#">
-              <font-awesome-icon :icon="['fab', 'github']" size="3x" />
-            </a>
-            <a href="#">
-              <font-awesome-icon icon="globe" size="3x" />
-            </a>
-          </div>
-        </div>
-      </section>
-      <section>
-        <img>
-        <h4>Stagecoach Meat Co.</h4>
-        <div class="card-overlay">
-          <span>My first Vue.js endeavor. Originally a bootcamp project using jQuery</span>
-          <h4>React &bull; ASP.NET Core &bull; Microsoft SQL Server &bull; Azure</h4>
+          <span>The love-child of my astronomy background and web development.</span>
+          <hr class="hrCard">
+          <h4>React &bull; HTML5 Canvas</h4>
+          <hr class="hrCard">
           <div class="overlay-footer">
             <a href="#">
               <font-awesome-icon :icon="['fab', 'github']" size="3x" />
@@ -56,7 +26,9 @@
         <h4>TwoFifteen</h4>
         <div class="card-overlay">
           <span>My first Vue.js endeavor. Originally a bootcamp project using jQuery</span>
+          <hr class="hrCard">
           <h4>React &bull; ASP.NET Core &bull; Microsoft SQL Server &bull; Azure</h4>
+          <hr class="hrCard">
           <div class="overlay-footer">
             <a href="#">
               <font-awesome-icon :icon="['fab', 'github']" size="3x" />
@@ -72,7 +44,9 @@
         <h4>Pixel-Art</h4>
         <div class="card-overlay">
           <span>My first Vue.js endeavor. Originally a bootcamp project using jQuery</span>
+          <hr class="hrCard">
           <h4>Vue &bull; core HTML and JS APIs</h4>
+          <hr class="hrCard">
           <div class="overlay-footer">
             <a href="">
               <font-awesome-icon :icon="['fab', 'github']" size="4x" />
@@ -85,10 +59,12 @@
       </section>
       <section>
         <img>
-        <h4>Franchise Favorites</h4>
+        <h4>CEA</h4>
         <div class="card-overlay">
-          <span>A gee whiz</span>
-          <h4>React JS &bull; OAuth &bull; MongoDB</h4>
+          <span>One of my very first programming projects rewritten in Angular </span>
+          <hr class="hrCard">
+          <h4>Angular &bull; ASP.NET Core &bull; MySql</h4>
+          <hr class="hrCard">
           <div class="overlay-footer">
             <a href="#">
               <font-awesome-icon :icon="['fab', 'github']" size="3x" />
@@ -100,11 +76,49 @@
         </div>
       </section>
       <section>
-        <img src="../assets/screenshots/extrasolar.png">
-        <h4>ExtraSolar</h4>
+        <img>
+        <h4>MeritViewer</h4>
         <div class="card-overlay">
-          <span>The love-child of my astronomy background and web development.</span>
-          <h4>React &bull; HTML5 Canvas</h4>
+          <span>An info tool for an old video game I used to play. An experiment that turned into a program.</span>
+          <hr class="hrCard">
+          <h4>React JS &bull; JSON</h4>
+          <hr class="hrCard">
+          <div class="overlay-footer">
+            <a href="#">
+              <font-awesome-icon :icon="['fab', 'github']" size="3x" />
+            </a>
+            <a href="#">
+              <font-awesome-icon icon="globe" size="3x" />
+            </a>
+          </div>
+        </div>
+      </section>
+      <section>
+        <img>
+        <h4>Stagecoach Meat Co.</h4>
+        <div class="card-overlay">
+          <span>My first Vue.js endeavor. Originally a bootcamp project using jQuery</span>
+          <hr class="hrCard">
+          <h4>React &bull; ASP.NET Core &bull; Microsoft SQL Server &bull; Azure</h4>
+          <hr class="hrCard">
+          <div class="overlay-footer">
+            <a href="#">
+              <font-awesome-icon :icon="['fab', 'github']" size="3x" />
+            </a>
+            <a href="#">
+              <font-awesome-icon icon="globe" size="3x" />
+            </a>
+          </div>
+        </div>
+      </section>
+      <section>
+        <img>
+        <h4>Franchise Favorites</h4>
+        <div class="card-overlay">
+          <span>A gee whiz</span>
+          <hr class="hrCard">
+          <h4>React JS &bull; OAuth &bull; MongoDB</h4>
+          <hr class="hrCard">
           <div class="overlay-footer">
             <a href="#">
               <font-awesome-icon :icon="['fab', 'github']" size="3x" />
@@ -120,7 +134,9 @@
         <h3>NOX</h3>
         <div class="card-overlay">
           <span>A customer portal and discrete admin access created for a fitness consultant in Colorado Springs, CO</span>
+          <hr class="hrCard">
           <h4>React &bull; Rails &bull; Postgresql</h4>
+          <hr class="hrCard">
           <div class="overlay-footer">
             <a href="#">
               <font-awesome-icon :icon="['fab', 'github']" size="3x" />
@@ -136,7 +152,9 @@
         <h3>Web-Dev-Roadmap</h3>
         <div class="card-overlay">
           <span>Infographic depicting some standard routes to learn web development heavily influenced by my subjective experience </span>
+          <hr class="hrCard">
           <h4>React &bull; SVG &bull; D3js</h4>
+          <hr class="hrCard">
           <div class="overlay-footer">
             <a href="#">
               <font-awesome-icon :icon="['fab', 'github']" size="3x" />
@@ -152,7 +170,9 @@
         <h3>Web-Dev-Quiz</h3>
         <div class="card-overlay">
           <span>Test your knowledge and wits on topics considered to be important in web develpment</span>
+          <hr class="hrCard">
           <h4>React &bull; Node JS &bull; MongoDB</h4>
+          <hr class="hrCard">
           <div class="overlay-footer">
             <a href="#">
               <font-awesome-icon :icon="['fab', 'github']" size="3x" />
@@ -186,7 +206,9 @@
         <h3>AirfieldAR</h3>
         <div class="card-overlay">
           <span>A first stab at augmented reality. Use a mobile device to visualize aviation flight paths, approaches and patterns!</span>
+          <hr class="hrCard">
           <h4>React &bull; Node JS &bull; MongoDB &bull; ARKit</h4>
+          <hr class="hrCard">
           <div class="overlay-footer">
             <a href="#">
               <font-awesome-icon :icon="['fab', 'github']" size="3x" />
@@ -246,7 +268,7 @@
   }
 
   .hrCard {
-    margin: 0 0.5em;
+    margin: 0.25em 0.5em;
     border-color: #0F0F0F
   }
 

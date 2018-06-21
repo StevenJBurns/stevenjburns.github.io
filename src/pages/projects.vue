@@ -276,7 +276,7 @@
 
   .hrCard {
     margin: 0.25em 0.5em;
-    border-color: #0F0F0F
+    border-color: #DFDFDF
   }
 
   #divCardWrapper {
@@ -329,7 +329,7 @@
     width: 100%;
     transition: opacity 0.5s;
     position: absolute;
-    background: #B0B080;
+    background: #FFFF19;
     color: #0F0F0F;
     display: flex;
     flex-direction: column
@@ -355,7 +355,7 @@
   }
 
   .overlay-footer svg {
-
+    color: #0F0F0F
   }
 
   .overlay-footer a:link,

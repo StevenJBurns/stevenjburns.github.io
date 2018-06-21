@@ -1,7 +1,7 @@
 <template>
   <div id="divPageWrapper">
     <h2>A collection of projects</h2>
-    <p>Click or over to see information and links for a given project</p>
+    <p>Click on or hover over an project to see information as well as links to the source code and live websites</p>
     <div id="divCardWrapper">
       <section>
         <img src="../assets/screenshots/extrasolar.png">
@@ -226,6 +226,13 @@
       <font-awesome-icon :icon="['fab', 'codepen']" size="5x" />
       <p>Some of my smaller efforts are hosted on <a href="https://codepen.io/StevenJBurns">CodePen</a> for quick testing, experiments and prototypes</p>
     </div>
+    <hr class="hrPage">
+    <div id="divObservableInfo">
+      <svg role="img" viewBox="0 0 24 24" aria-label="Observable" class="black" style="height: 80px; width: 80px; fill: #DFDFDF">
+        <path d="M12 21c-1.108 0-2.068-.261-2.88-.783a5.137 5.137 0 0 1-1.867-2.126 11.821 11.821 0 0 1-.952-2.847A16.523 16.523 0 0 1 6 12c0-.862.052-1.686.157-2.474.104-.787.297-1.587.578-2.399.281-.812.643-1.516 1.084-2.113a4.987 4.987 0 0 1 1.735-1.455C10.27 3.186 11.084 3 12 3c1.108 0 2.068.261 2.88.783a5.137 5.137 0 0 1 1.867 2.126c.434.895.751 1.844.952 2.847.2 1.002.301 2.084.301 3.244 0 .862-.052 1.686-.157 2.474a11.76 11.76 0 0 1-.59 2.399c-.29.812-.65 1.516-1.084 2.113-.434.597-1.008 1.082-1.723 1.455-.715.373-1.53.559-2.446.559zm2.118-6.882A2.888 2.888 0 0 0 15 12c0-.824-.287-1.53-.86-2.118C13.566 9.294 12.853 9 12 9c-.853 0-1.566.294-2.14.882A2.925 2.925 0 0 0 9 12c0 .824.287 1.53.86 2.118.574.588 1.287.882 2.14.882.853 0 1.559-.294 2.118-.882zM12 24c6.627 0 12-5.373 12-12S18.627 0 12 0 0 5.373 0 12s5.373 12 12 12z"></path>
+      </svg>
+      <p><a href="https://beta.observablehq.com/@stevenjburns">Observable</a> is a new service I am trying in addition to CodePen. </p>
+    </div>
   </div>
 </template>
 
@@ -362,24 +369,28 @@
     opacity: 1
   }
 
-  #divCodepenInfo {
+  #divCodepenInfo, #divObservableInfo {
     display: flex;
     flex-direction: row;
     align-items: center
   }
 
-  #divCodepenInfo p {
+  #divCodepenInfo p,
+  #divObservableInfo p {
     font-size: 1.5em;
     font-weight: bold;
     text-align: left
   }
 
-  #divCodepenInfo svg {
+  #divCodepenInfo svg,
+  #divObservableInfo svg {
     margin: 0 24px
   }
 
   #divCodepenInfo a:link,
-  #divCodepenInfo a:visited {
+  #divObservableInfo a:link,
+  #divCodepenInfo a:visited,
+  #divObservableInfo a:visited {
     color: #C0C090;
     display: inline !important
   }

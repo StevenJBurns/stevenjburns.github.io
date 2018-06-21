@@ -80,8 +80,10 @@
 
   h3 {
     margin: 0 32px;
+    margin-bottom: 16px;
     color: #303050;
     max-width: 720px;
+    font-size: 1.5em;
     display: inline-block;
   }
 

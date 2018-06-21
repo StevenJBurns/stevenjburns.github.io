@@ -396,11 +396,13 @@
   }
 
   @media screen and (max-width: 640px) {
-    #divCodepenInfo {
+    #divCodepenInfo,
+    #divObservableInfo {
       flex-direction: column
     }
 
-  #divCodepenInfo p {
+  #divCodepenInfo p,
+  #divObservableInfo p {
     font-size: 1.25em;
     text-align: justify
     }

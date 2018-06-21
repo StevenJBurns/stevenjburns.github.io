@@ -22,7 +22,7 @@
         <animateTransform attributeName="transform" type="translate" from="-24 -24" to="0 0" begin="1.5s" dur="0.5s" fill="freeze" />
       </polygon>
     </svg>
-    <h3>I Want To Be Challennged</h3>
+    <h3>I Want To Be Challenged</h3>
     <h2>Longmont&nbsp;&bull;&nbsp;Colorado</h2>
     </section>
     <div id="divPageBackground">

@@ -243,15 +243,13 @@
   }
 
   #divCardWrapper {
+    margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    align-items: flex-start;
-    align-content: flex-start;
-    justify-content:center;
-    grid-gap: 32px;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    background: transparent
+    justify-content: center;
+    background: transparent;
+    max-width: 960px;
   }
 
   section {

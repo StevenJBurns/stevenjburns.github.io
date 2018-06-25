@@ -5,12 +5,12 @@
       <section>
         <h3>Performance</h3>
         <font-awesome-icon icon="fighter-jet" size="3x" />
-        <p>Fast inital loads and sustained speed while running.</p>
+        <p>Fast inital load times. Sustained speed during use and transitions.</p>
       </section>
       <section>
         <h3>Responsive</h3>
         <font-awesome-icon icon="expand-arrows-alt" size="3x" />
-        <p>Apps should look good on any device in any screen resolution.</p>
+        <p>Websites and apps should look good on any device in any screen resolution.</p>
       </section>
       <section>
         <h3>Dynamic</h3>
@@ -30,9 +30,9 @@
         <img src="../assets/screenshots/extrasolar.png">
         <h4>ExtraSolar</h4>
         <div class="card-overlay">
-          <span>The love-child of my astronomy background and web development. Real time Exoplanet data from the NASA API charted</span>
+          <span>The love-child of my astronomy background and web development. Real time Exoplanet data pulled from the NASA API and charted on HTML5 canvas.</span>
           <hr class="hrCard">
-          <h4>React &bull; HTML5 Canvas</h4>
+          <h4>React &bull; Redux &bull; HTML5 Canvas</h4>
           <hr class="hrCard">
           <div class="overlay-footer">
             <a href="#">
@@ -50,7 +50,7 @@
         <div class="card-overlay">
           <span>All sports lend themselves to data analysis and visualization. I couldn't find a clean, free baseball API. So I made my own.</span>
           <hr class="hrCard">
-          <h4>React &bull; ASP.NET Core &bull; Microsoft SQL Server &bull; Azure</h4>
+          <h4>React &bull; Redux &bull; ASP.NET Core &bull; Microsoft SQL Server &bull; Azure</h4>
           <hr class="hrCard">
           <div class="overlay-footer">
             <a href="#">
@@ -122,7 +122,7 @@
         <div class="card-overlay">
           <span>An info tool for an old video game I used to play. An experiment that turned into a program.</span>
           <hr class="hrCard">
-          <h4>React JS &bull; JSON</h4>
+          <h4>React &bull; Redux &bull; JSON</h4>
           <hr class="hrCard">
           <div class="overlay-footer">
             <a href="#">
@@ -140,7 +140,7 @@
         <div class="card-overlay">
           <span>Infographic depicting some standard routes to learn web development heavily influenced by my subjective experience </span>
           <hr class="hrCard">
-          <h4>React &bull; SVG &bull; D3js</h4>
+          <h4>React &bull; Redux &bull; SVG &bull; D3js</h4>
           <hr class="hrCard">
           <div class="overlay-footer">
             <a href="#">
@@ -158,7 +158,7 @@
         <div class="card-overlay">
           <span>Test your knowledge and wits on topics considered to be important in web develpment</span>
           <hr class="hrCard">
-          <h4>React &bull; Node JS &bull; MongoDB</h4>
+          <h4>React &bull; Redux &bull; Node &bull; MongoDB</h4>
           <hr class="hrCard">
           <div class="overlay-footer">
             <a href="#">
@@ -176,7 +176,7 @@
         <div class="card-overlay">
           <span>A gee whiz</span>
           <hr class="hrCard">
-          <h4>React JS &bull; OAuth &bull; MongoDB</h4>
+          <h4>React &bull; Redux &bull; OAuth &bull; MongoDB</h4>
           <hr class="hrCard">
           <div class="overlay-footer">
             <a href="#">
@@ -212,7 +212,7 @@
         <div class="card-overlay">
           <span>Pilots are required to keep a log of flying hours and aviation events. Why not transform that static trove of data into a modern interactive visualization?</span>
           <hr class="hrCard">
-          <h4>React &bull; Node JS &bull; MongoDB</h4>
+          <h4>React &bull; Redux &bull; Node &bull; MongoDB</h4>
           <hr class="hrCard">
           <div class="overlay-footer">
             <a href="#">
@@ -230,7 +230,7 @@
         <div class="card-overlay">
           <span>A first stab at augmented reality. Use a mobile device to visualize aviation flight paths, approaches and patterns!</span>
           <hr class="hrCard">
-          <h4>React &bull; Node JS &bull; MongoDB &bull; ARKit</h4>
+          <h4>React &bull; Redux &bull; Node &bull; MongoDB &bull; ARKit</h4>
           <hr class="hrCard">
           <div class="overlay-footer">
             <a href="#">
@@ -303,6 +303,7 @@
 
   #divProjectGoals {
     margin: 32px auto;
+    max-width: 640px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center
@@ -317,7 +318,7 @@
     text-shadow: 2px 2px 16px #2F2F2F;
     box-shadow: 2px 2px 32px #2F2F2F;
     background: #DAA520;
-    transition: all 0.25s
+    transition: all 0.5s
   }
 
   #divProjectGoals section:hover {
@@ -395,8 +396,8 @@
   }
 
   .overlay-footer {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    justify-content: space-around;
     padding: 8px
   }
 
@@ -404,11 +405,11 @@
     color: #0F0F0F
   }
 
+  .overlay-footer a,
   .overlay-footer a:link,
   .overlay-footer a:visited {
-    margin: 0 12px;
+    display: inline-block;
     color: #0F0F0F;
-    display: inline
   }
   
   section:hover .card-overlay {

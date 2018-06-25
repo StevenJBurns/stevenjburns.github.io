@@ -332,7 +332,7 @@
     flex-direction: column;
     justify-content: center;
     min-width: 288px;
-    background: #909060;
+    background: #B8860B;
     border-radius: 8px;
     box-shadow: 4px 4px 32px #000000;
     position: relative;

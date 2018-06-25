@@ -2,16 +2,20 @@
   <div id="divPageWrapper">
     <div id="divProjectGoals">
       <section>
-        <h4>Performance</h4>
+        <h3>Performance</h3>
+        <font-awesome-icon icon="fighter-jet" size="3x" />
       </section>
       <section>
-        <h4>Responsive</h4>
+        <h3>Responsive</h3>
+        <font-awesome-icon icon="expand-arrows-alt" size="3x" />
       </section>
       <section>
-        <h4>Dynamic</h4>
+        <h3>Dynamic</h3>
+        <font-awesome-icon icon="bolt" size="3x" />
       </section>
       <section>
-        <h4>Secure</h4>
+        <h3>Secure</h3>
+        <font-awesome-icon icon="lock" size="3x" />
       </section>
     </div>
     <h2>A collection of my recent projects.</h2>
@@ -252,7 +256,7 @@
 <script scoped>
   import { eventBus } from "../main.js";
   import FontAwesomeIcon from "@fortawesome/vue-fontawesome";
-  import { fasGlobe, fasFighterjet, fasExpandarrows, fasBolt, fasLock } from "@fortawesome/fontawesome-free-solid";
+  import { fasGlobe, fasFighterjet, fasExpandarrowsalt, fasBolt, fasLock } from "@fortawesome/fontawesome-free-solid";
   import { fabGithub, fabCodepen } from "@fortawesome/fontawesome-free-brands";
 
 
@@ -303,7 +307,7 @@
     width: 144px;
     height: 144px;
     padding: 32px;
-    border-radius: 8px;
+    border-radius: 50%;
     box-shadow: 2px 2px 32px #2F2F2F;
     background: #DAA520;
     transition: all 0.25s

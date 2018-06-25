@@ -197,8 +197,8 @@
 
 <script>
   import Vue from "vue";
-  import { TweenLite } from "gsap";
   import { eventBus } from "../main.js";
+  import { TweenLite, BezierPlugin } from "gsap";
 
   export default {
     name: 'PageHome',

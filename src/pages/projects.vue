@@ -1,7 +1,21 @@
 <template>
   <div id="divPageWrapper">
-    <h2>A collection of projects</h2>
-    <p>Click on or hover over an project to see information as well as links to the source code and live websites</p>
+    <div id="divProjectGoals">
+      <section>
+        <h4>Performance</h4>
+      </section>
+      <section>
+        <h4>Responsive</h4>
+      </section>
+      <section>
+        <h4>Dynamic</h4>
+      </section>
+      <section>
+        <h4>Secure</h4>
+      </section>
+    </div>
+    <h2>A collection of my recent projects.</h2>
+    <p>Click on or hover over a project to see information as well as links to the source code and live websites</p>
     <div id="divCardWrapper">
       <section>
         <img src="../assets/screenshots/extrasolar.png">
@@ -279,6 +293,28 @@
     border-color: #DFDFDF
   }
 
+  #divProjectGoals {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center
+  }
+
+  #divProjectGoals section {
+    margin: 8px;
+    width: 144px;
+    height: 144px;
+    padding: 32px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 32px #2F2F2F;
+    background: #DAA520;
+    transition: all 0.25s
+  }
+
+  #divProjectGoals section:hover {
+    color: #0F0F0F;
+    background: #FFD700
+  }
+
   #divCardWrapper {
     margin: 0 auto;
     display: flex;
@@ -289,7 +325,7 @@
     max-width: 960px;
   }
 
-  section {
+  #divCardWrapper section {
     margin: 16px;
     padding: 16px 0;
     display: flex;
@@ -303,8 +339,8 @@
     overflow: hidden
   }
 
-  section h3 {
-    margin: 12px auto
+  #divCardWrapper section h3 {
+    margin: 24px auto
   }
 
   img {
@@ -316,8 +352,8 @@
     transition: opacity 0.5s
   }
 
-  section:hover img,
-  section:hover > h4 {
+  #divCardWrapper section:hover img,
+  #divCardWrapper section:hover > h4 {
     opacity: 0
   }
 
@@ -329,7 +365,7 @@
     width: 100%;
     transition: opacity 0.5s;
     position: absolute;
-    background: #FFFF19;
+    background: #FFD700;
     color: #0F0F0F;
     display: flex;
     flex-direction: column

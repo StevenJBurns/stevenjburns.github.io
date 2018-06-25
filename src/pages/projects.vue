@@ -233,7 +233,6 @@
           </div>
         </div>
       </section>
-
     </div>
     <hr class="hrPage">
     <div id="divCodepenInfo">
@@ -253,7 +252,7 @@
 <script scoped>
   import { eventBus } from "../main.js";
   import FontAwesomeIcon from "@fortawesome/vue-fontawesome";
-  import { fasGlobe } from "@fortawesome/fontawesome-free-solid";
+  import { fasGlobe, fasFighterjet, fasExpandarrows, fasBolt, fasLock } from "@fortawesome/fontawesome-free-solid";
   import { fabGithub, fabCodepen } from "@fortawesome/fontawesome-free-brands";
 
 

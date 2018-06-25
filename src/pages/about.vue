@@ -1,9 +1,10 @@
 <template>
   <div>
+    <h1>let Career = (MilitaryPilot) =&gt; FullStackDeveloper;</h1>
+    <br>
     <h1>About Me</h1>
     <hr>
     <img id="img-a" width="144" src="../assets/steve_then.png">
-    <h3>let Career = (MilitaryPilot) =&gt; FullStackDeveloper;</h3>
     <img id="img-b" width="144" src="../assets/steve_now.jpg">
     <hr>
     <p>Welcome to my personal portfolio site. My name is Steve Burns. I was neither the host of Blues Clues in the 1990s nor am I a distant relative of Montgomery J Burns of The Simpsons.  I <strong><em>am</em></strong> a U.S. Air Force veteran transitioning to a second career in software development. As a graduate of the Air Force Academy and former combat pilot, I am seeking an equally challenging second career.</p>
@@ -68,5 +69,17 @@
     width: 80%;
     margin: 12px 0;
     text-align: justify
+  }
+
+  @media screen and (max-width: 960px) {
+    h1 {
+      font-size: 1.5em
+    }
+  }
+
+  @media screen and (max-width: 720px) {
+    h1 {
+      font-size: 1.25em
+    }
   }
 </style>

@@ -401,10 +401,10 @@
       flex-direction: column
     }
 
-  #divCodepenInfo p,
-  #divObservableInfo p {
-    font-size: 1.25em;
-    text-align: justify
+    #divCodepenInfo p,
+    #divObservableInfo p {
+      font-size: 1.25em;
+      text-align: justify
     }
   }
 </style>

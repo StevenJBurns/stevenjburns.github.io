@@ -45,7 +45,7 @@
     align-items: center;
     background: #445566;
     overflow: hidden;
-    font-family: Futura
+    font-family: Futura, Helvetica, Verdana, Tahoma
   }
 
   div h3, div img {
@@ -80,6 +80,12 @@
   @media screen and (max-width: 720px) {
     h1 {
       font-size: 1.25em
+    }
+  }
+    
+  @media screen and (max-width: 480px) {
+    h1 {
+      font-size: 1.1em
     }
   }
 </style>

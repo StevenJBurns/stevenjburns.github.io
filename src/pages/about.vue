@@ -16,8 +16,8 @@
     <!-- <p>If you have a simple, static website from 1998 that needs cleanup, I can do that.</p>
     <p>If you want to overhaul a website to more modern technology, I can do that.</p>
     <p>If you want to lean full forward towards cutting-edge technology, I can do that</p> -->
-    <hr>
-    <h1>let Career = (MilitaryPilot) =&gt; FullStackDeveloper;</h1>
+    <!-- <hr> -->
+    <!-- <h1>let Career = (MilitaryPilot) =&gt; FullStackDeveloper;</h1> -->
   </div>
 </template>
 
@@ -37,7 +37,7 @@
 
 <style scoped>
   div {
-    padding: 64px 0;
+    padding: 32px 0;
     flex: 1 0 auto;
     display: flex;
     flex-direction: column;

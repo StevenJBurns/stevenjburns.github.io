@@ -1,21 +1,26 @@
 <template>
   <div id="divPageWrapper">
+    <h2>My goal in every project is to create the following four attributes</h2>
     <div id="divProjectGoals">
       <section>
         <h3>Performance</h3>
         <font-awesome-icon icon="fighter-jet" size="3x" />
+        <p>Fast inital loads and sustained speed while running.</p>
       </section>
       <section>
         <h3>Responsive</h3>
         <font-awesome-icon icon="expand-arrows-alt" size="3x" />
+        <p>Apps should look good on any device in any screen resolution.</p>
       </section>
       <section>
         <h3>Dynamic</h3>
         <font-awesome-icon icon="bolt" size="3x" />
+        <p>Even tiny animations lend a natural look and feel to users.</p>
       </section>
       <section>
         <h3>Secure</h3>
         <font-awesome-icon icon="lock" size="3x" />
+        <p>Minimal cookies. Very strong password and data protection. Period.</p>
       </section>
     </div>
     <h2>A collection of my recent projects.</h2>
@@ -284,7 +289,7 @@
     flex: 1 0 auto;
     padding: 32px 5%;
     background: #707040;
-    background: linear-gradient(to bottom right, #303000, #A0A070, #303000);
+    background: linear-gradient(to bottom right, #303000, #B8860B, #303000);
   }
   
   .hrPage {
@@ -297,6 +302,7 @@
   }
 
   #divProjectGoals {
+    margin: 32px auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center
@@ -304,10 +310,11 @@
 
   #divProjectGoals section {
     margin: 8px;
-    width: 144px;
-    height: 144px;
+    width: 160px;
+    height: 160px;
     padding: 32px;
     border-radius: 50%;
+    text-shadow: 2px 2px 16px #2F2F2F;
     box-shadow: 2px 2px 32px #2F2F2F;
     background: #DAA520;
     transition: all 0.25s

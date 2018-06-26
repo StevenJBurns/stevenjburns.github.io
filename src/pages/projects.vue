@@ -66,7 +66,7 @@
         <img src="../assets/screenshots/pixelart.png">
         <h4>Pixel-Art</h4>
         <div class="card-overlay">
-          <span>My first Vue.js endeavor. Originally a bootcamp project using jQuery</span>
+          <span>My first Vue.js endeavor. Originally a bootcamp project using jQuery. Draw on the canvas. Change colors. Repeat.</span>
           <hr class="hrCard">
           <h4>Vue &bull; core HTML and JS APIs</h4>
           <hr class="hrCard">

@@ -25,20 +25,20 @@
         currentView: null,
         currentNode: null,
         currentFocus: null,
-        skillColors: ["#8B0000", "#556677", "#667788", "#778899", "#8899AA", "#99AABB", "#AABBCC", "#BBCCDD"],
+        skillColors: ["#003300", "#005500", "#006600", "#005500", "#006600", "#99AABB", "#AABBCC", "#BBCCDD"],
         skillsData: {
           "name": "Skills",
           "children": [
             {
               "name": "Front End",
               "children": [
-                { "name": "HTML", "size": 1 },
+                { "name": "HTML", "size": 0.75 },
                 { "name": "SVG", "size": 1 },
-                { "name": "CSS", "size": 1 },
+                { "name": "CSS", "size": 0.75 },
                 { "name": "JavaScript", "size": 1 },
-                { "name": "jQuery", "size": 1 },
+                { "name": "jQuery", "size": 0.75 },
                 { "name": "React", "size": 1 },
-                { "name": "Vue", "size": 1 }
+                { "name": "Vue", "size": 0.75 }
               ]
             },
             {
@@ -46,7 +46,7 @@
               "children": [
                 { "name": "Node JS", "size": 1 },
                 { "name": "Ruby on Rails", "size": 1 },
-                { "name": "ASP.NET", "size": 1 },
+                { "name": "ASP.NET", "size": 0.75 },
                 { "name": "Java", "size": 1 },
                 { "name": "Python", "size": 1 }
               ]
@@ -88,8 +88,8 @@
     },
     mounted() {
       /* lets create a D3 sunburstt chart */
-      let width = 512;
-      let height = 512;
+      let width = 640;
+      let height = 640;
       let radius = Math.min(height, width) / 2;
       let color = scaleOrdinal(this.skillColors);
       
@@ -117,9 +117,9 @@
        .data(root.descendants())
        .enter()
        .append('path')
-       .attr("display", d => d.depth ? null : "none")
+       .attr("display", d => d.depth )
        .attr("d", arc)
-       .style('stroke', '#DFDFDF')
+       .style('stroke', '#809070')
        .style("fill", d => color((d.children ? d : d.parent).data.name));
       
     },

@@ -14,6 +14,7 @@
 <script>
   import { eventBus } from "../main.js";
   import * as d3 from "d3";
+  import {scaleLinear, scaleOrdinal } from "d3-scale";
 
   export default {
     name: 'PageSkills',
@@ -24,57 +25,52 @@
         currentView: null,
         currentNode: null,
         currentFocus: null,
-        skillColors: ["#445566", "#556677", "#667788", "#778899", "#8899AA", "#99AABB", "#AABBCC", "#BBCCDD"],
-        appData: {
+        skillColors: ["#8B0000", "#556677", "#667788", "#778899", "#8899AA", "#99AABB", "#AABBCC", "#BBCCDD"],
+        skillsData: {
           "name": "Skills",
-          "size": 100,
           "children": [
             {
               "name": "Front End",
-              "size": 25,
               "children": [
-                { "name": "HTML", "size": 25 },
-                { "name": "SVG", "size": 5 },
-                { "name": "CSS", "size": 12 },
-                { "name": "JavaScript", "size": 5 },
-                { "name": "jQuery", "size": 5 },
-                { "name": "React", "size": 5 },
-                { "name": "Vue", "size": 5 }
+                { "name": "HTML", "size": 1 },
+                { "name": "SVG", "size": 1 },
+                { "name": "CSS", "size": 1 },
+                { "name": "JavaScript", "size": 1 },
+                { "name": "jQuery", "size": 1 },
+                { "name": "React", "size": 1 },
+                { "name": "Vue", "size": 1 }
               ]
             },
             {
               "name": "Back End",
-              "size": 25,
               "children": [
-                { "name": "Node JS", "size": 5 },
-                { "name": "Ruby on Rails", "size": 5 },
-                { "name": "ASP.NET", "size": 5 },
-                { "name": "Java", "size": 5 },
-                { "name": "Python", "size": 5 }
+                { "name": "Node JS", "size": 1 },
+                { "name": "Ruby on Rails", "size": 1 },
+                { "name": "ASP.NET", "size": 1 },
+                { "name": "Java", "size": 1 },
+                { "name": "Python", "size": 1 }
               ]
             },
             {
               "name": "Data",
-              "size": 25,
               "children": [
-                { "name": "JSON", "size": 12 },
-                { "name": "XML", "size": 3 },
-                { "name": "SQLite", "size": 4 },
-                { "name": "MySql", "size": 6 },
-                { "name": "PostgreSQL", "size": 9 },
-                { "name": "MSSQL", "size": 6 },
-                { "name": "MongoDB", "size": 4 }
+                { "name": "JSON", "size": 1 },
+                { "name": "XML", "size": 1 },
+                { "name": "SQLite", "size": 1 },
+                { "name": "MySql", "size": 1 },
+                { "name": "PostgreSQL", "size": 1 },
+                { "name": "MSSQL", "size": 1 },
+                { "name": "MongoDB", "size": 1 }
               ]
             },
             {
               "name": "Tools & Environment",
-              "size": 25,
               "children": [
-                { "name": "Git", "size": 5 },
-                { "name": "GitHub", "size": 5 },
-                { "name": "NPM", "size": 5 },
-                { "name": "CRUD", "size": 5 },
-                { "name": "RESTful", "size": 5 }
+                { "name": "Git", "size": 1 },
+                { "name": "GitHub", "size": 1 },
+                { "name": "NPM", "size": 1 },
+                { "name": "CRUD", "size": 1 },
+                { "name": "RESTful", "size": 1 }
               ]
             }
           ]
@@ -91,123 +87,47 @@
       eventBus.$emit('changingTheme', this.theme)
     },
     mounted() {
-      let zoom = this.zoom;
-
-      const svg = d3.select("#svgSkillsChart")
-                     .attr("preserveAspectRatio", "xMinYMin meet")
-                     .attr("viewBox", "0 0 288 288");
-
-      const g = svg.append("g").attr("transform", "translate(144, 144)");
-
-      let pack = d3.pack().padding(2);
-
-      this.root = d3.hierarchy(this.appData)
-                    .sum(d => d.size)
-                    .sort((a, b) => b.value - a.value);
-
-      let nodes = pack(this.root).descendants();
-
-      this.circle = g.selectAll("circle")
-        .data(nodes)
-        .enter().append("circle")
-          .attr("class", (d) => d.parent ? (d.children ? "node" : "node node-leaf") : "node root-node")
-          .attr('stroke', 'transparent')
-          .attr('stroke-width', 4)
-          .style("fill", (d) => this.skillColors[d.depth + 1])
-          .on("click", (d) => this.currentFocus !== d ? this.zoom(d) : d3.event.stopPropagation())
-          .on('mouseover', function() {
-            d3.select(this)
-              .transition()
-              .duration(250)
-              .attr('stroke', '#B0C0A0')
-          })
-          .on('mouseout', function() {
-            d3.select(this)
-              .transition()
-              .duration(250)
-              .attr('stroke', 'transparent')
-          });
+      /* lets create a D3 sunburstt chart */
+      let width = 512;
+      let height = 512;
+      let radius = Math.min(height, width) / 2;
+      let color = scaleOrdinal(this.skillColors);
       
-        var text = g.selectAll("text")
-          .data(nodes)
-          .enter().append("text")
-            .attr("class", "svglabel")
-            .attr("dy", "4")
-            .attr("text-anchor", "middle")
-            .style("font-size", "10px")
-            .style("fill-opacity", function(d) { return d.parent == this.currentFocus ? 1 : 0; })
-            .style("display", function(d) { return d.parent == this.currentFocus ? "inline" : "none"; })
-            .text(d => d.data.name);
+      // set up the already declared SVG element in the template with height, width, a translate to the center and attach an svg g tag inside
+      let g = d3.select("#svgSkillsChart")
+                .attr("width", width)
+                .attr("height", height)
+                .append("g")
+                .attr("transform", `translate(${width / 2}, ${height / 2})`);
+      
+      //
+      let partition = d3.partition().size([2 * Math.PI, radius]);
 
-      this.node = g.selectAll("circle, text");
+      let root = d3.hierarchy(this.skillsData).sum(d => d.size);
 
-      this.zoomTo([this.root.x, this.root.y, this.root.r * 2]);
+      partition(root);
+
+      let arc = d3.arc()
+                  .startAngle(d => d.x0)
+                  .endAngle(d => d.x1)
+                  .innerRadius(d => d.y0)
+                  .outerRadius(d => d.y1);
+      
+      g.selectAll('path')
+       .data(root.descendants())
+       .enter()
+       .append('path')
+       .attr("display", d => d.depth ? null : "none")
+       .attr("d", arc)
+       .style('stroke', '#DFDFDF')
+       .style("fill", d => color((d.children ? d : d.parent).data.name));
+      
     },
     computed: {
-      svg: function() {
-        return d3.select("#svgSkillsChart");
-      },
-      pack: function() {
-        return d3.pack()
-                 .size([480, 480])
-                 .padding(8);
-      },
-      nodes: function() {
-        return this.pack(this.root).descendants();
-      },
-      view: {
-        get: function() { return this.currentView; },
-        set: function(newView) {
-          this.currentView = newView
-        }
-      },
-      focus: {
-        get: function() { return this.currentFocus; },
-        set: function(newFocus) {
-          this.currentFocus = newFocus
-        }
-      },
-      node: {
-        get: function() { return this.currentNode; },
-        set: function(newNode) {
-          this.currentNode = newNode;
-        }
-      }
+
     },
     methods: {
-      zoom: function(d) {
-        this.currentFocus = d;
 
-        let root = this.root;
-        let view = this.currentView;
-        let focus = this.currentFocus;
-        let zoomTo = this.zoomTo;
-        
-        let transition = d3.transition()
-            .duration(1000)
-            .tween("zoom", function(d) {
-              let i = d3.interpolateZoom(view, [focus.x, focus.y, focus.r * 2]);
-              return function(t) { zoomTo(i(t)) };
-            });
-
-        transition.selectAll("text")
-          .filter(function(d) { return d.parent === focus || this.style.display === "inline"; })
-            .style("fill-opacity", function(d) { return d.parent === focus ? 1 : 0; })
-            .on("start", function(d) { if (d.parent === focus) this.style.display = "inline"; })
-            .on("end", function(d) { if (d.parent !== focus) this.style.display = "none"; });      
-      },
-      zoomTo: function(v) {
-        let k = 240 / (v[2]);
-        console.log(k);
-        
-        this.view = v;
-
-        this.node.attr("transform", function(d) {
-          return `translate(${(d.x - v[0]) * k + 16}, ${(d.y - v[1]) * k + 16})`
-        });
-
-        this.circle.attr("r", function(d) { return d.r * k });
-      }
     }
   }
 </script>

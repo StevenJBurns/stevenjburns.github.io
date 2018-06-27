@@ -6,7 +6,7 @@
       </ul>
     </div>
     <div id="divChartWrapper">
-      <svg id="svgSkillsChart"></svg>
+      <svg id="svgSkillsChart" viewbox="0 0 256 256"></svg>
     </div>
   </div>
 </template>
@@ -32,22 +32,22 @@
             {
               "name": "Front End",
               "children": [
-                { "name": "HTML", "size": 0.75 },
+                { "name": "HTML", "size": 1 },
                 { "name": "SVG", "size": 1 },
-                { "name": "CSS", "size": 0.75 },
+                { "name": "CSS", "size": 1 },
                 { "name": "JavaScript", "size": 1 },
-                { "name": "jQuery", "size": 0.75 },
+                { "name": "jQuery", "size": 1 },
                 { "name": "React", "size": 1 },
-                { "name": "Vue", "size": 0.75 }
+                { "name": "Vue", "size": 1 }
               ]
             },
             {
               "name": "Back End",
               "children": [
                 { "name": "Node JS", "size": 1 },
-                { "name": "Ruby on Rails", "size": 1 },
-                { "name": "ASP.NET", "size": 0.75 },
-                { "name": "Java", "size": 1 },
+                { "name": "Ruby on Rails", "size": 2 },
+                { "name": "ASP.NET", "size": 1 },
+                { "name": "Java", "size": 2 },
                 { "name": "Python", "size": 1 }
               ]
             },
@@ -67,9 +67,9 @@
               "name": "Tools & Environment",
               "children": [
                 { "name": "Git", "size": 1 },
-                { "name": "GitHub", "size": 1 },
+                { "name": "GitHub", "size": 2 },
                 { "name": "NPM", "size": 1 },
-                { "name": "CRUD", "size": 1 },
+                { "name": "CRUD", "size": 2 },
                 { "name": "RESTful", "size": 1 }
               ]
             }
@@ -87,9 +87,9 @@
       eventBus.$emit('changingTheme', this.theme)
     },
     mounted() {
-      /* lets create a D3 sunburstt chart */
-      let width = 640;
-      let height = 640;
+      /* lets create a D3 sunburst chart */
+      let width = 480;
+      let height = 480;
       let radius = Math.min(height, width) / 2;
       let color = scaleOrdinal(this.skillColors);
       
@@ -153,7 +153,6 @@
     width: 100%;
     position: relative;
     text-align: center;
-    overflow: hidden
   }
 
   #svgSkillsChart {

@@ -95,10 +95,11 @@
       eventBus.$emit('changingTheme', this.theme)
     },
     mounted() {
-      
+      let radius = this.radius
+      console.log(radius);
     },
     computed: {
-      radius: () => Math.min(this.height, this.width) / 2
+      radius: function() { return Math.min(this.height, this.width) / 2 }
     },
     methods: {
 

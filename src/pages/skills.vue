@@ -1,7 +1,7 @@
 <template>
   <div id="divPageWrapper">
     <div id="divSkillsList">
-      <ul>
+      <ul :v-model="skillsData">
         <li />
       </ul>
     </div>
@@ -14,17 +14,13 @@
 <script>
   import { eventBus } from "../main.js";
   import * as d3 from "d3";
-  import {scaleLinear, scaleOrdinal } from "d3-scale";
 
   export default {
     name: 'PageSkills',
     data() {
       return {
-        root: null,
-        circle: null,
-        currentView: null,
-        currentNode: null,
-        currentFocus: null,
+        width: 480,
+        height: 480,
         skillColors: ["#003300", "#005500", "#006600", "#005500", "#006600", "#99AABB", "#AABBCC", "#BBCCDD"],
         skillsData: {
           "name": "Skills",
@@ -34,7 +30,12 @@
               "children": [
                 { "name": "HTML", "size": 1 },
                 { "name": "SVG", "size": 1 },
-                { "name": "CSS", "size": 1 },
+                { "name": "CSS",
+                  "children": [
+                    { "name": "Transition & Animation", "size": 1 },
+                    { "name": "Grid & Flexbox", "size": 1 },
+                    { "name": "SASS & SCSS", "size": 1 }
+                  ] },
                 { "name": "JavaScript", "size": 1 },
                 { "name": "jQuery", "size": 1 },
                 { "name": "React", "size": 1 },
@@ -46,7 +47,7 @@
               "children": [
                 { "name": "Node JS", "size": 1 },
                 { "name": "Ruby on Rails", "size": 2 },
-                { "name": "ASP.NET", "size": 1 },
+                { "name": "ASP.NET Core", "size": 1 },
                 { "name": "Java", "size": 2 },
                 { "name": "Python", "size": 1 }
               ]
@@ -68,7 +69,14 @@
               "children": [
                 { "name": "Git", "size": 1 },
                 { "name": "GitHub", "size": 2 },
+                { "name": "Atom", "size": 2 },
+                { "name": "Visual Studio Code", "size": 2 },
+                { "name": "Visual Studio 2017", "size": 2 },
+                { "name": "Microsoft Azure", "size": 2 },
+                { "name": "Heroku", "size": 2 },
                 { "name": "NPM", "size": 1 },
+                { "name": "Yarn", "size": 1 },
+                { "name": "NuGet", "size": 1 },
                 { "name": "CRUD", "size": 2 },
                 { "name": "RESTful", "size": 1 }
               ]
@@ -87,40 +95,6 @@
       eventBus.$emit('changingTheme', this.theme)
     },
     mounted() {
-      /* lets create a D3 sunburst chart */
-      let width = 480;
-      let height = 480;
-      let radius = Math.min(height, width) / 2;
-      let color = scaleOrdinal(this.skillColors);
-      
-      // set up the already declared SVG element in the template with height, width, a translate to the center and attach an svg g tag inside
-      let g = d3.select("#svgSkillsChart")
-                .attr("width", width)
-                .attr("height", height)
-                .append("g")
-                .attr("transform", `translate(${width / 2}, ${height / 2})`);
-      
-      //
-      let partition = d3.partition().size([2 * Math.PI, radius]);
-
-      let root = d3.hierarchy(this.skillsData).sum(d => d.size);
-
-      partition(root);
-
-      let arc = d3.arc()
-                  .startAngle(d => d.x0)
-                  .endAngle(d => d.x1)
-                  .innerRadius(d => d.y0)
-                  .outerRadius(d => d.y1);
-      
-      g.selectAll('path')
-       .data(root.descendants())
-       .enter()
-       .append('path')
-       .attr("display", d => d.depth )
-       .attr("d", arc)
-       .style('stroke', '#809070')
-       .style("fill", d => color((d.children ? d : d.parent).data.name));
       
     },
     computed: {

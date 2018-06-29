@@ -95,11 +95,16 @@
       eventBus.$emit('changingTheme', this.theme)
     },
     mounted() {
-    var g = d3.select('#svgSkillsChart')
-        .attr('width', this.width)
-        .attr('height', this.height)
-        .append('g')
-        .attr('transform', `translate(${this.width / 2}, ${this.height / 2})`);
+      // grab the skills svg element and set h, w, and translate it to the center
+      let g = d3.select('#svgSkillsChart')
+                .attr('width', this.width)
+                .attr('height', this.height)
+                .append('g')
+                .attr('transform', `translate(${this.width / 2}, ${this.height / 2})`);
+      
+      // create a D3 heirarchical partition chart
+      let partition = d3.partition().size([2 * Math.PI, this.radius]);
+
     },
     computed: {
       radius: function() { return Math.min(this.height, this.width) / 2 }

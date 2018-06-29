@@ -95,8 +95,11 @@
       eventBus.$emit('changingTheme', this.theme)
     },
     mounted() {
-      let radius = this.radius
-      console.log(radius);
+    var g = d3.select('#svgSkillsChart')
+        .attr('width', this.width)
+        .attr('height', this.height)
+        .append('g')
+        .attr('transform', `translate(${this.width / 2}, ${this.height / 2})`);
     },
     computed: {
       radius: function() { return Math.min(this.height, this.width) / 2 }

@@ -98,7 +98,7 @@
       
     },
     computed: {
-
+      radius: () => Math.min(this.height, this.width) / 2
     },
     methods: {
 

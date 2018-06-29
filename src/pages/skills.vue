@@ -105,6 +105,12 @@
       // create a D3 heirarchical partition chart
       let partition = d3.partition().size([2 * Math.PI, this.radius]);
 
+      // set the root as the top level object from the skillsData
+      // the D3 sum() will attach a value attribute to each node
+      root = d3.hierarchy(this.skillsData).sum(d => d.size)
+      console.log(root);
+      
+
     },
     computed: {
       radius: function() { return Math.min(this.height, this.width) / 2 }

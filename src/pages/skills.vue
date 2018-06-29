@@ -107,9 +107,19 @@
 
       // set the root as the top level object from the skillsData
       // the D3 sum() will attach a value attribute to each node
-      root = d3.hierarchy(this.skillsData).sum(d => d.size)
-      console.log(root);
+      let root = d3.hierarchy(this.skillsData).sum(d => d.size);
+
+      // feed the data structure (root) to the partition style chart
+      partition(root);
+
+      // create visual arcs for each object in the data, relative to the size of root
+      let arc = d3.arc()
+                  .startAngle(d => d.x0)
+                  .endAngle(d => d.x1)
+                  .innerRadius(d => d.y0)
+                  .outerRadius(d => d.y1);
       
+            
 
     },
     computed: {

@@ -1,13 +1,29 @@
 <template>
   <div id="divPageWrapper">
-    <div id="divSkillsList">
-      <ul :v-model="skillsData">
-        <li />
-      </ul>
-    </div>
+    <h1>My skills set from two different points of view</h1>
+    <hr>
+    <h3>There are a dizzying array of technolgies used in building websites and web apps. As a web developer I fight to keep them straight in my head. </h3>
+    <ul>
+      <li>The simplest websites re-designed with modern HTML, JavaScript and a splash of jQuery</li>
+      <li>Modernization of existing sites &amp; apps</li>
+      <li>Data-driven apps &amp; sites</li>
+      <li>Cutting edge, reactive apps that perform on near-native levels</li>
+    </ul>
+    <hr>
     <div id="divChartWrapper">
       <svg id="svgSkillsChart" viewbox="0 0 256 256"></svg>
     </div>
+    <hr>
+    <h3>Successful software developers <strong><em>never</em></strong> stop learning. The industry moves rapidly. Last year's darling technology can be a legacy technology next year. A legacy technology may be born again to evolve with the times. Below is a list of tech stacks, methods and languages I hope to pursue in my free time to further my toolset </h3>
+    <ul>
+      <li>Progressive Web Apps (PWA)</li>
+      <li>Native Android Apps</li>
+      <li>Python</li>
+      <li>More Ruby</li>
+      <li>Web Assembly</li>
+      <li>GraphQL</li>
+      <li>Redis</li>
+    </ul>
   </div>
 </template>
 
@@ -36,7 +52,8 @@
                   ] },
                 { "name": "SVG",
                   "children": [
-                    { "name": "D3", "size": 1 },
+                    { "name": "W3C Standard", "size": 2 },
+                    { "name": "D3", "size": 2 }
                   ] },
                 { "name": "CSS",
                   "children": [
@@ -64,23 +81,21 @@
             {
               "name": "Back End",
               "children": [
-                { "name": "Node JS", "size": 1 },
-                { "name": "Ruby on Rails", "size": 2 },
-                { "name": "ASP.NET Core", "size": 1 },
-                { "name": "Java", "size": 2 },
-                { "name": "Python", "size": 1 }
+                { "name": "Node JS", "size": 3 },
+                { "name": "Ruby on Rails", "size": 3 },
+                { "name": "ASP.NET Core", "size": 3 }
               ]
             },
             {
               "name": "Data",
               "children": [
-                { "name": "JSON", "size": 1 },
-                { "name": "XML", "size": 1 },
-                { "name": "SQLite", "size": 1 },
-                { "name": "MySql", "size": 1 },
-                { "name": "PostgreSQL", "size": 1 },
-                { "name": "MSSQL", "size": 1 },
-                { "name": "MongoDB", "size": 1 }
+                { "name": "JSON", "size": 2 },
+                { "name": "XML", "size": 2 },
+                { "name": "SQLite", "size": 2 },
+                { "name": "MySql", "size": 2 },
+                { "name": "PostgreSQL", "size": 2 },
+                { "name": "MSSQL", "size": 2 },
+                { "name": "MongoDB", "size": 2 }
               ]
             },
             {
@@ -211,15 +226,8 @@
     padding: 8px;
     padding-right: 0;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     background: #809070
-  }
-
-  #divSkillsList {
-    min-width: 288px;
-    border: 2px solid #777;
-    border-radius: 0 16px 16px 0;
-    background: #B0C0A0;
   }
 
   #divChartWrapper {

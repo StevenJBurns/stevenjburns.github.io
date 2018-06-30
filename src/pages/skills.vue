@@ -119,15 +119,52 @@
                   .innerRadius(d => d.y0)
                   .outerRadius(d => d.y1);
       
-            
+      // create g element for each arc in the data hierarchy
+      let slice = g.selectAll('g.node')
+                    .data(root.descendants(), d => d.data.name);
+      
+      let newSlice = slice.enter()
+                          .append('g')
+                          .attr("class", "node")
+                          .merge(slice);
+      
+      slice.exit().remove();
 
+      slice.selectAll('path').remove();
+
+      newSlice.append('path').attr("display", d => d.depth ? null : "none")
+            .attr("d", arc)
+            .style('stroke', '#809070')
+            .style("fill", d => this.getColor(d.depth));
+
+      // Populate the <text> elements with our data-driven titles.
+      slice.selectAll('text').remove();
+
+      newSlice.append("text")
+              .attr("transform", d => `translate(${arc.centroid(d)}) rotate(${this.computeTextRotation(d)})`)
+              .attr("dx", "-20")
+              .attr("dy", "0.5em")
+              .text(d => d.parent ? d.data.name : "");
     },
     computed: {
       radius: function() { return Math.min(this.height, this.width) / 2 }
     },
     methods: {
-
-    }
+      computeTextRotation: function(d) {
+        return 0;
+      },
+      getColor: function(depth) {
+        let colors = [
+          { yellow: ["#FDD835", "#FBC02D", "#F9AC25"] },
+          { amber: ["#FFB300", "#FFA000", "#FF8F00"] },
+          { orange: ["#FB8C00", "#F57C00", "#EF6C00"] },
+          { red: ["#F44336", "#E53935", "#D32F2F"] }
+        ];
+        console.log(depth);
+        
+        return !depth ? "red" : colors[1].amber[depth - 1]
+;      }
+     }
   }
 </script>
 

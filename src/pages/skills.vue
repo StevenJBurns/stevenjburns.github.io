@@ -28,18 +28,37 @@
             {
               "name": "Front End",
               "children": [
-                { "name": "HTML", "size": 1 },
-                { "name": "SVG", "size": 1 },
+                { "name": "HTML",
+                  "children": [
+                    { "name": "Forms", "size": 1 },
+                    { "name": "Audio", "size": 1 },
+                    { "name": "Video", "size": 1 },
+                  ] },
+                { "name": "SVG",
+                  "children": [
+                    { "name": "D3", "size": 1 },
+                  ] },
                 { "name": "CSS",
                   "children": [
-                    { "name": "Transition & Animation", "size": 1 },
-                    { "name": "Grid & Flexbox", "size": 1 },
-                    { "name": "SASS & SCSS", "size": 1 }
+                    { "name": "Transitions", "size": 1 },
+                    { "name": "Animations", "size": 1 },
+                    { "name": "CSS Flexbox", "size": 1 },
+                    { "name": "CSS Grid", "size": 1 },
+                    { "name": "SCSS", "size": 1 },
+                    { "name": "SASS", "size": 1 }
                   ] },
-                { "name": "JavaScript", "size": 1 },
-                { "name": "jQuery", "size": 1 },
-                { "name": "React", "size": 1 },
-                { "name": "Vue", "size": 1 }
+                { "name": "JavaScript",
+                  "children": [
+                    { "name": "DOM", "size": 1 },
+                    { "name": "LocalStorage", "size": 1 },
+                    { "name": "ES5, ES6, ES7", "size": 1 },
+                    { "name": "jQuery", "size": 1 },
+                    { "name": "SPA",
+                      "children": [
+                      { "name": "React", "size": 1 },
+                      { "name": "Vue", "size": 1 }
+                      ] },
+                  ] },
               ]
             },
             {
@@ -67,13 +86,24 @@
             {
               "name": "Tools & Environment",
               "children": [
-                { "name": "Git", "size": 1 },
-                { "name": "GitHub", "size": 2 },
-                { "name": "Atom", "size": 2 },
-                { "name": "Visual Studio Code", "size": 2 },
-                { "name": "Visual Studio 2017", "size": 2 },
-                { "name": "Microsoft Azure", "size": 2 },
-                { "name": "Heroku", "size": 2 },
+                { "name": "Version Control",
+                  "children": [
+                    { "name": "Git", "size": 1 },
+                    { "name": "GitHub", "size": 2 }
+                  ]
+                },
+              { "name": "Editors",
+                "children": [
+                  { "name": "Atom", "size": 2 },
+                  { "name": "Visual Studio Code", "size": 2 },
+                  { "name": "Visual Studio 2017", "size": 2 },
+                ]
+              },
+                { "name": "Hosting", "children": [
+                  { "name": "Microsoft Azure", "size": 2 },
+                  { "name": "Heroku", "size": 2 },
+                  ]
+                },
                 { "name": "NPM", "size": 1 },
                 { "name": "Yarn", "size": 1 },
                 { "name": "NuGet", "size": 1 },
@@ -135,7 +165,7 @@
       newSlice.append('path').attr("display", d => d.depth ? null : "none")
             .attr("d", arc)
             .style('stroke', '#809070')
-            .style("fill", d => this.getColor(d.depth));
+            .style("fill", d => this.getColor(d));
 
       // Populate the <text> elements with our data-driven titles.
       slice.selectAll('text').remove();
@@ -151,18 +181,25 @@
     },
     methods: {
       computeTextRotation: function(d) {
-        return 0;
+        let angle = (d.x0 + d.x1) / Math.PI * 90;
+        console.log(angle);
+        return angle < 180 ? angle - 90 : angle + 90;
       },
-      getColor: function(depth) {
+      getColor: function(d) {
         let colors = [
           { yellow: ["#FDD835", "#FBC02D", "#F9AC25"] },
-          { amber: ["#FFB300", "#FFA000", "#FF8F00"] },
+          { amber: ["#FFB300", "#FFA000", "#FF8F00", "FF6f00"] },
           { orange: ["#FB8C00", "#F57C00", "#EF6C00"] },
           { red: ["#F44336", "#E53935", "#D32F2F"] }
         ];
-        console.log(depth);
+        //console.log(d);
         
-        return !depth ? "red" : colors[1].amber[depth - 1]
+        if (!d.depth) return "red";
+        
+        let p = d.parent;
+        //console.log(p);
+        
+        return colors[1].amber[d.depth - 1]
 ;      }
      }
   }

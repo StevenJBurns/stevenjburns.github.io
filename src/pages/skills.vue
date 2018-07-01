@@ -1,16 +1,21 @@
 <template>
   <div id="divPageWrapper">
-    <h1>My skills set from two different points of view</h1>
+    <h1>Learning All The Things</h1>
     <hr>
-    <h3>There are a dizzying array of technolgies used in building websites and web apps. As a web developer I fight to keep them straight in my head. </h3>
+    <h3>There are a dizzying array of technolgies used in building websites and apps. As a developer I fight to keep my skills sharp and strengthen my understanding of how all the pieces fit together. My ear is always to the ground anticipating the next big thing in software.  There is no silver bullet technology stack to solve every problem. Understanding the problem and grabbing the right tools for the job.</h3>
+    <h3>Not everyone speaks the language of the web technologies. That doesn't mean a customer has no vision of what they want a digital product to look like at the end of the process. Below I have created two lists. The first is a general overview of the skills I bring to the table without muddying the conversation about specific languages, frameworks, libraries, etc. Below the first list is an interactive visual chart  is what I call a hardcore approach to  </h3>
     <ul>
-      <li>The simplest websites re-designed with modern HTML, JavaScript and a splash of jQuery</li>
+      <li>Simple website re-design. Go from 1998 to 2018 with HTML5 and JavaScript.</li>
       <li>Modernization of existing sites &amp; apps</li>
-      <li>Data-driven apps &amp; sites</li>
-      <li>Cutting edge, reactive apps that perform on near-native levels</li>
+      <li>Dynamic but subtle effects. Even a splash of animation or 3D goes a long way.</li>
+      <li>Responsive design. Your app should look good on any device at any resolution.</li>
+      <li>Data-driven websites &amp; apps &bull; Dynamic, interactive, animated charts.</li>
+      <li>Secure connections. Secure passwords, Secure Data. Period.</li>
+      <li>Cutting edge, reactive apps with high performance in mind.</li>
     </ul>
     <hr>
     <div id="divChartWrapper">
+      <h3>If you're in a long-term hiring mood for someone with specific skills, the interactive charts below contain a broad (and hierarchical) overview of the skill sets.</h3>
       <svg id="svgSkillsChart" viewbox="0 0 256 256"></svg>
     </div>
     <hr>
@@ -203,7 +208,7 @@
       getColor: function(d) {
         let colors = [
           { yellow: ["#FDD835", "#FBC02D", "#F9AC25"] },
-          { amber: ["#FFB300", "#FFA000", "#FF8F00", "FF6f00"] },
+          { amber: ["#FFB300", "#FFA000", "#FF8F00", "#FF6F00"] },
           { orange: ["#FB8C00", "#F57C00", "#EF6C00"] },
           { red: ["#F44336", "#E53935", "#D32F2F"] }
         ];
@@ -230,6 +235,11 @@
     background: #809070
   }
 
+  hr {
+    margin: 0.25em 0.5em;
+    border-color: #DFDFDF
+  }
+
   #divChartWrapper {
     width: 100%;
     position: relative;
@@ -241,10 +251,6 @@
     left: 0;
     max-height: 512px;
     }
-  
-  .svglabel {
-
-  }
 
   @media screen and (max-width: 720px) {
     #divPageWrapper {

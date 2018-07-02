@@ -18,6 +18,12 @@
     <p>If you want to lean full forward towards cutting-edge technology, I can do that</p> -->
     <!-- <hr> -->
     <!-- <h1>let Career = (MilitaryPilot) =&gt; FullStackDeveloper;</h1> -->
+    <hr>
+    <h1>About The Logo</h1>
+    <p></p>
+    <hr>
+    <h1>About This Site</h1>
+    <p></p>
   </div>
 </template>
 

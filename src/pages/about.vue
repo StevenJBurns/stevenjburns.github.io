@@ -20,10 +20,10 @@
     <!-- <h1>let Career = (MilitaryPilot) =&gt; FullStackDeveloper;</h1> -->
     <hr>
     <h1>About The Logo</h1>
-    <p></p>
+    <p>military related</p>
     <hr>
     <h1>About This Site</h1>
-    <p></p>
+    <p>Wrutten in Vue, Greensock, D3, SVG, JSON</p>
   </div>
 </template>
 

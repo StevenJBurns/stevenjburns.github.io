@@ -17,9 +17,13 @@
     <div id="divChartWrapper">
       <h3>If you're in a long-term hiring mood for someone with specific skills, the interactive charts below contain a broad (and hierarchical) overview of the skill sets.</h3>
       <svg id="svgSkillsChart" viewbox="0 0 256 256"></svg>
-      <div id="divChartFilterButtons">
-
+      <div id="divChartFilters">
+        <button type="button" @click="changeChartData('front')">Front End</button>
+        <button type="button" @click="changeChartData('back')">Server Side</button>
+        <button type="button" @click="changeChartData('data')">Data</button>
+        <button type="button" @click="changeChartData('tools')">Environment &amp; Tools</button>
       </div>
+      <!-- <svg-skills-chart :dataSource="root" /> -->
     </div>
     <hr>
     <h3>Successful software developers <strong><em>never</em></strong> stop learning. The industry moves rapidly. Last year's darling technology can be a legacy technology next year. A legacy technology may be born again to evolve with the times. Below is a list of tech stacks, methods and languages I hope to pursue in my free time to further my toolset </h3>
@@ -39,6 +43,7 @@
 
 <script>
   import { eventBus } from "../main.js";
+  //import svgSkillsChart from "../components/svgSkillsChart"
   import * as d3 from "d3";
 
   export default {
@@ -47,9 +52,10 @@
       return {
         width: 480,
         height: 480,
+        partition: d3.partition().size([2 * Math.PI, this.radius]),
         root: null,
         skillColors: ["#003300", "#005500", "#006600", "#005500", "#006600", "#99AABB", "#AABBCC", "#BBCCDD"],
-        skillsData: {
+        skillsAllData: {
           "name": "Skills",
           "children": [
             {
@@ -188,7 +194,7 @@
             { "name": "ASP.NET Core", "size": 3 }
           ]
         },
-        skillData: {
+        skillsData: {
           "name": "Data",
           "children": [
             { "name": "JSON", "size": 2 },
@@ -234,13 +240,12 @@
       theme: Object
     },
     components: {
-
+      // "svg-skills-chart": svgSkillsChart
     },
     created() {
       eventBus.$emit('changingTheme', this.theme)
     },
     mounted() {
-      // console.log(skillsFront);
       // grab the skills svg element and set h, w, and translate it to the center
       let g = d3.select('#svgSkillsChart')
                 .attr('width', this.width)
@@ -249,14 +254,14 @@
                 .attr('transform', `translate(${this.width / 2}, ${this.height / 2})`);
       
       // create a D3 heirarchical partition chart
-      let partition = d3.partition().size([2 * Math.PI, this.radius]);
+      this.partition = d3.partition().size([2 * Math.PI, this.radius]);
 
       // set the root as the top level object from the skillsData
       // the D3 sum() will attach a value attribute to each node
       this.root = d3.hierarchy(this.skillsFront).sum(d => d.size);
 
       // feed the data structure (root) to the partition style chart
-      partition(this.root);
+      this.partition(this.root);
 
       // create visual arcs for each object in the data, relative to the size of root
       let arc = d3.arc()
@@ -267,7 +272,7 @@
       
       // create g element for each arc in the data hierarchy
       let slice = g.selectAll('g.node')
-                    .data(this.root.descendants(), d => d.data.name);
+                   .data(this.root.descendants(), d => d.data.name);
       
       let newSlice = slice.enter()
                           .append('g')
@@ -279,9 +284,9 @@
       slice.selectAll('path').remove();
 
       newSlice.append('path').attr("display", d => d.depth ? null : "none")
-            .attr("d", arc)
-            .style('stroke', '#809070')
-            .style("fill", d => this.getColor(d));
+              .attr("d", arc)
+              .style('stroke', '#809070')
+              .style("fill", d => this.getColor(d));
 
       // Populate the <text> elements with our data-driven titles.
       slice.selectAll('text').remove();
@@ -294,7 +299,7 @@
     },
     computed: {
       radius: function() { return Math.min(this.height, this.width) / 2 }
-      // skillsFront: this.skillsData,
+      //root: function() { return d3.hierarchy(this.skillsData).sum(d => d.size) }
       // skillsBack: this.skillsData,
       // skillsData: this.skillsData,
       // skillsTools: this.skillsData
@@ -302,7 +307,7 @@
     methods: {
       computeTextRotation: function(d) {
         let angle = (d.x0 + d.x1) / Math.PI * 90;
-        console.log(angle);
+        //console.log(angle);
         return angle < 180 ? angle - 90 : angle + 90;
       },
       getColor: function(d) {
@@ -320,8 +325,34 @@
         //console.log(p);
         
         return colors[1].amber[d.depth - 1]
-;      }
-     }
+;      },
+      changeChartData: function(dataName) {
+        switch(dataName) {
+          case "front":
+            this.root = d3.hierarchy(this.skillsFront).sum(d => d.size);
+            this.partition(this.root);
+            console.log("front", this.root);
+            break;
+          case "back":
+            this.root = d3.hierarchy(this.skillsBack).sum(d => d.size);
+            this.partition(this.root);
+            console.log("back", this.root);
+            break;
+          case "data":
+            this.root = d3.hierarchy(this.skillsData).sum(d => d.size);
+            this.partition(this.root);
+            console.log("data", this.root);
+            break;
+          case "tools":
+            this.root = d3.hierarchy(this.skillsTools).sum(d => d.size);
+            this.partition(this.root);
+            console.log("tools", this.root);
+            break;
+          default:
+            break;
+        }
+      }
+    }
   }
 </script>
 
@@ -352,9 +383,17 @@
     max-height: 512px;
     }
 
-  #divChartFilterButtons {
-    
+  #divChartFilters {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 auto;    
+  }
 
+  #divChartFilters button {
+    width: 80px;
+    height: 48px;
+    text-align: center
   }
 
   @media screen and (max-width: 720px) {

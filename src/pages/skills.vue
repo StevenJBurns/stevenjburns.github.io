@@ -17,6 +17,9 @@
     <div id="divChartWrapper">
       <h3>If you're in a long-term hiring mood for someone with specific skills, the interactive charts below contain a broad (and hierarchical) overview of the skill sets.</h3>
       <svg id="svgSkillsChart" viewbox="0 0 256 256"></svg>
+      <div id="divChartFilterButtons">
+
+      </div>
     </div>
     <hr>
     <h3>Successful software developers <strong><em>never</em></strong> stop learning. The industry moves rapidly. Last year's darling technology can be a legacy technology next year. A legacy technology may be born again to evolve with the times. Below is a list of tech stacks, methods and languages I hope to pursue in my free time to further my toolset </h3>
@@ -44,6 +47,7 @@
       return {
         width: 480,
         height: 480,
+        root: null,
         skillColors: ["#003300", "#005500", "#006600", "#005500", "#006600", "#99AABB", "#AABBCC", "#BBCCDD"],
         skillsData: {
           "name": "Skills",
@@ -81,8 +85,10 @@
                       "children": [
                       { "name": "React", "size": 1 },
                       { "name": "Vue", "size": 1 }
-                      ] },
-                  ] },
+                      ]
+                    },
+                  ] 
+                },
               ]
             },
             {
@@ -134,6 +140,93 @@
               ]
             }
           ]
+        },
+        skillsFront: {
+          "name": "Front End",
+          "children": [
+            { "name": "HTML",
+              "children": [
+                { "name": "Forms", "size": 1 },
+                { "name": "Audio", "size": 1 },
+                { "name": "Video", "size": 1 },
+              ] },
+            { "name": "SVG",
+              "children": [
+                { "name": "W3C Standard", "size": 2 },
+                { "name": "D3", "size": 2 }
+              ] },
+            { "name": "CSS",
+              "children": [
+                { "name": "Transitions", "size": 1 },
+                { "name": "Animations", "size": 1 },
+                { "name": "CSS Flexbox", "size": 1 },
+                { "name": "CSS Grid", "size": 1 },
+                { "name": "SCSS", "size": 1 },
+                { "name": "SASS", "size": 1 }
+              ] },
+            { "name": "JavaScript",
+              "children": [
+                { "name": "DOM", "size": 1 },
+                { "name": "LocalStorage", "size": 1 },
+                { "name": "ES5, ES6, ES7", "size": 1 },
+                { "name": "jQuery", "size": 1 },
+                { "name": "SPA",
+                  "children": [
+                  { "name": "React", "size": 1 },
+                  { "name": "Vue", "size": 1 }
+                  ]
+                },
+              ] 
+            },
+          ]
+        },
+        skillsBack: {
+          "name": "Back End",
+          "children": [
+            { "name": "Node JS", "size": 3 },
+            { "name": "Ruby on Rails", "size": 3 },
+            { "name": "ASP.NET Core", "size": 3 }
+          ]
+        },
+        skillData: {
+          "name": "Data",
+          "children": [
+            { "name": "JSON", "size": 2 },
+            { "name": "XML", "size": 2 },
+            { "name": "SQLite", "size": 2 },
+            { "name": "MySql", "size": 2 },
+            { "name": "PostgreSQL", "size": 2 },
+            { "name": "MSSQL", "size": 2 },
+            { "name": "MongoDB", "size": 2 }
+          ]
+        },
+        skillsTools: {
+          "name": "Tools & Environment",
+          "children": [
+            { "name": "Version Control",
+              "children": [
+                { "name": "Git", "size": 1 },
+                { "name": "GitHub", "size": 2 }
+              ]
+            },
+          { "name": "Editors",
+            "children": [
+              { "name": "Atom", "size": 2 },
+              { "name": "Visual Studio Code", "size": 2 },
+              { "name": "Visual Studio 2017", "size": 2 },
+            ]
+          },
+            { "name": "Hosting", "children": [
+              { "name": "Microsoft Azure", "size": 2 },
+              { "name": "Heroku", "size": 2 },
+              ]
+            },
+            { "name": "NPM", "size": 1 },
+            { "name": "Yarn", "size": 1 },
+            { "name": "NuGet", "size": 1 },
+            { "name": "CRUD", "size": 2 },
+            { "name": "RESTful", "size": 1 }
+          ]
         }
       }
     },
@@ -147,6 +240,7 @@
       eventBus.$emit('changingTheme', this.theme)
     },
     mounted() {
+      // console.log(skillsFront);
       // grab the skills svg element and set h, w, and translate it to the center
       let g = d3.select('#svgSkillsChart')
                 .attr('width', this.width)
@@ -159,10 +253,10 @@
 
       // set the root as the top level object from the skillsData
       // the D3 sum() will attach a value attribute to each node
-      let root = d3.hierarchy(this.skillsData).sum(d => d.size);
+      this.root = d3.hierarchy(this.skillsFront).sum(d => d.size);
 
       // feed the data structure (root) to the partition style chart
-      partition(root);
+      partition(this.root);
 
       // create visual arcs for each object in the data, relative to the size of root
       let arc = d3.arc()
@@ -173,7 +267,7 @@
       
       // create g element for each arc in the data hierarchy
       let slice = g.selectAll('g.node')
-                    .data(root.descendants(), d => d.data.name);
+                    .data(this.root.descendants(), d => d.data.name);
       
       let newSlice = slice.enter()
                           .append('g')
@@ -200,6 +294,10 @@
     },
     computed: {
       radius: function() { return Math.min(this.height, this.width) / 2 }
+      // skillsFront: this.skillsData,
+      // skillsBack: this.skillsData,
+      // skillsData: this.skillsData,
+      // skillsTools: this.skillsData
     },
     methods: {
       computeTextRotation: function(d) {
@@ -253,6 +351,11 @@
     left: 0;
     max-height: 512px;
     }
+
+  #divChartFilterButtons {
+    
+
+  }
 
   @media screen and (max-width: 720px) {
     #divPageWrapper {

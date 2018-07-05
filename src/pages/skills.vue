@@ -53,7 +53,7 @@
         width: 480,
         height: 480,
         partition: d3.partition().size([2 * Math.PI, this.radius]),
-        root: null,
+        root: d3.hierarchy(this.skillsFront).sum(d => d.size),
         skillColors: ["#003300", "#005500", "#006600", "#005500", "#006600", "#99AABB", "#AABBCC", "#BBCCDD"],
         skillsAllData: {
           "name": "Skills",
@@ -247,11 +247,11 @@
     },
     mounted() {
       // grab the skills svg element and set h, w, and translate it to the center
-      let g = d3.select('#svgSkillsChart')
-                .attr('width', this.width)
-                .attr('height', this.height)
-                .append('g')
-                .attr('transform', `translate(${this.width / 2}, ${this.height / 2})`);
+      // let g = d3.select('#svgSkillsChart')
+      //           .attr('width', this.width)
+      //           .attr('height', this.height)
+      //           .append('g')
+      //           .attr('transform', `translate(${this.width / 2}, ${this.height / 2})`);
       
       // create a D3 heirarchical partition chart
       this.partition = d3.partition().size([2 * Math.PI, this.radius]);
@@ -264,27 +264,26 @@
       this.partition(this.root);
 
       // create visual arcs for each object in the data, relative to the size of root
-      let arc = d3.arc()
-                  .startAngle(d => d.x0)
-                  .endAngle(d => d.x1)
-                  .innerRadius(d => d.y0)
-                  .outerRadius(d => d.y1);
+      // let arc = d3.arc()
+      //             .startAngle(d => d.x0)
+      //             .endAngle(d => d.x1)
+      //             .innerRadius(d => d.y0)
+      //             .outerRadius(d => d.y1);
       
       // create g element for each arc in the data hierarchy
-      let slice = g.selectAll('g.node')
-                   .data(this.root.descendants(), d => d.data.name);
+      // let slice = g.selectAll('g.node').data(this.root.descendants(), d => d.data.name);
       
-      let newSlice = slice.enter()
+      let newSlice = this.slice.enter()
                           .append('g')
                           .attr("class", "node")
-                          .merge(slice);
+                          .merge(this.slice);
       
-      slice.exit().remove();
+      this.slice.exit().remove();
 
-      slice.selectAll('path').remove();
+      this.slice.selectAll('path').remove();
 
       newSlice.append('path').attr("display", d => d.depth ? null : "none")
-              .attr("d", arc)
+              .attr("d", this.arc)
               .style('stroke', '#809070')
               .style("fill", d => this.getColor(d));
 
@@ -292,22 +291,45 @@
       slice.selectAll('text').remove();
 
       newSlice.append("text")
-              .attr("transform", d => `translate(${arc.centroid(d)}) rotate(${this.computeTextRotation(d)})`)
+              .attr("transform", d =>
+                `translate(${this.centroid(d)}) rotate(${this.computeTextRotation(d)})`)
               .attr("dx", "-20")
               .attr("dy", "0.5em")
               .text(d => d.parent ? d.data.name : "");
     },
     computed: {
-      radius: function() { return Math.min(this.height, this.width) / 2 }
+      radius: function() { return Math.min(this.height, this.width) / 2 },
+      g: function() {
+        return d3.select('#svgSkillsChart')
+                 .attr('width', this.width)
+                 .attr('height', this.height)
+                 .append('g')
+                 .attr('transform', `translate(${this.width / 2}, ${this.height / 2})`);
+      },
+      slice: function(g) { g.selectAll('g.node').data(this.root.descendants(), d => d.data.name) }
       //root: function() { return d3.hierarchy(this.skillsData).sum(d => d.size) }
       // skillsBack: this.skillsData,
       // skillsData: this.skillsData,
       // skillsTools: this.skillsData
     },
+    watch: {
+      root: function(newData) {
+
+      }
+    },
     methods: {
+      arc: function(d) {
+        return d3.arc()
+          .startAngle(d => d.x0)
+          .endAngle(d => d.x1)
+          .innerRadius(d => d.y0)
+          .outerRadius(d => d.y1);
+      },
+      centroid: function(d) {
+        return this.arc(d).centroid(d);
+      },
       computeTextRotation: function(d) {
         let angle = (d.x0 + d.x1) / Math.PI * 90;
-        //console.log(angle);
         return angle < 180 ? angle - 90 : angle + 90;
       },
       getColor: function(d) {
@@ -317,15 +339,13 @@
           { orange: ["#FB8C00", "#F57C00", "#EF6C00"] },
           { red: ["#F44336", "#E53935", "#D32F2F"] }
         ];
-        //console.log(d);
         
         if (!d.depth) return "red";
         
         let p = d.parent;
-        //console.log(p);
         
-        return colors[1].amber[d.depth - 1]
-;      },
+        return colors[1].amber[d.depth - 1];
+      },
       changeChartData: function(dataName) {
         switch(dataName) {
           case "front":

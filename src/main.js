@@ -1,5 +1,5 @@
 /* App Dependencies */
-import Vue from 'vue';
+import Vue from 'vue/dist/vue.js';
 import VueRouter from 'vue-router';
 import VueAnalytics from 'vue-analytics';
 import VueParticles from 'vue-particles';

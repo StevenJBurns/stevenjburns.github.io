@@ -52,10 +52,8 @@
         width: 480,
         height: 480,
         sunburstConfig: function (chart) {
-          chart.sunburst = chart.sunburst()
-                                .size(d => d.x)
-                                .key(d =>  d.name)
-                                .label(d => d.name) 
+          chart.label(function (d) { return d.name; })
+          chart.sunburst().size(function (d) { return d.size; });
         },
         skillColors: ["#003300", "#005500", "#006600", "#005500", "#006600", "#99AABB", "#AABBCC", "#BBCCDD"],
         skillsAllData: {
@@ -151,38 +149,38 @@
           ]
         },
         skillsFront: {
-          "name": "Front End",
-          "children": [
-            { "name": "HTML",
-              "children": [
-                { "name": "Forms", "size": 1 },
-                { "name": "Audio", "size": 1 },
-                { "name": "Video", "size": 1 },
+          name: "Front End",
+          children: [
+            { name: "HTML",
+              children: [
+                { name: "Forms", size: 1 },
+                { name: "Audio", size: 1 },
+                { name: "Video", size: 1 },
               ] },
-            { "name": "SVG",
-              "children": [
-                { "name": "W3C Standard", "size": 2 },
-                { "name": "D3", "size": 2 }
+            { name: "SVG",
+              children: [
+                { name: "W3C Standard", size: 2 },
+                { name: "D3", size: 2 }
               ] },
-            { "name": "CSS",
-              "children": [
-                { "name": "Transitions", "size": 1 },
-                { "name": "Animations", "size": 1 },
-                { "name": "CSS Flexbox", "size": 1 },
-                { "name": "CSS Grid", "size": 1 },
-                { "name": "SCSS", "size": 1 },
-                { "name": "SASS", "size": 1 }
+            { name: "CSS",
+              children: [
+                { name: "Transitions", size: 1 },
+                { name: "Animations", size: 1 },
+                { name: "CSS Flexbox", size: 1 },
+                { name: "CSS Grid", size: 1 },
+                { name: "SCSS", size: 1 },
+                { name: "SASS", size: 1 }
               ] },
-            { "name": "JavaScript",
-              "children": [
-                { "name": "DOM", "size": 1 },
-                { "name": "LocalStorage", "size": 1 },
-                { "name": "ES5, ES6, ES7", "size": 1 },
-                { "name": "jQuery", "size": 1 },
-                { "name": "SPA",
-                  "children": [
-                  { "name": "React", "size": 1 },
-                  { "name": "Vue", "size": 1 }
+            { name: "JavaScript",
+              children: [
+                { name: "DOM", size: 1 },
+                { name: "LocalStorage", size: 1 },
+                { name: "ES5, ES6, ES7", size: 1 },
+                { name: "jQuery", size: 1 },
+                { name: "SPA",
+                  children: [
+                  { name: "React", size: 1 },
+                  { name: "Vue", size: 1 }
                   ]
                 },
               ] 
@@ -243,7 +241,7 @@
       theme: Object
     },
     components: {
-      ChartSunburst
+      "ChartSunburst": ChartSunburst
     },
     created() {
       eventBus.$emit('changingTheme', this.theme)
@@ -255,9 +253,7 @@
 
     },
     watch: {
-      root: function(newData) {
 
-      }
     },
     methods: {
       changeChartData: function(dataName) {
@@ -303,11 +299,15 @@
     text-align: center;
   }
 
-  #svgSkillsChart {
-    top: 0;
-    left: 0;
-    max-height: 512px;
+  .vue-d2b-container {
+    height: 512px;
+    width: 512px
     }
+
+  .d2b-chart {
+    height: 512px;
+    width: 512px
+  }
 
   #divChartFilters {
     display: flex;

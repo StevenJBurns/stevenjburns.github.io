@@ -16,14 +16,13 @@
     <hr>
     <div id="divChartWrapper">
       <h3>If you're in a long-term hiring mood for someone with specific skills, the interactive charts below contain a broad (and hierarchical) overview of the skill sets.</h3>
-      <svg id="svgSkillsChart" viewbox="0 0 256 256"></svg>
+      <ChartSunburst :data="skillsFront" :config="sunburstConfig"></ChartSunburst>
       <div id="divChartFilters">
         <button type="button" @click="changeChartData('front')">Front End</button>
         <button type="button" @click="changeChartData('back')">Server Side</button>
         <button type="button" @click="changeChartData('data')">Data</button>
         <button type="button" @click="changeChartData('tools')">Environment &amp; Tools</button>
       </div>
-      <!-- <svg-skills-chart :dataSource="root" /> -->
     </div>
     <hr>
     <h3>Successful software developers <strong><em>never</em></strong> stop learning. The industry moves rapidly. Last year's darling technology can be a legacy technology next year. A legacy technology may be born again to evolve with the times. Below is a list of tech stacks, methods and languages I hope to pursue in my free time to further my toolset </h3>
@@ -43,8 +42,8 @@
 
 <script>
   import { eventBus } from "../main.js";
-  //import svgSkillsChart from "../components/svgSkillsChart"
   import * as d3 from "d3";
+  import { ChartSunburst} from "vue-d2b";
 
   export default {
     name: 'PageSkills',
@@ -52,8 +51,12 @@
       return {
         width: 480,
         height: 480,
-        partition: d3.partition().size([2 * Math.PI, this.radius]),
-        root: d3.hierarchy(this.skillsFront).sum(d => d.size),
+        sunburstConfig: function (chart) {
+          chart.sunburst = chart.sunburst()
+                                .size(d => d.x)
+                                .key(d =>  d.name)
+                                .label(d => d.name) 
+        },
         skillColors: ["#003300", "#005500", "#006600", "#005500", "#006600", "#99AABB", "#AABBCC", "#BBCCDD"],
         skillsAllData: {
           "name": "Skills",
@@ -240,77 +243,16 @@
       theme: Object
     },
     components: {
-      // "svg-skills-chart": svgSkillsChart
+      ChartSunburst
     },
     created() {
       eventBus.$emit('changingTheme', this.theme)
     },
     mounted() {
-      // grab the skills svg element and set h, w, and translate it to the center
-      // let g = d3.select('#svgSkillsChart')
-      //           .attr('width', this.width)
-      //           .attr('height', this.height)
-      //           .append('g')
-      //           .attr('transform', `translate(${this.width / 2}, ${this.height / 2})`);
-      
-      // create a D3 heirarchical partition chart
-      this.partition = d3.partition().size([2 * Math.PI, this.radius]);
 
-      // set the root as the top level object from the skillsData
-      // the D3 sum() will attach a value attribute to each node
-      this.root = d3.hierarchy(this.skillsFront).sum(d => d.size);
-
-      // feed the data structure (root) to the partition style chart
-      this.partition(this.root);
-
-      // create visual arcs for each object in the data, relative to the size of root
-      // let arc = d3.arc()
-      //             .startAngle(d => d.x0)
-      //             .endAngle(d => d.x1)
-      //             .innerRadius(d => d.y0)
-      //             .outerRadius(d => d.y1);
-      
-      // create g element for each arc in the data hierarchy
-      // let slice = g.selectAll('g.node').data(this.root.descendants(), d => d.data.name);
-      
-      let newSlice = this.slice.enter()
-                          .append('g')
-                          .attr("class", "node")
-                          .merge(this.slice);
-      
-      this.slice.exit().remove();
-
-      this.slice.selectAll('path').remove();
-
-      newSlice.append('path').attr("display", d => d.depth ? null : "none")
-              .attr("d", this.arc)
-              .style('stroke', '#809070')
-              .style("fill", d => this.getColor(d));
-
-      // Populate the <text> elements with our data-driven titles.
-      slice.selectAll('text').remove();
-
-      newSlice.append("text")
-              .attr("transform", d =>
-                `translate(${this.centroid(d)}) rotate(${this.computeTextRotation(d)})`)
-              .attr("dx", "-20")
-              .attr("dy", "0.5em")
-              .text(d => d.parent ? d.data.name : "");
     },
     computed: {
-      radius: function() { return Math.min(this.height, this.width) / 2 },
-      g: function() {
-        return d3.select('#svgSkillsChart')
-                 .attr('width', this.width)
-                 .attr('height', this.height)
-                 .append('g')
-                 .attr('transform', `translate(${this.width / 2}, ${this.height / 2})`);
-      },
-      slice: function(g) { g.selectAll('g.node').data(this.root.descendants(), d => d.data.name) }
-      //root: function() { return d3.hierarchy(this.skillsData).sum(d => d.size) }
-      // skillsBack: this.skillsData,
-      // skillsData: this.skillsData,
-      // skillsTools: this.skillsData
+
     },
     watch: {
       root: function(newData) {
@@ -318,55 +260,19 @@
       }
     },
     methods: {
-      arc: function(d) {
-        return d3.arc()
-          .startAngle(d => d.x0)
-          .endAngle(d => d.x1)
-          .innerRadius(d => d.y0)
-          .outerRadius(d => d.y1);
-      },
-      centroid: function(d) {
-        return this.arc(d).centroid(d);
-      },
-      computeTextRotation: function(d) {
-        let angle = (d.x0 + d.x1) / Math.PI * 90;
-        return angle < 180 ? angle - 90 : angle + 90;
-      },
-      getColor: function(d) {
-        let colors = [
-          { yellow: ["#FDD835", "#FBC02D", "#F9AC25"] },
-          { amber: ["#FFB300", "#FFA000", "#FF8F00", "#FF6F00"] },
-          { orange: ["#FB8C00", "#F57C00", "#EF6C00"] },
-          { red: ["#F44336", "#E53935", "#D32F2F"] }
-        ];
-        
-        if (!d.depth) return "red";
-        
-        let p = d.parent;
-        
-        return colors[1].amber[d.depth - 1];
-      },
       changeChartData: function(dataName) {
         switch(dataName) {
           case "front":
-            this.root = d3.hierarchy(this.skillsFront).sum(d => d.size);
-            this.partition(this.root);
-            console.log("front", this.root);
+            console.log("front");
             break;
           case "back":
-            this.root = d3.hierarchy(this.skillsBack).sum(d => d.size);
-            this.partition(this.root);
-            console.log("back", this.root);
+            console.log("back");
             break;
           case "data":
-            this.root = d3.hierarchy(this.skillsData).sum(d => d.size);
-            this.partition(this.root);
-            console.log("data", this.root);
+            console.log("data");
             break;
           case "tools":
-            this.root = d3.hierarchy(this.skillsTools).sum(d => d.size);
-            this.partition(this.root);
-            console.log("tools", this.root);
+            console.log("tools");
             break;
           default:
             break;

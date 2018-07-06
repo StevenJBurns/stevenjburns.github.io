@@ -19,6 +19,7 @@
     "gsap": "^2.0.1",
     "vue": "^2.5.16",
     "vue-analytics": "^5.12.2",
+    "vue-d2b": "^1.0.13",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {

@@ -16,7 +16,7 @@
     <hr>
     <div id="divChartWrapper">
       <h3>If you're in a long-term hiring mood for someone with specific skills, the interactive charts below contain a broad (and hierarchical) overview of the skill sets.</h3>
-      <ChartSunburst :data="skillsFront" :config="sunburstConfig"></ChartSunburst>
+      <ChartSunburst :data="currentDataset" :config="sunburstConfig"></ChartSunburst>
       <div id="divChartFilters">
         <button type="button" @click="changeChartData('front')">Front End</button>
         <button type="button" @click="changeChartData('back')">Server Side</button>
@@ -52,9 +52,10 @@
         width: 480,
         height: 480,
         sunburstConfig: function (chart) {
-          chart.label(function (d) { return d.name; })
-          chart.sunburst().size(function (d) { return d.size; });
+          chart.label(d => d.name)
+          chart.sunburst().size(d => d.size);
         },
+        currentDataset: null,
         skillColors: ["#003300", "#005500", "#006600", "#005500", "#006600", "#99AABB", "#AABBCC", "#BBCCDD"],
         skillsAllData: {
           "name": "Skills",
@@ -247,7 +248,7 @@
       eventBus.$emit('changingTheme', this.theme)
     },
     mounted() {
-
+      this.currentDataset = this.skillsFront 
     },
     computed: {
 
@@ -260,15 +261,19 @@
         switch(dataName) {
           case "front":
             console.log("front");
+            this.currentDataset = this.skillsFront;
             break;
           case "back":
             console.log("back");
+            this.currentDataset = this.skillsBack;
             break;
           case "data":
             console.log("data");
+            this.currentDataset = this.skillsData;
             break;
           case "tools":
             console.log("tools");
+            this.currentDataset = this.skillsTools;
             break;
           default:
             break;

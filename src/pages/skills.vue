@@ -16,8 +16,9 @@
     <hr>
     <div id="divChartWrapper">
       <h3>If you're in a long-term hiring mood for someone with specific skills, the interactive charts below contain a broad (and hierarchical) overview of the skill sets.</h3>
-      <ChartSunburst :data="currentDataset" :config="sunburstConfig"></ChartSunburst>
+      <ChartSunburst :data="currentDataSet" :config="sunburstConfig" :color="currentColorSet"></ChartSunburst>
       <div id="divChartFilters">
+        <button type="button" @click="changeChartData('all')">All Skills</button>
         <button type="button" @click="changeChartData('front')">Front End</button>
         <button type="button" @click="changeChartData('back')">Server Side</button>
         <button type="button" @click="changeChartData('data')">Data</button>
@@ -43,6 +44,7 @@
 <script>
   import { eventBus } from "../main.js";
   import * as d3 from "d3";
+  import d2b from "d2b";
   import { ChartSunburst} from "vue-d2b";
 
   export default {
@@ -52,47 +54,58 @@
         width: 480,
         height: 480,
         sunburstConfig: function (chart) {
-          chart.label(d => d.name)
+          chart.label(d => d.label)
           chart.sunburst().size(d => d.size);
+          chart.color(d => {
+            return this.currentColorSet
+          })
+          chart.chartFrame().legendEnabled(false).breadcrumbsEnabled(false) //.tooltipsEnabled(false)
         },
-        currentDataset: null,
-        skillColors: ["#003300", "#005500", "#006600", "#005500", "#006600", "#99AABB", "#AABBCC", "#BBCCDD"],
+        currentDataSet: null,
+        currentColorSet: null,
+        skillColors: {
+          all: ["#003300", "#005500", "#006600", "#005500", "#006600", "#99AABB", "#AABBCC", "#BBCCDD"],
+          front: ["#9999CC", "#7F7FBF", "#6666B2", "#4C4CA6"],
+          back: [],
+          data: [],
+          tools: []
+        },
         skillsAllData: {
-          "name": "Skills",
+          label: "Skills",
           "children": [
             {
-              "name": "Front End",
+              label: "Front End",
               "children": [
-                { "name": "HTML",
+                { label: "HTML",
                   "children": [
-                    { "name": "Forms", "size": 1 },
-                    { "name": "Audio", "size": 1 },
-                    { "name": "Video", "size": 1 },
+                    { label: "Forms", size: 1 },
+                    { label: "Audio", size: 1 },
+                    { label: "Video", size: 1 },
                   ] },
-                { "name": "SVG",
+                { label: "SVG",
                   "children": [
-                    { "name": "W3C Standard", "size": 2 },
-                    { "name": "D3", "size": 2 }
+                    { label: "W3C Standard", size: 2 },
+                    { label: "D3", size: 2 }
                   ] },
-                { "name": "CSS",
+                { label: "CSS",
                   "children": [
-                    { "name": "Transitions", "size": 1 },
-                    { "name": "Animations", "size": 1 },
-                    { "name": "CSS Flexbox", "size": 1 },
-                    { "name": "CSS Grid", "size": 1 },
-                    { "name": "SCSS", "size": 1 },
-                    { "name": "SASS", "size": 1 }
+                    { label: "Transitions", size: 1 },
+                    { label: "Animations", size: 1 },
+                    { label: "CSS Flexbox", size: 1 },
+                    { label: "CSS Grid", size: 1 },
+                    { label: "SCSS", size: 1 },
+                    { label: "SASS", size: 1 }
                   ] },
-                { "name": "JavaScript",
+                { label: "JavaScript",
                   "children": [
-                    { "name": "DOM", "size": 1 },
-                    { "name": "LocalStorage", "size": 1 },
-                    { "name": "ES5, ES6, ES7", "size": 1 },
-                    { "name": "jQuery", "size": 1 },
-                    { "name": "SPA",
+                    { label: "DOM", size: 1 },
+                    { label: "LocalStorage", size: 1 },
+                    { label: "ES5, ES6, ES7", size: 1 },
+                    { label: "jQuery", size: 1 },
+                    { label: "SPA",
                       "children": [
-                      { "name": "React", "size": 1 },
-                      { "name": "Vue", "size": 1 }
+                      { label: "React", size: 1 },
+                      { label: "Vue", size: 1 }
                       ]
                     },
                   ] 
@@ -100,88 +113,88 @@
               ]
             },
             {
-              "name": "Back End",
+              label: "Back End",
               "children": [
-                { "name": "Node JS", "size": 3 },
-                { "name": "Ruby on Rails", "size": 3 },
-                { "name": "ASP.NET Core", "size": 3 }
+                { label: "Node JS", size: 3 },
+                { label: "Ruby on Rails", size: 3 },
+                { label: "ASP.NET Core", size: 3 }
               ]
             },
             {
-              "name": "Data",
+              label: "Data",
               "children": [
-                { "name": "JSON", "size": 2 },
-                { "name": "XML", "size": 2 },
-                { "name": "SQLite", "size": 2 },
-                { "name": "MySql", "size": 2 },
-                { "name": "PostgreSQL", "size": 2 },
-                { "name": "MSSQL", "size": 2 },
-                { "name": "MongoDB", "size": 2 }
+                { label: "JSON", size: 2 },
+                { label: "XML", size: 2 },
+                { label: "SQLite", size: 2 },
+                { label: "MySql", size: 2 },
+                { label: "PostgreSQL", size: 2 },
+                { label: "MSSQL", size: 2 },
+                { label: "MongoDB", size: 2 }
               ]
             },
             {
-              "name": "Tools & Environment",
+              label: "Tools & Environment",
               "children": [
-                { "name": "Version Control",
+                { label: "Version Control",
                   "children": [
-                    { "name": "Git", "size": 1 },
-                    { "name": "GitHub", "size": 2 }
+                    { label: "Git", size: 1 },
+                    { label: "GitHub", size: 2 }
                   ]
                 },
-              { "name": "Editors",
+              { label: "Editors",
                 "children": [
-                  { "name": "Atom", "size": 2 },
-                  { "name": "Visual Studio Code", "size": 2 },
-                  { "name": "Visual Studio 2017", "size": 2 },
+                  { label: "Atom", size: 2 },
+                  { label: "Visual Studio Code", size: 2 },
+                  { label: "Visual Studio 2017", size: 2 },
                 ]
               },
-                { "name": "Hosting", "children": [
-                  { "name": "Microsoft Azure", "size": 2 },
-                  { "name": "Heroku", "size": 2 },
+                { label: "Hosting", "children": [
+                  { label: "Microsoft Azure", size: 2 },
+                  { label: "Heroku", size: 2 },
                   ]
                 },
-                { "name": "NPM", "size": 1 },
-                { "name": "Yarn", "size": 1 },
-                { "name": "NuGet", "size": 1 },
-                { "name": "CRUD", "size": 2 },
-                { "name": "RESTful", "size": 1 }
+                { label: "NPM", size: 1 },
+                { label: "Yarn", size: 1 },
+                { label: "NuGet", size: 1 },
+                { label: "CRUD", size: 2 },
+                { label: "RESTful", size: 1 }
               ]
             }
           ]
         },
         skillsFront: {
-          name: "Front End",
+          label: "Front End",
           children: [
             { name: "HTML",
               children: [
-                { name: "Forms", size: 1 },
-                { name: "Audio", size: 1 },
-                { name: "Video", size: 1 },
+                { label: "Forms", size: 1 },
+                { label: "Audio", size: 1 },
+                { label: "Video", size: 1 },
               ] },
-            { name: "SVG",
+            { label: "SVG",
               children: [
-                { name: "W3C Standard", size: 2 },
-                { name: "D3", size: 2 }
+                { label: "W3C Standard", size: 2 },
+                { label: "D3", size: 2 }
               ] },
-            { name: "CSS",
+            { label: "CSS",
               children: [
-                { name: "Transitions", size: 1 },
-                { name: "Animations", size: 1 },
-                { name: "CSS Flexbox", size: 1 },
-                { name: "CSS Grid", size: 1 },
-                { name: "SCSS", size: 1 },
-                { name: "SASS", size: 1 }
+                { label: "Transitions", size: 1 },
+                { label: "Animations", size: 1 },
+                { label: "CSS Flexbox", size: 1 },
+                { label: "CSS Grid", size: 1 },
+                { label: "SCSS", size: 1 },
+                { label: "SASS", size: 1 }
               ] },
-            { name: "JavaScript",
+            { label: "JavaScript",
               children: [
-                { name: "DOM", size: 1 },
-                { name: "LocalStorage", size: 1 },
-                { name: "ES5, ES6, ES7", size: 1 },
-                { name: "jQuery", size: 1 },
-                { name: "SPA",
+                { label: "DOM", size: 1 },
+                { label: "LocalStorage", size: 1 },
+                { label: "ES5, ES6, ES7", size: 1 },
+                { label: "jQuery", size: 1 },
+                { label: "SPA",
                   children: [
-                  { name: "React", size: 1 },
-                  { name: "Vue", size: 1 }
+                  { label: "React", size: 1 },
+                  { label: "Vue", size: 1 }
                   ]
                 },
               ] 
@@ -189,51 +202,51 @@
           ]
         },
         skillsBack: {
-          "name": "Back End",
+          label: "Back End",
           "children": [
-            { "name": "Node JS", "size": 3 },
-            { "name": "Ruby on Rails", "size": 3 },
-            { "name": "ASP.NET Core", "size": 3 }
+            { label: "Node JS", size: 3 },
+            { label: "Ruby on Rails", size: 3 },
+            { label: "ASP.NET Core", size: 3 }
           ]
         },
         skillsData: {
-          "name": "Data",
+          label: "Data",
           "children": [
-            { "name": "JSON", "size": 2 },
-            { "name": "XML", "size": 2 },
-            { "name": "SQLite", "size": 2 },
-            { "name": "MySql", "size": 2 },
-            { "name": "PostgreSQL", "size": 2 },
-            { "name": "MSSQL", "size": 2 },
-            { "name": "MongoDB", "size": 2 }
+            { label: "JSON", size: 2 },
+            { label: "XML", size: 2 },
+            { label: "SQLite", size: 2 },
+            { label: "MySql", size: 2 },
+            { label: "PostgreSQL", size: 2 },
+            { label: "MSSQL", size: 2 },
+            { label: "MongoDB", size: 2 }
           ]
         },
         skillsTools: {
-          "name": "Tools & Environment",
+          label: "Tools & Environment",
           "children": [
-            { "name": "Version Control",
+            { label: "Version Control",
               "children": [
-                { "name": "Git", "size": 1 },
-                { "name": "GitHub", "size": 2 }
+                { label: "Git", size: 1 },
+                { label: "GitHub", size: 2 }
               ]
             },
-          { "name": "Editors",
+          { label: "Editors",
             "children": [
-              { "name": "Atom", "size": 2 },
-              { "name": "Visual Studio Code", "size": 2 },
-              { "name": "Visual Studio 2017", "size": 2 },
+              { label: "Atom", size: 2 },
+              { label: "Visual Studio Code", size: 2 },
+              { label: "Visual Studio 2017", size: 2 },
             ]
           },
-            { "name": "Hosting", "children": [
-              { "name": "Microsoft Azure", "size": 2 },
-              { "name": "Heroku", "size": 2 },
+            { label: "Hosting", "children": [
+              { label: "Microsoft Azure", "size": 2 },
+              { label: "Heroku", "size": 2 },
               ]
             },
-            { "name": "NPM", "size": 1 },
-            { "name": "Yarn", "size": 1 },
-            { "name": "NuGet", "size": 1 },
-            { "name": "CRUD", "size": 2 },
-            { "name": "RESTful", "size": 1 }
+            { label: "NPM", size: 1 },
+            { label: "Yarn", size: 1 },
+            { label: "NuGet", size: 1 },
+            { label: "CRUD", size: 2 },
+            { label: "RESTful", size: 1 }
           ]
         }
       }
@@ -248,7 +261,9 @@
       eventBus.$emit('changingTheme', this.theme)
     },
     mounted() {
-      this.currentDataset = this.skillsFront 
+      this.currentDataSet = this.skillsAllData;
+      this.currentColorSet = this.skillColors["all"];
+      // d3.selectAll('.node').call(d2b.tooltip().clear)
     },
     computed: {
 
@@ -257,23 +272,49 @@
 
     },
     methods: {
+      selectColorScheme: function(slice) {
+        switch (slice.label) {
+          case "all":
+
+            break;
+          case "front":
+            console.log(slice.label);
+            return this.skillColors[slice.label]
+            break;
+          case "back":
+
+            break;
+          case "data":
+
+            break;
+          case "tools":
+
+            break;
+          default:
+            break;
+        }
+      },
       changeChartData: function(dataName) {
         switch(dataName) {
+          case "all":
+            console.log("front");
+            this.currentDataSet = this.skillsAllData;
+            break;
           case "front":
             console.log("front");
-            this.currentDataset = this.skillsFront;
+            this.currentDataSet = this.skillsFront;
             break;
           case "back":
             console.log("back");
-            this.currentDataset = this.skillsBack;
+            this.currentDataSet = this.skillsBack;
             break;
           case "data":
             console.log("data");
-            this.currentDataset = this.skillsData;
+            this.currentDataSet = this.skillsData;
             break;
           case "tools":
             console.log("tools");
-            this.currentDataset = this.skillsTools;
+            this.currentDataSet = this.skillsTools;
             break;
           default:
             break;
@@ -300,19 +341,18 @@
 
   #divChartWrapper {
     width: 100%;
-    position: relative;
+    display: flex;
+    flex-direction: column;
     text-align: center;
   }
 
   .vue-d2b-container {
-    height: 512px;
-    width: 512px
+    margin: 16px auto;
+    min-height: 304px;
+    max-height: 512px;
+    min-width: 304px;
+    max-width: 512px
     }
-
-  .d2b-chart {
-    height: 512px;
-    width: 512px
-  }
 
   #divChartFilters {
     display: flex;

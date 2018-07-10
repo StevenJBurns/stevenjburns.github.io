@@ -16,7 +16,7 @@
     <hr>
     <div id="divChartWrapper">
       <h3>If you're in a long-term hiring mood for someone with specific skills, the interactive charts below contain a broad (and hierarchical) overview of the skill sets.</h3>
-      <ChartSunburst :data="currentDataSet" :config="sunburstConfig" :color="currentColorSet"></ChartSunburst>
+      <ChartSunburst :data="currentDataSet" :config="sunburstConfig"></ChartSunburst>
       <div id="divChartFilters">
         <button type="button" @click="changeChartData('all')">All Skills</button>
         <button type="button" @click="changeChartData('front')">Front End</button>
@@ -56,13 +56,12 @@
         sunburstConfig: function (chart) {
           chart.label(d => d.label)
           chart.sunburst().size(d => d.size);
-          chart.color(d => {
-            return this.currentColorSet
-          })
+          chart.color(d => d.color);
+
           chart.chartFrame().legendEnabled(false).breadcrumbsEnabled(false) //.tooltipsEnabled(false)
         },
         currentDataSet: null,
-        currentColorSet: null,
+        currentColorSet: "#474747",
         skillColors: {
           all: ["#003300", "#005500", "#006600", "#005500", "#006600", "#99AABB", "#AABBCC", "#BBCCDD"],
           front: ["#9999CC", "#7F7FBF", "#6666B2", "#4C4CA6"],
@@ -72,40 +71,47 @@
         },
         skillsAllData: {
           label: "Skills",
+          color: "#226622",
           "children": [
             {
               label: "Front End",
+              color: "#FFD700",
               "children": [
                 { label: "HTML",
+                  color: "#E6C200",
                   "children": [
-                    { label: "Forms", size: 1 },
-                    { label: "Audio", size: 1 },
-                    { label: "Video", size: 1 },
+                    { label: "Forms", color: "#CCAC00", size: 1 },
+                    { label: "Audio", color: "#CCAC00", size: 1 },
+                    { label: "Video", color: "#CCAC00", size: 1 },
                   ] },
                 { label: "SVG",
+                  color: "#E6C200",
                   "children": [
-                    { label: "W3C Standard", size: 2 },
-                    { label: "D3", size: 2 }
+                    { label: "W3C Standard", color: "#CCAC00", size: 2 },
+                    { label: "D3", color: "#CCAC00", size: 2 }
                   ] },
                 { label: "CSS",
+                  color: "#E6C200",
                   "children": [
-                    { label: "Transitions", size: 1 },
-                    { label: "Animations", size: 1 },
-                    { label: "CSS Flexbox", size: 1 },
-                    { label: "CSS Grid", size: 1 },
-                    { label: "SCSS", size: 1 },
-                    { label: "SASS", size: 1 }
+                    { label: "Transitions", color: "#CCAC00", size: 1 },
+                    { label: "Animations", color: "#CCAC00", size: 1 },
+                    { label: "CSS Flexbox", color: "#CCAC00", size: 1 },
+                    { label: "CSS Grid", color: "#CCAC00", size: 1 },
+                    { label: "SCSS", color: "#CCAC00", size: 1 },
+                    { label: "SASS", color: "#CCAC00", size: 1 }
                   ] },
                 { label: "JavaScript",
+                  color: "#E6C200",
                   "children": [
-                    { label: "DOM", size: 1 },
-                    { label: "LocalStorage", size: 1 },
-                    { label: "ES5, ES6, ES7", size: 1 },
-                    { label: "jQuery", size: 1 },
+                    { label: "DOM", color: "#CCAC00", size: 1 },
+                    { label: "LocalStorage", color: "#CCAC00", size: 1 },
+                    { label: "ES5, ES6, ES7", color: "#CCAC00", size: 1 },
+                    { label: "jQuery", color: "#CCAC00", size: 1 },
                     { label: "SPA",
+                      color: "#CCAC00",
                       "children": [
-                      { label: "React", size: 1 },
-                      { label: "Vue", size: 1 }
+                      { label: "React", color: "#B39700", size: 1 },
+                      { label: "Vue", color: "#B39700", size: 1 }
                       ]
                     },
                   ] 
@@ -114,50 +120,57 @@
             },
             {
               label: "Back End",
+              color: "#323299",
               "children": [
-                { label: "Node JS", size: 3 },
-                { label: "Ruby on Rails", size: 3 },
-                { label: "ASP.NET Core", size: 3 }
+                { label: "Node JS", color: "#000080", size: 3 },
+                { label: "Ruby on Rails", color: "#000080", size: 3 },
+                { label: "ASP.NET Core", color: "#000080", size: 3 }
               ]
             },
             {
               label: "Data",
+              color: "#7C26CB",
               "children": [
-                { label: "JSON", size: 2 },
-                { label: "XML", size: 2 },
-                { label: "SQLite", size: 2 },
-                { label: "MySql", size: 2 },
-                { label: "PostgreSQL", size: 2 },
-                { label: "MSSQL", size: 2 },
-                { label: "MongoDB", size: 2 }
+                { label: "JSON", color: "#551A8B", size: 2 },
+                { label: "XML", color: "#551A8B", size: 2 },
+                { label: "SQLite", color: "#551A8B", size: 2 },
+                { label: "MySql", color: "#551A8B", size: 2 },
+                { label: "PostgreSQL", color: "#551A8B", size: 2 },
+                { label: "MSSQL", color: "#551A8B", size: 2 },
+                { label: "MongoDB", color: "#551A8B", size: 2 }
               ]
             },
             {
               label: "Tools & Environment",
+              color: "#E50000",
               "children": [
                 { label: "Version Control",
+                  color: "#B20000",
                   "children": [
-                    { label: "Git", size: 1 },
-                    { label: "GitHub", size: 2 }
+                    { label: "Git", color: "#990000", size: 1 },
+                    { label: "GitHub", color: "#990000", size: 2 }
                   ]
                 },
               { label: "Editors",
+                color: "#B20000",
                 "children": [
-                  { label: "Atom", size: 2 },
-                  { label: "Visual Studio Code", size: 2 },
-                  { label: "Visual Studio 2017", size: 2 },
+                  { label: "Atom", color: "#990000", size: 2 },
+                  { label: "Visual Studio Code", color: "#990000", size: 2 },
+                  { label: "Visual Studio 2017", color: "#990000", size: 2 },
                 ]
               },
-                { label: "Hosting", "children": [
-                  { label: "Microsoft Azure", size: 2 },
-                  { label: "Heroku", size: 2 },
+                { label: "Hosting",
+                  color: "#B20000",
+                  "children": [
+                  { label: "Microsoft Azure", color: "#990000", size: 2 },
+                  { label: "Heroku", color: "#990000",size: 2 },
                   ]
                 },
-                { label: "NPM", size: 1 },
-                { label: "Yarn", size: 1 },
-                { label: "NuGet", size: 1 },
-                { label: "CRUD", size: 2 },
-                { label: "RESTful", size: 1 }
+                { label: "NPM", color: "#B20000", size: 1 },
+                { label: "Yarn", color: "#B20000", size: 1 },
+                { label: "NuGet", color: "#B20000", size: 1 },
+                { label: "CRUD", color: "#B20000", size: 2 },
+                { label: "RESTful", color: "#B20000", size: 1 }
               ]
             }
           ]
@@ -279,6 +292,7 @@
             break;
           case "front":
             console.log(slice.label);
+            currentColorSet()
             return this.skillColors[slice.label]
             break;
           case "back":

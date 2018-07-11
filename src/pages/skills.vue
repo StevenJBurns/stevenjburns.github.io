@@ -18,11 +18,11 @@
       <h3>If you're in a long-term hiring mood for someone with specific skills, the interactive charts below contain a broad (and hierarchical) overview of the skill sets.</h3>
       <ChartSunburst :data="currentDataSet" :config="sunburstConfig"></ChartSunburst>
       <div id="divChartFilters">
-        <button type="button" @click="changeChartData('all')">All Skills</button>
-        <button type="button" @click="changeChartData('front')">Front End</button>
-        <button type="button" @click="changeChartData('back')">Server Side</button>
-        <button type="button" @click="changeChartData('data')">Data</button>
-        <button type="button" @click="changeChartData('tools')">Environment &amp; Tools</button>
+        <button type="button" @click="changeChartData('Skills')">All Skills</button>
+        <button type="button" @click="changeChartData('Front End')">Front End</button>
+        <button type="button" @click="changeChartData('Back End')">Server Side</button>
+        <button type="button" @click="changeChartData('Data')">Data</button>
+        <button type="button" @click="changeChartData('Tools')">Environment &amp; Tools</button>
       </div>
     </div>
     <hr>
@@ -72,27 +72,27 @@
         skillsAllData: {
           label: "Skills",
           color: "#226622",
-          "children": [
+          children: [
             {
               label: "Front End",
               color: "#FFD700",
-              "children": [
+              children: [
                 { label: "HTML",
                   color: "#E6C200",
-                  "children": [
+                  children: [
                     { label: "Forms", color: "#CCAC00", size: 1 },
                     { label: "Audio", color: "#CCAC00", size: 1 },
                     { label: "Video", color: "#CCAC00", size: 1 },
                   ] },
                 { label: "SVG",
                   color: "#E6C200",
-                  "children": [
+                  children: [
                     { label: "W3C Standard", color: "#CCAC00", size: 2 },
                     { label: "D3", color: "#CCAC00", size: 2 }
                   ] },
                 { label: "CSS",
                   color: "#E6C200",
-                  "children": [
+                  children: [
                     { label: "Transitions", color: "#CCAC00", size: 1 },
                     { label: "Animations", color: "#CCAC00", size: 1 },
                     { label: "CSS Flexbox", color: "#CCAC00", size: 1 },
@@ -102,14 +102,14 @@
                   ] },
                 { label: "JavaScript",
                   color: "#E6C200",
-                  "children": [
+                  children: [
                     { label: "DOM", color: "#CCAC00", size: 1 },
                     { label: "LocalStorage", color: "#CCAC00", size: 1 },
                     { label: "ES5, ES6, ES7", color: "#CCAC00", size: 1 },
                     { label: "jQuery", color: "#CCAC00", size: 1 },
                     { label: "SPA",
                       color: "#CCAC00",
-                      "children": [
+                      children: [
                       { label: "React", color: "#B39700", size: 1 },
                       { label: "Vue", color: "#B39700", size: 1 }
                       ]
@@ -121,7 +121,7 @@
             {
               label: "Back End",
               color: "#323299",
-              "children": [
+              children: [
                 { label: "Node JS", color: "#000080", size: 3 },
                 { label: "Ruby on Rails", color: "#000080", size: 3 },
                 { label: "ASP.NET Core", color: "#000080", size: 3 }
@@ -130,7 +130,7 @@
             {
               label: "Data",
               color: "#7C26CB",
-              "children": [
+              children: [
                 { label: "JSON", color: "#551A8B", size: 2 },
                 { label: "XML", color: "#551A8B", size: 2 },
                 { label: "SQLite", color: "#551A8B", size: 2 },
@@ -141,9 +141,9 @@
               ]
             },
             {
-              label: "Tools & Environment",
+              label: "Tools",
               color: "#E50000",
-              "children": [
+              children: [
                 { label: "Version Control",
                   color: "#B20000",
                   "children": [
@@ -153,7 +153,7 @@
                 },
               { label: "Editors",
                 color: "#B20000",
-                "children": [
+                children: [
                   { label: "Atom", color: "#990000", size: 2 },
                   { label: "Visual Studio Code", color: "#990000", size: 2 },
                   { label: "Visual Studio 2017", color: "#990000", size: 2 },
@@ -161,7 +161,7 @@
               },
                 { label: "Hosting",
                   color: "#B20000",
-                  "children": [
+                  children: [
                   { label: "Microsoft Azure", color: "#990000", size: 2 },
                   { label: "Heroku", color: "#990000",size: 2 },
                   ]
@@ -309,30 +309,9 @@
         }
       },
       changeChartData: function(dataName) {
-        switch(dataName) {
-          case "all":
-            console.log("front");
-            this.currentDataSet = this.skillsAllData;
-            break;
-          case "front":
-            console.log("front");
-            this.currentDataSet = this.skillsFront;
-            break;
-          case "back":
-            console.log("back");
-            this.currentDataSet = this.skillsBack;
-            break;
-          case "data":
-            console.log("data");
-            this.currentDataSet = this.skillsData;
-            break;
-          case "tools":
-            console.log("tools");
-            this.currentDataSet = this.skillsTools;
-            break;
-          default:
-            break;
-        }
+        this.currentDataSet = dataName == "Skills" ?
+                              this.skillsAllData :
+                              this.skillsAllData.children.filter(k => k.label == dataName)[0];
       }
     }
   }

@@ -275,7 +275,7 @@
     },
     mounted() {
       this.currentDataSet = this.skillsAllData;
-      this.currentColorSet = this.skillColors["all"];
+      // this.currentColorSet = this.skillColors["all"];
       // d3.selectAll('.node').call(d2b.tooltip().clear)
     },
     computed: {
@@ -309,9 +309,15 @@
         }
       },
       changeChartData: function(dataName) {
-        this.currentDataSet = dataName == "Skills" ?
-                              this.skillsAllData :
-                              this.skillsAllData.children.filter(k => k.label == dataName)[0];
+        // this.currentDataSet = dataName == "Skills" ?
+        //                       this.skillsAllData :
+        //                       this.skillsAllData.children.filter(k => k.label == dataName)[0];
+        
+        if (dataName == "Skills") {
+          this.currentDataSet = this.skillsAllData
+        } else {
+          this.currentDataSet = this.skillsAllData.children.filter(k => k.label == dataName)[0]
+        }
       }
     }
   }
@@ -361,9 +367,15 @@
   }
 
   @media screen and (max-width: 720px) {
-    #divPageWrapper {
+    #divChartWrapper {
       flex: 1 0 auto;
       flex-direction: column;
+    }
+
+    .vue-d2b-container {
+      margin: 16px auto;
+      height: 304px;
+      width: 304px
     }
   }
 </style>

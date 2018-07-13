@@ -98,7 +98,7 @@
 
   }
   
-   .fade-leave-active {
+  .fade-leave-active {
     transition-property: all;
     transition-duration: 0s;
   }

@@ -35,6 +35,10 @@ main {
   flex: 1 0 auto;
 }
 
+.d2b-tooltip {
+  display: none
+}
+
 footer {
   text-align: center;
   /* background: #1F1F1F */

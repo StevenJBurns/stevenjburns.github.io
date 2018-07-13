@@ -51,25 +51,15 @@
     name: 'PageSkills',
     data() {
       return {
-        width: 480,
-        height: 480,
         sunburstConfig: function (chart) {
           chart.label(d => d.label)
           chart.sunburst().size(d => d.size);
           chart.color(d => d.color);
 
-          chart.chartFrame().legendEnabled(false).breadcrumbsEnabled(false) //.tooltipsEnabled(false)
+          chart.chartFrame().legendEnabled(false).breadcrumbsEnabled(false);
         },
         currentDataSet: null,
-        currentColorSet: "#474747",
-        skillColors: {
-          all: ["#003300", "#005500", "#006600", "#005500", "#006600", "#99AABB", "#AABBCC", "#BBCCDD"],
-          front: ["#9999CC", "#7F7FBF", "#6666B2", "#4C4CA6"],
-          back: [],
-          data: [],
-          tools: []
-        },
-        skillsAllData: {
+        skillsData: {
           label: "Skills",
           color: "#226622",
           children: [
@@ -174,93 +164,6 @@
               ]
             }
           ]
-        },
-        skillsFront: {
-          label: "Front End",
-          children: [
-            { name: "HTML",
-              children: [
-                { label: "Forms", size: 1 },
-                { label: "Audio", size: 1 },
-                { label: "Video", size: 1 },
-              ] },
-            { label: "SVG",
-              children: [
-                { label: "W3C Standard", size: 2 },
-                { label: "D3", size: 2 }
-              ] },
-            { label: "CSS",
-              children: [
-                { label: "Transitions", size: 1 },
-                { label: "Animations", size: 1 },
-                { label: "CSS Flexbox", size: 1 },
-                { label: "CSS Grid", size: 1 },
-                { label: "SCSS", size: 1 },
-                { label: "SASS", size: 1 }
-              ] },
-            { label: "JavaScript",
-              children: [
-                { label: "DOM", size: 1 },
-                { label: "LocalStorage", size: 1 },
-                { label: "ES5, ES6, ES7", size: 1 },
-                { label: "jQuery", size: 1 },
-                { label: "SPA",
-                  children: [
-                  { label: "React", size: 1 },
-                  { label: "Vue", size: 1 }
-                  ]
-                },
-              ] 
-            },
-          ]
-        },
-        skillsBack: {
-          label: "Back End",
-          "children": [
-            { label: "Node JS", size: 3 },
-            { label: "Ruby on Rails", size: 3 },
-            { label: "ASP.NET Core", size: 3 }
-          ]
-        },
-        skillsData: {
-          label: "Data",
-          "children": [
-            { label: "JSON", size: 2 },
-            { label: "XML", size: 2 },
-            { label: "SQLite", size: 2 },
-            { label: "MySql", size: 2 },
-            { label: "PostgreSQL", size: 2 },
-            { label: "MSSQL", size: 2 },
-            { label: "MongoDB", size: 2 }
-          ]
-        },
-        skillsTools: {
-          label: "Tools & Environment",
-          "children": [
-            { label: "Version Control",
-              "children": [
-                { label: "Git", size: 1 },
-                { label: "GitHub", size: 2 }
-              ]
-            },
-          { label: "Editors",
-            "children": [
-              { label: "Atom", size: 2 },
-              { label: "Visual Studio Code", size: 2 },
-              { label: "Visual Studio 2017", size: 2 },
-            ]
-          },
-            { label: "Hosting", "children": [
-              { label: "Microsoft Azure", "size": 2 },
-              { label: "Heroku", "size": 2 },
-              ]
-            },
-            { label: "NPM", size: 1 },
-            { label: "Yarn", size: 1 },
-            { label: "NuGet", size: 1 },
-            { label: "CRUD", size: 2 },
-            { label: "RESTful", size: 1 }
-          ]
         }
       }
     },
@@ -274,9 +177,7 @@
       eventBus.$emit('changingTheme', this.theme)
     },
     mounted() {
-      this.currentDataSet = this.skillsAllData;
-      // this.currentColorSet = this.skillColors["all"];
-      // d3.selectAll('.node').call(d2b.tooltip().clear)
+      this.currentDataSet = this.skillsData;
     },
     computed: {
 
@@ -285,39 +186,13 @@
 
     },
     methods: {
-      selectColorScheme: function(slice) {
-        switch (slice.label) {
-          case "all":
-
-            break;
-          case "front":
-            console.log(slice.label);
-            currentColorSet()
-            return this.skillColors[slice.label]
-            break;
-          case "back":
-
-            break;
-          case "data":
-
-            break;
-          case "tools":
-
-            break;
-          default:
-            break;
-        }
-      },
-      changeChartData: function(dataName) {
-        // this.currentDataSet = dataName == "Skills" ?
-        //                       this.skillsAllData :
-        //                       this.skillsAllData.children.filter(k => k.label == dataName)[0];
-        
+      changeChartData: function(dataName) {        
         if (dataName == "Skills") {
-          this.currentDataSet = this.skillsAllData
+          this.currentDataSet = this.skillsData
         } else {
-          this.currentDataSet = this.skillsAllData.children.filter(k => k.label == dataName)[0]
+          this.currentDataSet = this.skillsData.children.filter(k => k.label == dataName)[0]
         }
+      console.log(this.currentDataSet);
       }
     }
   }
@@ -347,17 +222,15 @@
 
   .vue-d2b-container {
     margin: 16px auto;
-    min-height: 304px;
-    max-height: 512px;
-    min-width: 304px;
-    max-width: 512px
-    }
+    height: 496px;
+    width: 496px
+  }
 
   #divChartFilters {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin: 0 auto;    
+    margin: 0 auto
   }
 
   #divChartFilters button {
@@ -366,11 +239,16 @@
     text-align: center
   }
 
-  @media screen and (max-width: 720px) {
-    #divChartWrapper {
-      flex: 1 0 auto;
-      flex-direction: column;
-    }
+  .d2b-sunburst-center {
+
+  }
+
+  @media screen and (max-width: 480px) {
+    /* .d2b-chart-frame {
+      margin: 16px auto;
+      height: 480px;
+      width: 480px
+    } */
 
     .vue-d2b-container {
       margin: 16px auto;

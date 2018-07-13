@@ -54,6 +54,7 @@
         sunburstConfig: function (chart) {
           chart.label(d => d.label)
           chart.sunburst().size(d => d.size);
+          chart.innerRadius(0)
           chart.color(d => d.color);
 
           chart.chartFrame().legendEnabled(false).breadcrumbsEnabled(false);
@@ -178,6 +179,8 @@
     },
     mounted() {
       this.currentDataSet = this.skillsData;
+
+      d3.select(".d2b-sunburst-center").attr("r", 100);
     },
     computed: {
 
@@ -186,7 +189,9 @@
 
     },
     methods: {
-      changeChartData: function(dataName) {        
+      changeChartData: function(dataName) {
+        this.currentDataSet = null;
+        
         if (dataName == "Skills") {
           this.currentDataSet = this.skillsData
         } else {

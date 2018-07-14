@@ -244,17 +244,7 @@
     text-align: center
   }
 
-  .d2b-sunburst-center {
-
-  }
-
   @media screen and (max-width: 480px) {
-    /* .d2b-chart-frame {
-      margin: 16px auto;
-      height: 480px;
-      width: 480px
-    } */
-
     .vue-d2b-container {
       margin: 16px auto;
       height: 304px;

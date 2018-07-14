@@ -51,14 +51,15 @@
     name: 'PageSkills',
     data() {
       return {
+        currentDataSet: null,
         sunburstConfig: function (chart) {
           chart.innerRadius(0);
           chart.label(d => d.label);
           chart.color(d => d.color);
-          chart.sunburst().size(d => d.size);
+          chart.sunburst().size(d => d.size)
+          chart.sunburst().ancestorPadding(0)
           chart.chartFrame().legendEnabled(false).breadcrumbsEnabled(false);
         },
-        currentDataSet: null,
         skillsData: {
           label: "Skills",
           color: "#226622",
@@ -194,6 +195,7 @@
         } else {
           this.currentDataSet = this.skillsData.children.filter(k => k.label == dataName)[0]
         }
+        console.log(this.currentDataSet);
       }
     }
   }
@@ -227,6 +229,15 @@
     width: 496px
   }
 
+  .d2b-chart-frame {
+    height: 496px;
+    width: 496px
+  }
+
+  .d2b-chart {
+    max-width: 496px
+  }
+
   #divChartFilters {
     display: flex;
     flex-direction: row;
@@ -242,7 +253,11 @@
 
   @media screen and (max-width: 480px) {
     .vue-d2b-container {
-      margin: 16px auto;
+      height: 304px;
+      width: 304px
+    }
+
+    .d2b-chart-frame {
       height: 304px;
       width: 304px
     }

@@ -52,11 +52,10 @@
     data() {
       return {
         sunburstConfig: function (chart) {
-          chart.label(d => d.label)
-          chart.sunburst().size(d => d.size);
-          chart.innerRadius(0)
+          chart.innerRadius(0);
+          chart.label(d => d.label);
           chart.color(d => d.color);
-
+          chart.sunburst().size(d => d.size);
           chart.chartFrame().legendEnabled(false).breadcrumbsEnabled(false);
         },
         currentDataSet: null,
@@ -179,8 +178,6 @@
     },
     mounted() {
       this.currentDataSet = this.skillsData;
-
-      d3.select(".d2b-sunburst-center").attr("r", 100);
     },
     computed: {
 
@@ -197,7 +194,6 @@
         } else {
           this.currentDataSet = this.skillsData.children.filter(k => k.label == dataName)[0]
         }
-      console.log(this.currentDataSet);
       }
     }
   }

@@ -51,15 +51,17 @@
     name: 'PageSkills',
     data() {
       return {
+        pageWidth: 0,
+        pageHeight: 0,
         currentDataSet: null,
         sunburstConfig: function (chart) {
           chart.innerRadius(0);
-          chart.outerRadius(236);
+          //chart.outerRadius(236);
           chart.label(d => d.label);
           chart.color(d => d.color);
           chart.sunburst().size(d => d.size);
           chart.sunburst().ancestorPadding(0);
-          chart.chartFrame().size({height: 496, width: 496});
+          chart.chartFrame().size({height: this.pageHeight - 16, width: this.pageWidth - 16});
           chart.chartFrame().legendEnabled(false).breadcrumbsEnabled(false);
 
           d3.selectAll("g").append("text")
@@ -184,7 +186,12 @@
       "ChartSunburst": ChartSunburst
     },
     created() {
-      eventBus.$emit('changingTheme', this.theme)
+      eventBus.$emit('changingTheme', this.theme),
+      this.pageHeight = window.height,
+      this.pageWidth = window.width
+    },
+    beforeMount() {
+
     },
     mounted() {
       this.currentDataSet = this.skillsData;
@@ -260,7 +267,7 @@
     text-align: center
   }
 
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 512px) {
     .vue-d2b-container {
       height: 304px;
       width: 304px

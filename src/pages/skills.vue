@@ -61,6 +61,7 @@
           chart.color(d => d.color);
           chart.sunburst().size(d => d.size);
           chart.sunburst().ancestorPadding(0);
+          chart.sunburst().zoomable(false);
           chart.chartFrame().size({height: this.pageHeight - 16, width: this.pageWidth - 16});
           chart.chartFrame().legendEnabled(false).breadcrumbsEnabled(false);
 
@@ -211,7 +212,7 @@
         } else {
           this.currentDataSet = this.skillsData.children.filter(k => k.label == dataName)[0]
         }
-        console.log(this.currentDataSet);
+        //console.log(this.currentDataSet);
       }
     }
   }

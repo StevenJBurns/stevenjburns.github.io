@@ -42,10 +42,10 @@
 </template>
 
 <script>
-  import { eventBus } from "../main.js";
-  import * as d3 from "d3";
   import d2b from "d2b";
+  import * as d3 from "d3";
   import { ChartSunburst} from "vue-d2b";
+  import { eventBus } from "../main.js";
 
   export default {
     name: 'PageSkills',
@@ -54,11 +54,19 @@
         currentDataSet: null,
         sunburstConfig: function (chart) {
           chart.innerRadius(0);
+          chart.outerRadius(236);
           chart.label(d => d.label);
           chart.color(d => d.color);
-          chart.sunburst().size(d => d.size)
-          chart.sunburst().ancestorPadding(0)
+          chart.sunburst().size(d => d.size);
+          chart.sunburst().ancestorPadding(0);
           chart.chartFrame().legendEnabled(false).breadcrumbsEnabled(false);
+
+          d3.selectAll("g").append("text")
+            .call(d => console.log(d.y))
+            .attr("x", d => d.x)
+            .attr("dx", "6")
+            // .attr("dy", ".35em")
+            .text(d => d.label);
         },
         skillsData: {
           label: "Skills",
@@ -188,7 +196,7 @@
     },
     methods: {
       changeChartData: function(dataName) {
-        this.currentDataSet = null;
+        this.currentDataSet.selected = null;
         
         if (dataName == "Skills") {
           this.currentDataSet = this.skillsData
@@ -260,6 +268,12 @@
     .d2b-chart-frame {
       height: 304px;
       width: 304px
+    }
+
+    #divChartFilters button {
+      width: 60px;
+      height: 48px;
+      text-align: center
     }
   }
 </style>

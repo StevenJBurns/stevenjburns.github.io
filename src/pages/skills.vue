@@ -66,7 +66,7 @@
           chart.chartFrame().legendEnabled(false).breadcrumbsEnabled(false);
 
           d3.selectAll("g").append("text")
-            .call(d => console.log(d.y))
+            // .call(d => console.log(d.y))
             .attr("x", d => d.x)
             .attr("dx", "6")
             // .attr("dy", ".35em")

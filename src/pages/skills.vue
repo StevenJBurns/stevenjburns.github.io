@@ -59,6 +59,7 @@
           chart.color(d => d.color);
           chart.sunburst().size(d => d.size);
           chart.sunburst().ancestorPadding(0);
+          chart.chartFrame().size({height: 496, width: 496});
           chart.chartFrame().legendEnabled(false).breadcrumbsEnabled(false);
 
           d3.selectAll("g").append("text")

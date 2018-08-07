@@ -56,7 +56,7 @@
         currentDataSet: null,
         sunburstConfig: function (chart) {
           chart.innerRadius(0);
-          //chart.outerRadius(236);
+          //chart.outerRadius(158);
           chart.label(d => d.label);
           chart.color(d => d.color);
           chart.sunburst().size(d => d.size);
@@ -65,12 +65,12 @@
           chart.chartFrame().size({height: this.pageHeight - 16, width: this.pageWidth - 16});
           chart.chartFrame().legendEnabled(false).breadcrumbsEnabled(false);
 
-          d3.selectAll("g").append("text")
+          // d3.selectAll("g").append("text")
             // .call(d => console.log(d.y))
-            .attr("x", d => d.x)
-            .attr("dx", "6")
+            // .attr("x", d => d.x)
+            // .attr("dx", "6")
             // .attr("dy", ".35em")
-            .text(d => d.label);
+            // .text(d => d.label);
         },
         skillsData: {
           label: "Skills",
@@ -212,7 +212,6 @@
         } else {
           this.currentDataSet = this.skillsData.children.filter(k => k.label == dataName)[0]
         }
-        //console.log(this.currentDataSet);
       }
     }
   }
@@ -286,4 +285,3 @@
     }
   }
 </style>
-

@@ -23,7 +23,7 @@
     <p>military related</p>
     <hr>
     <h1>About This Site</h1>
-    <p>Wrutten in Vue, Greensock, D3, SVG, JSON</p>
+    <p>Written in Vue, Greensock, D3, SVG, JSON</p>
   </div>
 </template>
 

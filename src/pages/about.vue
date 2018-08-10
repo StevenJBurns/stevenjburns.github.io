@@ -1,10 +1,11 @@
 <template>
   <div>
     <h1>About Me</h1>
-    <hr>
+    <!-- <hr> -->
     <!-- <img id="img-a" width="144" src="../assets/steve_then.png">
     <img id="img-b" width="144" src="../assets/steve_now.jpg">
     <hr> -->
+    <img id="img-sjb" width="100%" src="../assets/OLY07439.jpg">
     <p>Welcome to my personal portfolio site. My name is Steve Burns. I was neither the host of Blues Clues in the 1990s nor am I a distant relative of Montgomery J Burns of The Simpsons.  I <strong><em>am</em></strong> a U.S. Air Force veteran transitioning to a second career in software development. As a graduate of the Air Force Academy and former combat pilot, I am seeking an equally challenging second career.</p>
     <p>The path that landed me here spans almost 40 years. A fascination with BASIC on the Atari 800 started it all during my 1980s childhood. I was hooked. Over the years I have tried my hand at many ways of drawing pixels on screens. Along the way I discovered you could make those pixels meaningful with data. The internet changed everything by allowing most everyone to share those meaningful pixels. But this hobby often overlapped with my military career and because of the military commitment, writing computer programs remained a hobby.</p>
     <!-- <p>Programming has fascinated me since the mid-1980s when I discovered BASIC on my first computer : the mighty Atari 800 equipped with 16KB of memory and video capable of 16 colors. Seeing the potential of computers beyond games and entertainment, I was hooked.  But college and the Air Force became my priority and so computers would take a back seat as a hobby.  By the 1990s I was hooked again by the awe-inspiring features of Windows 3.1 that introduced me to "relational" databases in Microsoft Access and productivity tools such as Solitaire and Minesweeper. While I saw many potential projects in the daily routines of the military I could never find the time to learn programming on a serious level or write software that was worth using and so computers were shelved as a hobby once again.</p>
@@ -20,7 +21,7 @@
     <!-- <h1>let Career = (MilitaryPilot) =&gt; FullStackDeveloper;</h1> -->
     <hr>
     <h1>About The Logo</h1>
-    <p>military related</p>
+    <p>Everyone could use a little personal branding, no?  In the rough sketching of what I thought would be an interesting Steve-Logo, I drew upon the designs, images and symbols I saw during my miltiary career. My favorite unit logos were simple yet identifiable.  While the majority of my career was spent in aircraft cockpits, my first assignment was in strategic missiles.  There is a common design among most of these missile units that involve globes, circles and projectiles.    </p>
     <hr>
     <h1>About This Site</h1>
     <p>Written in Vue, Greensock, D3, SVG, JSON</p>
@@ -58,6 +59,14 @@
     display: inline-block
   }
 
+  #img-sjb {
+    width: 80%;
+    min-width: 320px;
+    margin: 16px 0;
+    border-radius: 16px;
+    overflow: hidden
+  }
+
   #img-a {
     clip-path: circle(100.0% at 100% 50%);
   }
@@ -68,11 +77,13 @@
 
   hr {
     width: 80%;
-    margin: 8px 0;
+    min-width: 296;
+    margin: 32px 0;
   }
 
   p {
     width: 80%;
+    min-width: 296px;
     margin: 12px 0;
     text-align: justify
   }

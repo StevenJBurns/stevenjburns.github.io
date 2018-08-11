@@ -7,7 +7,7 @@
     <hr> -->
     <img id="img-sjb" width="100%" src="../assets/OLY07439.jpg">
     <p>Welcome to my personal portfolio site. My name is Steve Burns. I was neither the host of Blues Clues in the 1990s nor am I a distant relative of Montgomery J Burns of The Simpsons.  I <strong><em>am</em></strong> a U.S. Air Force veteran transitioning to a second career in software development. As a graduate of the Air Force Academy and former combat pilot, I am seeking an equally challenging second career.</p>
-    <p>The path that landed me here spans almost 40 years. A fascination with BASIC on the Atari 800 started it all during my 1980s childhood. I was hooked. Over the years I have tried my hand at many ways of drawing pixels on screens. Along the way I discovered you could make those pixels meaningful with data. The internet changed everything by allowing most everyone to share those meaningful pixels. But this hobby often overlapped with my military career and because of the military commitment, writing computer programs remained a hobby.</p>
+    <p>The path that landed me here spans almost 40 years. A fascination with BASIC on the Atari 800 started it all during my 1980s childhood. I was hooked. Over the years I have tried my hand at many ways of drawing pixels on screens. Along the way I discovered you could make those pixels meaningful with data. The internet changed everything by allowing most everyone to share those meaningful pixels. But this hobby often overlapped with my Air Force career and because of the military commitment, writing computer programs remained a hobby.</p>
     <!-- <p>Programming has fascinated me since the mid-1980s when I discovered BASIC on my first computer : the mighty Atari 800 equipped with 16KB of memory and video capable of 16 colors. Seeing the potential of computers beyond games and entertainment, I was hooked.  But college and the Air Force became my priority and so computers would take a back seat as a hobby.  By the 1990s I was hooked again by the awe-inspiring features of Windows 3.1 that introduced me to "relational" databases in Microsoft Access and productivity tools such as Solitaire and Minesweeper. While I saw many potential projects in the daily routines of the military I could never find the time to learn programming on a serious level or write software that was worth using and so computers were shelved as a hobby once again.</p>
     <p>In 2003 my military career brought me to a staff job where flying a desk was far less fun than flying jets but something interesting happened there. The military, like civilian organizations, runs heavy on data and analysis and my superiors wanted that data refined and accesible -- that job was assigned to me. Their knee jerk reaction was to build a cluster of Microsoft Excel sheets. I objected and raised the ante by offering up a powerhouse combination of Microsoft Access and VBA forms. And it worked. For a while. The system I created was a working solution for five people who tapped into the database a few times each day but the project caught the attention of some senior commanders. Usage increased, the network bottlenecked and poor Microsoft Access couldn't handle the workload. I quickly found myself learning about Microsoft SQL Server.  Finally, a real database! But how could I could improve the front end user experience? The answer was a Windows Forms application running on Visual Basic .NET, of course. I couldn't grasp the concept of clients and servers. It seemed I had reached the end of the road of being self-taught in software development.</p> -->
     <p>Many military members leave the armed forces unsure of what they want to do upon re-entering the civilian world and my story was no exception. I was 100% certain about one thing: just like flying jets, I need to find a job that doesn't feel like a job. My excitement for computers and software had all the potential to be that second dream job but I needed formal training and projects to gain experience. After months of researching my options, I chose the immersive web development course at Galvanize in Boulder, Colorado to connect the dots to a new career. As challenging as anything I accomplished in the military, Galvanize was the smartest professional decision I had made in 25 years.</p>
@@ -22,14 +22,16 @@
     <hr>
     <h1>About The Logo</h1>
     <p>Everyone could use a little personal branding, no?  In the rough sketching of what I thought would be an interesting Steve-Logo, I drew upon the designs, images and symbols I saw during my miltiary career. My favorite unit logos were simple yet identifiable.  While the majority of my career was spent in aircraft cockpits, my first assignment was in strategic missiles.  There is a common design among most of these missile units that involve globes, circles and projectiles.  The result is about the simplest hybrid of that concept that I could render.</p>
-    <p>Why does my simple little logo earn an explanation?  People have already asked me where it comes from and what it means.</p>
+    <p>Why does my little logo earn an explanation?  People have already asked me where it comes from and what it means.</p>
     <hr>
     <h1>About This Site</h1>
+    <p></p>
     <p>The modern Single Page Application (SPA) curriculum of my bootcamp experience at Galvanize was exclusively tailored to React but learning other programming approaches was highly encouraged. After wrapping my head around the broad abilities of React, I was only aware that similar frameworks and libraries existed and so I began to branch out a little further than what I learned at Galvanize.</p>
-    <p>On my first shallow dive into Vue I was immediately hooked.  React is arguably the industry's popular front end approach to modern web apps and so most of my projects are React-centric.  This portfolio site was to be the core of all my programming work but I wanted it stand apart.  Wading into completely uncharted waters, I made Vue the backbone of this site.</p>
-    <p>Building off the Vue core I also experimented with D3js (the Skills page interactive chart) and Greensock Animation (the landing page flying logos).</p>
-    <p>Of course no project would complete without Font Awesome... because it's awesome.</p>
+    <p>On my first shallow dive into Vue I was immediately hooked.  React is arguably the industry's popular front end approach to modern web apps and most of my projects are React-centric.  But this portfolio site was to be the core of all my programming work and I wanted it stand apart.  Wading into completely uncharted waters, I made Vue the backbone of this site.</p>
+    <p>Building off the Vue core I also experimented with D3js (the Skills page interactive chart) and Greensock Animation (the Home page animated logos).</p>
+    <p>Every project needs some Font Awesome... because it's awesome.</p>
     <p>Finally, I am versed in Boostrap and Material Design for styling, but I tend to write my own styles in straight-up basic CSS.</p>
+    <p>With no need for a dedicated server-side code, this site lives straight off the Github Pages of my personal respository account. The source code is <a href="https://github.com/StevenJBurns/stevenjburns.github.io">here</a></p>
   </div>
 </template>
 
@@ -66,24 +68,24 @@
 
   #img-sjb {
     width: 80%;
-    min-width: 320px;
+    min-width: 288px;
     margin: 16px 0;
     border-radius: 16px;
     overflow: hidden
   }
 
   #img-a {
-    clip-path: circle(100.0% at 100% 50%);
+    clip-path: circle(100.0% at 100% 50%)
   }
 
   #img-b {
-    clip-path: circle(100.0% at 0 50%);
+    clip-path: circle(100.0% at 0 50%)
   }
 
   hr {
     width: 80%;
     min-width: 296;
-    margin: 32px 0;
+    margin: 32px 0
   }
 
   p {
@@ -91,6 +93,10 @@
     min-width: 296px;
     margin: 12px 0;
     text-align: justify
+  }
+
+  a:link, a:visited {
+    color: #DFDFDF
   }
 
   @media screen and (max-width: 960px) {

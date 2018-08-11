@@ -21,10 +21,15 @@
     <!-- <h1>let Career = (MilitaryPilot) =&gt; FullStackDeveloper;</h1> -->
     <hr>
     <h1>About The Logo</h1>
-    <p>Everyone could use a little personal branding, no?  In the rough sketching of what I thought would be an interesting Steve-Logo, I drew upon the designs, images and symbols I saw during my miltiary career. My favorite unit logos were simple yet identifiable.  While the majority of my career was spent in aircraft cockpits, my first assignment was in strategic missiles.  There is a common design among most of these missile units that involve globes, circles and projectiles.    </p>
+    <p>Everyone could use a little personal branding, no?  In the rough sketching of what I thought would be an interesting Steve-Logo, I drew upon the designs, images and symbols I saw during my miltiary career. My favorite unit logos were simple yet identifiable.  While the majority of my career was spent in aircraft cockpits, my first assignment was in strategic missiles.  There is a common design among most of these missile units that involve globes, circles and projectiles.  The result is about the simplest hybrid of that concept that I could render.</p>
+    <p>Why does my simple little logo earn an explanation?  People have already asked me where it comes from and what it means.</p>
     <hr>
     <h1>About This Site</h1>
-    <p>Written in Vue, Greensock, D3, SVG, JSON</p>
+    <p>The modern Single Page Application (SPA) curriculum of my bootcamp experience at Galvanize was exclusively tailored to React but learning other programming approaches was highly encouraged. After wrapping my head around the broad abilities of React, I was only aware that similar frameworks and libraries existed and so I began to branch out a little further than what I learned at Galvanize.</p>
+    <p>On my first shallow dive into Vue I was immediately hooked.  React is arguably the industry's popular front end approach to modern web apps and so most of my projects are React-centric.  This portfolio site was to be the core of all my programming work but I wanted it stand apart.  Wading into completely uncharted waters, I made Vue the backbone of this site.</p>
+    <p>Building off the Vue core I also experimented with D3js (the Skills page interactive chart) and Greensock Animation (the landing page flying logos).</p>
+    <p>Of course no project would complete without Font Awesome... because it's awesome.</p>
+    <p>Finally, I am versed in Boostrap and Material Design for styling, but I tend to write my own styles in straight-up basic CSS.</p>
   </div>
 </template>
 

@@ -1,8 +1,7 @@
 <template>
   <div id="page-wrapper">
-    <div id="grid-wrapper">
+    <section>
       <h1>About Me</h1>
-      <hr>
       <figure id="figure-pilot">
         <img id="img-pilot" src="../assets/steve_then.png">
       </figure>
@@ -19,25 +18,27 @@
       </figure>
       <p id="about-me-3">Many military members leave the armed forces unsure of what they want to do upon re-entering the civilian world and my story was no exception. I was 100% certain about one thing: just like flying jets, I need to find a job that doesn't feel like a job. My excitement for computers and software had all the potential to be that second dream job but I needed formal training and projects to gain experience. After months of researching my options, I chose the immersive web development course at Galvanize in Boulder, Colorado to connect the dots to a new career. As challenging as anything I accomplished in the military, Galvanize was the smartest professional decision I had made in 25 years.</p>
       <p id="about-me-4">This website is a virtual online hub to my projects, both big and small, demonstrating the skills I've learned over the years in software development.  Writing fast, clean, and efficient code never feels like work to me. It is always a challenge to be sure but my military experiences demand a challenge. I want to build things that work and I embrace the obstacles along the way. The whole process is just as rewarding as being a military pilot.  It is work that doesn't feel like work.</p>
-    </div>
+    </section>
     <!-- <p>If you have a simple, static website from 1998 that needs cleanup, I can do that.</p>
     <p>If you want to overhaul a website to more modern technology, I can do that.</p>
     <p>If you want to lean full forward towards cutting-edge technology, I can do that</p> -->
     <!-- <hr> -->
     <!-- <h1>let Career = (MilitaryPilot) =&gt; FullStackDeveloper;</h1> -->
-    <hr>
-    <h1>About The Logo</h1>
-    <p>Everyone could use a little personal branding, no?  In the rough sketching of what I thought would be an interesting Steve-Logo, I drew upon the designs, images and symbols I saw during my miltiary career. My favorite unit logos were simple yet identifiable.  While the majority of my career was spent in aircraft cockpits, my first assignment was in strategic missiles.  There is a common design among most of these missile units that involve globes, circles and projectiles.  The result is about the simplest hybrid of that concept that I could render.</p>
-    <p>Why does my little logo earn an explanation?  People have already asked me where it comes from and what it means.</p>
-    <hr>
-    <h1>About This Site</h1>
-    <p>Here's some fun facts about building this site...</p>
-    <p>The modern Single Page Application (SPA) curriculum of my bootcamp experience at Galvanize was exclusively tailored to React but learning other programming approaches was highly encouraged. After wrapping my head around the broad abilities of React, I was only aware that similar frameworks and libraries existed and so I began to branch out a little further than what I learned at Galvanize.</p>
-    <p>On my first shallow dive into Vue I was immediately hooked.  React is arguably the industry's popular front end approach to modern web apps and most of my projects are React-centric.  But this portfolio site was to be the core of all my programming work and I wanted it stand apart.  Wading into completely uncharted waters, I made Vue the backbone of this site.</p>
-    <p>Building off the core I also experimented with D3js (the Skills page interactive chart) and Greensock Animation (the Home page animated logos).</p>
-    <p>Every project needs some Font Awesome... because it's awesome.</p>
-    <p>Finally, I am versed in Boostrap and Material Design for styling, but I tend to write my own styles in straight-up basic CSS.</p>
-    <p>With no need for a dedicated server-side code, this site lives straight off the Github Pages of my personal respository account. The source code is <a href="https://github.com/StevenJBurns/stevenjburns.github.io">here</a></p>
+    <section>
+      <h1>About The Logo</h1>
+      <p>Everyone could use a little personal branding, no?  In the rough sketching of what I thought would be an interesting Steve-Logo, I drew upon the designs, images and symbols I saw during my miltiary career. My favorite unit logos were simple yet identifiable.  While the majority of my career was spent in aircraft cockpits, my first assignment was in strategic missiles.  There is a common design among most of these missile units that involve globes, circles and projectiles.  The result is about the simplest hybrid of that concept that I could render.</p>
+      <p>Why does my little logo earn an explanation?  People have already asked me where it comes from and what it means.</p>
+    </section>
+    <section>
+      <h1>About This Site</h1>
+      <p>Here's some fun facts about building this site...</p>
+      <p>The modern Single Page Application (SPA) curriculum of my bootcamp experience at Galvanize was exclusively tailored to React but learning other programming approaches was highly encouraged. After wrapping my head around the broad abilities of React, I was only aware that similar frameworks and libraries existed and so I began to branch out a little further than what I learned at Galvanize.</p>
+      <p>On my first shallow dive into Vue I was immediately hooked.  React is arguably the industry's popular front end approach to modern web apps and most of my projects are React-centric.  But this portfolio site was to be the core of all my programming work and I wanted it stand apart.  Wading into completely uncharted waters, I made Vue the backbone of this site.</p>
+      <p>Building off the core I also experimented with D3js (the Skills page interactive chart) and Greensock Animation (the Home page animated logos).</p>
+      <p>Every project needs some Font Awesome... because it's awesome.</p>
+      <p>Finally, I am versed in Boostrap and Material Design for styling, but I tend to write my own styles in straight-up basic CSS.</p>
+      <p>With no need for a dedicated server-side code, this site lives straight off the Github Pages of my personal respository account. The source code is <a href="https://github.com/StevenJBurns/stevenjburns.github.io">here</a></p>
+    </section>
   </div>
 </template>
 
@@ -68,23 +69,32 @@
     justify-content: center;
     align-items: center;
     background: #445566;
+    background: linear-gradient(to right, #001122, #334455, #001122);
     overflow: hidden;
     font-family: Futura, Helvetica, Verdana, Tahoma
   }
 
-  #grid-wrapper {
-    /* width: 90%; */
+  section {
+    padding: 0;
+    margin-bottom: 48px;
+    border-radius: 12px;
+    background: #667788;
+    overflow: hidden
   }
 
-  #grid-wrapper h1 {
-    margin: 12px 0
+  h1 {
+    width: 100%;
+    padding: 12px 0;
+    margin-bottom: 8px;
+    background: #556677;
+    text-shadow: 2px 2px 8px #0F0F0F;
   }
 
   #img-pilot {
     float: left;
     width: 10%;
     height: auto;
-    margin-right: 24px;
+    margin: 24px;
     min-width: 288px;
     border-radius: 16px
   }
@@ -93,7 +103,7 @@
     width: 10%;
     height: auto;
     min-width: 288px;
-    margin-left: 24px;
+    margin: 24px;
     border-radius: 16px;
     float: right
   }
@@ -105,7 +115,7 @@
   }
 
   p {
-    margin: 12px 0;
+    margin: 24px;
     font-size: 18px;
     text-align: justify
 }

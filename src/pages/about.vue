@@ -2,11 +2,12 @@
   <div id="page-wrapper">
     <div id="grid-wrapper">
       <h1>About Me</h1>
-      <!-- <hr> -->
-      <img id="img-pilot" src="../assets/steve_then.png">
+      <hr>
+      <figure id="figure-pilot">
+        <img id="img-pilot" src="../assets/steve_then.png">
+      </figure>
       <!-- <img id="img-b" width="144" src="../assets/steve_now.jpg">
       <hr> -->
-      <img id="img-dev" src="../assets/OLY07439.jpg">
       <p id="about-me-1">Welcome to my personal portfolio site. My name is Steve Burns. I was neither the host of Blues Clues in the 1990s nor am I a distant relative of Montgomery J Burns of The Simpsons.  I <strong><em>am</em></strong> a U.S. Air Force veteran transitioning to a second career in software development. As a graduate of the Air Force Academy and former combat pilot, I am seeking an equally challenging second career.</p>
       <p id="about-me-2">The path that landed me here spans almost 40 years. A fascination with BASIC on the Atari 800 started it all during my 1980s childhood. I was hooked. Over the years I have tried my hand at many ways of drawing pixels on screens. Along the way I discovered you could make those pixels meaningful with data. The internet changed everything by allowing most everyone to share those meaningful pixels. But this hobby often overlapped with my Air Force career and because of the military commitment, writing computer programs remained a hobby.</p>
       <!-- <p>Programming has fascinated me since the mid-1980s when I discovered BASIC on my first computer : the mighty Atari 800 equipped with 16KB of memory and video capable of 16 colors. Seeing the potential of computers beyond games and entertainment, I was hooked.  But college and the Air Force became my priority and so computers would take a back seat as a hobby.  By the 1990s I was hooked again by the awe-inspiring features of Windows 3.1 that introduced me to "relational" databases in Microsoft Access and productivity tools such as Solitaire and Minesweeper. While I saw many potential projects in the daily routines of the military I could never find the time to learn programming on a serious level or write software that was worth using and so computers were shelved as a hobby once again.</p>
@@ -15,6 +16,9 @@
       <!-- <p>Many military members leave the armed forces not 100% sure what they want to do upon re-entering the civilian world. I was no exception but after flying jets I was 100% certain about one thing: I need to find a job that doesn't feel like a job. I tried my hand in real estate but the passion wasn't there. There was a nagging feeling that my interest in computers had potential but the path from A to B wasn't visible to me. I needed projects to work on. I needed professional training. Forutnately I was sitting on a lottery ticket in the form of my military GI Bill which made more education possible. Already having both a bachelors degree and a masters degree, the thought of sitting through four years of unrelated courses in pursuit of a computer science degree was extremely unappealing at age 48. There had to be a quicker, more direct path to learning modern software development.</p>
       <p>If you had asked my opinion on coding boot camps in December of 2016 my response would have been "snake oil!" I had zero evidence to back that up. After a month of researching code bootcamp options and what they generally have to offer I was on a course determined to attend Galvanize in Boulder, Colorado. Front end development in jQuery. Servers built on Node and Express. Databases. Modern front-end development in React. Encouragement to use self-taught paths to parallel and unique technology stacks that are not in the syllabus. Career services to guide you in landing a job in the software landscape. All in 24 weeks and no courses on philosophy or history. What's not to like? Galvanize was the smartest decision I had made in 25 years.</p> -->
       <p id="about-me-4">This website is a virtual online hub to my projects, both big and small, demonstrating the skills I've learned over the years in software development.  Writing fast, clean, and efficient code never feels like work to me. It is always a challenge to be sure but my military experiences demand a challenge. I want to build things that work and I embrace the obstacles along the way. The whole process is just as rewarding as being a military pilot.  It is work that doesn't feel like work.</p>
+      <figure id="figure-dev">
+        <img id="img-dev" src="../assets/OLY07439.jpg">
+      </figure>
     </div>
     <!-- <p>If you have a simple, static website from 1998 that needs cleanup, I can do that.</p>
     <p>If you want to overhaul a website to more modern technology, I can do that.</p>
@@ -52,6 +56,10 @@
 </script>
 
 <style scoped>
+  * {
+    box-sizing: border-box;
+  }
+
   #page-wrapper {
     padding: 32px 0;
     flex: 1 0 auto;
@@ -70,59 +78,43 @@
 
   #grid-wrapper {
     width: 90%;
-    display: grid;
-    grid-gap: 24px;
-    grid-template-columns: repeat(5, auto);
-    grid-template-rows: repeat(5, auto);
   }
 
   #grid-wrapper h1 {
-    grid-column: 1 / span 5;
-    grid-row: 1;
+    margin: 12px 0
+  }
+
+  #figure-pilot {
+    float: left
   }
 
   #img-pilot {
     /* clip-path: circle(100.0% at 100% 50%) */
-    width: 100%;
-    grid-row: 2;
-    grid-column: 1;
-    min-width: 160px;
+    width: 10%;
+    margin-right: 24px;
+    min-width: 320px;
     border-radius: 16px;
+    border: 2px solid black;
+  }
+
+  #figure-dev {
+
   }
 
   #img-dev {
-    width: 100%;
-    min-width: 160px;
-    margin: 16px 0;
+    width: 10%;
+    margin: 8px;
+    min-width: 320px;
+    margin: 16px;
     border-radius: 16px;
-    overflow: hidden;
-    grid-row: 5;
-    grid-column: 5;
+    position: absolute;
+    bottom: 0;
+    right: 0;
   }
 
   /* #img-b {
     clip-path: circle(100.0% at 0 50%)
   } */
-
-  #about-me-1 {
-    grid-column: 2 / span 4;
-    grid-row: 2;
-  }
-
-  #about-me-2 {
-    grid-column: 2 / span 4;
-    grid-row: 3;
-  }
-
-  #about-me-3 {
-    grid-column: 1 / span 4;
-    grid-row: 4;
-  }
-
-  #about-me-4 {
-    grid-column: 1 / span 4;
-    grid-row: 5;
-  }
 
   hr {
     width: 80%;
@@ -131,12 +123,10 @@
   }
 
   p {
-    /* width: 80%;
-    min-width: 296px; */
-    /* margin: 20px; */
+    margin-bottom: 24px;
+    font-size: 16px;
     text-align: justify;
-    font-size: 16px
-  }
+}
 
   a:link, a:visited {
     color: #DFDFDF

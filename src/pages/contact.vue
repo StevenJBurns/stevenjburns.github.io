@@ -21,7 +21,7 @@
         <span>Fork. Clone. Star. Follow. My source code and some front-end hosted projects.</span>
       </section>
       <section>
-        <a href="https://github.com/StevenJBurns">
+        <a href="https://codepen.io/StevenJBurns/">
           <font-awesome-icon :icon="['fab', 'codepen']" size="4x" />
         </a>
         <span>Not big enough to be &quot;real&quot; projects yet. My place to experiment, prototype and just screw around with code.</span>

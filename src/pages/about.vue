@@ -37,7 +37,7 @@
       <p>Building off the core I also experimented with D3js (the Skills page interactive chart) and Greensock Animation (the Home page animated logos).</p>
       <p>Every project needs some Font Awesome... because it's awesome.</p>
       <p>Finally, I am versed in Boostrap and Material Design for styling, but I tend to write my own styles in straight-up basic CSS.</p>
-      <p>With no need for a dedicated server-side code, this site lives straight off the Github Pages of my personal respository account. The source code is <a href="https://github.com/StevenJBurns/stevenjburns.github.io">here</a></p>
+      <p>With no need for a dedicated server-side code, this site lives straight off the Github Pages of my personal respository account. The source code is <span><a href="https://github.com/StevenJBurns/stevenjburns.github.io">here</a></span></p>
     </section>
   </div>
 </template>
@@ -57,10 +57,6 @@
 </script>
 
 <style scoped>
-  * {
-    box-sizing: border-box;
-  }
-
   #page-wrapper {
     padding: 5%;
     flex: 1 0 auto;
@@ -70,8 +66,8 @@
     align-items: center;
     background: #445566;
     background: linear-gradient(to right, #001122, #334455, #001122);
-    overflow: hidden;
-    font-family: Futura, Helvetica, Verdana, Tahoma
+    font-family: Futura, Helvetica, Verdana, Tahoma;
+    overflow: hidden
   }
 
   section {
@@ -118,7 +114,11 @@
     margin: 24px;
     font-size: 18px;
     text-align: justify
-}
+  }
+
+  a {
+    width: auto
+  }
 
   a:link, a:visited {
     color: #DFDFDF

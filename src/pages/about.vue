@@ -91,19 +91,19 @@
   }
 
   #img-pilot {
-    float: left;
     width: 10%;
     height: auto;
     margin: 24px;
-    min-width: 288px;
-    border-radius: 16px
+    min-width: 240px;
+    border-radius: 16px;
+    float: left;
   }
 
   #img-dev {
     width: 10%;
     height: auto;
-    min-width: 288px;
     margin: 24px;
+    min-width: 240px;
     border-radius: 16px;
     float: right
   }

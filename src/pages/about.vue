@@ -86,7 +86,7 @@
     width: 100%;
     padding: 12px 0;
     margin-bottom: 8px;
-    background: #556677;
+    background: #445566;
     text-shadow: 2px 2px 8px #0F0F0F;
   }
 

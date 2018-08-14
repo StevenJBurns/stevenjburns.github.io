@@ -47,8 +47,8 @@
 <script>
   import { eventBus } from "../main.js";
   import FontAwesomeIcon from "@fortawesome/vue-fontawesome";
-  import { fasEnvelope } from "@fortawesome/fontawesome-free-solid";
-  import { fabLinkedin, fabGithub, faTwitter } from "@fortawesome/fontawesome-free-brands";
+  import { fasEnvelope } from "@fortawesome/free-solid-svg-icons";
+  import { fabLinkedin, fabGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
 
   export default {
     name: 'PageContact',

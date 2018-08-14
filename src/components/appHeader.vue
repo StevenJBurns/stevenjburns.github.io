@@ -11,15 +11,15 @@
     <h2 id="#appTitle">STEVEN J BURNS</h2>
     <hr>
     <Nav :theme="theme"/>
-    <font-awesome-icon icon="bars" size="2x" @click="openResponsiveMenu()" />
+    <font-awesome-icon :icon="['far', 'bars']" size="2x" @click="openResponsiveMenu()" />
   </header>
 </template>
 
 <script>
   import Nav from "./appNav.vue";
-  import FontAwesomeIcon from "@fortawesome/vue-fontawesome";
-  import { fasBars } from "@fortawesome/fontawesome-free-solid";
   import { eventBus } from "../main.js";
+  import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+  import { faBars } from "@fortawesome/free-solid-svg-icons";
 
   export default {
     name: 'Header',
@@ -33,7 +33,7 @@
     },
     components: {
       Nav,
-      'font-awesome-icon': FontAwesomeIcon
+      FontAwesomeIcon
     },
     methods: {
       openResponsiveMenu() {

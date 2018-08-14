@@ -261,8 +261,8 @@
 <script scoped>
   import { eventBus } from "../main.js";
   import FontAwesomeIcon from "@fortawesome/vue-fontawesome";
-  import { fasGlobe, fasFighterjet, fasExpandarrowsalt, fasBolt, fasLock } from "@fortawesome/fontawesome-free-solid";
-  import { fabGithub, fabCodepen } from "@fortawesome/fontawesome-free-brands";
+  import { fasGlobe, fasFighterjet, fasExpandarrowsalt, fasBolt, fasLock } from "@fortawesome/free-solid-svg-icons";
+  import { fabGithub, fabCodepen } from "@fortawesome/free-brands-svg-icons";
 
 
   export default {

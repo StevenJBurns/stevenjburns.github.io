@@ -26,6 +26,25 @@
     <!-- <h1>let Career = (MilitaryPilot) =&gt; FullStackDeveloper;</h1> -->
     <section>
       <h1>About The Logo</h1>
+      <svg height="96" width="96" viewBox="0 0 256 256">
+        <defs>
+          <filter id="drop-shadow" x="0" y="0" width="200%" height="200%">
+            <feOffset result="offOut" in="SourceAlpha" dx="4" dy="4" />
+            <feGaussianBlur result="blurOut" in="offOut" stdDeviation="6" />
+            <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+          </filter>
+        </defs>
+        <circle cx="128" cy="128" r="96" fill="#F0F0F0" filter="url(#drop-shadow)">
+          <animate attributeType="XML" attributeName="r" from="0" to="96" dur="0.75s" fill="freeze" />
+        </circle>
+        <circle cx="128" cy="128" r="0" fill="none" stroke="#708090FF" stroke-width="24">
+          <animate attributeType="XML" attributeName="r" begin="0.75s" from="0" to="50" dur="0.75s" fill="freeze" />
+        </circle>
+        <polygon opacity="0" points="128,128 16,84 62,62 84,16" stroke="#708090FF" stroke-width="8" stroke-linejoin="round" fill="#F0F0F0" fill-opacity="1">
+          <animate attributeType="XML" attributeName="opacity" begin="1.5s" from="0" to="1" dur="0.5s" fill="freeze" />
+          <animateTransform attributeName="transform" type="translate" from="-24 -24" to="0 0" begin="1.5s" dur="0.5s" fill="freeze" />
+        </polygon>
+      </svg>
       <p>Everyone could use a little personal branding, no?  In the rough sketching of what I thought would be an interesting Steve-Logo, I drew upon the designs, images and symbols I saw during my miltiary career. My favorite unit logos were simple yet identifiable.  While the majority of my career was spent in aircraft cockpits, my first assignment was in strategic missiles.  There is a common design among most of these missile units that involve globes, circles and projectiles.  The result is about the simplest hybrid of that concept that I could render.</p>
       <p>Why does my little logo earn an explanation?  People have already asked me where it comes from and what it means.</p>
     </section>
@@ -35,20 +54,25 @@
       <p>The modern Single Page Application (SPA) curriculum of my bootcamp experience at Galvanize was exclusively tailored to React but learning other programming approaches was highly encouraged. After wrapping my head around the broad abilities of React, I was only aware that similar frameworks and libraries existed and so I began to branch out a little further than what I learned at Galvanize.</p>
       <p>On my first shallow dive into Vue I was immediately hooked.  React is arguably the industry's popular front end approach to modern web apps and most of my projects are React-centric.  But this portfolio site was to be the core of all my programming work and I wanted it stand apart.  Wading into completely uncharted waters, I made Vue the backbone of this site.</p>
       <p>Building off the core I also experimented with D3js (the Skills page interactive chart) and Greensock Animation (the Home page animated logos).</p>
-      <p>Every project needs some Font Awesome... because it's awesome.</p>
+      <p><font-awesome-icon :icon="['fab', 'fontawesomeflag']" size="4x"></font-awesome-icon> Every project needs some Font Awesome... because it's awesome.</p>
       <p>Finally, I am versed in Boostrap and Material Design for styling, but I tend to write my own styles in straight-up basic CSS.</p>
-      <p>With no need for a dedicated server-side code, this site lives straight off the Github Pages of my personal respository account. The source code is <span><a href="https://github.com/StevenJBurns/stevenjburns.github.io">here</a></span></p>
+      <p>With no need for a dedicated server-side code, this site lives straight off the Github Pages of my personal respository account. The source code is <span><a href="https://github.com/StevenJBurns/stevenjburns.github.io"> here</a></span></p>
     </section>
   </div>
 </template>
 
 <script>
   import { eventBus } from "../main.js";
+  import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+  import { fabFontAwesomeFlag } from "@fortawesome/free-brands-svg-icons";
   
   export default {
     name: 'PageAbout',
     props: {
       theme: Object
+    },
+    components: {
+      FontAwesomeIcon
     },
     created() {
       eventBus.$emit('changingTheme', this.theme)
@@ -113,15 +137,24 @@
   p {
     margin: 24px;
     font-size: 18px;
-    text-align: justify
+    text-align: left;
   }
 
-  a {
-    width: auto
+  svg {
+    margin-top: 18px;
+    margin-right: 12px;
+    float: left;
+  }
+
+  span {
+    margin-left: 0.5em;
+    position: absolute;
   }
 
   a:link, a:visited {
-    color: #DFDFDF
+    color: #DFDFDF;
+    vertical-align: bottom;
+    position: relative
   }
 
   @media screen and (max-width: 960px) {

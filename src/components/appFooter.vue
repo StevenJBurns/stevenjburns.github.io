@@ -34,9 +34,9 @@
 </template>
 
 <script>
-  import FontAwesomeIcon from "@fortawesome/vue-fontawesome";
-  import { fasEnvelope } from "@fortawesome/fontawesome-free-solid";
-  import { fabLinkedin, fabTwitter, fabGithub, fabCodepen } from "@fortawesome/fontawesome-free-brands";
+  import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+  import { fasEnvelope } from "@fortawesome/free-solid-svg-icons";
+  import { fabLinkedin, fabTwitter, fabGithub, fabCodepen } from "@fortawesome/free-brands-svg-icons";
 
   export default {
     name: 'Footer',

@@ -4,22 +4,22 @@
     <div id="divProjectGoals">
       <section>
         <h2>Performance</h2>
-        <font-awesome-icon icon="fighter-jet" size="3x" />
+        <font-awesome-icon :icon="['fas', 'fighter-jet']" size="3x" />
         <p>Fast inital load times. Sustained speed during use and transitions.</p>
       </section>
       <section>
         <h2>Responsive</h2>
-        <font-awesome-icon icon="expand-arrows-alt" size="3x" />
+        <font-awesome-icon :icon="['fas', 'expand-arrows-alt']" size="3x" />
         <p>Websites and apps should look good on any device in any screen resolution.</p>
       </section>
       <section>
         <h2>Dynamic</h2>
-        <font-awesome-icon icon="bolt" size="3x" />
+        <font-awesome-icon :icon="['fas', 'bolt']" size="3x" />
         <p>Even tiny animations lend a natural look and feel to users.</p>
       </section>
       <section>
         <h2>Secure</h2>
-        <font-awesome-icon icon="lock" size="3x" />
+        <font-awesome-icon :icon="['fas', 'lock']" size="3x" />
         <p>Minimal cookies. Very strong password and data protection. Period.</p>
       </section>
     </div>
@@ -39,7 +39,7 @@
               <font-awesome-icon :icon="['fab', 'github']" size="3x" />
             </a>
             <a href="#">
-              <font-awesome-icon icon="globe" size="3x" />
+              <font-awesome-icon :icon="['fas', 'globe']" size="3x" />
             </a>
           </div>
         </div>
@@ -57,7 +57,7 @@
               <font-awesome-icon :icon="['fab', 'github']" size="3x" />
             </a>
             <a href="#">
-              <font-awesome-icon icon="globe" size="3x" />
+              <font-awesome-icon :icon="['fas', 'globe']" size="3x" />
             </a>
           </div>
         </div>
@@ -75,7 +75,7 @@
               <font-awesome-icon :icon="['fab', 'github']" size="3x" />
             </a>
             <a href="#">
-              <font-awesome-icon icon="globe" size="3x" />
+              <font-awesome-icon :icon="['fas', 'globe']" size="3x" />
             </a>
           </div>
         </div>
@@ -93,7 +93,7 @@
               <font-awesome-icon :icon="['fab', 'github']" size="3x" />
             </a>
             <a href="#">
-              <font-awesome-icon icon="globe" size="3x" />
+              <font-awesome-icon :icon="['fas', 'globe']" size="3x" />
             </a>
           </div>
         </div>
@@ -111,7 +111,7 @@
               <font-awesome-icon :icon="['fab', 'github']" size="3x" />
             </a>
             <a href="http://noxfit.com/">
-              <font-awesome-icon icon="globe" size="3x" />
+              <font-awesome-icon :icon="['fas', 'globe']" size="3x" />
             </a>
           </div>
         </div>
@@ -129,7 +129,7 @@
               <font-awesome-icon :icon="['fab', 'github']" size="3x" />
             </a>
             <a href="#">
-              <font-awesome-icon icon="globe" size="3x" />
+              <font-awesome-icon :icon="['fas', 'globe']" size="3x" />
             </a>
           </div>
         </div>
@@ -147,7 +147,7 @@
               <font-awesome-icon :icon="['fab', 'github']" size="3x" />
             </a>
             <a href="#">
-              <font-awesome-icon icon="globe" size="3x" />
+              <font-awesome-icon :icon="['fas', 'globe']" size="3x" />
             </a>
           </div>
         </div>
@@ -165,7 +165,7 @@
               <font-awesome-icon :icon="['fab', 'github']" size="3x" />
             </a>
             <a href="#">
-              <font-awesome-icon icon="globe" size="3x" />
+              <font-awesome-icon :icon="['fas', 'globe']" size="3x" />
             </a>
           </div>
         </div>
@@ -183,7 +183,7 @@
               <font-awesome-icon :icon="['fab', 'github']" size="3x" />
             </a>
             <a href="#">
-              <font-awesome-icon icon="globe" size="3x" />
+              <font-awesome-icon :icon="['fas', 'globe']" size="3x" />
             </a>
           </div>
         </div>
@@ -201,7 +201,7 @@
               <font-awesome-icon :icon="['fab', 'github']" size="3x" />
             </a>
             <a href="#">
-              <font-awesome-icon icon="globe" size="3x" />
+              <font-awesome-icon :icon="['fas', 'globe']" size="3x" />
             </a>
           </div>
         </div>
@@ -219,7 +219,7 @@
               <font-awesome-icon :icon="['fab', 'github']" size="3x" />
             </a>
             <a href="#">
-              <font-awesome-icon icon="globe" size="3x" />
+              <font-awesome-icon :icon="['fas', 'globe']" size="3x" />
             </a>
           </div>
         </div>
@@ -237,7 +237,7 @@
               <font-awesome-icon :icon="['fab', 'github']" size="3x" />
             </a>
             <a href="#">
-              <font-awesome-icon icon="globe" size="3x" />
+              <font-awesome-icon :icon="['fas', 'globe']" size="3x" />
             </a>
           </div>
         </div>
@@ -260,16 +260,13 @@
 
 <script scoped>
   import { eventBus } from "../main.js";
-  import FontAwesomeIcon from "@fortawesome/vue-fontawesome";
-  import { fasGlobe, fasFighterjet, fasExpandarrowsalt, fasBolt, fasLock } from "@fortawesome/free-solid-svg-icons";
-  import { fabGithub, fabCodepen } from "@fortawesome/free-brands-svg-icons";
+  // import FontAwesomeIcon from "@fortawesome/vue-fontawesome";
+  // import { fasGlobe, fasFighterjet, fasExpandarrowsalt, fasBolt, fasLock } from "@fortawesome/free-solid-svg-icons";
+  // import { fabGithub, fabCodepen } from "@fortawesome/free-brands-svg-icons";
 
 
   export default {
     name: 'PageProjects',
-    components: {
-      FontAwesomeIcon
-    },
     props: {
       theme: Object
     },

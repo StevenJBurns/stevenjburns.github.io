@@ -54,7 +54,7 @@
       <p>The modern Single Page Application (SPA) curriculum of my bootcamp experience at Galvanize was exclusively tailored to React but learning other programming approaches was highly encouraged. After wrapping my head around the broad abilities of React, I was only aware that similar frameworks and libraries existed and so I began to branch out a little further than what I learned at Galvanize.</p>
       <p>On my first shallow dive into Vue I was immediately hooked.  React is arguably the industry's popular front end approach to modern web apps and most of my projects are React-centric.  But this portfolio site was to be the core of all my programming work and I wanted it stand apart.  Wading into completely uncharted waters, I made Vue the backbone of this site.</p>
       <p>Building off the core I also experimented with D3js (the Skills page interactive chart) and Greensock Animation (the Home page animated logos).</p>
-      <p><font-awesome-icon :icon="['fab', 'fontawesomeflag']" size="4x"></font-awesome-icon> Every project needs some Font Awesome... because it's awesome.</p>
+      <p><font-awesome-icon :icon="['fab', 'font-awesome-flag']" size="4x"></font-awesome-icon> Every project needs some Font Awesome... because it's awesome.</p>
       <p>Finally, I am versed in Boostrap and Material Design for styling, but I tend to write my own styles in straight-up basic CSS.</p>
       <p>With no need for a dedicated server-side code, this site lives straight off the Github Pages of my personal respository account. The source code is <span><a href="https://github.com/StevenJBurns/stevenjburns.github.io"> here</a></span></p>
     </section>

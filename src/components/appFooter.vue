@@ -24,7 +24,7 @@
         </li>
         <li @mouseover.capture="mouseOver" @mouseout.capture="mouseOut">
           <a href="mailto:stevenjburns@msn.com?subject=You're%20Hired">
-            <font-awesome-icon icon="envelope" size="3x" />
+            <font-awesome-icon :icon="['fas', 'envelope']" size="3x" />
           </a>
         </li>
       </ul>
@@ -34,15 +34,8 @@
 </template>
 
 <script>
-  import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-  import { fasEnvelope } from "@fortawesome/free-solid-svg-icons";
-  import { fabLinkedin, fabTwitter, fabGithub, fabCodepen } from "@fortawesome/free-brands-svg-icons";
-
   export default {
     name: 'Footer',
-    components: {
-      FontAwesomeIcon
-    },
     props: {
       theme: Object
     },

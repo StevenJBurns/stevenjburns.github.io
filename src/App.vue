@@ -14,7 +14,6 @@
 <script>
   /* State Management without Vuex */
   import { eventBus } from "./main.js";
-  // import VueParticles from "vue-particles";
 
   /* import app components */
   import Header from './components/appHeader.vue';

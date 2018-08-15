@@ -2,7 +2,7 @@
   <transition name="modal" :theme="theme">
     <div class="modal-backdrop">
       <nav class="nav-modal">
-        <font-awesome-icon icon="['fas', 'times-circle']" size="2x" @click="requestResponsiveMenu" />
+        <font-awesome-icon :icon="['fas', 'times-circle']" size="2x" @click="requestResponsiveMenu" />
         <ul @click="requestResponsiveMenu">
           <li><router-link tag="li" to="/">Home</router-link></li>
           <li><router-link tag="li" to="/skills">Skills</router-link></li>
@@ -18,14 +18,9 @@
 
 <script>
   import { eventBus } from "../main.js";
-  import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-  import { fasTimescircle } from "@fortawesome/free-solid-svg-icons";
 
   export default {
     name: 'responsiveMenu',
-    components: {
-      FontAwesomeIcon
-    },
     data() {
       return {};
     },

@@ -12,6 +12,13 @@ import Projects from './pages/projects.vue';
 import Contact from './pages/contact.vue';
 import About from './pages/about.vue';
 
+/* Font Awesome for Vue */
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { faBars, faEnvelope, faTimesCircle } from "@fortawesome/free-solid-svg-icons";
+import { faLinkedin, faTwitter, faGithub, faCodepen } from  "@fortawesome/free-brands-svg-icons";
+/* The library makes adding multiple icons at the top easier to filter into child components */
+
 /* import app color themes from JSON */
 import Themes from "./data/appThemeColors.json";
 
@@ -19,6 +26,9 @@ Vue.config.productionTip = false;
 
 Vue.use(VueRouter);
 Vue.use(VueParticles);
+
+library.add(faBars, faLinkedin, faTwitter, faGithub, faCodepen, faEnvelope, faTimesCircle);
+Vue.component('font-awesome-icon', FontAwesomeIcon);
 
 const routes = [
   { path: "/", component: Home, props: { theme: Themes['home']}},

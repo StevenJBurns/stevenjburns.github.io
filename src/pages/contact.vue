@@ -28,7 +28,7 @@
       </section>
       <section>
         <a href="mailto:stevenjburns@msn.com">
-          <font-awesome-icon icon="envelope" size="4x" />
+          <font-awesome-icon :icon="['fas', 'envelope']" size="4x" />
         </a>
         <span>Compose an electronic letter. Or just send a raven.</span>
       </section>
@@ -46,17 +46,11 @@
 
 <script>
   import { eventBus } from "../main.js";
-  import FontAwesomeIcon from "@fortawesome/vue-fontawesome";
-  import { fasEnvelope } from "@fortawesome/free-solid-svg-icons";
-  import { fabLinkedin, fabGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
 
   export default {
     name: 'PageContact',
     props: {
       theme: Object
-    },
-    components: {
-      FontAwesomeIcon
     },
     created() {
       eventBus.$emit('changingTheme', this.theme)

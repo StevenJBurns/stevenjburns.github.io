@@ -27,6 +27,7 @@ Vue.config.productionTip = false;
 Vue.use(VueRouter);
 Vue.use(VueParticles);
 
+Vue.component('font-awesome-icon', FontAwesomeIcon);
 library.add(faBars,
             faLinkedin,
             faTwitter,
@@ -40,7 +41,6 @@ library.add(faBars,
             faExpandArrowsAlt,
             faFontAwesomeFlag,
             faTimesCircle);
-Vue.component('font-awesome-icon', FontAwesomeIcon);
 
 const routes = [
   { path: "/", component: Home, props: { theme: Themes['home']}},

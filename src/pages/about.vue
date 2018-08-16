@@ -54,7 +54,7 @@
       <p>Building off the core I also experimented with D3js (the Skills page interactive chart) and Greensock Animation (the Home page animated logos).</p>
       <p><font-awesome-icon :icon="['fab', 'font-awesome-flag']" size="2x"></font-awesome-icon> Every project needs some Font Awesome... because it's awesome.</p>
       <p>Finally, I am versed in Boostrap and Material Design for styling, but I tend to write my own styles in straight-up basic CSS.</p>
-      <p>With no need for a dedicated server-side code, this site lives straight off the Github Pages of my personal account. The source code is <span><a href="https://github.com/StevenJBurns/stevenjburns.github.io"> here</a></span></p>
+      <p>With no need for dedicated server-side code, this site lives straight off the Github Pages of my personal account. The source code is <span><a href="https://github.com/StevenJBurns/stevenjburns.github.io"> here</a></span></p>
     </section>
   </div>
 </template>

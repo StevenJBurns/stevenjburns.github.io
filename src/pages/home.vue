@@ -270,10 +270,6 @@
     justify-content: center;
     align-items: center;
     background: radial-gradient(circle at center, #708090 0%, #001020 100%);
-    /* background-image: url('../assets/OLY07439.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover; */
     text-shadow: 2px 2px 16px #2F2F2F;
     position: relative;
     overflow: hidden;

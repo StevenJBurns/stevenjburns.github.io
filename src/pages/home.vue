@@ -2,7 +2,7 @@
   <div id="divPageWrapper">
     <section>
     <h2>Full Stack Developer</h2>
-    <h3>Learning All The Things</h3>
+    <!-- <h3>Learning All The Things</h3> -->
     <svg height="160" width="160" viewBox="0 0 256 256">
       <defs>
         <filter id="drop-shadow" x="0" y="0" width="200%" height="200%">
@@ -22,7 +22,7 @@
         <animateTransform attributeName="transform" type="translate" from="-24 -24" to="0 0" begin="1.5s" dur="0.5s" fill="freeze" />
       </polygon>
     </svg>
-    <h3>I Want To Be Challenged</h3>
+    <!-- <h3>I Want To Be Challenged</h3> -->
     <h2>Longmont&nbsp;&bull;&nbsp;Colorado</h2>
     </section>
     <div id="divPageBackground">

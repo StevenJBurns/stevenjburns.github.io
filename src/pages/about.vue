@@ -171,5 +171,15 @@
     h1 {
       font-size: 1.1em
     }
+
+    #img-pilot {
+      float: none;
+      display: inline
+    }
+
+    #img-dev {
+      float: none;
+      display: inline
+    }
   }
 </style>

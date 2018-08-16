@@ -137,7 +137,6 @@
   }
 
   #appTitles h3 {
-    /* margin: 0 auto; */
     font-size: 0.75em
   }
 }

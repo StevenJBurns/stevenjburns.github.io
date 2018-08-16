@@ -26,17 +26,17 @@
       </div>
     </div>
     <hr>
-    <h3>Successful software developers <strong><em>never</em></strong> stop learning. The industry moves rapidly. Last year's darling technology can be a legacy technology next year. A legacy technology may be born again to evolve with the times. Below is a list of tech stacks, methods and languages I hope to pursue in my free time to further my toolset </h3>
-    <ul>
-      <li>Progressive Web Apps (PWA)</li>
-      <li>Native Android Apps</li>
-      <li>Python &amp; Data Science</li>
-      <li>More Ruby</li>
-      <li>Angular</li>
-      <li>Amazon Web Services</li>
-      <li>Web Assembly</li>
-      <li>GraphQL</li>
-      <li>Redis</li>
+    <p id="p-future-skills">Successful software developers <strong><em>never</em></strong> stop learning. The industry moves rapidly. Last year's darling technology can be a legacy technology next year. A legacy technology may be born again to evolve with the times. Below is a list of tech stacks, methods and languages I hope to pursue in my free time to further my toolset </p>
+    <ul id="ul-future-skills">
+      <li><span>Progressive Web Apps (PWA)</span></li>
+      <li><span>Android Apps</span></li>
+      <li><span>Python &amp; Data Science</span></li>
+      <li><span>More Ruby</span></li>
+      <li><span>Angular</span></li>
+      <!-- <li><span>Amazon Web Services</span></li> -->
+      <li><span>Web Assembly</span></li>
+      <li><span>GraphQL</span></li>
+      <li><span>Redis</span></li>
     </ul>
   </div>
 </template>
@@ -265,6 +265,41 @@
     width: 80px;
     height: 48px;
     text-align: center
+  }
+
+  #p-future-skills {
+    width: 90%;
+    max-width: 960px;
+    text-align: justify;
+    margin: 16px auto
+
+  }
+
+  #ul-future-skills {
+    width: 75%;
+    max-width: 720px;;
+    margin: 24px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center
+  }
+
+  #ul-future-skills li {
+    margin: 8px;
+    width: 96px;
+    height: 96px;
+    display: flex;
+    flex-direction: column;
+    background: green;
+    border-radius: 8px;
+    border: 2px solid darkgreen;
+    box-shadow: 2px 2px 12px #2F2F2F;
+  }
+
+  #ul-future-skills span {
+    margin: auto 2px;
+    display: inline-block;
+    text-shadow: 2px 2px 8px #2F2F2F
   }
 
   @media screen and (max-width: 512px) {

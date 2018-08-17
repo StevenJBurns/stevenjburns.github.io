@@ -62,16 +62,13 @@
 
 <script>
   import { eventBus } from "../main.js";
-  import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-  import { fabFontAwesomeFlag } from "@fortawesome/free-brands-svg-icons";
+  // import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+  // import { fabFontAwesomeFlag } from "@fortawesome/free-brands-svg-icons";
   
   export default {
     name: 'PageAbout',
     props: {
       theme: Object
-    },
-    components: {
-      FontAwesomeIcon
     },
     created() {
       eventBus.$emit('changingTheme', this.theme)

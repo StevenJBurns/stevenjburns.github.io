@@ -4,7 +4,7 @@
     <hr>
     <p>There are a dizzying array of technolgies used in building websites and apps. As a developer I fight to keep my skills sharp and strengthen my understanding of how all the pieces fit together. My ear is always to the ground anticipating the next big thing in software.  There is no silver bullet technology stack to solve every problem. Understanding the problem and grabbing the right tools for the job.</p>
     <p>Not everyone speaks the language of the web technologies. That doesn't mean a customer has no vision of what they want a digital product to look like at the end of the process. Below I have created two lists. The first is a general overview of the skills I bring to the table without muddying the conversation about specific languages, frameworks, libraries, etc. Below the first list is an interactive visual chart  is what I call a hardcore approach to  </p>
-    <ul>
+    <ul id="id-skills-general">
       <li>Re-design. Go from 1998 to 2018 with modern HTML5 and JavaScript.</li>
       <li>Modernize existing sites &amp; apps. Let a server do the heavy lifting.</li>
       <li>Dynamic but subtle effects. Even a splash of animation or 3D goes a long way.</li>
@@ -239,6 +239,12 @@
     text-align: justify
   }
 
+  #id-skills-general {
+    margin: 24px auto;
+    max-width: 320;
+    text-align: justify
+  }
+
   #divChartWrapper {
     width: 100%;
     display: flex;
@@ -284,7 +290,7 @@
 
   #ul-future-skills {
     width: 75%;
-    max-width: 720px;;
+    max-width: 480px;;
     margin: 24px auto;
     display: flex;
     flex-wrap: wrap;

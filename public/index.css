@@ -9,30 +9,24 @@ html {
 }
 
 body {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
   color: #DFDFDF;
-  /* background: #2F2F2F; */
-  background: radial-gradient(ellipse at bottom, #4F4F4F, #000000);
+  background: radial-gradient(ellipse at bottom, #4F4F4F, #000000)
 }
 
 header {
-  text-align: center;
-  /* background: #1F1F1F; */
+  text-align: center
 }
 
 header h2 {
-  margin: 12px;
-}
-
-nav {
-
+  margin: 12px
 }
 
 main {
-  padding: 12px 24px;
   flex: 1 0 auto;
+  padding: 12px 24px
 }
 
 .d2b-tooltip {
@@ -40,10 +34,9 @@ main {
 }
 
 footer {
-  text-align: center;
-  /* background: #1F1F1F */
+  text-align: center
 }
 
 footer h4 {
-  margin: 12px;
+  margin: 12px
 }

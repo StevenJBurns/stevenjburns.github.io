@@ -13,7 +13,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="<%= BASE_URL %>favicon-16x16.png">
     <link rel="stylesheet" type="text/css" href="<%= BASE_URL %>index.css">
     <script>
-      (function(){
+      (() => {
         let redirect = sessionStorage.redirect;
         delete sessionStorage.redirect;
         if (redirect && redirect != location.href) {
@@ -22,10 +22,7 @@
       })();
     </script>
     <style>
-      body {
-        color: #DFDFDF;
-        /* background: #2F2F2F; */
-      }
+      body { color: #DFDFDF }
     </style>
     <title>Steven J Burns &bull; Full Stack Developer</title>
   </head>

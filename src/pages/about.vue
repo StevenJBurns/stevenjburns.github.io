@@ -124,12 +124,6 @@
     float: right
   }
 
-  hr {
-    width: 100%;
-    min-width: 296;
-    margin: 32px auto
-  }
-
   p {
     margin: 24px;
     font-size: 18px;

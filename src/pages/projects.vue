@@ -35,10 +35,10 @@
           <h4>React &bull; Redux &bull; HTML5 Canvas</h4>
           <hr class="hrCard">
           <div class="overlay-footer">
-            <a href="#">
+            <a href="https://github.com/StevenJBurns/extrasolar">
               <font-awesome-icon :icon="['fab', 'github']" size="3x" />
             </a>
-            <a href="#">
+            <a href="https://stevenjburns.github.com/extrasolar">
               <font-awesome-icon :icon="['fas', 'globe']" size="3x" />
             </a>
           </div>

@@ -38,7 +38,7 @@
             <a href="https://github.com/StevenJBurns/extrasolar">
               <font-awesome-icon :icon="['fab', 'github']" size="3x" />
             </a>
-            <a href="https://stevenjburns.github.com/extrasolar">
+            <a href="https://stevenjburns.github.io/extrasolar">
               <font-awesome-icon :icon="['fas', 'globe']" size="3x" />
             </a>
           </div>

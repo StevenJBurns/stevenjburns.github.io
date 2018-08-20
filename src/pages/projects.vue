@@ -89,10 +89,10 @@
           <h4>React &bull; SVG &bull;</h4>
           <hr class="hrCard">
           <div class="overlay-footer">
-            <a href="#">
+            <a href="https://github.com/StevenJBurns/stagecoach">
               <font-awesome-icon :icon="['fab', 'github']" size="3x" />
             </a>
-            <a href="#">
+            <a href="https://stevenjburns.github.io/stagecoach/">
               <font-awesome-icon :icon="['fas', 'globe']" size="3x" />
             </a>
           </div>

@@ -78,7 +78,6 @@
 
 <style scoped>
   #page-wrapper {
-    padding: 5%;
     flex: 1 0 auto;
     display: flex;
     flex-direction: column;
@@ -92,7 +91,9 @@
 
   section {
     padding: 0;
-    margin-bottom: 48px;
+    width: 90%;
+    max-width: 960px;
+    margin: 48px auto;
     border-radius: 12px;
     background: #667788;
     overflow: hidden

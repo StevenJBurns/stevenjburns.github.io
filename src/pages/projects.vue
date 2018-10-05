@@ -27,7 +27,7 @@
     <p>Click on or hover over a project to see information as well as links to the source code and live websites</p>
     <div id="divCardWrapper">
       <section>
-        <img src="../assets/screenshots/extrasolar.png">
+        <img src="../assets/screenshots/extrasolar.png" alt="Project: ExtraSolar">
         <h4>ExtraSolar</h4>
         <div class="card-overlay">
           <span>The love-child of my astronomy background and web development. Real time Exoplanet data pulled from the NASA API and charted on HTML5 canvas.</span>
@@ -63,7 +63,7 @@
         </div>
       </section>
       <section>
-        <img src="../assets/screenshots/pixelart.png">
+        <img src="../assets/screenshots/pixelart.png" alt="Project: PixelArt">
         <h4>Pixel-Art</h4>
         <div class="card-overlay">
           <span>My first Vue.js endeavor. Originally a bootcamp project using jQuery. Draw on the canvas. Change colors. Repeat.</span>
@@ -81,7 +81,7 @@
         </div>
       </section>
       <section>
-        <img>
+        <img src="../assets/screenshots/stagecoach.png" alt="Project: Stagecoach">
         <h4>Stagecoach Meat Co.</h4>
         <div class="card-overlay">
           <span>The Stagecoach Meat Co. in eastern Colorado wanted a very simple infographic-style web page for their customers. So I made this for them.</span>

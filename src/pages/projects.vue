@@ -45,7 +45,7 @@
         </div>
       </section>
       <section>
-        <img>
+        <img src="../assets/screenshots/wip.png" alt="Coming Soon">
         <h4>TwoFifteen</h4>
         <div class="card-overlay">
           <span>All sports lend themselves to data analysis and visualization. I couldn't find a clean, free baseball API. So I made my own.</span>
@@ -117,7 +117,7 @@
         </div>
       </section>
       <section>
-        <img>
+        <img src="../assets/screenshots/wip.png" alt="Coming Soon">
         <h4>MeritViewer</h4>
         <div class="card-overlay">
           <span>An info tool for an old video game I used to play. An experiment that turned into a program.</span>
@@ -135,7 +135,7 @@
         </div>
       </section>
       <section>
-        <img src="">
+        <img src="../assets/screenshots/wip.png" alt="Coming Soon">
         <h3>Web-Dev-Roadmap</h3>
         <div class="card-overlay">
           <span>Infographic depicting some standard routes to learn web development heavily influenced by my subjective experience </span>
@@ -153,7 +153,7 @@
         </div>
       </section>
       <section>
-        <img src="">
+        <img src="../assets/screenshots/wip.png" alt="Coming Soon">
         <h3>Web-Dev-Quiz</h3>
         <div class="card-overlay">
           <span>Test your knowledge and wits on topics considered to be important in web develpment</span>
@@ -171,7 +171,7 @@
         </div>
       </section>
       <section>
-        <img>
+        <img src="../assets/screenshots/wip.png" alt="Coming Soon">
         <h4>Franchise Favorites</h4>
         <div class="card-overlay">
           <span>A gee whiz</span>
@@ -189,7 +189,7 @@
         </div>
       </section>      
       <section>
-        <img>
+        <img src="../assets/screenshots/wip.png" alt="Coming Soon">
         <h4>CEA</h4>
         <div class="card-overlay">
           <span>One of my very first programming projects rewritten in Angular </span>
@@ -207,7 +207,7 @@
         </div>
       </section>      
       <section>
-        <img src="">
+        <img src="../assets/screenshots/wip.png" alt="Coming Soon">
         <h3>LogBook</h3>
         <div class="card-overlay">
           <span>Pilots are required to keep a log of flying hours and aviation events. Why not transform that static trove of data into a modern interactive visualization?</span>
@@ -225,7 +225,7 @@
         </div>
       </section>
       <section>
-        <img src="">
+        <img src="../assets/screenshots/wip.png" alt="Coming Soon">
         <h3>Airfield<sup>+</sup></h3>
         <div class="card-overlay">
           <span>A first stab at augmented reality. Use a mobile device to visualize aviation flight paths, approaches and patterns!</span>

@@ -19,7 +19,7 @@
     "d3-scale": "^2.2.2",
     "gsap": "^2.1.2",
     "vue": "^2.6.8",
-    "vue-analytics": "^5.16.2",
+    "vue-analytics": "^5.16.3",
     "vue-d2b": "^1.0.15",
     "vue-router": "^3.0.2"
   },

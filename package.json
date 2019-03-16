@@ -15,21 +15,21 @@
     "@fortawesome/vue-fontawesome": "^0.1.5",
     "ajv": "^6.10.0",
     "d2b": "^0.5.6",
-    "d3": "^5.9.1",
+    "d3": "^5.9.2",
     "d3-scale": "^2.2.2",
     "gsap": "^2.1.2",
-    "vue": "^2.6.8",
+    "vue": "^2.6.9",
     "vue-analytics": "^5.16.4",
     "vue-d2b": "^1.0.15",
     "vue-router": "^3.0.2"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.5.0",
-    "@vue/cli-service": "^3.5.0",
+    "@vue/cli-plugin-babel": "^3.5.1",
+    "@vue/cli-service": "^3.5.1",
     "html-loader": "^0.5.5",
     "push-dir": "^0.4.1",
     "vue-particles": "^1.0.9",
-    "vue-template-compiler": "^2.6.8"
+    "vue-template-compiler": "^2.6.9"
   },
   "babel": {
     "presets": [

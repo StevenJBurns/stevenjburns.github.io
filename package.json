@@ -24,7 +24,7 @@
     "vue-router": "^3.0.2"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.5.3",
+    "@vue/cli-plugin-babel": "^3.5.4",
     "@vue/cli-service": "^3.5.3",
     "html-loader": "^0.5.5",
     "push-dir": "^0.4.1",

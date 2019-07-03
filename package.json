@@ -21,11 +21,11 @@
     "vue": "^2.6.10",
     "vue-analytics": "^5.17.0",
     "vue-d2b": "^2.0.4",
-    "vue-router": "^3.0.6"
+    "vue-router": "^3.0.7"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.8.0",
-    "@vue/cli-service": "^3.8.4",
+    "@vue/cli-plugin-babel": "^3.9.0",
+    "@vue/cli-service": "^3.9.0",
     "html-loader": "^0.5.5",
     "push-dir": "^0.4.1",
     "vue-particles": "^1.0.9",

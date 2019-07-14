@@ -13,7 +13,7 @@
     "@fortawesome/free-regular-svg-icons": "^5.9.0",
     "@fortawesome/free-solid-svg-icons": "^5.9.0",
     "@fortawesome/vue-fontawesome": "^0.1.6",
-    "ajv": "^6.10.0",
+    "ajv": "^6.10.1",
     "d2b": "^1.0.9",
     "d3": "^5.9.7",
     "d3-scale": "^3.0.0",
@@ -24,8 +24,8 @@
     "vue-router": "^3.0.7"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.9.0",
-    "@vue/cli-service": "^3.9.0",
+    "@vue/cli-plugin-babel": "^3.9.2",
+    "@vue/cli-service": "^3.9.2",
     "html-loader": "^0.5.5",
     "push-dir": "^0.4.1",
     "vue-particles": "^1.0.9",

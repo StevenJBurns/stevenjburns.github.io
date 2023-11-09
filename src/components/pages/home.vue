@@ -197,7 +197,7 @@
 
 <script lang="ts">
   import Vue from "vue";
-  import { eventBus } from "../main";
+  import { eventBus } from "../../main.js";
   import { TweenLite } from "gsap";
 
   export default {

@@ -21,7 +21,6 @@
     "vue": "^2.7.15",
     "vue-analytics": "^5.22.1",
     "vue-d2b": "^2.0.4",
-    "vue-particles": "^1.0.9",
     "vue-router": "^3.6.5"
   },
   "devDependencies": {
@@ -29,7 +28,8 @@
     "@vitejs/plugin-vue2": "^2.2.0",
     "push-dir": "^0.4.1",
     "typescript": "^5.2.2",
-    "vite": "^4.5.0"
+    "vite": "^4.5.0",
+    "vue-particles": "^1.0.9"
   },
   "browserslist": [
     "> 1%",

@@ -195,9 +195,9 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
   import Vue from "vue";
-  import { eventBus } from "../main.ts";
+  import { eventBus } from "../main";
   import { TweenLite } from "gsap";
 
   export default {

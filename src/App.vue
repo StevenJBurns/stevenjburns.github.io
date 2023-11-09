@@ -11,7 +11,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
   /* State Management without Vuex */
   import { eventBus } from "./main.ts";
 
@@ -19,14 +19,14 @@
   import Header from './components/appHeader.vue';
   import Nav from './components/appNav.vue';
   import Footer from './components/appFooter.vue';
-  import ModalMenu from "./pages/modalMenu.vue";
+  import ModalMenu from './pages/modalMenu.vue';
 
   export default {
     name: 'App',
     data() {
       return {
         showResponsiveMenu: false,
-        theme: {}
+        theme: {},
       }
     },
     props: {
@@ -36,8 +36,7 @@
       Header,
       Nav,
       Footer,
-      "modal-menu": ModalMenu,
-      // "vue-particles" : VueParticles
+      'modal-menu': ModalMenu,
     },
     created() {
       eventBus.$on('requestResponsiveMenu', this.toggleResponsiveMenu);
@@ -93,9 +92,8 @@
     transition-duration: 0.25s;
   }
 
-  .fade-leave {
-
-  }
+  /* .fade-leave {
+  } */
   
   .fade-leave-active {
     transition-property: all;

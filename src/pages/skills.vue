@@ -45,7 +45,7 @@
   import d2b from "d2b";
   import * as d3 from "d3";
   import { ChartSunburst} from "vue-d2b";
-  import { eventBus } from "../main.js";
+  import { eventBus } from "../main.ts";
 
   export default {
     name: 'PageSkills',

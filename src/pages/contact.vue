@@ -45,7 +45,7 @@
 </template>
 
 <script>
-  import { eventBus } from "../main.js";
+  import { eventBus } from "../main.ts";
 
   export default {
     name: 'PageContact',

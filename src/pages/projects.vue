@@ -259,7 +259,7 @@
 </template>
 
 <script scoped>
-  import { eventBus } from "../main.js";
+  import { eventBus } from "../main.ts";
   // import FontAwesomeIcon from "@fortawesome/vue-fontawesome";
   // import { fasGlobe, fasFighterjet, fasExpandarrowsalt, fasBolt, fasLock } from "@fortawesome/free-solid-svg-icons";
   // import { fabGithub, fabCodepen } from "@fortawesome/free-brands-svg-icons";

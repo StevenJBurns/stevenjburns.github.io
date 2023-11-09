@@ -20,7 +20,7 @@
 
 <script>
   import Nav from "./appNav.vue";
-  import { eventBus } from "../main.js";
+  import { eventBus } from "../main.ts";
 
   export default {
     name: 'Header',

@@ -61,7 +61,7 @@
 </template>
 
 <script>
-  import { eventBus } from "../main.js";
+  import { eventBus } from "../main.ts";
   // import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
   // import { fabFontAwesomeFlag } from "@fortawesome/free-brands-svg-icons";
   

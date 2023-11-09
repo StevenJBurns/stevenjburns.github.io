@@ -9,6 +9,7 @@
     "skipLibCheck": false,
     "esModuleInterop": false,
     "useDefineForClassFields": true,
+    "allowImportingTsExtensions": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,

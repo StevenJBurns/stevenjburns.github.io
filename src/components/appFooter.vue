@@ -29,7 +29,7 @@
         </li>
       </ul>
     </nav>
-    <h4>&copy;2018 &bull; Steven J Burns</h4>
+    <h4>&copy;{{currentYear}} &bull; Steven J Burns</h4>
   </footer>
 </template>
 
@@ -42,7 +42,8 @@
     data() {
       return {
         isMouseOver: false,
-        hoverColor: this.theme.light
+        hoverColor: this.theme.light,
+        currentYear: new Date().getFullYear(),
       }
     },
     methods: {

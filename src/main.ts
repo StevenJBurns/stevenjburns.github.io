@@ -28,19 +28,22 @@ Vue.use(VueRouter);
 Vue.use(VueParticles);
 
 Vue.component('font-awesome-icon', FontAwesomeIcon);
-library.add(faBars,
-            faLinkedin,
-            faTwitter,
-            faGithub,
-            faCodepen,
-            faEnvelope,
-            faFighterJet,
-            faBolt,
-            faLock,
-            faGlobe,
-            faExpandArrowsAlt,
-            faFontAwesomeFlag,
-            faTimesCircle);
+
+library.add(
+  faBars,
+  faLinkedin,
+  faTwitter,
+  faGithub,
+  faCodepen,
+  faEnvelope,
+  faFighterJet,
+  faBolt,
+  faLock,
+  faGlobe,
+  faExpandArrowsAlt,
+  faFontAwesomeFlag,
+  faTimesCircle
+);
 
 const routes = [
   { path: "/", component: Home, props: { theme: Themes['home']}},
@@ -65,9 +68,9 @@ export const eventBus = new Vue({});
 
 new Vue({
   el: '#app',
+  router, // this is ES6 for -> router: router //
   data() {
     return {}
   },
-  router, // this is ES6 for -> router: router //
-  render: h => h(App)
+  render: (h: (arg0: any) => any) => h(App)
 }).$mount('#app');

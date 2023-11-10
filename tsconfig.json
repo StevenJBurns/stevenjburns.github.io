@@ -1,9 +1,17 @@
 {
-  "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }],
+  "include": [
+    "src",
+    "untyped.d.ts"
+  ],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ],
   "compilerOptions": {
     "strict": true,
-    "allowJs": false,
+    "baseUrl": ".",
+    "allowJs": true,
     "module": "ESNext",
     "target": "ESNext",
     "skipLibCheck": false,
@@ -17,6 +25,9 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "paths": {
+      "src/*": ["./src/*"],
+      "assets/*": ["./src/assets"]
+    }
   },
 }

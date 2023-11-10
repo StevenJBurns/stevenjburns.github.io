@@ -3,7 +3,7 @@
     <ul>
       <li @mouseover.capture="mouseOver" @mouseout.capture="mouseOut">
         <router-link class="menu-item" to="/">HOME</router-link>
-        </li>
+      </li>
       <li @mouseover.capture="mouseOver" @mouseout.capture="mouseOut">
         <router-link class="menu-item" to="/skills">SKILLS</router-link>
       </li>
@@ -22,7 +22,7 @@
 
 <script>
   export default {
-    name: 'Nav',
+    name: 'AppNavBar',
     data() {
       return {
         currentTheme: this.theme

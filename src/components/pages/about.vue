@@ -3,7 +3,7 @@
     <section>
       <h1>About Me</h1>
       <figure id="figure-pilot">
-        <img id="img-pilot" src="../assets/steve_pilot.png">
+        <img id="img-pilot" src="@assets/steve_pilot.png">
       </figure>
       <p>Welcome to my personal portfolio site. My name is Steve Burns. I was neither the host of Blues Clues in the 1990s nor am I a distant relative of Montgomery J Burns of The Simpsons.  I <strong><em>am</em></strong> a U.S. Air Force veteran transitioning to a second career in software development. As a graduate of the Air Force Academy and former combat pilot, I am seeking an equally challenging second career.</p>
       <p>The path that landed me here spans almost 40 years. A fascination with BASIC on the Atari 800 started it all during my 1980s childhood. I was hooked. Over the years I have tried my hand at many ways of drawing pixels on screens. Along the way I discovered you could make those pixels meaningful with data. The internet changed everything by allowing most everyone to share those meaningful pixels. But this hobby often overlapped with my Air Force career and because of the military commitment, writing computer programs remained a hobby.</p>
@@ -12,7 +12,7 @@
       <!-- <p>Many military members leave the armed forces not 100% sure what they want to do upon re-entering the civilian world. I was no exception but after flying jets I was 100% certain about one thing: I need to find a job that doesn't feel like a job. I tried my hand in real estate but the passion wasn't there. There was a nagging feeling that my interest in computers had potential but the path from A to B wasn't visible to me. I needed projects to work on. I needed professional training. Forutnately I was sitting on a lottery ticket in the form of my military GI Bill which made more education possible. Already having both a bachelors degree and a masters degree, the thought of sitting through four years of unrelated courses in pursuit of a computer science degree was extremely unappealing at age 48. There had to be a quicker, more direct path to learning modern software development.</p>
       <p>If you had asked my opinion on coding boot camps in December of 2016 my response would have been "snake oil!" I had zero evidence to back that up. After a month of researching code bootcamp options and what they generally have to offer I was on a course determined to attend Galvanize in Boulder, Colorado. Front end development in jQuery. Servers built on Node and Express. Databases. Modern front-end development in React. Encouragement to use self-taught paths to parallel and unique technology stacks that are not in the syllabus. Career services to guide you in landing a job in the software landscape. All in 24 weeks and no courses on philosophy or history. What's not to like? Galvanize was the smartest decision I had made in 25 years.</p> -->
       <figure id="figure-dev">
-        <img id="img-dev" src="../assets/steve-dev.jpg">
+        <img id="img-dev" src="@assets/steve-dev.jpg">
       </figure>
       <p>Many military members leave the armed forces unsure of what they want to do upon re-entering the civilian world and my story was no exception. I was 100% certain about one thing: just like flying jets, I need to find a job that doesn't feel like a job. My excitement for computers and software had all the potential to be that second dream job but I needed formal training and projects to gain experience. After months of researching my options, I chose the immersive web development course at Galvanize in Boulder, Colorado to connect the dots to a new career. As challenging as anything I accomplished in the military, Galvanize was the smartest professional decision I had made in 25 years.</p>
       <p>This website is a virtual online hub to my projects, both big and small, demonstrating the skills I've learned over the years in software development.  Writing fast, clean, and efficient code never feels like work to me. It is always a challenge to be sure but my military experiences demand a challenge. I want to build things that work and I embrace the obstacles along the way. The whole process is just as rewarding as being a military pilot.  It is work that doesn't feel like work.</p>
@@ -61,12 +61,12 @@
 </template>
 
 <script>
-  import { eventBus } from "../main.ts";
+  import { eventBus } from "@/main.ts";
   // import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
   // import { fabFontAwesomeFlag } from "@fortawesome/free-brands-svg-icons";
   
   export default {
-    name: 'PageAbout',
+    name: 'About',
     props: {
       theme: Object
     },

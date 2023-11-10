@@ -33,22 +33,23 @@
         <span>Compose an electronic letter. Or just send a raven.</span>
       </section>
     </div>
-    <vue-particles color="#778899"
-                   :particlesNumber="144"
-                   :particleOpacity="0.75"
-                   :linesDistance="96"
-                   shapeType="circle"
-                   :particleSize="8"
-                   :moveSpeed="2"
-                   :clickEffect="false" />
+    <vue-particles
+      color="#778899"
+      shapeType="circle"
+      :particlesNumber="144"
+      :particleOpacity="0.75"
+      :linesDistance="96"
+      :particleSize="8"
+      :moveSpeed="2"
+      :clickEffect="false" />
   </div>
 </template>
 
-<script>
-  import { eventBus } from "../main.ts";
+<script lang="ts">
+  import { eventBus } from "../../main.ts";
 
   export default {
-    name: 'PageContact',
+    name: 'Contact',
     props: {
       theme: Object
     },

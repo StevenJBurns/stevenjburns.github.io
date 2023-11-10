@@ -1,18 +1,15 @@
-/* App Dependencies */
-import Vue from 'vue/dist/vue.js';
+import Vue from 'vue';
 import VueRouter from 'vue-router';
-import VueAnalytics from 'vue-analytics';
 import VueParticles from 'vue-particles';
+import VueAnalytics from 'vue-analytics';
 
-/* Page imports */
 import App from './App.vue';
-import Home from './pages/home.vue';
-import Skills from './pages/skills.vue';
-import Projects from './pages/projects.vue';
-import Contact from './pages/contact.vue';
-import About from './pages/about.vue';
+import Home from './components/pages/Home.vue';
+import Skills from './components/pages/Skills.vue';
+import Projects from './components/pages/Projects.vue';
+import Contact from './components/pages/Contact.vue';
+import About from './components/pages/About.vue';
 
-/* Font Awesome for Vue */
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { faBars, faEnvelope, faTimesCircle, faFighterJet, faExpandArrowsAlt, faBolt, faLock, faGlobe } from "@fortawesome/free-solid-svg-icons";
@@ -45,18 +42,45 @@ library.add(
   faTimesCircle
 );
 
-const routes = [
-  { path: "/", component: Home, props: { theme: Themes['home']}},
-  { path: "/skills", component: Skills, props: { theme: Themes['skills']}},
-  { path: "/projects", component: Projects, props: { theme: Themes['projects']}},
-  { path: "/contact", component: Contact, props: { theme: Themes['contact']}},
-  { path: "/about", component: About, props: { theme: Themes['about']}}
+const routes: Array<any> = [
+  {
+    path: "/",
+    component: Home,
+    props: {
+      theme: Themes['home']
+    }
+  },
+  {
+    path: "/skills",
+    component: Skills,
+    props: {
+      theme: Themes['skills']
+    },
+  },
+  {
+    path: "/projects",
+    component: Projects,
+    props: {
+      theme: Themes['projects']
+    },
+  },
+  {
+    path: "/contact",
+    component: Contact,
+    props: {
+      theme: Themes['contact']
+    },
+  },
+  {
+    path: "/about",
+    component: About,
+    props: {
+      theme: Themes['about']
+    },
+  },
 ];
 
-const router = new VueRouter({
-  routes,  // this is ES6 for -> routes: routes //
-  mode: "history"
-});
+const router = new VueRouter({ routes, mode: 'history' });
 
 Vue.use(VueAnalytics, {
   id: 'UA-35847828-1',
@@ -68,9 +92,6 @@ export const eventBus = new Vue({});
 
 new Vue({
   el: '#app',
-  router, // this is ES6 for -> router: router //
-  data() {
-    return {}
-  },
+  router,
   render: (h: (arg0: any) => any) => h(App)
 }).$mount('#app');

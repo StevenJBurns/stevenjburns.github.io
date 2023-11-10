@@ -17,10 +17,10 @@
 
 
 <script>
-  import { eventBus } from "../main.ts";
+  import { eventBus } from "@/main.ts";
 
   export default {
-    name: 'responsiveMenu',
+    name: 'ModalNavMenu',
     data() {
       return {};
     },
@@ -37,7 +37,6 @@
     }
   }
 </script>
-
 
 <style scoped>
   .modal-backdrop {

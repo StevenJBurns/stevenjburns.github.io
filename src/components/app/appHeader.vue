@@ -13,17 +13,17 @@
       <h3 id="appSubtitle">Software Developer</h3>
     </div>
     <hr>
-    <Nav :theme="theme"/>
+    <AppNavBar :theme="theme"/>
     <font-awesome-icon :icon="['fas', 'bars']" size="2x" @click="openResponsiveMenu()" />
   </header>
 </template>
 
 <script>
-  import Nav from "./appNav.vue";
-  import { eventBus } from "../main.ts";
+  import AppNavBar from "./AppNavBar.vue";
+  import { eventBus } from "@/main.ts";
 
   export default {
-    name: 'Header',
+    name: 'AppHeader',
     data() {
       return {
         // theme: {}
@@ -33,7 +33,7 @@
       theme: Object
     },
     components: {
-      Nav
+      AppNavBar
     },
     methods: {
       openResponsiveMenu() {

@@ -196,8 +196,8 @@
 </template>
 
 <script lang="ts">
-  import Vue from "vue";
-  import { eventBus } from "../../main.js";
+  // import Vue from "vue";
+  import { eventBus } from "../../main.ts";
   import { TweenLite } from "gsap";
 
   export default {
@@ -219,7 +219,7 @@
     mounted() {
       let logos = document.querySelectorAll("#divPageBackground svg");
       
-      logos.forEach((logo, i) => {
+      logos.forEach(logo => {
         this.animateLogo(logo);
       });
     },
@@ -227,39 +227,43 @@
 
     },
     methods: {
-      getRandomPercent: function() {
+      getRandomPercent: function(): number {
         let x = Math.floor(Math.random() * 100);
         return (x <= 33 || x >= 66) ? x : this.getRandomPercent();
       },
       getRandomDuration: function() {
         return Math.floor(Math.random() * 8) + 8;
       },
-      animateLogo: function(target) {
+      animateLogo: function(target: gsap.TweenTarget): void {
         target.style["top"] = `${this.getRandomPercent()}%`;
         target.style["left"] = `${this.getRandomPercent()}%`;
         target.style["transform"] = "scale(0.75)";
         target.style["opacity"] = 0;
 
-        let delay = this.getRandomDuration() - 6;
-        let duration = this.getRandomDuration();
+        const delay = this.getRandomDuration() - 6;
+        const duration = this.getRandomDuration();
         
-        TweenLite.to(target, duration, { delay: delay,
-                                        top: '50%',
-                                        left: '50%',
-                                        opacity: 1,
-                                        scale: 0.75,
-                                        onComplete: this.animateLogo,
-                                        onCompleteParams: [target]
-                                        });
+        TweenLite.to(
+          target,
+          duration,
+          {
+            delay: delay,
+            top: '50%',
+            left: '50%',
+            opacity: 1,
+            scale: 0.75,
+            onComplete: this.animateLogo,
+            onCompleteParams: [target]
+          }
+        );
       }
     }
   }
 </script>
 
 <style scoped>
-  :root {
-
-  }
+  /* :root {
+  } */
 
   #divPageWrapper {
     flex: 1 0 auto;

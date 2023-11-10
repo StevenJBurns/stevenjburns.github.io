@@ -35,7 +35,7 @@
 
 <script>
   export default {
-    name: 'Footer',
+    name: 'AppFooter',
     props: {
       theme: Object
     },

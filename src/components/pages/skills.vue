@@ -45,10 +45,10 @@
   import d2b from "d2b";
   import * as d3 from "d3";
   import { ChartSunburst} from "vue-d2b";
-  import { eventBus } from "../main.ts";
+  import { eventBus } from "@/main.ts";
 
   export default {
-    name: 'PageSkills',
+    name: 'Skills',
     data() {
       return {
         pageWidth: 0,

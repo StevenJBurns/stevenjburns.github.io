@@ -27,7 +27,7 @@
     <p>Click on or hover over a project to see information as well as links to the source code and live websites</p>
     <div id="divCardWrapper">
       <section>
-        <img src="../assets/screenshots/extrasolar.png" alt="Project: ExtraSolar">
+        <img src="@assets/screenshots/extrasolar.png" alt="Project: ExtraSolar">
         <h4>ExtraSolar</h4>
         <div class="card-overlay">
           <span>The love-child of my astronomy background and web development. Real time Exoplanet data pulled from the NASA API and charted on HTML5 canvas.</span>
@@ -45,7 +45,7 @@
         </div>
       </section>
       <section>
-        <img src="../assets/screenshots/wip.png" alt="Coming Soon">
+        <img src="@assets/screenshots/wip.png" alt="Coming Soon">
         <h4>TwoFifteen</h4>
         <div class="card-overlay">
           <span>All sports lend themselves to data analysis and visualization. I couldn't find a clean, free baseball API. So I made my own.</span>
@@ -63,7 +63,7 @@
         </div>
       </section>
       <section>
-        <img src="../assets/screenshots/pixelart.png" alt="Project: PixelArt">
+        <img src="@assets/screenshots/pixelart.png" alt="Project: PixelArt">
         <h4>Pixel-Art</h4>
         <div class="card-overlay">
           <span>My first Vue.js endeavor. Originally a bootcamp project using jQuery. Draw on the canvas. Change colors. Repeat.</span>
@@ -81,7 +81,7 @@
         </div>
       </section>
       <section>
-        <img src="../assets/screenshots/stagecoach.png" alt="Project: Stagecoach">
+        <img src="@assets/screenshots/stagecoach.png" alt="Project: Stagecoach">
         <h4>Stagecoach Meat Co.</h4>
         <div class="card-overlay">
           <span>The Stagecoach Meat Co. in eastern Colorado wanted a very simple infographic-style web page for their customers. So I made this for them.</span>
@@ -99,7 +99,7 @@
         </div>
       </section>
       <section>
-        <img src="../assets/screenshots/noxfit.png">
+        <img src="@assets/screenshots/noxfit.png">
         <h3>NOX</h3>
         <div class="card-overlay">
           <span>A customer portal and discrete admin access created for a fitness consultant in Colorado Springs, CO</span>
@@ -117,7 +117,7 @@
         </div>
       </section>
       <section>
-        <img src="../assets/screenshots/wip.png" alt="Coming Soon">
+        <img src="@assets/screenshots/wip.png" alt="Coming Soon">
         <h4>MeritViewer</h4>
         <div class="card-overlay">
           <span>An info tool for an old video game I used to play. An experiment that turned into a program.</span>
@@ -135,7 +135,7 @@
         </div>
       </section>
       <section>
-        <img src="../assets/screenshots/wip.png" alt="Coming Soon">
+        <img src="@assets/screenshots/wip.png" alt="Coming Soon">
         <h3>Web-Dev-Roadmap</h3>
         <div class="card-overlay">
           <span>Infographic depicting some standard routes to learn web development heavily influenced by my subjective experience </span>
@@ -153,7 +153,7 @@
         </div>
       </section>
       <section>
-        <img src="../assets/screenshots/wip.png" alt="Coming Soon">
+        <img src="@assets/screenshots/wip.png" alt="Coming Soon">
         <h3>Web-Dev-Quiz</h3>
         <div class="card-overlay">
           <span>Test your knowledge and wits on topics considered to be important in web develpment</span>
@@ -171,7 +171,7 @@
         </div>
       </section>
       <section>
-        <img src="../assets/screenshots/wip.png" alt="Coming Soon">
+        <img src="@assets/screenshots/wip.png" alt="Coming Soon">
         <h4>Franchise Favorites</h4>
         <div class="card-overlay">
           <span>A gee whiz</span>
@@ -189,7 +189,7 @@
         </div>
       </section>      
       <section>
-        <img src="../assets/screenshots/wip.png" alt="Coming Soon">
+        <img src="@assets/screenshots/wip.png" alt="Coming Soon">
         <h4>CEA</h4>
         <div class="card-overlay">
           <span>One of my very first programming projects rewritten in Angular </span>
@@ -207,7 +207,7 @@
         </div>
       </section>      
       <section>
-        <img src="../assets/screenshots/wip.png" alt="Coming Soon">
+        <img src="@assets/screenshots/wip.png" alt="Coming Soon">
         <h3>LogBook</h3>
         <div class="card-overlay">
           <span>Pilots are required to keep a log of flying hours and aviation events. Why not transform that static trove of data into a modern interactive visualization?</span>
@@ -225,7 +225,7 @@
         </div>
       </section>
       <section>
-        <img src="../assets/screenshots/wip.png" alt="Coming Soon">
+        <img src="@assets/screenshots/wip.png" alt="Coming Soon">
         <h3>Airfield<sup>+</sup></h3>
         <div class="card-overlay">
           <span>A first stab at augmented reality. Use a mobile device to visualize aviation flight paths, approaches and patterns!</span>
@@ -259,11 +259,13 @@
 </template>
 
 <script scoped>
-  import { eventBus } from "../main.ts";
+  import { ref } from 'vue';
+  import { eventBus } from "@/main.ts";
   // import FontAwesomeIcon from "@fortawesome/vue-fontawesome";
   // import { fasGlobe, fasFighterjet, fasExpandarrowsalt, fasBolt, fasLock } from "@fortawesome/free-solid-svg-icons";
   // import { fabGithub, fabCodepen } from "@fortawesome/free-brands-svg-icons";
 
+  const projectCount = ref(0);
 
   export default {
     name: 'PageProjects',

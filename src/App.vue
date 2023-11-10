@@ -1,25 +1,23 @@
 <template>
   <div id="app">
-    <Header :theme="theme" />
+    <AppHeader :theme="theme" />
     <main>
       <transition name="fade" mode="out-in">
         <router-view></router-view>
       </transition>
     </main>
-    <Footer :theme="theme" />
+    <AppFooter :theme="theme" />
     <modal-menu :theme="theme" v-show="showResponsiveMenu" />
   </div>
 </template>
 
 <script lang="ts">
   /* State Management without Vuex */
+  import AppHeader from './components/app/AppHeader.vue';
+  import AppFooter from './components/app/AppFooter.vue';
+  import AppNavBar from './components/app/AppNavBar.vue';
+  import ModalNavMenu from './components/pages/ModalNavMenu.vue';
   import { eventBus } from "./main.ts";
-
-  /* import app components */
-  import Header from './components/appHeader.vue';
-  import Nav from './components/appNav.vue';
-  import Footer from './components/appFooter.vue';
-  import ModalMenu from './pages/modalMenu.vue';
 
   export default {
     name: 'App',
@@ -33,10 +31,10 @@
 
     },
     components: {
-      Header,
-      Nav,
-      Footer,
-      'modal-menu': ModalMenu,
+      AppHeader,
+      AppFooter,
+      AppNavBar,
+      'modal-menu': ModalNavMenu,
     },
     created() {
       eventBus.$on('requestResponsiveMenu', this.toggleResponsiveMenu);
@@ -49,7 +47,7 @@
       toggleResponsiveMenu() {
         this.showResponsiveMenu = !this.showResponsiveMenu;
       },
-      changeTheme(newTheme) {
+      changeTheme(newTheme: {}) {
         this.theme = newTheme;
       }
     }

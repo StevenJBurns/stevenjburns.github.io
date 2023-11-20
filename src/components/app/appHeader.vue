@@ -1,12 +1,9 @@
 <template>
   <header>
     <svg id="appLogo" height="64" width="64" viewBox="0 0 256 256">
-      <circle cx="128" cy="128" r="96" fill="#DFDFDF">
-      </circle>
-      <circle cx="128" cy="128" r="48" fill="none" stroke="#2F2F2F" stroke-width="24">
-      </circle>
-      <polygon points="128,128 16,84 62,62 84,16" stroke="#2F2F2F" stroke-width="8" stroke-linejoin="round" fill="#F0F0F0" fill-opacity="1">
-      </polygon>
+      <circle cx="128" cy="128" r="96" fill="#DFDFDF"></circle>
+      <circle cx="128" cy="128" r="48" fill="none" stroke="#2F2F2F" stroke-width="24"></circle>
+      <polygon points="128,128 16,84 62,62 84,16" stroke="#2F2F2F" stroke-width="8" stroke-linejoin="round" fill="#F0F0F0" fill-opacity="1"></polygon>
     </svg>
     <div id="appTitles">
       <h2 id="appTitle">STEVEN J BURNS</h2>
@@ -14,7 +11,7 @@
     </div>
     <hr>
     <AppNavBar :theme="theme"/>
-    <font-awesome-icon :icon="['fas', 'bars']" size="2x" @click="openResponsiveMenu()" />
+    <!-- <font-awesome-icon :icon="['fas', 'bars']" size="2x" @click="openResponsiveMenu()" /> -->
   </header>
 </template>
 

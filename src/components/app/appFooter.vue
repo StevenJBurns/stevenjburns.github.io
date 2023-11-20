@@ -4,27 +4,27 @@
       <ul>
         <li @mouseover.capture="mouseOver" @mouseout.capture="mouseOut">
           <a href="https://www.linkedin.com/in/steven-j-burns/">
-            <font-awesome-icon :icon="['fab', 'linkedin']" size="3x" />
+            <FontAwesomeIcon :icon="['fab', 'linkedin']" size="3x" />
           </a>
         </li>
         <li @mouseover.capture="mouseOver" @mouseout.capture="mouseOut">
           <a href="https://twitter.com/StevenJBurns">
-            <font-awesome-icon :icon="['fab', 'twitter']" size="3x" />
+            <FontAwesomeIcon :icon="['fab', 'twitter']" size="3x" />
           </a>
         </li>
         <li @mouseover.capture="mouseOver" @mouseout.capture="mouseOut">
           <a href="https://github.com/StevenJBurns">
-            <font-awesome-icon :icon="['fab', 'github']" size="3x" />
+            <FontAwesomeIcon :icon="['fab', 'github']" size="3x" />
           </a>
         </li>
         <li @mouseover.capture="mouseOver" @mouseout.capture="mouseOut">
           <a href="https://codepen.io/StevenJBurns/#">
-            <font-awesome-icon :icon="['fab', 'codepen']" size="3x" />
+            <FontAwesomeIcon :icon="['fab', 'codepen']" size="3x" />
           </a>
         </li>
         <li @mouseover.capture="mouseOver" @mouseout.capture="mouseOut">
           <a href="mailto:stevenjburns@msn.com?subject=You're%20Hired">
-            <font-awesome-icon :icon="['fas', 'envelope']" size="3x" />
+            <FontAwesomeIcon :icon="['fas', 'envelope']" size="3x" />
           </a>
         </li>
       </ul>
@@ -34,8 +34,32 @@
 </template>
 
 <script>
+  import { library } from '@fortawesome/fontawesome-svg-core';
+  import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+  import { faBars, faEnvelope, faTimesCircle, faFighterJet, faExpandArrowsAlt, faBolt, faLock, faGlobe } from "@fortawesome/free-solid-svg-icons";
+  import { faLinkedin, faTwitter, faGithub, faCodepen, faFontAwesomeFlag } from  "@fortawesome/free-brands-svg-icons";
+
+  library.add(
+    faBars,
+    faLinkedin,
+    faTwitter,
+    faGithub,
+    faCodepen,
+    faEnvelope,
+    faFighterJet,
+    faBolt,
+    faLock,
+    faGlobe,
+    faExpandArrowsAlt,
+    faFontAwesomeFlag,
+    faTimesCircle
+  );
+
   export default {
     name: 'AppFooter',
+    components: {
+      FontAwesomeIcon,
+    },
     props: {
       theme: Object
     },
@@ -48,10 +72,14 @@
     },
     methods: {
       mouseOver(event) {        
-        event.target.style = `color: ${this.theme.light}; transition: color 0.25s ease;`;
+        event.target.style = `
+          color: ${this.theme.light}; transition: color 0.25s ease;
+        `;
       },
       mouseOut(event) {
-        event.target.style = "color: #DFDFDF; transition: color 0.25s ease;";
+        event.target.style = `
+          color: #DFDFDF; transition: color 0.25s ease;
+        `;
       }
     }
   }

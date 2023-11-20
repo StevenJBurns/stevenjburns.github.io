@@ -201,7 +201,7 @@
   import { TweenLite } from "gsap";
 
   export default {
-    name: 'PageHome',
+    name: 'Home',
     props: {
       theme: Object
     },
@@ -235,10 +235,12 @@
         return Math.floor(Math.random() * 8) + 8;
       },
       animateLogo: function(target: gsap.TweenTarget): void {
-        target.style["top"] = `${this.getRandomPercent()}%`;
-        target.style["left"] = `${this.getRandomPercent()}%`;
-        target.style["transform"] = "scale(0.75)";
-        target.style["opacity"] = 0;
+        if (!target) return;
+
+        (target as HTMLElement)['style'].top = `${this.getRandomPercent()}%`;
+        (target as HTMLElement)['style'].left = `${this.getRandomPercent()}%`;
+        (target as HTMLElement)['style'].transform = 'scale(0.75)';
+        (target as HTMLElement)['style'].opacity = '0';
 
         const delay = this.getRandomDuration() - 6;
         const duration = this.getRandomDuration();

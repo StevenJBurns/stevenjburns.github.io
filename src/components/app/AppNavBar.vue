@@ -1,19 +1,19 @@
 <template>
   <nav :theme="theme">
     <ul>
-      <li @mouseover.capture="mouseOver" @mouseout.capture="mouseOut">
+      <li @mouseover.capture="handleMouseOver" @mouseout.capture="handleMouseOut">
         <router-link class="menu-item" to="/">HOME</router-link>
       </li>
-      <li @mouseover.capture="mouseOver" @mouseout.capture="mouseOut">
+      <li @mouseover.capture="handleMouseOver" @mouseout.capture="handleMouseOut">
         <router-link class="menu-item" to="/skills">SKILLS</router-link>
       </li>
-      <li @mouseover.capture="mouseOver" @mouseout.capture="mouseOut">
+      <li @mouseover.capture="handleMouseOver" @mouseout.capture="handleMouseOut">
         <router-link class="menu-item" to="/projects">PROJECTS</router-link>
         </li>
-      <li @mouseover.capture="mouseOver" @mouseout.capture="mouseOut">
+      <li @mouseover.capture="handleMouseOver" @mouseout.capture="handleMouseOut">
         <router-link class="menu-item" to="/contact">CONTACT</router-link>
         </li>
-      <li @mouseover.capture="mouseOver" @mouseout.capture="mouseOut">
+      <li @mouseover.capture="handleMouseOver" @mouseout.capture="handleMouseOut">
         <router-link class="menu-item" to="/about">ABOUT</router-link>
       </li>
     </ul>
@@ -48,7 +48,7 @@
         });
     },
     methods: {
-      mouseOver(event) {
+      handleMouseOver(event) {
         if (event.target.classList.contains("router-link-exact-active")) return;
 
         event.target.style =
@@ -58,7 +58,7 @@
           vertical-align: middle;
           background: ${this.theme.dark}`;
       },
-      mouseOut(event) {
+      handleMouseOut(event) {
         if (event.target.classList.contains("router-link-exact-active")) return;
 
         event.target.style =

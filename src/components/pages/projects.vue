@@ -268,7 +268,7 @@
   const projectCount = ref(0);
 
   export default {
-    name: 'PageProjects',
+    name: 'Projects',
     props: {
       theme: Object
     },

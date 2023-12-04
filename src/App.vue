@@ -11,9 +11,9 @@
   /* State Management without Vuex */
   import { eventBus } from "./main.ts";
 
-  import AppHeader from './components/app/AppHeader.vue';
-  import AppMain from './components/app/AppMain.vue';
-  import AppFooter from './components/app/AppFooter.vue';
+  import AppHeader from './components/app/appHeader.vue';
+  import AppMain from './components/app/appMain.vue';
+  import AppFooter from './components/app/appFooter.vue';
   import AppNavBar from './components/app/AppNavBar.vue';
   import ModalNavMenu from './components/pages/ModalNavMenu.vue';
 
@@ -62,6 +62,6 @@
     min-height: 100vh;
     font-family: 'Roboto', 'Avenir', Helvetica, Arial, sans-serif;
     text-align: center;
-    color: #2F2F2F;
+    color: #2F2F2F
   }
 </style>

@@ -1,19 +1,34 @@
 <template>
   <nav :theme="theme">
     <ul>
-      <li @mouseover.capture="handleMouseOver" @mouseout.capture="handleMouseOut">
+      <li
+        @mouseover.capture="handleMouseOver"
+        @mouseout.capture="handleMouseOut"
+      >
         <router-link class="menu-item" to="/">HOME</router-link>
       </li>
-      <li @mouseover.capture="handleMouseOver" @mouseout.capture="handleMouseOut">
+      <li
+        @mouseover.capture="handleMouseOver"
+        @mouseout.capture="handleMouseOut"
+      >
         <router-link class="menu-item" to="/skills">SKILLS</router-link>
       </li>
-      <li @mouseover.capture="handleMouseOver" @mouseout.capture="handleMouseOut">
+      <li
+        @mouseover.capture="handleMouseOver"
+        @mouseout.capture="handleMouseOut"
+      >
         <router-link class="menu-item" to="/projects">PROJECTS</router-link>
-        </li>
-      <li @mouseover.capture="handleMouseOver" @mouseout.capture="handleMouseOut">
+      </li>
+      <li
+        @mouseover.capture="handleMouseOver"
+        @mouseout.capture="handleMouseOut"
+      >
         <router-link class="menu-item" to="/contact">CONTACT</router-link>
-        </li>
-      <li @mouseover.capture="handleMouseOver" @mouseout.capture="handleMouseOut">
+      </li>
+      <li
+        @mouseover.capture="handleMouseOver"
+        @mouseout.capture="handleMouseOut"
+      >
         <router-link class="menu-item" to="/about">ABOUT</router-link>
       </li>
     </ul>
@@ -22,37 +37,39 @@
 
 <script>
   export default {
-    name: 'AppNavBar',
+    name: "AppNavBar",
+    props: {
+      theme: {
+        type: Object,
+        default: () => {},
+      },
+    },
     data() {
       return {
-        currentTheme: this.theme
-      }
-    },
-    props: {
-      theme: Object
+        currentTheme: this.theme,
+      };
     },
     beforeUpdate() {
-      document.querySelector(".router-link-exact-active").style =
-        `width: 100%;
+      document.querySelector(".router-link-exact-active").style = `width: 100%;
         color: #0f0f0f;
         display: table-cell;
         vertical-align: middle;
         background: ${this.theme.light}`;
 
-      document.querySelectorAll("a:not(.router-link-exact-active)")
-        .forEach((e) => { e.style =
-          `width: 100%;
+      document
+        .querySelectorAll("a:not(.router-link-exact-active)")
+        .forEach((e) => {
+          e.style = `width: 100%;
           display: table-cell;
           vertical-align: middle;
-          background: transparent`
+          background: transparent`;
         });
     },
     methods: {
       handleMouseOver(event) {
         if (event.target.classList.contains("router-link-exact-active")) return;
 
-        event.target.style =
-          `width: 100%;
+        event.target.style = `width: 100%;
           height: 100%;
           display: table-cell;
           vertical-align: middle;
@@ -61,18 +78,16 @@
       handleMouseOut(event) {
         if (event.target.classList.contains("router-link-exact-active")) return;
 
-        event.target.style =
-          `width: 100%;
+        event.target.style = `width: 100%;
           height: 100%;
           color: #F0F0F0;
           display: table-cell;
           vertical-align: middle;
           background: transparent`;
       },
-    }
-  }
+    },
+  };
 </script>
-
 <style scoped>
   nav {
     padding: 0;
@@ -84,7 +99,7 @@
     display: flex;
     flex-direction: row;
     list-style: none;
-    color: #BFBFBF;
+    color: #bfbfbf;
   }
 
   li {
@@ -96,20 +111,20 @@
     font-size: 1em;
     cursor: pointer;
     overflow: hidden;
-    background: #2F2F2F;
+    background: #2f2f2f;
     transition: all 0.5 ease;
     display: table;
   }
 
   .menu-item {
-    background: transparent;    
+    background: transparent;
   }
 
   a:link,
   a:visited {
     width: 100%;
     height: 100%;
-    color: #F0F0F0;
+    color: #f0f0f0;
     text-align: center;
     text-decoration: none;
     display: table-cell;
@@ -118,8 +133,8 @@
 
   /* .router-link-active, */
   .router-link-exact-active {
-    color: #0F0F0F;
+    color: #0f0f0f;
     background: transparent;
-    transition: all 0.5s ease
+    transition: all 0.5s ease;
   }
 </style>

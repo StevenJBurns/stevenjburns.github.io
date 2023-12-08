@@ -3,6 +3,6 @@
   "compilerOptions": {
     "module": "esnext",
     "composite": true,
-    "moduleResolution": "node",
-  },
+    "moduleResolution": "node"
+  }
 }

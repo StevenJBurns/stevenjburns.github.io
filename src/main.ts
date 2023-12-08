@@ -1,9 +1,9 @@
-import Vue from 'vue';
+import Vue from "vue";
 // import VueParticles from 'vue-particles';
 // import VueAnalytics from 'vue-analytics';
 
-import App from './App.vue';
-import { router } from './router/index.ts';
+import App from "./App.vue";
+import { router } from "./router/index.ts";
 
 Vue.config.productionTip = false;
 
@@ -17,7 +17,7 @@ Vue.config.productionTip = false;
 export const eventBus = new Vue({});
 
 new Vue({
-  // el: '#app',
+  el: "#app",
   router,
-  render: (h: (arg0: any) => any) => h(App),
-}).$mount('#app');
+  render: (h) => h(App),
+}).$mount("#app");

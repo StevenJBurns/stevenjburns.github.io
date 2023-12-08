@@ -1,1 +1,1 @@
-declare module 'vue-particles';
+declare module "vue-particles";

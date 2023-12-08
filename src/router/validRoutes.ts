@@ -1,49 +1,43 @@
-import { RouteConfig } from 'vue-router';
-import { default as Pages } from '../components/pages/index.ts';
-import Themes from '../style/appThemeColors.json';
+import { RouteConfig } from "vue-router";
+import { default as Pages } from "../components/pages/index.ts";
+import Themes from "../style/appThemeColors.json";
 
-const {
-  Home,
-  Skills,
-  Projects,
-  Contact,
-  About,
-} = Pages;
+const { Home, Skills, Projects, Contact, About } = Pages;
 
 export const validRoutes: ReadonlyArray<RouteConfig> = [
   {
     path: "/",
     component: Home,
     props: {
-      theme: Themes['home']
-    }
+      theme: Themes["home"],
+    },
   },
   {
     path: "/skills",
     component: Skills,
     props: {
-      theme: Themes['skills']
+      theme: Themes["skills"],
     },
   },
   {
     path: "/projects",
     component: Projects,
     props: {
-      theme: Themes['projects']
+      theme: Themes["projects"],
     },
   },
   {
     path: "/contact",
     component: Contact,
     props: {
-      theme: Themes['contact']
+      theme: Themes["contact"],
     },
   },
   {
     path: "/about",
     component: About,
     props: {
-      theme: Themes['about']
+      theme: Themes["about"],
     },
   },
 ];

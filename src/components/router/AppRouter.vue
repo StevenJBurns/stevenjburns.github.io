@@ -6,21 +6,20 @@
   </main>
 </template>
 
-<script lang="ts">
-</script>
+<script lang="ts"></script>
 
 <style scoped>
   main {
     flex: 1 0 auto;
     display: flex;
     flex-direction: column;
-    color: #DFDFDF;
+    color: #dfdfdf;
     overflow: hidden;
   }
-  
+
   .fade-enter {
     opacity: 0;
-    transform: scale(1.75, 1.75)
+    transform: scale(1.75, 1.75);
   }
 
   .fade-enter-active {
@@ -29,8 +28,8 @@
   }
 
   /* .fade-leave {
-  } */
-  
+    } */
+
   .fade-leave-active {
     transition-property: all;
     transition-duration: 0s;

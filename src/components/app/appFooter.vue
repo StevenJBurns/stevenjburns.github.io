@@ -29,15 +29,30 @@
         </li>
       </ul>
     </nav>
-    <h4>&copy;{{currentYear}} &bull; Steven J Burns</h4>
+    <h4>&copy;{{ currentYear }} &bull; Steven J Burns</h4>
   </footer>
 </template>
 
 <script>
-  import { library } from '@fortawesome/fontawesome-svg-core';
-  import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-  import { faBars, faEnvelope, faTimesCircle, faFighterJet, faExpandArrowsAlt, faBolt, faLock, faGlobe } from "@fortawesome/free-solid-svg-icons";
-  import { faLinkedin, faTwitter, faGithub, faCodepen, faFontAwesomeFlag } from  "@fortawesome/free-brands-svg-icons";
+  import { library } from "@fortawesome/fontawesome-svg-core";
+  import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+  import {
+    faBars,
+    faEnvelope,
+    faTimesCircle,
+    faFighterJet,
+    faExpandArrowsAlt,
+    faBolt,
+    faLock,
+    faGlobe,
+  } from "@fortawesome/free-solid-svg-icons";
+  import {
+    faLinkedin,
+    faTwitter,
+    faGithub,
+    faCodepen,
+    faFontAwesomeFlag,
+  } from "@fortawesome/free-brands-svg-icons";
 
   library.add(
     faBars,
@@ -52,26 +67,29 @@
     faGlobe,
     faExpandArrowsAlt,
     faFontAwesomeFlag,
-    faTimesCircle
+    faTimesCircle,
   );
 
   export default {
-    name: 'AppFooter',
+    name: "AppFooter",
     components: {
       FontAwesomeIcon,
     },
     props: {
-      theme: Object
+      theme: {
+        type: Object,
+        default: () => {},
+      },
     },
     data() {
       return {
         isMouseOver: false,
         hoverColor: this.theme.light,
         currentYear: new Date().getFullYear(),
-      }
+      };
     },
     methods: {
-      mouseOver(event) {        
+      mouseOver(event) {
         event.target.style = `
           color: ${this.theme.light}; transition: color 0.25s ease;
         `;
@@ -80,31 +98,32 @@
         event.target.style = `
           color: #DFDFDF; transition: color 0.25s ease;
         `;
-      }
-    }
-  }
+      },
+    },
+  };
 </script>
 
 <style scoped>
   footer {
     padding: 12px;
-    color: #DFDFDF;
-    background: transparent
+    color: #dfdfdf;
+    background: transparent;
   }
 
   ul {
-    list-style: none
+    list-style: none;
   }
 
   li {
     margin: 8px;
     padding: 2px;
     border-radius: 4px;
-    display: inline-block
+    display: inline-block;
   }
 
-  a:link, a:visited {
-    color: #DFDFDF;
+  a:link,
+  a:visited {
+    color: #dfdfdf;
     text-decoration: none;
   }
 

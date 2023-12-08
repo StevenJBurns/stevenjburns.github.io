@@ -1,30 +1,45 @@
 <template>
   <div id="divPageWrapper">
-    <h3>I am always on the lookout to get involved in a new software development challenge. Drop me a line at any of the following:</h3>
+    <h3>
+      I am always on the lookout to get involved in a new software development
+      challenge. Drop me a line at any of the following:
+    </h3>
     <div id="divCardWrapper">
       <section>
         <a href="https://www.linkedin.com/in/steven-j-burns/">
           <font-awesome-icon :icon="['fab', 'linkedin']" size="4x" />
         </a>
-        <span>Most everyone's professional anchor. Add me to your network if we are like-minded.</span>
+        <span
+          >Most everyone's professional anchor. Add me to your network if we are
+          like-minded.</span
+        >
       </section>
       <section>
         <a href="https://twitter.com/StevenJBurns">
           <font-awesome-icon :icon="['fab', 'twitter']" size="4x" />
         </a>
-        <span>Find me on the Twitters for witty banter and software development related nuggets.</span>
+        <span
+          >Find me on the Twitters for witty banter and software development
+          related nuggets.</span
+        >
       </section>
       <section>
         <a href="https://github.com/StevenJBurns">
           <font-awesome-icon :icon="['fab', 'github']" size="4x" />
         </a>
-        <span>Fork. Clone. Star. Follow. My source code and some front-end hosted projects.</span>
+        <span
+          >Fork. Clone. Star. Follow. My source code and some front-end hosted
+          projects.</span
+        >
       </section>
       <section>
         <a href="https://codepen.io/StevenJBurns/">
           <font-awesome-icon :icon="['fab', 'codepen']" size="4x" />
         </a>
-        <span>Not big enough to be &quot;real&quot; projects yet. My place to experiment, prototype and just screw around with code.</span>
+        <span
+          >Not big enough to be &quot;real&quot; projects yet. My place to
+          experiment, prototype and just screw around with code.</span
+        >
       </section>
       <section>
         <a href="mailto:stevenjburns@msn.com">
@@ -35,13 +50,14 @@
     </div>
     <vue-particles
       color="#778899"
-      shapeType="circle"
-      :particlesNumber="144"
-      :particleOpacity="0.75"
-      :linesDistance="96"
-      :particleSize="8"
-      :moveSpeed="2"
-      :clickEffect="false" />
+      shape-type="circle"
+      :particles-number="144"
+      :particle-opacity="0.75"
+      :lines-distance="96"
+      :particle-size="8"
+      :move-speed="2"
+      :click-effect="false"
+    />
   </div>
 </template>
 
@@ -49,20 +65,19 @@
   import { eventBus } from "../../main.ts";
 
   export default {
-    name: 'Contact',
+    name: "Contact",
     props: {
-      theme: Object
+      theme: {
+        type: Object,
+        default: () => {},
+      },
     },
     created() {
-      eventBus.$emit('changingTheme', this.theme)
+      eventBus.$emit("changingTheme", this.theme);
     },
-    mounted() {
-
-    },
-    methods: {
-
-    }
-  }
+    mounted() {},
+    methods: {},
+  };
 </script>
 
 <style scoped>
@@ -91,11 +106,12 @@
     justify-content: center;
   }
 
-  a:link, a:visited {
-    color: #F0F0F0;
+  a:link,
+  a:visited {
+    color: #f0f0f0;
     text-decoration: none;
     align-self: center;
-    transition: color 0.25s ease
+    transition: color 0.25s ease;
   }
 
   section {
@@ -116,7 +132,7 @@
 
   section:hover {
     background: #404060;
-    transform: scale(1.05)
+    transform: scale(1.05);
   }
 
   section:hover a {
@@ -125,12 +141,12 @@
 
   section svg {
     margin: 0 8px;
-    align-self: center
+    align-self: center;
   }
 
   section span {
     padding: 4px;
-    align-self: center
+    align-self: center;
   }
 
   #particles-js {
@@ -138,7 +154,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    position: absolute
+    position: absolute;
   }
 
   @media screen and (max-width: 720px) {

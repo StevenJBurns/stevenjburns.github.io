@@ -1,8 +1,5 @@
 {
-  "include": [
-    "src",
-    "untyped.d.ts"
-  ],
+  "include": ["src", "untyped.d.ts"],
   "references": [
     {
       "path": "./tsconfig.node.json"

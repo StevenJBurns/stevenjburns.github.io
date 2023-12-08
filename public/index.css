@@ -1,42 +1,42 @@
 * {
   margin: 0;
-  padding: 0
+  padding: 0;
 }
 
 html {
-  background: #0F0F0F;
-  font-family: 'Futura', 'Nunito', 'Roboto', Arial, Helvetica, sans-serif
+  background: #0f0f0f;
+  font-family: "Futura", "Nunito", "Roboto", Arial, Helvetica, sans-serif;
 }
 
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  color: #DFDFDF;
-  background: radial-gradient(ellipse at bottom, #4F4F4F, #000000)
+  color: #dfdfdf;
+  background: radial-gradient(ellipse at bottom, #4f4f4f, #000000);
 }
 
 header {
-  text-align: center
+  text-align: center;
 }
 
 header h2 {
-  margin: 12px
+  margin: 12px;
 }
 
 main {
   flex: 1 0 auto;
-  padding: 12px 24px
+  padding: 12px 24px;
 }
 
 .d2b-tooltip {
-  display: none
+  display: none;
 }
 
 footer {
-  text-align: center
+  text-align: center;
 }
 
 footer h4 {
-  margin: 12px
+  margin: 12px;
 }

@@ -75,7 +75,7 @@
         </polygon>
       </svg>
       <!-- <h3>I Want To Be Challenged</h3> -->
-      <h2>Longmont&nbsp;&bull;&nbsp;Colorado</h2>
+      <h2>Abilene&nbsp;&bull;&nbsp;Texas</h2>
     </section>
     <div id="divPageBackground">
       <svg

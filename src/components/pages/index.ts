@@ -1,8 +1,8 @@
-import Home from "./Home.vue";
-import Skills from "./Skills.vue";
-import Projects from "./Projects.vue";
-import Contact from "./Contact.vue";
-import About from "./About.vue";
+import Home from "./home.vue";
+import Skills from "./skills.vue";
+import Projects from "./projects.vue";
+import Contact from "./contact.vue";
+import About from "./about.vue";
 
 export default {
   Home,
